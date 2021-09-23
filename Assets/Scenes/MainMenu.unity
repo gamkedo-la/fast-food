@@ -2355,6 +2355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b1fd40bbcef354ab0228345ba80777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  englishIWouldLikeAAudioClip: {fileID: 8300000, guid: 9ab6c369160d8ad4b937fe4c9e8e49ba, type: 3}
   englishHamburgerAudioClip: {fileID: 8300000, guid: 07d2decd03e94ef429a3d7167118f1b9, type: 3}
   englishLettuceAudioClip: {fileID: 8300000, guid: d1d46124150e3fd4c990fbc8f085b294, type: 3}
   englishTomatoeAudioClip: {fileID: 8300000, guid: 1679c156352f7b74e87c9500639e79af, type: 3}
@@ -2364,6 +2365,7 @@ MonoBehaviour:
   englishLettucePickupAudioClip: {fileID: 8300000, guid: e2a535ff526dd88479a16c8fe3cce3c3, type: 3}
   englishTomatoePickupAudioClip: {fileID: 8300000, guid: 9d417c08480d9d940b6ed94ecb1272e1, type: 3}
   englishOnionPickupAudioClip: {fileID: 8300000, guid: 8c13be480dc27ba45ab58e38ee640caa, type: 3}
+  albanianIWouldLikeAAudioClip: {fileID: 8300000, guid: 72249ab2c7dc99f44b8b2c344032ab5e, type: 3}
   albanianHamburgerAudioClip: {fileID: 8300000, guid: 7527459c04c0e7445a8935799f8dca01, type: 3}
   albanianLettuceAudioClip: {fileID: 8300000, guid: 6d6fa5f529f878b4295435b5a5f46696, type: 3}
   albanianTomatoeAudioClip: {fileID: 8300000, guid: 8464661c828868448a8641894c4fbf04, type: 3}
@@ -2507,6 +2509,10 @@ PrefabInstance:
     - target: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Name
       value: InstructionsCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084091, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Pivot.x

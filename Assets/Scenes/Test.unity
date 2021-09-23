@@ -1437,10 +1437,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1730095124897694516, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85312504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095124897694516, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85185343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095124897694516, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095124897694516, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.8408
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095125340952362, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85312504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095125340952362, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85185343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095125340952362, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095125340952362, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 28.761
+      objectReference: {fileID: 0}
     - target: {fileID: 1730095125652747244, guid: 3c640203fd779d949a28111f56bda079, type: 3}
       propertyPath: pauseMenuCanvas
       value: 
       objectReference: {fileID: 1675140189}
+    - target: {fileID: 1730095125652747245, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126255182066, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85312504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126255182066, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85185343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126255182066, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126255182066, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 67.538
+      objectReference: {fileID: 0}
     - target: {fileID: 1730095126475029906, guid: 3c640203fd779d949a28111f56bda079, type: 3}
       propertyPath: m_Name
       value: GameplayCanvas
@@ -1528,6 +1580,22 @@ PrefabInstance:
     - target: {fileID: 1730095126475029918, guid: 3c640203fd779d949a28111f56bda079, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126862251524, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85312504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126862251524, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85185343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126862251524, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730095126862251524, guid: 3c640203fd779d949a28111f56bda079, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 109.84
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c640203fd779d949a28111f56bda079, type: 3}

@@ -9,6 +9,7 @@ public class LanguageDictionary : MonoBehaviour
 
     public static Dictionary<string, Dictionary<string, AudioClip>> audioLanguageDictionary = new Dictionary<string, Dictionary<string, AudioClip>>();
 
+    [SerializeField] AudioClip englishIWouldLikeAAudioClip;
     [SerializeField] AudioClip englishHamburgerAudioClip;
     [SerializeField] AudioClip englishLettuceAudioClip;
     [SerializeField] AudioClip englishTomatoeAudioClip;
@@ -20,7 +21,7 @@ public class LanguageDictionary : MonoBehaviour
     [SerializeField] AudioClip englishOnionPickupAudioClip;
 
 
-
+    [SerializeField] AudioClip albanianIWouldLikeAAudioClip;
     [SerializeField] AudioClip albanianHamburgerAudioClip;
     [SerializeField] AudioClip albanianLettuceAudioClip;
     [SerializeField] AudioClip albanianTomatoeAudioClip;
@@ -37,7 +38,7 @@ public class LanguageDictionary : MonoBehaviour
         #region Initialize text dictionary
         //gameplay
         languageDictionary.Add("English", new Dictionary<string, string>());
-        languageDictionary["English"].Add("I want a hamburger", "I want a hamburger");
+        languageDictionary["English"].Add("I want a hamburger", "I would like a hamburger");
         languageDictionary["English"].Add("with", " with ");
         languageDictionary["English"].Add("only lettuce", "lettuce.");
         languageDictionary["English"].Add("only tomatoe", "tomatoe.");
@@ -63,11 +64,13 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary["Albanian"].Add("That's not what I want!", "Kjo nuk është ajo që unë dua!");
 
         //study screen
+        languageDictionary["English"].Add("I would like a", "I would like a");
         languageDictionary["English"].Add("hamburger", "hamburger");
         languageDictionary["English"].Add("lettuce", "lettuce");
         languageDictionary["English"].Add("tomatoe", "tomatoe");
         languageDictionary["English"].Add("onion", "onion");
 
+        languageDictionary["Albanian"].Add("I would like a", "Unë dua një");
         languageDictionary["Albanian"].Add("hamburger", "hamburger");
         languageDictionary["Albanian"].Add("lettuce", "marule");
         languageDictionary["Albanian"].Add("tomatoe", "domate");
@@ -78,6 +81,7 @@ public class LanguageDictionary : MonoBehaviour
         #region Initialize audio dictionary
         //English
         audioLanguageDictionary.Add("English", new Dictionary<string, AudioClip>());
+        audioLanguageDictionary["English"].Add("I would like a", englishIWouldLikeAAudioClip);
         audioLanguageDictionary["English"].Add("hamburger", englishHamburgerAudioClip);
         audioLanguageDictionary["English"].Add("lettuce", englishLettuceAudioClip);
         audioLanguageDictionary["English"].Add("tomatoe", englishTomatoeAudioClip);
@@ -92,6 +96,7 @@ public class LanguageDictionary : MonoBehaviour
 
         //Albanian
         audioLanguageDictionary.Add("Albanian", new Dictionary<string, AudioClip>());
+        audioLanguageDictionary["Albanian"].Add("I would like a", albanianIWouldLikeAAudioClip);
         audioLanguageDictionary["Albanian"].Add("hamburger", albanianHamburgerAudioClip);
         audioLanguageDictionary["Albanian"].Add("lettuce", albanianLettuceAudioClip);
         audioLanguageDictionary["Albanian"].Add("tomatoe", albanianTomatoeAudioClip);
