@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 
 public class CustomerOrderingScript : MonoBehaviour
@@ -70,6 +71,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject fullTomatoe;
     [SerializeField] GameObject fullOnion;
 
+    IncreaseNumberOfCorrectOrdersEvent increaseNumberOfCorrectOrdersEvent = new IncreaseNumberOfCorrectOrdersEvent();
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -98,9 +100,12 @@ public class CustomerOrderingScript : MonoBehaviour
         customerOrderingCanvasImageTransform = customerOrderingCanvasImage.transform;
         customerOrderingCanvasImageStartingPosition = customerOrderingCanvasImageTransform.position;
         customerOrderingCanvasImageStartingY = customerOrderingCanvasImageStartingPosition.y;
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.correctOrderSubmissionEvent, HandleCorrectOrderSubmission);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
     }
 
-    
+
     IEnumerator SelectRandomOrderingLocationAfterARandomAmountOfTime()
     {
         yield return new WaitForSeconds(myRandomTimeToWaitBeforeOrdering);
@@ -278,16 +283,11 @@ public class CustomerOrderingScript : MonoBehaviour
                 {
                     if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
                     {
-                        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                        HandleCorrectOrderSubmission();
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
                     }
-                    else
+                else
                     {
-                        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                        HandleIncorrectOrderSubmission();
-                        StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                     }
             }
                 
@@ -296,16 +296,11 @@ public class CustomerOrderingScript : MonoBehaviour
                 {
                     if (!GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
                     {
-                        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                        HandleCorrectOrderSubmission();
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
                     }
-                    else
+                else
                     {
-                        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                        HandleIncorrectOrderSubmission();
-                        StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                     }
             }
                         
@@ -314,16 +309,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
 
@@ -332,16 +322,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
 
@@ -350,16 +335,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (!GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
 
@@ -368,16 +348,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
 
@@ -386,16 +361,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
 
@@ -404,16 +374,11 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-                    HandleCorrectOrderSubmission();
+                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
                 else
                 {
-                    currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-                    Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
-                    HandleIncorrectOrderSubmission();
-                    StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
             }
             #endregion
@@ -426,35 +391,30 @@ public class CustomerOrderingScript : MonoBehaviour
         burger.GetComponent<BurgerScript>().ResetBurger();
     }
 
+    public void AddIncreaseNumberOfCorrectOrdersEvent(UnityAction increaseCorrectOrdersListener)
+    {
+        increaseNumberOfCorrectOrdersEvent.AddListener(increaseCorrectOrdersListener);
+    }
     private void HandleCorrectOrderSubmission()
     {
-        GameManagerScript.numberOfCorrectOrders++;
-        GameManagerScript.totalSubmittedOrders++;
-        correctOrdersTextbox.text = "Correct Orders: " + GameManagerScript.numberOfCorrectOrders.ToString();
+        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
         myState = "leaving";
         myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
         myOrderingLocation = null;
         StartCoroutine(DelayedToggleOffDialogBox());
-        Debug.Log("percentage of timer left: " + myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft());
         speedBonusPointsTextbox.text = "Speed Bonus Points: " + (myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10).ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
-        CalculateAccuracy();
     }
 
     private void HandleIncorrectOrderSubmission()
     {
-        GameManagerScript.numberOfIncorrectOrders++;
-        GameManagerScript.totalSubmittedOrders++;
-        incorrectOrdersTextbox.text = "Incorrect Orders: " + GameManagerScript.numberOfIncorrectOrders.ToString();
-        CalculateAccuracy();
+        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
+        StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
     }
     
-    private void CalculateAccuracy()
-    {
-        GameManagerScript.accuracy = GameManagerScript.numberOfCorrectOrders / GameManagerScript.totalSubmittedOrders;
-        GameManagerScript.accuracy = GameManagerScript.accuracy * 100;
-        accuracyTextbox.text = "Accuracy: " + GameManagerScript.accuracy.ToString() + "%";
-    }
+    
     IEnumerator DelayedNewOrder()
     {
         yield return new WaitForSeconds(2);
