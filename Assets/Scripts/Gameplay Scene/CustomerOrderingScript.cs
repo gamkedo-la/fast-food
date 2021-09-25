@@ -71,7 +71,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject fullTomatoe;
     [SerializeField] GameObject fullOnion;
 
-    IncreaseNumberOfCorrectOrdersEvent increaseNumberOfCorrectOrdersEvent = new IncreaseNumberOfCorrectOrdersEvent();
+    private bool isProcessingOrder = false;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -277,6 +277,8 @@ public class CustomerOrderingScript : MonoBehaviour
     {
         if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
         {
+            isProcessingOrder = true;
+
             #region Handle Player Submission 
             //customer wants all the toppings
             if (iWantLettuce && iWantOnion && iWantTomatoe)
@@ -389,14 +391,19 @@ public class CustomerOrderingScript : MonoBehaviour
         fullTomatoe.GetComponent<SpriteRenderer>().enabled = true;
         fullOnion.GetComponent<SpriteRenderer>().enabled = true;
         burger.GetComponent<BurgerScript>().ResetBurger();
+
+        isProcessingOrder = false;
     }
 
-    public void AddIncreaseNumberOfCorrectOrdersEvent(UnityAction increaseCorrectOrdersListener)
-    {
-        increaseNumberOfCorrectOrdersEvent.AddListener(increaseCorrectOrdersListener);
-    }
+    
     private void HandleCorrectOrderSubmission()
     {
+        //prevent duplicate event calls
+        if (!isProcessingOrder)
+        {
+            return;
+        }
+
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
         myState = "leaving";
@@ -409,6 +416,12 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void HandleIncorrectOrderSubmission()
     {
+        //prevent duplicate event calls
+        if (!isProcessingOrder)
+        {
+            return;
+        }
+
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
