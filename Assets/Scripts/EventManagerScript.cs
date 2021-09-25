@@ -18,6 +18,7 @@ public static class EventManagerScript
     public static UnityEvent incorrectOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent anyBurgerSubmissionEvent = new UnityEvent();
 
+    public static UnityEvent toggleOnInstructionsScreenEvent = new UnityEvent();
     #endregion
 
     public static void AddEventHandlerToTargetEvent(UnityEvent targetEvent, UnityAction handlerToAdd)
