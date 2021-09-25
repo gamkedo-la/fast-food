@@ -15,16 +15,27 @@ public class headOfLettuceScript : MonoBehaviour
         fullHeadOfLettuceSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, HandleChefPicksUpLettuce);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
         {
-            GameManagerScript.burgerHasLettuce = true;
             lettuceOnBurgerSpriteRenderer.enabled = true;
-            fullHeadOfLettuceSpriteRenderer.enabled = false;
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
+            EventManagerScript.chefPicksUpLettuceEvent.Invoke();
         }
+    }
+
+    private void HandleChefPicksUpLettuce()
+    {
+        GameManagerScript.burgerHasLettuce = true;
+        Disappear();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
+    }
+
+    private void Disappear()
+    {
+        fullHeadOfLettuceSpriteRenderer.enabled = false;
     }
 
     private void Reappear()

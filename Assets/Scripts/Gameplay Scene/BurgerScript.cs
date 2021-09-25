@@ -42,10 +42,6 @@ public class BurgerScript : MonoBehaviour
         GameManagerScript.chefHasBurger = false;
         GameManagerScript.playerIsDraggingChef = false;
 
-        lettuceSpriteRenderer.enabled = false;
-        tomatoeSpriteRenderer.enabled = false;
-        onionSpriteRenderer.enabled = false;
-
         GameManagerScript.burgerHasLettuce = false;
         GameManagerScript.burgerHasTomatoe = false;
         GameManagerScript.burgerHasOnion = false;

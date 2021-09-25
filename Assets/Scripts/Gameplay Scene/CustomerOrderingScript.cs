@@ -5,7 +5,15 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-
+public enum CustomerStateEnumerations
+{
+    WaitingOutsideEntrance,
+    PickingAnOrderingLocation,
+    EnteringRestaurant,
+    WaitingForMyOrder,
+    LeavingRestaurant,
+    ExitingRestaurant
+}
 public class CustomerOrderingScript : MonoBehaviour
 {
     #region Fields
@@ -18,7 +26,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Text speedBonusPointsTextbox;
     [SerializeField] private GameObject customerOrderingLocationManager;
 
-    private string myState = "waiting outside entrance";
+    private CustomerStateEnumerations myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
     private float myStartingX;
     private float myOrderingImageStartingX;
     private float myOrderingImageToggleButtonsStartingX;
@@ -103,7 +111,7 @@ public class CustomerOrderingScript : MonoBehaviour
     }
     public void SelectAnAvailableOrderingLocation()
     {
-        myState = "picking an ordering location";
+        myStateEnumeration = CustomerStateEnumerations.PickingAnOrderingLocation;
         GameObject randomlyPickedAvailableOrderingLocation = null;
         int numberOfOrderingLocations = listOfCustomerOrderingLocations.Count;
         int randomOrderingLocationListIndex = Random.Range(0, numberOfOrderingLocations);
@@ -122,17 +130,17 @@ public class CustomerOrderingScript : MonoBehaviour
     private void HandleCustomerEntersRestaurantEvent()
     {
         //prevent duplicate event calls
-        if (myState != "picking an ordering location")
+        if (myStateEnumeration != CustomerStateEnumerations.PickingAnOrderingLocation)
         {
             return;
         }
 
-        myState = "entering";
+        myStateEnumeration = CustomerStateEnumerations.EnteringRestaurant;
     }
 
     private void MoveTowardsSelectedOrderingLocation()
     {
-        if (myOrderingLocation != null && myState == "entering")
+        if (myOrderingLocation != null && myStateEnumeration == CustomerStateEnumerations.EnteringRestaurant)
         {
             float myX = gameObject.transform.position.x;
             float orderingLocationX = myOrderingLocation.transform.position.x;
@@ -160,7 +168,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void MoveTowardsExit()
     {
-        if (myState == "leaving" && gameObject.transform.position.x < exitLocation.transform.position.x)
+        if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
             gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed, gameObject.transform.position.y);
             customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
@@ -169,9 +177,9 @@ public class CustomerOrderingScript : MonoBehaviour
                 customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         }
 
-        if (myState == "leaving" && gameObject.transform.position.x > exitLocation.transform.position.x)
+        if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x > exitLocation.transform.position.x)
         {
-            myState = "exiting";
+            myStateEnumeration = CustomerStateEnumerations.ExitingRestaurant;
             EventManagerScript.customerExitsRestaurantEvent.Invoke();
         }
     }
@@ -179,7 +187,7 @@ public class CustomerOrderingScript : MonoBehaviour
     private void HandleCustomerExitedRestaurantEvent()
     {
         //preventing duplicate calls in event
-        if (myState != "exiting")
+        if (myStateEnumeration != CustomerStateEnumerations.ExitingRestaurant)
         {
             return;
         }
@@ -188,7 +196,7 @@ public class CustomerOrderingScript : MonoBehaviour
         customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
         customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
-        myState = "waiting outside entrance";
+        myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
         StartCoroutine(DelayedNewOrder());
     }
 
@@ -209,11 +217,11 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
-        if (myState == "entering")
+        if (myStateEnumeration == CustomerStateEnumerations.EnteringRestaurant)
         {
             MoveTowardsSelectedOrderingLocation();
         }
-        else if (myState == "leaving")
+        else if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant)
         {
             MoveTowardsExit();
         }
@@ -426,7 +434,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
-        myState = "leaving";
+        myStateEnumeration = CustomerStateEnumerations.LeavingRestaurant;
         myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
         myOrderingLocation = null;
         StartCoroutine(DelayedToggleOffDialogBox());
