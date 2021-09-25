@@ -18,7 +18,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Text speedBonusPointsTextbox;
     [SerializeField] private GameObject customerOrderingLocationManager;
 
-    private string myState = "waiting";
+    private string myState = "waiting outside entrance";
     private float myStartingX;
     private float myOrderingImageStartingX;
     private float myOrderingImageToggleButtonsStartingX;
@@ -53,8 +53,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject customerOrderingCanvasImageGameObject;
     private Transform customerOrderingCanvasImageTransform;
     private Vector3 customerOrderingCanvasImageStartingPosition;
-    private float customerOrderingCanvasImageStartingY;
-    private float customerOrderingCanvasImageXOffset = 2000.0f;
+    
     [SerializeField] Text customerOrderingTextBoxObject;
     private string customersOrderString;
     [SerializeField] Button customerOrderingCanvasToggleButton;
@@ -62,10 +61,6 @@ public class CustomerOrderingScript : MonoBehaviour
     private string currentCustomerDialogueString;
 
     [SerializeField] GameObject burger;
-
-    [SerializeField] Text correctOrdersTextbox;
-    [SerializeField] Text incorrectOrdersTextbox;
-    [SerializeField] Text accuracyTextbox;
 
     [SerializeField] GameObject fullHeadOfLettuce;
     [SerializeField] GameObject fullTomatoe;
@@ -99,10 +94,11 @@ public class CustomerOrderingScript : MonoBehaviour
         InitializeOrder();
         customerOrderingCanvasImageTransform = customerOrderingCanvasImage.transform;
         customerOrderingCanvasImageStartingPosition = customerOrderingCanvasImageTransform.position;
-        customerOrderingCanvasImageStartingY = customerOrderingCanvasImageStartingPosition.y;
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.correctOrderSubmissionEvent, HandleCorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerEntersRestaurantEvent, HandleCustomerEntersRestaurantEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
     }
 
 
@@ -113,6 +109,7 @@ public class CustomerOrderingScript : MonoBehaviour
     }
     public void SelectAnAvailableOrderingLocation()
     {
+        myState = "picking an ordering location";
         GameObject randomlyPickedAvailableOrderingLocation = null;
         int numberOfOrderingLocations = listOfCustomerOrderingLocations.Count;
         int randomOrderingLocationListIndex = Random.Range(0, numberOfOrderingLocations);
@@ -125,11 +122,23 @@ public class CustomerOrderingScript : MonoBehaviour
         randomlyPickedAvailableOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = true;
         myOrderingLocation = randomlyPickedAvailableOrderingLocation;
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().isActive = true;
+        EventManagerScript.customerEntersRestaurantEvent.Invoke();
+    }
+
+    private void HandleCustomerEntersRestaurantEvent()
+    {
+        //prevent duplicate event calls
+        if (myState != "picking an ordering location")
+        {
+            return;
+        }
+
+        myState = "entering";
     }
 
     private void MoveTowardsSelectedOrderingLocation()
     {
-        if (myOrderingLocation != null && myState == "waiting")
+        if (myOrderingLocation != null && myState == "entering")
         {
             float myX = gameObject.transform.position.x;
             float orderingLocationX = myOrderingLocation.transform.position.x;
@@ -153,7 +162,11 @@ public class CustomerOrderingScript : MonoBehaviour
                 myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
             }
         }
-        else if (myState == "leaving" && gameObject.transform.position.x < exitLocation.transform.position.x)
+    }
+
+    private void MoveTowardsExit()
+    {
+        if (myState == "leaving" && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
             gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed, gameObject.transform.position.y);
             customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
@@ -161,15 +174,28 @@ public class CustomerOrderingScript : MonoBehaviour
             customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(customerOrderingCanvasToggleButton.transform.localPosition.x + myRandomSpeed * 51,
                 customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         }
-        else if (myState == "leaving" && gameObject.transform.position.x > exitLocation.transform.position.x)
+
+        if (myState == "leaving" && gameObject.transform.position.x > exitLocation.transform.position.x)
         {
-            gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
-            customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
-            customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
-            myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
-            myState = "waiting";
-            StartCoroutine(DelayedNewOrder());
+            myState = "exiting";
+            EventManagerScript.customerExitsRestaurantEvent.Invoke();
         }
+    }
+
+    private void HandleCustomerExitedRestaurantEvent()
+    {
+        //preventing duplicate calls in event
+        if (myState != "exiting")
+        {
+            return;
+        }
+
+        gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
+        customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
+        customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
+        myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
+        myState = "waiting outside entrance";
+        StartCoroutine(DelayedNewOrder());
     }
 
     IEnumerator DelayedToggleOffDialogBox()
@@ -189,7 +215,14 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
-        MoveTowardsSelectedOrderingLocation();
+        if (myState == "entering")
+        {
+            MoveTowardsSelectedOrderingLocation();
+        }
+        else if (myState == "leaving")
+        {
+            MoveTowardsExit();
+        }
     }
 
     void InitializeOrder()

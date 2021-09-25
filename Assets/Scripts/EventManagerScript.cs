@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public static class EventManagerScript 
 {
     #region Events
+    public static UnityEvent customerEntersRestaurantEvent = new UnityEvent();
+    public static UnityEvent customerExitsRestaurantEvent = new UnityEvent();
+
     public static UnityEvent correctOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent incorrectOrderSubmissionEvent = new UnityEvent();
 
