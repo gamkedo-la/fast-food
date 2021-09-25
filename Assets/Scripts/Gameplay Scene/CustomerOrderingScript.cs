@@ -249,7 +249,6 @@ public class CustomerOrderingScript : MonoBehaviour
             iWantOnion = true;
         }
         #endregion
-        Debug.Log("I want lettuce: " + iWantLettuce + ", I want tomatoe: " + iWantTomatoe + ", I want onion: " + iWantOnion);
 
         #region HandleCustomerDialogBoxString
         customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
@@ -300,10 +299,7 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
-        Debug.Log("reaching dialog textbox setting with current string string");
-        Debug.Log("currentCustomerDialogueString: " + currentCustomerDialogueString);
         customerOrderingTextBoxObject.text = currentCustomerDialogueString;
-        Debug.Log("customerOrderingTextBoxObject.text: " + customerOrderingTextBoxObject.text);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
