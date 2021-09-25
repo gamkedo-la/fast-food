@@ -13,6 +13,8 @@ public class FullOnionScript : MonoBehaviour
         onionOnBurgerGameObject = GameObject.FindGameObjectWithTag("OnionOnBurger");
         onionOnBurgerSpriteRenderer = onionOnBurgerGameObject.GetComponent<SpriteRenderer>();
         fullOnionSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,5 +25,10 @@ public class FullOnionScript : MonoBehaviour
             fullOnionSpriteRenderer.enabled = false;
             Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
         }
+    }
+
+    private void Reappear()
+    {
+        fullOnionSpriteRenderer.enabled = true;
     }
 }

@@ -60,12 +60,6 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private string currentCustomerDialogueString;
 
-    [SerializeField] GameObject burger;
-
-    [SerializeField] GameObject fullHeadOfLettuce;
-    [SerializeField] GameObject fullTomatoe;
-    [SerializeField] GameObject fullOnion;
-
     private bool isProcessingOrder = false;
     #endregion
     // Start is called before the first frame update
@@ -416,10 +410,7 @@ public class CustomerOrderingScript : MonoBehaviour
             customerOrderingTextBoxObject.text = currentCustomerDialogueString;
         }
 
-        fullHeadOfLettuce.GetComponent<SpriteRenderer>().enabled = true;
-        fullTomatoe.GetComponent<SpriteRenderer>().enabled = true;
-        fullOnion.GetComponent<SpriteRenderer>().enabled = true;
-        burger.GetComponent<BurgerScript>().ResetBurger();
+        EventManagerScript.anyBurgerSubmissionEvent.Invoke();
 
         isProcessingOrder = false;
     }

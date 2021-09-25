@@ -13,6 +13,8 @@ public class headOfLettuceScript : MonoBehaviour
         lettuceOnBurgerGameObject = GameObject.FindGameObjectWithTag("LettuceOnBurger");
         lettuceOnBurgerSpriteRenderer = lettuceOnBurgerGameObject.GetComponent<SpriteRenderer>();
         fullHeadOfLettuceSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,5 +25,10 @@ public class headOfLettuceScript : MonoBehaviour
             fullHeadOfLettuceSpriteRenderer.enabled = false;
             Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
         }
+    }
+
+    private void Reappear()
+    {
+        fullHeadOfLettuceSpriteRenderer.enabled = true;
     }
 }

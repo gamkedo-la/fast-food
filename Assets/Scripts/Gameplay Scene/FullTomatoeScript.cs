@@ -13,6 +13,8 @@ public class FullTomatoeScript : MonoBehaviour
         tomatoeOnBurgerGameObject = GameObject.FindGameObjectWithTag("TomatoeOnBurger");
         tomatoeOnBurgerSpriteRenderer = tomatoeOnBurgerGameObject.GetComponent<SpriteRenderer>();
         fullTomatoeSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,5 +25,10 @@ public class FullTomatoeScript : MonoBehaviour
             fullTomatoeSpriteRenderer.enabled = false;
             Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomatoe pickup"]);
         }
+    }
+
+    private void Reappear()
+    {
+        fullTomatoeSpriteRenderer.enabled = true;
     }
 }

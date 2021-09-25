@@ -17,14 +17,22 @@ public class BurgerScript : MonoBehaviour
     private void Start()
     {
         startingPositionVector2 = gameObject.transform.position;
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBurger);
+    }
+
+    private void HandleChefPicksUpBurgerEvent()
+    {
+        GameManagerScript.chefHasBurger = true;
+
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["hamburger"]);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Chef")
         {
-            GameManagerScript.chefHasBurger = true;
-            
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["hamburger"]);
+            EventManagerScript.chefPicksUpHamburgerEvent.Invoke();
         }
     }
 
