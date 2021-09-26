@@ -2,33 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FullOnionScript : MonoBehaviour
+public class FullOnionScript : ToppingOnCountertopScript
 {
     private GameObject onionOnBurgerGameObject;
     private SpriteRenderer onionOnBurgerSpriteRenderer;
-    private SpriteRenderer fullOnionSpriteRenderer;
 
-    private void Start()
+    public override void Start()
     {
         onionOnBurgerGameObject = GameObject.FindGameObjectWithTag("OnionOnBurger");
         onionOnBurgerSpriteRenderer = onionOnBurgerGameObject.GetComponent<SpriteRenderer>();
-        fullOnionSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
-        {
-            GameManagerScript.burgerHasOnion = true;
-            onionOnBurgerSpriteRenderer.enabled = true;
-            fullOnionSpriteRenderer.enabled = false;
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
-        }
+        base.Start();
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, ActualMethodHandlerOnPickupEvent);
     }
 
-    private void Reappear()
+    public override void HandleChefPicksMeUpEvent()
     {
-        fullOnionSpriteRenderer.enabled = true;
+        EventManagerScript.chefPicksUpOnionEvent.Invoke();
+    }
+
+    private void ActualMethodHandlerOnPickupEvent()
+    {
+        GameManagerScript.burgerHasOnion = true;
+        onionOnBurgerSpriteRenderer.enabled = true;
+        Disappear();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
     }
 }
