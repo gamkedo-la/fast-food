@@ -2,22 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnionOnBurgerScript : MonoBehaviour
+public class OnionOnBurgerScript : ToppingOnBurgerScript
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, Appear);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Disappear);
-    }
-
-    private void Appear()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    private void Disappear()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }

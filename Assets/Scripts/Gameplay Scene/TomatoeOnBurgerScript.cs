@@ -2,22 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TomatoeOnBurgerScript : MonoBehaviour
+public class TomatoeOnBurgerScript : ToppingOnBurgerScript
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, Appear);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Disappear);
-    }
-
-    private void Appear()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-    }
-
-    private void Disappear()
-    {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
