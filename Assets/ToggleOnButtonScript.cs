@@ -8,12 +8,18 @@ public class ToggleOnButtonScript : ButtonScript
     [SerializeField] GameObject objectToToggleOff;
     private void ToggleOn()
     {
-        objectToToggleOn.SetActive(true);
+        if (objectToToggleOn != null)
+        {
+            objectToToggleOn.SetActive(true);
+        }
     }
 
     private void ToggleOff()
     {
-        objectToToggleOff.SetActive(false);
+        if (objectToToggleOff != null)
+        {
+            objectToToggleOff.SetActive(false);
+        }
     }
 
     public override void HandleButtonClick()
