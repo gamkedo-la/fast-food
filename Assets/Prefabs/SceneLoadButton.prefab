@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4462421701647991685}
   - component: {fileID: 4462421701647991682}
   m_Layer: 5
-  m_Name: PlayButtonText
+  m_Name: SceneLoadButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Scene Load Button
 --- !u!1 &4462421703554140672
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4462421703554140679}
   - component: {fileID: 4462421703554140676}
   - component: {fileID: 4462421703554140677}
-  - component: {fileID: 4462421703554140674}
+  - component: {fileID: -296908064807976685}
   m_Layer: 5
   m_Name: SceneLoadButton
   m_TagString: Untagged
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4462421703554140674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TitleScreenPlayButtonScript, Assembly-CSharp
         m_MethodName: HandlePlayButtonClick
         m_Mode: 1
@@ -213,7 +213,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4462421703554140674
+--- !u!114 &-296908064807976685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,7 +222,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4462421703554140672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af93f64c02ae28d4aa501a5a3d916b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cb74099db129e44abc9c5896e78d145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickAudioClip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
+  buttonClickAudioClip: {fileID: 0}
+  mySceneToLoadEnumeration: 0

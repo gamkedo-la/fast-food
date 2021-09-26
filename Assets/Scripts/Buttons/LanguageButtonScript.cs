@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LanguageButtonScript : MonoBehaviour
+public class LanguageButtonScript : ButtonScript
 {
     [SerializeField] string language = "";
     public Text currentLanguageTextbox;
     [SerializeField] AudioClip buttonClickAudioClip;
 
-    private void Start()
-    {
-        
-    }
-    public void HandleLanguageButtonClick()
+    public override void HandleButtonClick()
     {
         AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLanguage = language;
