@@ -2476,7 +2476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1319536366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3414,6 +3414,14 @@ PrefabInstance:
       propertyPath: objectToToggleOn
       value: 
       objectReference: {fileID: 2134906074}
+    - target: {fileID: 1981640583342579463, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Name
+      value: ControlsToggleButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981640585438409575, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Text
+      value: Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 3112279894223454532, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
@@ -3506,6 +3514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3112279895627523227, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecfd6a4ce20c3394689305189dd85cbe, type: 3}
     - target: {fileID: 3112279895789860612, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: instructionsCanvasPrefab
       value: 
@@ -3513,6 +3525,22 @@ PrefabInstance:
     - target: {fileID: 3112279896299701109, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -5.7960815
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112279896299701110, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112279896299701110, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112279896299701110, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9695823
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112279896299701110, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902459557903576034, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: objectToToggleOff
@@ -3591,6 +3619,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af62adcd272b7dd42adfa1de7536ecf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1675140194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3112279896299701108, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+  m_PrefabInstance: {fileID: 1675140188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1675140195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675140194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0.7533188, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1676101059
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,9 +4213,58 @@ PrefabInstance:
       propertyPath: objectToToggleOff
       value: 
       objectReference: {fileID: 2134906074}
+    - target: {fileID: 371161178903117234, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Name
+      value: ControlsCanvasBackButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Text
+      value: 'Click on customers to get their orders
+
+        Click them again to
+        turn off their orders (text mode)
+
+        Drag chef with finger or mouse
+
+        Drag
+        over hamburger to pick it up
+
+        Then drag over toppings to pick them
+        up
+
+        Drag the chef to the appropriate customer for delivery'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.992313
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348788, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Name
+      value: ControlsCanvasText
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348791, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.1351757
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348791, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.509601
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033241967348791, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 109
+      objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Name
-      value: InstructionsCanvas
+      value: ControlsCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_IsActive
@@ -4257,6 +4354,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5529033243084772097, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ecfd6a4ce20c3394689305189dd85cbe, type: 3}
+    - target: {fileID: 5529033243084772111, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_Name
+      value: ControlsCanvasBackgroundImage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
 --- !u!1 &2134906074 stripped
@@ -4264,3 +4369,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
   m_PrefabInstance: {fileID: 2134906073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2134906075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5529033241967348788, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+  m_PrefabInstance: {fileID: 2134906073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134906076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134906075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.1, y: -1}
+  m_UseGraphicAlpha: 1
