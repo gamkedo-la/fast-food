@@ -149,12 +149,9 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 Vector2 newCustomerPosition = new Vector2(myX + myRandomSpeed, gameObject.transform.position.y);
                 gameObject.transform.position = newCustomerPosition;
-
-                Vector2 newUIPositionConvertedFromWorldToScreenPoint = Camera.main.WorldToScreenPoint(newCustomerPosition);
-
-                float orderingImageXOffSet = 3.0f;
+                
                 float orderingImageYOffSet = 2.0f;
-                Vector2 newOrderingImageVectorWithOffsets = new Vector2(newCustomerPosition.x + orderingImageXOffSet, newCustomerPosition.y - orderingImageYOffSet);
+                Vector2 newOrderingImageVectorWithOffsets = new Vector2(newCustomerPosition.x, newCustomerPosition.y - orderingImageYOffSet);
                 customerOrderingCanvasImage.transform.position = newOrderingImageVectorWithOffsets;
 
                 customerOrderingCanvasToggleButton.transform.position = newCustomerPosition;
