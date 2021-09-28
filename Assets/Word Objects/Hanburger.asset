@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1645327bf7c5eb349aac418e90429566, type: 3}
+  m_Name: Hanburger
+  m_EditorClassIdentifier: 
+  englishWord: hamburger
+  albanianWord: hamburger
+  icon: {fileID: 21300000, guid: 4ab97a7fd0ebee74097c3cd036859f32, type: 3}
+  englishAudio: {fileID: 8300000, guid: 07d2decd03e94ef429a3d7167118f1b9, type: 3}
+  albanianAudio: {fileID: 8300000, guid: 7527459c04c0e7445a8935799f8dca01, type: 3}
