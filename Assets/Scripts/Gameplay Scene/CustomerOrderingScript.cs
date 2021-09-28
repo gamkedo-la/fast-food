@@ -435,7 +435,8 @@ public class CustomerOrderingScript : MonoBehaviour
         myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
         myOrderingLocation = null;
         StartCoroutine(DelayedToggleOffDialogBox());
-        speedBonusPointsTextbox.text = "Speed Bonus Points: " + (myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10).ToString();
+        GameManagerScript.speedBonus = myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10;
+        speedBonusPointsTextbox.text = "Speed Bonus Points: " + GameManagerScript.speedBonus.ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
     }
 

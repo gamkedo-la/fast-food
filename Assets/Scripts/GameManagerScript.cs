@@ -25,4 +25,5 @@ public static class GameManagerScript
     public static float numberOfIncorrectOrders = 0;
     public static float totalSubmittedOrders = 0;
     public static float accuracy = 0;
+    public static float speedBonus = 0;
 }
