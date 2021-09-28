@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public enum ScenesToLoadEnumerations
 {
     MainMenu,
-    PrepScene,
-    Gameplay
+    NewPlayerPrepScene,
+    ReturningPlayerPrepScene,
+    Gameplay,
 }
 public class LoadSceneButtonScript : ButtonScript
 {

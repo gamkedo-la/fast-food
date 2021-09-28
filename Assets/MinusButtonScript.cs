@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class MinusButtonScript : MonoBehaviour
 {
-    [SerializeField] Text reviewLevelTextbox;
-
+    [SerializeField] Text currentLevelText;
+    [SerializeField] AudioClip buttonClickAudioClip;
     public void DecreaseLevel()
     {
+        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLevel--;
         if (GameManagerScript.currentLevel == 0)
         {
             GameManagerScript.currentLevel = 1;
         }
-        reviewLevelTextbox.text = "Level to Start from: " + GameManagerScript.currentLevel;
+        currentLevelText.text = GameManagerScript.currentLevel.ToString();
     }
 }

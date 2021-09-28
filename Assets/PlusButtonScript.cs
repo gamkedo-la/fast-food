@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class PlusButtonScript : MonoBehaviour
 {
-    [SerializeField] Text reviewLevelTextbox;
-
+    [SerializeField] Text currentLevelTextbox;
+    [SerializeField] AudioClip buttonClickAudioClip;
     public void IncreaseLevel()
     {
+        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLevel++;
-        reviewLevelTextbox.text = "Level to Start from: " + GameManagerScript.currentLevel;
+        if (GameManagerScript.currentLevel == 5)
+        {
+            GameManagerScript.currentLevel = 4;
+        }
+        currentLevelTextbox.text = GameManagerScript.currentLevel.ToString();
     }
 }
