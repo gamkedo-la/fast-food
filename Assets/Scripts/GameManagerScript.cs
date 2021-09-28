@@ -26,4 +26,8 @@ public static class GameManagerScript
     public static float totalSubmittedOrders = 0;
     public static float accuracy = 0;
     public static float speedBonus = 0;
+
+    public static string currentProfile = "Profile 1";
+
+    public static int currentLevel = 1;
 }
