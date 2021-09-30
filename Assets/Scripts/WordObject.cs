@@ -8,7 +8,6 @@ public class WordObject : ScriptableObject
 {
     [Header("Typed Words")]
     public string englishWord;
-
     public string albanianWord;
 
     [Header("Image File")]
@@ -17,8 +16,4 @@ public class WordObject : ScriptableObject
     [Header("Audio")]
     public AudioClip englishAudio;
     public AudioClip albanianAudio;
-
-
-
-
 }
