@@ -1523,6 +1523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: foodCounterTop
       objectReference: {fileID: 0}
+    - target: {fileID: 3172838739611158023, guid: 426a92e924f420648bcde86bc164055b, type: 3}
+      propertyPath: m_TagString
+      value: TomatoeOnBurgerScriptablePrefab
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 426a92e924f420648bcde86bc164055b, type: 3}
 --- !u!1 &1505560092 stripped
