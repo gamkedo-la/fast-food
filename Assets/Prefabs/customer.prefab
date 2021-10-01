@@ -714,15 +714,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d4b05f6690951545aaa6e4dba000521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minFrametime: 0.25
-  maxFrametime: 1.5
+  minFrametime: 1
+  maxFrametime: 3
+  oddFramesBlinkFast: 1
   mySprites:
   - {fileID: 21300000, guid: 515fe7a4e059a1e4e8fdaad1360ffe8b, type: 3}
   - {fileID: 21300000, guid: a774774e754ae274592dd770acb74c96, type: 3}
   - {fileID: 21300000, guid: 515fe7a4e059a1e4e8fdaad1360ffe8b, type: 3}
-  - {fileID: 21300000, guid: f94cb8d001016cb49a53ba48eed4351d, type: 3}
   - {fileID: 21300000, guid: e6a0a2efbd1608843ab38a8858eb35d4, type: 3}
   - {fileID: 21300000, guid: f94cb8d001016cb49a53ba48eed4351d, type: 3}
+  - {fileID: 21300000, guid: e6a0a2efbd1608843ab38a8858eb35d4, type: 3}
   - {fileID: 21300000, guid: 515fe7a4e059a1e4e8fdaad1360ffe8b, type: 3}
   - {fileID: 21300000, guid: a774774e754ae274592dd770acb74c96, type: 3}
   - {fileID: 21300000, guid: ff8a924e7241c7646b12dfa2bdaf0cdb, type: 3}

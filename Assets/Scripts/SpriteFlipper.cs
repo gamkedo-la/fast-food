@@ -16,6 +16,7 @@ public class SpriteFlipper : MonoBehaviour
     void Start()
     {
         flipMe = gameObject.GetComponent<SpriteRenderer>();
+        spriteIndex = Random.Range(0,mySprites.Length-1);
         StartCoroutine(flippingSprite());    
     }
 
