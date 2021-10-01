@@ -27,7 +27,6 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
     {
         if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
         {
-            Debug.Log("anything");
             HandleChefPicksMeUpEvent();
         }
     }

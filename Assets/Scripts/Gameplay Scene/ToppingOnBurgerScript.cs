@@ -17,7 +17,6 @@ public abstract class ToppingOnBurgerScript : MonoBehaviour
 
     protected void Disappear()
     {
-        Debug.Log("anything");
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }
