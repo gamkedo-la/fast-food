@@ -9,6 +9,9 @@ TagManager:
   - OnionOnBurger
   - LanguageTextBox
   - Customer
+  - OnionOnBurgerScriptablePrefab
+  - TomatoeOnBurgerScriptablePrefab
+  - LettuceOnBurgerScriptablePrefab
   layers:
   - Default
   - TransparentFX

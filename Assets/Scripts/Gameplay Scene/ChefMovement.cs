@@ -25,6 +25,7 @@ public class ChefMovement : MonoBehaviour
     private BoxCollider2D chefs2DBoxCollider;
     private Camera mainCamera;
     [SerializeField] GameObject burger;
+    [SerializeField] GameObject burgerScriptablePrefab;
 
     [SerializeField] GameObject foodCounterTop;
     [SerializeField] GameObject customerCounterTop;
@@ -102,6 +103,7 @@ public class ChefMovement : MonoBehaviour
             {
                 float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
                 burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+                burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
             }
         }
         #endregion

@@ -1048,6 +1048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HamburgerStudyImage
       objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7163505417638025671, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

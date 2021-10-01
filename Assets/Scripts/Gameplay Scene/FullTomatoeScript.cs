@@ -8,11 +8,16 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     private SpriteRenderer tomatoeOnBurgerSpriteRenderer;
     private SpriteRenderer fullTomatoeSpriteRenderer;
 
+    private GameObject tomatoeOnBurgerScriptableObject;
+    private SpriteRenderer tomatoeOnBurgerScriptableObjectSpriteRenderer;
+
     public override void Start()
     {
         base.Start();
-        tomatoeOnBurgerGameObject = GameObject.FindGameObjectWithTag("TomatoeOnBurger");
-        tomatoeOnBurgerSpriteRenderer = tomatoeOnBurgerGameObject.GetComponent<SpriteRenderer>();
+        //tomatoeOnBurgerGameObject = GameObject.FindGameObjectWithTag("TomatoeOnBurger");
+        //tomatoeOnBurgerSpriteRenderer = tomatoeOnBurgerGameObject.GetComponent<SpriteRenderer>();
+        tomatoeOnBurgerScriptableObject = GameObject.FindGameObjectWithTag("TomatoeOnBurgerScriptableObject");
+        tomatoeOnBurgerScriptableObjectSpriteRenderer = tomatoeOnBurgerScriptableObject.GetComponent<SpriteRenderer>();
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
     }
@@ -33,7 +38,8 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     {
         Debug.Log("anything");
         GameManagerScript.burgerHasTomatoe = true;
-        tomatoeOnBurgerSpriteRenderer.enabled = true;
+        //tomatoeOnBurgerSpriteRenderer.enabled = true;
+        tomatoeOnBurgerScriptableObjectSpriteRenderer.enabled = true;
         Disappear();
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomatoe pickup"]);
     }
