@@ -23,4 +23,21 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
             myOrderingCanvasDialogBoxImage.SetActive(false);
         }
     }
+
+    public void PlayMyOrderAudioClip()
+    {
+
+    }
+
+    public void HandleInvisibleCustomerOrderButtonClick()
+    {
+        if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Text)
+        {
+            HandleToggleCustomerDialogBoxButtonClick();
+        }
+        else
+        {
+            PlayMyOrderAudioClip();
+        }
+    }
 }

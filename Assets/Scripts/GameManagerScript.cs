@@ -2,9 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CustomerPromptTypeEnumerables
+{
+    Text,
+    Audio
+}
 public static class GameManagerScript 
 {
     public static string currentLanguage = "English";
+
+    public static CustomerPromptTypeEnumerables currentCustomerPromptType = CustomerPromptTypeEnumerables.Text;
 
     public static bool gameIsPaused = false;
 
