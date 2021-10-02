@@ -67,6 +67,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Button customerOrderingCanvasToggleButton;
 
     private string currentCustomerDialogueString;
+    public AudioClip myCurrentOrdersAudioClip;
 
     private bool isProcessingOrder = false;
     #endregion
@@ -299,6 +300,8 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
         customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+        Debug.Log("currentCustomerDialogueString: " + currentCustomerDialogueString);
+        myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

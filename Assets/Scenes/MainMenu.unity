@@ -3701,6 +3701,14 @@ MonoBehaviour:
   englishLettucePickupAudioClip: {fileID: 8300000, guid: e2a535ff526dd88479a16c8fe3cce3c3, type: 3}
   englishTomatoePickupAudioClip: {fileID: 8300000, guid: 9d417c08480d9d940b6ed94ecb1272e1, type: 3}
   englishOnionPickupAudioClip: {fileID: 8300000, guid: 8c13be480dc27ba45ab58e38ee640caa, type: 3}
+  iWouldLikeAHamburgerEnglishPrompt: {fileID: 8300000, guid: 83489f5241d107e4dbce02a402860e86, type: 3}
+  iWouldLikeAHamburgerWithLettuceEnglishPrompt: {fileID: 8300000, guid: f6de096ec9a14324d9669346e8f85090, type: 3}
+  iWouldLikeAHamburgerWithTomatoEnglishPrompt: {fileID: 8300000, guid: 46a667971b25c8a46ba5db783d6dbbc0, type: 3}
+  iWouldLikeAHamburgerWithOnionEnglishPrompt: {fileID: 8300000, guid: dbc5ebdabd52c3c40b046ad22f3b6e1b, type: 3}
+  iWouldLikeAHamburgerWithLettuceAndTomatoEnglishPrompt: {fileID: 8300000, guid: fabeca49e92f5544e81df26d561df576, type: 3}
+  iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt: {fileID: 8300000, guid: 72f22752ce2ec1441896df91d3156df9, type: 3}
+  iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt: {fileID: 8300000, guid: 1ccafd6f0cf598d45af2e4333cd79c67, type: 3}
+  iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt: {fileID: 8300000, guid: 32ad4687e8de38f4e9376ca8515ed9ff, type: 3}
   albanianIWouldLikeAAudioClip: {fileID: 8300000, guid: 72249ab2c7dc99f44b8b2c344032ab5e, type: 3}
   albanianHamburgerAudioClip: {fileID: 8300000, guid: 7527459c04c0e7445a8935799f8dca01, type: 3}
   albanianLettuceAudioClip: {fileID: 8300000, guid: 6d6fa5f529f878b4295435b5a5f46696, type: 3}
@@ -3711,6 +3719,14 @@ MonoBehaviour:
   albanianLettucePickupAudioClip: {fileID: 8300000, guid: 11a40e62465cdfb49baaace53ddc1dfe, type: 3}
   albanianTomatoePickupAudioClip: {fileID: 8300000, guid: 2449a7c8bd39cd94ca4f545b74e3c00a, type: 3}
   albanianOnionPickupAudioClip: {fileID: 8300000, guid: ed549c2d57ee54446be8b935de24a3e4, type: 3}
+  iWouldLikeAHamburgerAlbanianPrompt: {fileID: 8300000, guid: 1459c84f8061ffc44b56d419c848f887, type: 3}
+  iWouldLikeAHamburgerWithLettuceAlbanianPrompt: {fileID: 8300000, guid: f2f11dcab352bc1438eb93dfc5c63af1, type: 3}
+  iWouldLikeAHamburgerWithTomatoAlbanianPrompt: {fileID: 8300000, guid: 36c5d178975f2e34eace24a3c6437e7f, type: 3}
+  iWouldLikeAHamburgerWithOnionAlbanianPrompt: {fileID: 8300000, guid: 57cb1e2bb31fcfd4498cfb511a2a9a6c, type: 3}
+  iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt: {fileID: 8300000, guid: 637e4b341ccf41b4d9c770bb256e9970, type: 3}
+  iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt: {fileID: 8300000, guid: 75d29cc87dc51bb4e9a4493daf27e020, type: 3}
+  iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt: {fileID: 8300000, guid: 1320710337ef2f44885f526f4c02c814, type: 3}
+  iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt: {fileID: 8300000, guid: 5ccf9e7309b258549be69b50a8403349, type: 3}
 --- !u!4 &1957484832
 Transform:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
     #region Fields
 
     [SerializeField] GameObject myOrderingCanvasDialogBoxImage;
-
+    [SerializeField] GameObject customer;
     #endregion    
 
     public void HandleToggleCustomerDialogBoxButtonClick()
@@ -26,7 +26,8 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
 
     public void PlayMyOrderAudioClip()
     {
-
+        //AudioManagerScript.audioManagerScript.PlayOneShot(customer.GetComponent<CustomerOrderingScript>().myCurrentOrdersAudioClip);
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(customer.GetComponent<CustomerOrderingScript>().myCurrentOrdersAudioClip);
     }
 
     public void HandleInvisibleCustomerOrderButtonClick()

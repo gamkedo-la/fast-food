@@ -31,7 +31,7 @@ public class SpriteFlipper : MonoBehaviour
             yield return new WaitForSeconds(sec);
             
             spriteIndex++;
-            Debug.Log("Flipping sprite index: "+spriteIndex);
+            //Debug.Log("Flipping sprite index: "+spriteIndex);
             if (spriteIndex>mySprites.Length-1) spriteIndex = 0;
             flipMe.sprite = mySprites[spriteIndex];
             

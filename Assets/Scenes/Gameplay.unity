@@ -529,6 +529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517263752320679865, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customer
+      value: 
+      objectReference: {fileID: 412680740}
     - target: {fileID: 4517263753575141587, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -615,6 +619,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+--- !u!1 &412680740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4517263754366804213, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 412680739}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455572395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,6 +1984,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4517263752320679865, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customer
+      value: 
+      objectReference: {fileID: 1750545665}
     - target: {fileID: 4517263753575141587, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2061,6 +2074,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+--- !u!1 &1750545665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4517263754366804213, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 1750545664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1812770008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +3983,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4517263754366804170, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customer
+      value: 
+      objectReference: {fileID: 4517263753423223787}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: exitLocation
       value: 
@@ -4039,6 +4061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+--- !u!1 &4517263753423223787 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4517263754366804213, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 4517263753423223786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7059690951495675778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5013308290323242110, guid: 8e878e54272bef245a04022eaa8aa763, type: 3}

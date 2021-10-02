@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4517263752320679865}
         m_TargetAssemblyTypeName: ToggleCustomerOrderDialogBoxScript, Assembly-CSharp
-        m_MethodName: HandleToggleCustomerDialogBoxButtonClick
+        m_MethodName: HandleInvisibleCustomerOrderButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myOrderingCanvasDialogBoxImage: {fileID: 4517263752511323399}
+  customer: {fileID: 4517263754366804213}
 --- !u!1 &4517263752511323399
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +785,7 @@ MonoBehaviour:
   customerOrderingCanvasImageGameObject: {fileID: 4517263752511323399}
   customerOrderingTextBoxObject: {fileID: 4517263754408746455}
   customerOrderingCanvasToggleButton: {fileID: 4517263752320679870}
+  myCurrentOrdersAudioClip: {fileID: 0}
 --- !u!114 &4517263754366804170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,6 +799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myOrderingCanvasDialogBoxImage: {fileID: 4517263752511323399}
+  customer: {fileID: 0}
 --- !u!1 &4517263754408746449
 GameObject:
   m_ObjectHideFlags: 0
