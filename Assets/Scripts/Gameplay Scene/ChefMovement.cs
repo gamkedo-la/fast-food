@@ -42,20 +42,16 @@ public class ChefMovement : MonoBehaviour
     {
         //for mobile build, turn on simulated touch input in Window -> Analysis -> Input Debugger
         #region Mobile Build
-        Debug.Log("Touchscreen.current.primaryTouch.IsPressed()" + Touchscreen.current.primaryTouch.IsPressed());
-        if (!Touchscreen.current.primaryTouch.IsPressed())
-        {
-            GameManagerScript.playerIsTouchingScreenBool = true;
-            return;
-        }
+        //Debug.Log("Touchscreen.current.primaryTouch.IsPressed()" + Touchscreen.current.primaryTouch.IsPressed());
+        
         if (Touchscreen.current.primaryTouch.IsPressed())
         {
-
             GameManagerScript.playerIsTouchingScreenBool = true;
         }
         else
         {
             GameManagerScript.playerIsTouchingScreenBool = false;
+            return;
         }
 
         if (GameManagerScript.gameIsPaused)
@@ -64,7 +60,6 @@ public class ChefMovement : MonoBehaviour
         }
         if (!GameManagerScript.playerIsTouchingScreenBool)
         {
-            Debug.Log("player isn't touching screen");
             GameManagerScript.playerIsTouchingChef = false;
             GameManagerScript.playerIsDraggingChef = false;
             //currentTouchPositionVector3InWorldUnits = Vector3.zero;
@@ -87,17 +82,17 @@ public class ChefMovement : MonoBehaviour
         {
             GameManagerScript.playerIsTouchingChef = false;
             GameManagerScript.playerIsDraggingChef = false;
-            GameManagerScript.cameraShouldFollowChef = false;
         }
 
         if (GameManagerScript.playerIsTouchingChef)
         {
+            //don't move if colliding with either countertop
             if (foodCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(currentTouchPositionVector3InWorldUnits) ||
                 customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(currentTouchPositionVector3InWorldUnits))
             {
                 return;
             }
-
+            //move chef and burger
             gameObject.transform.position = currentTouchPositionVector3InWorldUnits;
             if (GameManagerScript.chefHasBurger)
             {
@@ -137,27 +132,29 @@ public class ChefMovement : MonoBehaviour
     }//end of update
 
     #region Itch Build
-    private void OnMouseDrag()
-    {
-        //Vector2 mousePositionInScreenPixels = Input.mousePosition;
-        //Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
+    //private void OnMouseDrag()
+    //{
+    //    Vector2 mousePositionInScreenPixels = Input.mousePosition;
+    //    Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
 
-        ////if (GameManagerScript.playerIsTouchingChef)
-        ////{
-        //    if (foodCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) ||
-        //        customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits))
-        //    {
-        //        return;
-        //    }
-        //    gameObject.transform.position = mousePositionConvertedToWorldUnits;
+    //    //if (GameManagerScript.playerIsTouchingChef)
+    //    //{
+    //    if (foodCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) ||
+    //        customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits))
+    //    {
+    //        return;
+    //    }
+    //    gameObject.transform.position = mousePositionConvertedToWorldUnits;
 
-        //    if (GameManagerScript.chefHasBurger)
-        //    {
-        //        float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
-        //        burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-        //    }
-            //}
-    }
+    //    if (GameManagerScript.chefHasBurger)
+    //    {
+    //        float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
+    //        //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+    //        burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+    //    }
+    //}
+
     #endregion //Itch build
     #endregion //Methods
 }
+

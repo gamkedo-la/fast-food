@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReturningPlayerPrepScene.unity
     guid: 4637cd6eb9a894b4895eaa2469e47014
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 5908387e10c601f4f87003ae3a79b4d5, type: 2}

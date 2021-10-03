@@ -11,7 +11,7 @@ public static class GameManagerScript
 {
     public static string currentLanguage = "English";
 
-    public static CustomerPromptTypeEnumerables currentCustomerPromptType = CustomerPromptTypeEnumerables.Audio;
+    public static CustomerPromptTypeEnumerables currentCustomerPromptType = CustomerPromptTypeEnumerables.Text;
 
     public static bool gameIsPaused = false;
 

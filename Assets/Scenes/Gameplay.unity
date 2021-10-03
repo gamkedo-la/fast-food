@@ -226,6 +226,18 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Radius
+      value: 1.1284348
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.14703329
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.70384693
+      objectReference: {fileID: 0}
     - target: {fileID: 4929245247744725731, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Size.x
       value: 8

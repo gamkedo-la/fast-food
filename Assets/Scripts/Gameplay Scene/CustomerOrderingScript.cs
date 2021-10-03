@@ -306,6 +306,11 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.name == "customerCounterTop")
+        {
+            return;
+        }
+
         if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
         {
             isProcessingOrder = true;
@@ -417,7 +422,6 @@ public class CustomerOrderingScript : MonoBehaviour
             #endregion
             customerOrderingTextBoxObject.text = currentCustomerDialogueString;
         }
-
         EventManagerScript.anyBurgerSubmissionEvent.Invoke();
 
         isProcessingOrder = false;
