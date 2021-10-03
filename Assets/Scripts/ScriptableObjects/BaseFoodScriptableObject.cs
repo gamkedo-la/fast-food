@@ -12,6 +12,9 @@ public class BaseFoodScriptableObject : ScriptableObject
     [Header("Base Food Image")]
     public Sprite baseFoodImage;
 
+    [Header("Base Food Image 2")]
+    public Sprite baseFoodImage2;
+
     [Header("Topping 1 Image")]
     public Sprite topping1Image;
 
@@ -20,6 +23,4 @@ public class BaseFoodScriptableObject : ScriptableObject
 
     [Header("Topping 3 Image")]
     public Sprite topping3Image;
-
-
 }

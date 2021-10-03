@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: HamburgerScriptableObject
   m_EditorClassIdentifier: 
   englishWord: hamburger
-  baseFoodImage: {fileID: 21300000, guid: bd9d36e84d1a6164e804549681ff3919, type: 3}
+  baseFoodImage: {fileID: 21300000, guid: 4ab97a7fd0ebee74097c3cd036859f32, type: 3}
+  baseFoodImage2: {fileID: 21300000, guid: cfb4407d03ffbc04d85214ef9bd70152, type: 3}
   topping1Image: {fileID: 21300000, guid: 90075dedb8035744f95d91a4c67d0c25, type: 3}
   topping2Image: {fileID: 21300000, guid: 98237434e40f80547a685216c02d78c5, type: 3}
   topping3Image: {fileID: 21300000, guid: 4d199c67bf8482646b796913ebcb3740, type: 3}

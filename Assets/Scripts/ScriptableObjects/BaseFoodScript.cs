@@ -14,6 +14,8 @@ public class BaseFoodScript : MonoBehaviour
 
     [SerializeField] private Sprite baseFoodImage;
     private SpriteRenderer baseFoodSpriteRenderer;
+    [SerializeField] private Sprite baseFoodImage2;
+    private SpriteRenderer baseFoodSpriteRenderer2;
     [SerializeField] private Sprite topping1Image;
     private SpriteRenderer topping1SpriteRenderer;
     [SerializeField] private Sprite topping2Image;
@@ -30,11 +32,13 @@ public class BaseFoodScript : MonoBehaviour
             englishWord = baseFoodScriptableObject.englishWord;
 
             baseFoodSpriteRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
-            topping1SpriteRenderer = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
-            topping2SpriteRenderer = gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
-            topping3SpriteRenderer = gameObject.transform.GetChild(3).GetComponent<SpriteRenderer>();
+            baseFoodSpriteRenderer2 = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
+            topping1SpriteRenderer = gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
+            topping2SpriteRenderer = gameObject.transform.GetChild(3).GetComponent<SpriteRenderer>();
+            topping3SpriteRenderer = gameObject.transform.GetChild(4).GetComponent<SpriteRenderer>();
 
             baseFoodImage = baseFoodScriptableObject.baseFoodImage;
+            baseFoodImage2 = baseFoodScriptableObject.baseFoodImage2;
             topping1Image = baseFoodScriptableObject.topping1Image;
             topping2Image = baseFoodScriptableObject.topping2Image;
             topping3Image = baseFoodScriptableObject.topping3Image;
