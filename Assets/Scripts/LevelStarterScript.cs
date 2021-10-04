@@ -10,6 +10,9 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] Text accuracyTextbox;
     [SerializeField] Text speedBonusTextbox;
 
+    [SerializeField] GameObject fullTomatoe;
+    [SerializeField] GameObject fullOnion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,14 @@ public class LevelStarterScript : MonoBehaviour
         numberOfIncorrectOrdersTextbox.text = "Incorrect Orders: ";
         accuracyTextbox.text = "Accuracy: ";
         speedBonusTextbox.text = "Speed Bonus Points: ";
+
+        if (GameManagerScript.currentLevel >= 2)
+        {
+            fullTomatoe.SetActive(true);
+        }
+        if (GameManagerScript.currentLevel >= 3)
+        {
+            fullOnion.SetActive(true);
+        }
     }
 }

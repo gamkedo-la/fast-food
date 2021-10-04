@@ -74,6 +74,8 @@ public class CustomerOrderingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+        myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
         myStartingX = gameObject.transform.position.x;
 
         Vector2 orderImageStartingVectorConverted = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -125,6 +127,7 @@ public class CustomerOrderingScript : MonoBehaviour
         randomlyPickedAvailableOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = true;
         myOrderingLocation = randomlyPickedAvailableOrderingLocation;
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().isActive = true;
+        Debug.Log("ordering location selected");
         EventManagerScript.customerEntersRestaurantEvent.Invoke();
     }
 
@@ -141,8 +144,11 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void MoveTowardsSelectedOrderingLocation()
     {
+        Debug.Log("myOrderingLocation from MoveTowards: " + myOrderingLocation);
+        Debug.Log("myStateEnumeration from MoveTowards: " + myStateEnumeration);
         if (myOrderingLocation != null && myStateEnumeration == CustomerStateEnumerations.EnteringRestaurant)
         {
+            Debug.Log("inside move towards ordering location");
             float myX = gameObject.transform.position.x;
             float orderingLocationX = myOrderingLocation.transform.position.x;
 
@@ -237,16 +243,22 @@ public class CustomerOrderingScript : MonoBehaviour
             iWantLettuce = true;
         }
 
-        randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
-        if (randomFloatForCoinFlip < 0.5f)
+        if (GameManagerScript.currentLevel >= 2)
         {
-            iWantTomatoe = true;
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip < 0.5f)
+            {
+                iWantTomatoe = true;
+            }
         }
-
-        randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
-        if (randomFloatForCoinFlip < 0.5f)
+        
+        if (GameManagerScript.currentLevel >= 3)
         {
-            iWantOnion = true;
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip < 0.5f)
+            {
+                iWantOnion = true;
+            }
         }
         #endregion
 
@@ -292,6 +304,7 @@ public class CustomerOrderingScript : MonoBehaviour
         }
         #endregion
 
+        Debug.Log("second half of InitializeOrder");
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().InitializeTimer();
         float patienceTimerSliderYCoordinateWithOffset = gameObject.transform.position.y - 1.0f;
@@ -300,7 +313,6 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
         customerOrderingTextBoxObject.text = currentCustomerDialogueString;
-        Debug.Log("currentCustomerDialogueString: " + currentCustomerDialogueString);
         myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
     }
 
@@ -445,6 +457,16 @@ public class CustomerOrderingScript : MonoBehaviour
         GameManagerScript.speedBonus = myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10;
         speedBonusPointsTextbox.text = "Speed Bonus Points: " + GameManagerScript.speedBonus.ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
+        CheckForLevelCompletion();
+    }
+
+    private void CheckForLevelCompletion()
+    {
+        if (GameManagerScript.totalSubmittedOrders >= GameManagerScript.minimumSubmittedOrdersToCompleteLevel1 &&
+            GameManagerScript.accuracy >= GameManagerScript.minimumAccuracyToCompleteLevel)
+        {
+            EventManagerScript.levelCompletedEvent.Invoke();
+        }
     }
 
     private void HandleIncorrectOrderSubmission()

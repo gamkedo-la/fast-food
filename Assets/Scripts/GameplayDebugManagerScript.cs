@@ -11,8 +11,8 @@ public class GameplayDebugManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("anything");
             Time.timeScale = 0;
+            EventManagerScript.levelCompletedEvent.Invoke();
             levelStatsCanvas.SetActive(true);
         }
     }

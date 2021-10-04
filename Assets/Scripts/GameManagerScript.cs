@@ -37,4 +37,6 @@ public static class GameManagerScript
     public static string currentProfile = "Profile 1";
 
     public static int currentLevel = 1;
+    public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
+    public static float minimumAccuracyToCompleteLevel = 90.0f;
 }

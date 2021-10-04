@@ -19,8 +19,7 @@ public static class EventManagerScript
     public static UnityEvent correctOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent incorrectOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent anyBurgerSubmissionEvent = new UnityEvent();
-    //new section
-    public static UnityEvent exampleEvent = new UnityEvent();
+    public static UnityEvent levelCompletedEvent = new UnityEvent();
     #endregion
 
     public static void AddEventHandlerToTargetEvent(UnityEvent targetEvent, UnityAction handlerToAdd)
