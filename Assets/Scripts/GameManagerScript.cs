@@ -38,6 +38,9 @@ public static class GameManagerScript
 
     public static int currentLevel = 1;
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
+    public static int minimumSubmittedOrdersToCompleteLevel2 = 10;
+    public static int minimumSubmittedOrdersToCompleteLevel3 = 15;
+    public static int minimumSubmittedOrdersToCompleteCurrentLevel = minimumSubmittedOrdersToCompleteLevel1;
     public static float minimumAccuracyToCompleteLevel = 90.0f;
 
     public static bool levelStarterFirstTimeStarted = false;

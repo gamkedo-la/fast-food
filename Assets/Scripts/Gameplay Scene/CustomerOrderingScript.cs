@@ -457,9 +457,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void CheckForLevelCompletion()
     {
-        Debug.Log("GameManagerScript.totalSubmittedOrders: " + GameManagerScript.totalSubmittedOrders);
-        Debug.Log("GameManagerScript.accuracy: " + GameManagerScript.accuracy);
-        if (GameManagerScript.totalSubmittedOrders >= GameManagerScript.minimumSubmittedOrdersToCompleteLevel1 &&
+        if (GameManagerScript.totalSubmittedOrders >= GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel &&
             GameManagerScript.accuracy >= GameManagerScript.minimumAccuracyToCompleteLevel)
         {
             EventManagerScript.levelCompletedEvent.Invoke();

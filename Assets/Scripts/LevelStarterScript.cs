@@ -38,6 +38,20 @@ public class LevelStarterScript : MonoBehaviour
         accuracyTextbox.text = "Accuracy: ";
         speedBonusTextbox.text = "Speed Bonus Points: ";
 
+        switch (GameManagerScript.currentLevel)
+        {
+            case 1:
+                GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel = GameManagerScript.minimumSubmittedOrdersToCompleteLevel1;               
+                break;
+            case 2:
+                GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel = GameManagerScript.minimumSubmittedOrdersToCompleteLevel2;
+                break;
+            case 3:
+                GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel = GameManagerScript.minimumSubmittedOrdersToCompleteLevel3;
+                break;
+        }
+
+
         if (GameManagerScript.currentLevel >= 2)
         {
             fullTomatoe.SetActive(true);
