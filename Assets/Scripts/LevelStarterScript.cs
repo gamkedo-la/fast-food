@@ -20,13 +20,11 @@ public class LevelStarterScript : MonoBehaviour
         {
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
         }
-        Debug.Log("should be calling level initialization");
         EventManagerScript.initializeLevel.Invoke();
     }
 
     private void HandleStartOfLevelEvent()
     {
-        Debug.Log("level initialization actually called");
         GameManagerScript.numberOfCorrectOrders = 0;
         GameManagerScript.numberOfIncorrectOrders = 0;
         GameManagerScript.totalSubmittedOrders = 0;
