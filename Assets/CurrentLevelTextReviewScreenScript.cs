@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class CurrentLevelTextReviewScreenScript : MonoBehaviour
+{
+    [SerializeField] Text currentLevelTextbox;
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentLevelTextbox.text = GameManagerScript.currentLevel.ToString();
+    }
+}

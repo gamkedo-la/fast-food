@@ -11,9 +11,9 @@ public class PlusButtonScript : MonoBehaviour
     {
         AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLevel++;
-        if (GameManagerScript.currentLevel == 5)
+        if (GameManagerScript.currentLevel == 4)
         {
-            GameManagerScript.currentLevel = 4;
+            GameManagerScript.currentLevel = 3;
         }
         currentLevelTextbox.text = GameManagerScript.currentLevel.ToString();
     }

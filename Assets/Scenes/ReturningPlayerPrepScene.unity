@@ -1854,6 +1854,7 @@ GameObject:
   - component: {fileID: 721774179}
   - component: {fileID: 721774178}
   - component: {fileID: 721774180}
+  - component: {fileID: 721774181}
   m_Layer: 5
   m_Name: CurrentLevelText
   m_TagString: Untagged
@@ -1937,6 +1938,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0.98097944, b: 1, a: 0.5}
   m_EffectDistance: {x: 0.31, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &721774181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721774176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b1aab9625cea74d8d2018a6d37f098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevelTextbox: {fileID: 721774178}
 --- !u!1 &739684732
 GameObject:
   m_ObjectHideFlags: 0
