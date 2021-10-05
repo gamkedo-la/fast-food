@@ -127,7 +127,6 @@ public class CustomerOrderingScript : MonoBehaviour
         randomlyPickedAvailableOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = true;
         myOrderingLocation = randomlyPickedAvailableOrderingLocation;
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().isActive = true;
-        Debug.Log("ordering location selected");
         EventManagerScript.customerEntersRestaurantEvent.Invoke();
     }
 
@@ -144,11 +143,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void MoveTowardsSelectedOrderingLocation()
     {
-        Debug.Log("myOrderingLocation from MoveTowards: " + myOrderingLocation);
-        Debug.Log("myStateEnumeration from MoveTowards: " + myStateEnumeration);
         if (myOrderingLocation != null && myStateEnumeration == CustomerStateEnumerations.EnteringRestaurant)
         {
-            Debug.Log("inside move towards ordering location");
             float myX = gameObject.transform.position.x;
             float orderingLocationX = myOrderingLocation.transform.position.x;
 
@@ -304,7 +300,6 @@ public class CustomerOrderingScript : MonoBehaviour
         }
         #endregion
 
-        Debug.Log("second half of InitializeOrder");
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().InitializeTimer();
         float patienceTimerSliderYCoordinateWithOffset = gameObject.transform.position.y - 1.0f;
@@ -462,6 +457,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void CheckForLevelCompletion()
     {
+        Debug.Log("GameManagerScript.totalSubmittedOrders: " + GameManagerScript.totalSubmittedOrders);
+        Debug.Log("GameManagerScript.accuracy: " + GameManagerScript.accuracy);
         if (GameManagerScript.totalSubmittedOrders >= GameManagerScript.minimumSubmittedOrdersToCompleteLevel1 &&
             GameManagerScript.accuracy >= GameManagerScript.minimumAccuracyToCompleteLevel)
         {

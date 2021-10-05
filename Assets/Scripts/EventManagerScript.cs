@@ -7,6 +7,8 @@ public static class EventManagerScript
 {
     #region Events
 
+    //utility
+    public static UnityEvent initializeLevel = new UnityEvent();
     //customers
     public static UnityEvent customerEntersRestaurantEvent = new UnityEvent();
     public static UnityEvent customerExitsRestaurantEvent = new UnityEvent();

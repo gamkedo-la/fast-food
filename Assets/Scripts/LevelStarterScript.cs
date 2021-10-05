@@ -16,8 +16,20 @@ public class LevelStarterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!GameManagerScript.levelStarterFirstTimeStarted)
+        {
+            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
+        }
+        Debug.Log("should be calling level initialization");
+        EventManagerScript.initializeLevel.Invoke();
+    }
+
+    private void HandleStartOfLevelEvent()
+    {
+        Debug.Log("level initialization actually called");
         GameManagerScript.numberOfCorrectOrders = 0;
         GameManagerScript.numberOfIncorrectOrders = 0;
+        GameManagerScript.totalSubmittedOrders = 0;
         GameManagerScript.accuracy = 0;
         GameManagerScript.speedBonus = 0;
 
