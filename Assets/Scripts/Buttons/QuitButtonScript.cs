@@ -5,9 +5,12 @@ using UnityEngine;
 public class QuitButtonScript : MonoBehaviour
 {
     [SerializeField] AudioClip buttonClickAudioClip;
+    public AudioController audioController;
+
     public void HandleQuitButtonClick()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
+        //AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
+        audioController.PlayAudio(AudioType.UI_Button);
         Application.Quit();
     }
 }
