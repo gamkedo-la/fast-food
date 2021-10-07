@@ -29,6 +29,10 @@ public class FullOnionScript : ToppingOnCountertopScript
 
     private void ActualMethodHandlerOnPickupEvent()
     {
+        if (GameManagerScript.burgerHasOnion)
+        {
+            return;
+        }
         GameManagerScript.burgerHasOnion = true;
         //onionOnBurgerSpriteRenderer.enabled = true;
         onionOnBurgerScriptablePrefabSpriteRenderer.enabled = true;

@@ -29,14 +29,16 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     public override void HandleChefPicksMeUpEvent()
     {
-        Debug.Log("inside chef picks me up event");
         EventManagerScript.chefPicksUpTomatoeEvent.Invoke();
     }
 
 
     private void ActualMethodHandlerOnPickupEvent()
     {
-        Debug.Log("anything");
+        if (GameManagerScript.burgerHasTomatoe)
+        {
+            return;
+        }
         GameManagerScript.burgerHasTomatoe = true;
         //tomatoeOnBurgerSpriteRenderer.enabled = true;
         tomatoeOnBurgerScriptableObjectSpriteRenderer.enabled = true;

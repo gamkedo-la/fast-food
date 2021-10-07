@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BaseFoodScript : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class BaseFoodScript : MonoBehaviour
     [SerializeField] private Sprite topping3Image;
     private SpriteRenderer topping3SpriteRenderer;
 
+    [SerializeField] private GameObject trayAndPlateLocation;
+
+    private Camera mainCamera;
+    private CircleCollider2D baseFoodCircleCollider;
+
+    private Vector2 currentTouchPositionVector2InScreenPixels;
+    private Vector3 currentTouchPositionVector3InWorldUnits;
     #endregion
 
     private void OnValidate()
@@ -53,12 +61,31 @@ public class BaseFoodScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        mainCamera = Camera.main;
+        baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+
         startingPositionVector2 = gameObject.transform.position;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBurger);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, OnMouseUp);
+    }
+
+    private void Update()
+    {
+        currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
+
+        currentTouchPositionVector3InWorldUnits = mainCamera.ScreenToWorldPoint(currentTouchPositionVector2InScreenPixels);
+
+        //prevent the z coordinate from making the chef disappear
+        currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
+
+        if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
+        {
+            HandlePlayerSelectsBurger();
+        }
     }
 
     private void HandleChefPicksUpBurgerEvent()
@@ -76,6 +103,20 @@ public class BaseFoodScript : MonoBehaviour
         }
     }
 
+    private void OnMouseUp()
+    {
+        EventManagerScript.playerSelectsBurgerEvent.Invoke();
+    }
+
+    private void HandlePlayerSelectsBurger()
+    {
+        MoveToTray();
+        GameManagerScript.chefHasBurger = true;
+    }
+    private void MoveToTray()
+    {
+        gameObject.transform.position = trayAndPlateLocation.transform.position;
+    }
     public void ResetBurger()
     {
         gameObject.transform.position = startingPositionVector2;

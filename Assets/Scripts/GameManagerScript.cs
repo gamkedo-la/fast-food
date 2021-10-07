@@ -23,6 +23,7 @@ public static class GameManagerScript
 
     public static bool chefHasBurger = false;
     public static float burgerBeingHeldXOffset = 1.0f;
+    public static float burgerBeingHeldYOffset = 1.0f;
 
     public static bool burgerHasLettuce = false;
     public static bool burgerHasTomatoe = false;

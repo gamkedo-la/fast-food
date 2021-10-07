@@ -29,6 +29,10 @@ public class headOfLettuceScript : ToppingOnCountertopScript
 
     private void ActualMethodHandlerOnPickupEvent()
     {
+        if (GameManagerScript.burgerHasLettuce)
+        {
+            return;
+        }
         GameManagerScript.burgerHasLettuce = true;
         //lettuceOnBurgerSpriteRenderer.enabled = true;
         lettuceOnBurgerScriptablePrefabSpriteRenderer.enabled = true;

@@ -12,6 +12,7 @@ TagManager:
   - OnionOnBurgerScriptablePrefab
   - TomatoeOnBurgerScriptablePrefab
   - LettuceOnBurgerScriptablePrefab
+  - TrayAndPlate
   layers:
   - Default
   - TransparentFX

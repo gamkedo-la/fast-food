@@ -313,12 +313,12 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "customerCounterTop")
+        if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab")
         {
             return;
         }
 
-        if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
+        if (collision.gameObject.name == "TrayAndPlate" && GameManagerScript.chefHasBurger)
         {
             isProcessingOrder = true;
 

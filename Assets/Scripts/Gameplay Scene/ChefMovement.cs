@@ -13,14 +13,6 @@ public class ChefMovement : MonoBehaviour
     #region Fields
     private Vector2 currentTouchPositionVector2InScreenPixels;
     private Vector3 currentTouchPositionVector3InWorldUnits;
-    private Vector3 previousFramesTouchPositionVector3InWorldUnits;
-
-    private Vector3 previousFrameTouchInputPosition;
-    private Vector3 currentFrameTouchInputPosition;
-    private float negligibleDeltaXRangeFromTouchInputForCameraFollow = 0.1f;
-    private float negligibleDeltaXRangeFromTouchInputForTriggeringChefDrag = 0.1f;
-
-    private float currentDeltaXFromTouchInput;
 
     private BoxCollider2D chefs2DBoxCollider;
     private Camera mainCamera;
