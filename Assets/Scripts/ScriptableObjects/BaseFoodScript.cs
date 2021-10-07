@@ -68,11 +68,12 @@ public class BaseFoodScript : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBurger);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, OnMouseUp);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandleChefPicksUpBurgerEvent);
     }
 
+    //Android
     private void Update()
     {
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
@@ -90,23 +91,15 @@ public class BaseFoodScript : MonoBehaviour
 
     private void HandleChefPicksUpBurgerEvent()
     {
-        GameManagerScript.chefHasBurger = true;
+        HandlePlayerSelectsBurger();
 
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Chef")
-        {
-            EventManagerScript.chefPicksUpHamburgerEvent.Invoke();
-        }
-    }
-
-    private void OnMouseUp()
-    {
-        EventManagerScript.playerSelectsBurgerEvent.Invoke();
-    }
+    //Itch
+    //private void OnMouseUp()
+    //{
+    //    EventManagerScript.playerSelectsBurgerEvent.Invoke();
+    //}
 
     private void HandlePlayerSelectsBurger()
     {

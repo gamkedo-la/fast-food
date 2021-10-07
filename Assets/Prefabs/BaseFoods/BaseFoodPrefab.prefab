@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7419506105773645614}
   - component: {fileID: 731702626811366197}
   - component: {fileID: 4048185847155898390}
+  - component: {fileID: 2805708555790154232}
   m_Layer: 0
   m_Name: BaseFoodPrefab
   m_TagString: Untagged
@@ -57,6 +58,7 @@ MonoBehaviour:
   topping1Image: {fileID: 0}
   topping2Image: {fileID: 0}
   topping3Image: {fileID: 0}
+  trayAndPlateLocation: {fileID: 0}
 --- !u!212 &731702626811366197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -124,6 +126,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &2805708555790154232
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779914993011922268}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1979853072347902392
 GameObject:
   m_ObjectHideFlags: 0

@@ -39,4 +39,9 @@ public class FullOnionScript : ToppingOnCountertopScript
         Disappear();
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
     }
+    //Itch
+    //private void OnMouseUp()
+    //{
+    //    HandleChefPicksMeUpEvent();
+    //}
 }

@@ -21,7 +21,7 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
     }
-
+    //Android
     private void Update()
     {
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
@@ -47,21 +47,7 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
         mySpriteRenderer.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.name == "Chef" && GameManagerScript.chefHasBurger)
-        {
-            HandleChefPicksMeUpEvent();
-        }
-    }
-
-
     public virtual void HandleChefPicksMeUpEvent()
     {
-    }
-
-    private void OnMouseUp()
-    {
-        Debug.Log("anything");
     }
 }
