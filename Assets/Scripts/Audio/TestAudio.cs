@@ -10,23 +10,23 @@ public class TestAudio : MonoBehaviour
     private void Update() {
         //To test playback, stop, restart of soundtrack
         if (Input.GetKeyUp(KeyCode.T)){
-            audioController.PlayAudio(AudioType.Music_Main_Menu);
+            audioController.PlayAudio(GameSoundEnum.Music_Main_Menu);
         }
         if (Input.GetKeyUp(KeyCode.G)){
-            audioController.StopAudio(AudioType.Music_Main_Menu);
+            audioController.StopAudio(GameSoundEnum.Music_Main_Menu);
         }
         if (Input.GetKeyUp(KeyCode.B)){
-            audioController.RestartAudio(AudioType.Music_Main_Menu);
+            audioController.RestartAudio(GameSoundEnum.Music_Main_Menu);
         }
         //To test playback, stop, restart of a sound effect
         if (Input.GetKeyUp(KeyCode.Y)){
-            audioController.PlayAudio(AudioType.UI_Button);
+            audioController.PlayAudio(GameSoundEnum.UI_Button);
         }
         if (Input.GetKeyUp(KeyCode.H)){
-            audioController.StopAudio(AudioType.UI_Button);
+            audioController.StopAudio(GameSoundEnum.UI_Button);
         }
         if (Input.GetKeyUp(KeyCode.N)){
-            audioController.RestartAudio(AudioType.UI_Button);
+            audioController.RestartAudio(GameSoundEnum.UI_Button);
         }
 
         //workaround test for direct audio playing

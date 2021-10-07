@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AudioType{
+public enum GameSoundEnum{
     None,
     //Music
     Music_Main_Menu,

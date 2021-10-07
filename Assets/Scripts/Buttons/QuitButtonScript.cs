@@ -10,7 +10,7 @@ public class QuitButtonScript : MonoBehaviour
     public void HandleQuitButtonClick()
     {
         //AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
-        audioController.PlayAudio(AudioType.UI_Button);
+        audioController.PlayAudio(GameSoundEnum.UI_Button);
         Application.Quit();
     }
 }

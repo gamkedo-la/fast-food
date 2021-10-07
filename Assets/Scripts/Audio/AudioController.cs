@@ -10,12 +10,12 @@ public class AudioController : MonoBehaviour
     public bool debug;
     public AudioTrack[] tracks;
 
-    private Hashtable m_AudioTable; //relationship between audio types (key) and audio tracks (value)
-    private Hashtable m_JobTable; // relationship between audio types (key) and jobs (value)
+    private Hashtable m_AudioTable; //relationship between audio sounds (key) and audio tracks (value)
+    private Hashtable m_JobTable; // relationship between audio sounds (key) and jobs (value)
 
     [System.Serializable]
     public class AudioObject {
-        public AudioType type;
+        public GameSoundEnum sound;
         public AudioClip clip;
     }
 
@@ -27,11 +27,11 @@ public class AudioController : MonoBehaviour
 
     private class AudioJob {
         public AudioAction action;
-        public AudioType type;
+        public GameSoundEnum sound;
 
-        public AudioJob(AudioAction _action, AudioType _type){
+        public AudioJob(AudioAction _action, GameSoundEnum _sound){
             action = _action;
-            type = _type;
+            sound = _sound;
         }
     }
 
@@ -56,18 +56,18 @@ public class AudioController : MonoBehaviour
 #endregion
 
 #region Public Functions
-//Three different jobs, job types
-    public void PlayAudio(AudioType _type) {
+//Three different jobs
+    public void PlayAudio(GameSoundEnum _sound) {
         Debug.Log("should be actually playing, but instead adding?");
-        AddJob(new AudioJob(AudioAction.START, _type));
+        AddJob(new AudioJob(AudioAction.START, _sound));
     }
 
-    public void StopAudio(AudioType _type) {
-        AddJob(new AudioJob(AudioAction.STOP, _type));
+    public void StopAudio(GameSoundEnum _sound) {
+        AddJob(new AudioJob(AudioAction.STOP, _sound));
     }
 
-    public void RestartAudio(AudioType _type) {
-        AddJob(new AudioJob(AudioAction.RESTART, _type));
+    public void RestartAudio(GameSoundEnum _sound) {
+        AddJob(new AudioJob(AudioAction.RESTART, _sound));
     }
 
 
@@ -93,25 +93,25 @@ public class AudioController : MonoBehaviour
         foreach(AudioTrack _track in tracks) {
             foreach(AudioObject _obj in _track.audio){
                 //do not duplicate keys
-                if (m_AudioTable.ContainsKey(_obj.type)) {
-                    LogWarning("You are trying to register audio ["+_obj.type+"] that has already been reigstered.");
+                if (m_AudioTable.ContainsKey(_obj.sound)) {
+                    LogWarning("You are trying to register audio ["+_obj.sound+"] that has already been reigstered.");
                 } else {
-                    m_AudioTable.Add(_obj.type, _track);
-                    Log("Registering audio ["+_obj.type+"]");
+                    m_AudioTable.Add(_obj.sound, _track);
+                    Log("Registering audio ["+_obj.sound+"]");
                 }
             }
         }
     }
 
     private IEnumerator RunAudioJob(AudioJob _job) {
-        AudioTrack _track = GetAudioTrack(_job.type);
+        AudioTrack _track = GetAudioTrack(_job.sound);
         Debug.Log(_track.source.clip);
-        _track.source.clip = GetAudioClipFromAudioTrack(_job.type, _track);
+        _track.source.clip = GetAudioClipFromAudioTrack(_job.sound, _track);
         Debug.Log("inside RunAudioJob");
         switch (_job.action) {
             case AudioAction.START:
                 _track.source.Play();
-                Log("Playing "+_job.type);
+                Log("Playing "+_job.sound);
             break;
 
             case AudioAction.STOP:
@@ -124,7 +124,7 @@ public class AudioController : MonoBehaviour
             break;
         }
 
-        m_JobTable.Remove(_job.type);
+        m_JobTable.Remove(_job.sound);
         Log("Job count: "+m_JobTable.Count);
 
         yield return null;
@@ -132,63 +132,63 @@ public class AudioController : MonoBehaviour
 
     private void AddJob(AudioJob _job){
         //remove conflicting jobs
-        RemoveConflictingJobs(_job.type);
+        RemoveConflictingJobs(_job.sound);
 
         // start job
         IEnumerator _jobRunner = RunAudioJob(_job);
         StartCoroutine(_jobRunner);
-        m_JobTable.Add(_job.type, _jobRunner);
-        Log("Adding job on ["+_job.type+"] with operation: "+_job.action);
+        m_JobTable.Add(_job.sound, _jobRunner);
+        Log("Adding job on ["+_job.sound+"] with operation: "+_job.action);
     }
 
-    private void RemoveJob(AudioType _type){
-        if (!m_JobTable.ContainsKey(_type)){
-            LogWarning("Trying to stop a job ["+_type+"] that is not running.");
+    private void RemoveJob(GameSoundEnum _sound){
+        if (!m_JobTable.ContainsKey(_sound)){
+            LogWarning("Trying to stop a job ["+_sound+"] that is not running.");
             return;
         }
 
-        Log("Removing job of [" + _type + "]");
-        IEnumerator _runningJob = (IEnumerator)m_JobTable[_type];
+        Log("Removing job of [" + _sound + "]");
+        IEnumerator _runningJob = (IEnumerator)m_JobTable[_sound];
         StopCoroutine(_runningJob);
-        m_JobTable.Remove(_type);
+        m_JobTable.Remove(_sound);
     }
 
-    private void RemoveConflictingJobs(AudioType _type) {
-        // cancel the job if one exists with the same type
-        if (m_JobTable.ContainsKey(_type)) {
-            RemoveJob(_type);
+    private void RemoveConflictingJobs(GameSoundEnum _sound) {
+        // cancel the job if one exists with the same sound
+        if (m_JobTable.ContainsKey(_sound)) {
+            RemoveJob(_sound);
         }
 
         // cancel jobs that share the same audio track
-        AudioType _conflictAudio = AudioType.None;
-        AudioTrack _audioTrackNeeded = GetAudioTrack(_type, "Get Audio Track Needed");
+        GameSoundEnum _conflictAudio = GameSoundEnum.None;
+        AudioTrack _audioTrackNeeded = GetAudioTrack(_sound, "Get Audio Track Needed");
         foreach (DictionaryEntry _entry in m_JobTable) {
-            AudioType _audioType = (AudioType)_entry.Key;
-            AudioTrack _audioTrackInUse = GetAudioTrack(_audioType, "Get Audio Track In Use");
+            GameSoundEnum _GameSoundEnum = (GameSoundEnum)_entry.Key;
+            AudioTrack _audioTrackInUse = GetAudioTrack(_GameSoundEnum, "Get Audio Track In Use");
             if (_audioTrackInUse.source == _audioTrackNeeded.source) {
-                _conflictAudio = _audioType;
+                _conflictAudio = _GameSoundEnum;
                 break;
             }
         }
-        if (_conflictAudio != AudioType.None) {
+        if (_conflictAudio != GameSoundEnum.None) {
             RemoveJob(_conflictAudio);
         }
     }
 
-    private AudioTrack GetAudioTrack(AudioType _type, string _job="") {
+    private AudioTrack GetAudioTrack(GameSoundEnum _sound, string _job="") {
         
-        if (!m_AudioTable.ContainsKey(_type)) {
-            LogWarning("You are trying to <color=#fff>"+_job+"</color> for ["+_type+"] but no track was found supporting this audio type.");
+        if (!m_AudioTable.ContainsKey(_sound)) {
+            LogWarning("You are trying to <color=#fff>"+_job+"</color> for ["+_sound+"] but no track was found supporting this audio sound.");
             return null;
                 }
-        Debug.Log("(AudioTrack)m_AudioTable[_type]: " + (AudioTrack)m_AudioTable[_type]);
-        return (AudioTrack)m_AudioTable[_type];
+        Debug.Log("(AudioTrack)m_AudioTable[_sound]: " + (AudioTrack)m_AudioTable[_sound]);
+        return (AudioTrack)m_AudioTable[_sound];
     }
 
-    private AudioClip GetAudioClipFromAudioTrack(AudioType _type, AudioTrack _track){
+    private AudioClip GetAudioClipFromAudioTrack(GameSoundEnum _sound, AudioTrack _track){
         Debug.Log("inside GetAudioClipFromAudioTrack");
         foreach (AudioObject _obj in _track.audio){
-            if (_obj.type == _type) {
+            if (_obj.sound == _sound) {
                 Debug.Log("_obj.clip: " + _obj.clip);
                 return _obj.clip;
             }

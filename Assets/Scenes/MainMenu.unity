@@ -3613,11 +3613,13 @@ MonoBehaviour:
   tracks:
   - source: {fileID: 139745868}
     audio:
-    - type: 1
+    - sound: 1
       clip: {fileID: 8300000, guid: edc1aef50540e47758bf77defbc1e630, type: 3}
+    - sound: 2
+      clip: {fileID: 8300000, guid: 8e87b92ce85bf42b990505e03be52a34, type: 3}
   - source: {fileID: 372932279}
     audio:
-    - type: 3
+    - sound: 3
       clip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
   - source: {fileID: 1673899406}
     audio: []
