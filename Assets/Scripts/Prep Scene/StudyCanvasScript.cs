@@ -14,7 +14,7 @@ public class StudyCanvasScript : MonoBehaviour
     {
         hamburgerImageTextBox.text = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
         lettuceImageTextBox.text = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce"];
-        tomatoeImageTextBox.text = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomatoe"];
+        tomatoeImageTextBox.text = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato"];
         onionImageTextBox.text = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["onion"];
     }
 }

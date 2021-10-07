@@ -272,7 +272,7 @@ public class CustomerOrderingScript : MonoBehaviour
         }
         else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
         {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomatoe"];
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
         }
         else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
         {
@@ -282,7 +282,7 @@ public class CustomerOrderingScript : MonoBehaviour
         //two toppings
         else if (iWantLettuce && iWantTomatoe && !iWantOnion)
         {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomatoe"];
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
         }
         else if (iWantLettuce && !iWantTomatoe && iWantOnion)
         {
@@ -290,13 +290,13 @@ public class CustomerOrderingScript : MonoBehaviour
         }
         else if (!iWantLettuce && iWantTomatoe && iWantOnion)
         {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomatoe and onion"];
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
         }
 
         //all three toppings
         else if (iWantLettuce && iWantTomatoe && iWantOnion)
         {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomatoe, and onion"];
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
         }
         #endregion
 
@@ -362,7 +362,7 @@ public class CustomerOrderingScript : MonoBehaviour
                 }
             }
 
-            //customer only wants tomatoe
+            //customer only wants tomato
             else if  (!iWantLettuce && iWantTomatoe && !iWantOnion)
             {
                 if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
@@ -388,7 +388,7 @@ public class CustomerOrderingScript : MonoBehaviour
                 }
             }
 
-            //customer wants lettuce and tomatoe
+            //customer wants lettuce and tomato
             else if (iWantLettuce && iWantTomatoe && !iWantOnion)
             {
                 if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
@@ -414,7 +414,7 @@ public class CustomerOrderingScript : MonoBehaviour
                 }
             }
 
-            //customer wants tomatoe and onion
+            //customer wants tomato and onion
             else if (!iWantLettuce && iWantTomatoe && iWantOnion)
             {
                 if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)

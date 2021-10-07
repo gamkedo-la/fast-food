@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7163505416937390601, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Text
-      value: Tomatoe
+      value: Tomato
       objectReference: {fileID: 0}
     - target: {fileID: 7163505416937390603, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_IsActive
@@ -2537,7 +2537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Tomatoe
+  m_Text: Tomato
 --- !u!222 &1267350982
 CanvasRenderer:
   m_ObjectHideFlags: 0

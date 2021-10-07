@@ -41,6 +41,6 @@ public class FullTomatoeScript : ToppingOnCountertopScript
         //tomatoeOnBurgerSpriteRenderer.enabled = true;
         tomatoeOnBurgerScriptableObjectSpriteRenderer.enabled = true;
         Disappear();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomatoe pickup"]);
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomato pickup"]);
     }
 }
