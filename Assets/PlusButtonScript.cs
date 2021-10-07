@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class PlusButtonScript : MonoBehaviour
 {
     [SerializeField] Text currentLevelTextbox;
-    [SerializeField] AudioClip buttonClickAudioClip;
     public void IncreaseLevel()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLevel++;
         if (GameManagerScript.currentLevel == 4)
         {

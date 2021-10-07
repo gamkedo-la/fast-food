@@ -8,7 +8,6 @@ public class TogglePromptModeButtonScript : ButtonScript
     [SerializeField] Text currentModeTextbox;
     public override void HandleButtonClick()
     {
-        Debug.Log("anything");
         if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Text)
         {
             GameManagerScript.currentCustomerPromptType = CustomerPromptTypeEnumerables.Audio;

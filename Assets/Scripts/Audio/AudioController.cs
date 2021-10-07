@@ -77,7 +77,6 @@ public class AudioController : MonoBehaviour
 #region Public Functions
 //Three different jobs
     public void PlayAudio(GameSoundEnum _sound) {
-        Debug.Log("should be actually playing, but instead adding?");
         AddJob(new AudioJob(AudioAction.START, _sound));
     }
 
@@ -116,7 +115,6 @@ public class AudioController : MonoBehaviour
                     LogWarning("You are trying to register audio ["+_obj.sound+"] that has already been reigstered.");
                 } else {
                     m_AudioTable.Add(_obj.sound, _track);
-                    Log("Registering audio ["+_obj.sound+"]");
                 }
             }
         }
@@ -124,13 +122,10 @@ public class AudioController : MonoBehaviour
 
     private IEnumerator RunAudioJob(AudioJob _job) {
         AudioTrack _track = GetAudioTrack(_job.sound);
-        Debug.Log(_track.source.clip);
         _track.source.clip = GetAudioClipFromAudioTrack(_job.sound, _track);
-        Debug.Log("inside RunAudioJob");
         switch (_job.action) {
             case AudioAction.START:
                 _track.source.Play();
-                Log("Playing "+_job.sound);
             break;
 
             case AudioAction.STOP:
@@ -144,7 +139,6 @@ public class AudioController : MonoBehaviour
         }
 
         m_JobTable.Remove(_job.sound);
-        Log("Job count: "+m_JobTable.Count);
 
         yield return null;
     }
@@ -157,7 +151,6 @@ public class AudioController : MonoBehaviour
         IEnumerator _jobRunner = RunAudioJob(_job);
         StartCoroutine(_jobRunner);
         m_JobTable.Add(_job.sound, _jobRunner);
-        Log("Adding job on ["+_job.sound+"] with operation: "+_job.action);
     }
 
     private void RemoveJob(GameSoundEnum _sound){
@@ -166,7 +159,6 @@ public class AudioController : MonoBehaviour
             return;
         }
 
-        Log("Removing job of [" + _sound + "]");
         IEnumerator _runningJob = (IEnumerator)m_JobTable[_sound];
         StopCoroutine(_runningJob);
         m_JobTable.Remove(_sound);
@@ -200,15 +192,12 @@ public class AudioController : MonoBehaviour
             LogWarning("You are trying to <color=#fff>"+_job+"</color> for ["+_sound+"] but no track was found supporting this audio sound.");
             return null;
                 }
-        Debug.Log("(AudioTrack)m_AudioTable[_sound]: " + (AudioTrack)m_AudioTable[_sound]);
         return (AudioTrack)m_AudioTable[_sound];
     }
 
     private AudioClip GetAudioClipFromAudioTrack(GameSoundEnum _sound, AudioTrack _track){
-        Debug.Log("inside GetAudioClipFromAudioTrack");
         foreach (AudioObject _obj in _track.audio){
             if (_obj.sound == _sound) {
-                Debug.Log("_obj.clip: " + _obj.clip);
                 return _obj.clip;
             }
         }

@@ -15,9 +15,7 @@ public class LoadSceneButtonScript : ButtonScript
     [SerializeField] ScenesToLoadEnumerations mySceneToLoadEnumeration;
 
     public override void HandleButtonClick()
-    {
-        //AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
-       
+    {  
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         switch (mySceneToLoadEnumeration)

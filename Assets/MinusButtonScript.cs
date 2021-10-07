@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class MinusButtonScript : MonoBehaviour
 {
     [SerializeField] Text currentLevelText;
-    [SerializeField] AudioClip buttonClickAudioClip;
     public void DecreaseLevel()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         GameManagerScript.currentLevel--;
         if (GameManagerScript.currentLevel == 0)
         {

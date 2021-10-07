@@ -24,7 +24,6 @@ public class ToggleOnButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
         ToggleOn();
         ToggleOff();
     }

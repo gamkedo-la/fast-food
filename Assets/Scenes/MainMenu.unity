@@ -8063,7 +8063,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: SaveButtonScript, Assembly-CSharp
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 516862417335915505, guid: f189582360cb5c146831957bb7f8024d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f189582360cb5c146831957bb7f8024d, type: 3}
 --- !u!224 &1115400815 stripped
 RectTransform:
