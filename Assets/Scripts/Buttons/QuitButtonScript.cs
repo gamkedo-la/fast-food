@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuitButtonScript : MonoBehaviour
 {
-    [SerializeField] AudioClip buttonClickAudioClip;
+    //[SerializeField] AudioClip buttonClickAudioClip;
     public AudioController audioController;
 
     public void HandleQuitButtonClick()
