@@ -28,6 +28,12 @@ public class TestAudio : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.N)){
             audioController.RestartAudio(AudioType.UI_Button);
         }
+
+        //workaround test for direct audio playing
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            Camera.main.GetComponent<AudioSource>().Play();
+        }
     }
     #endif
 #endregion

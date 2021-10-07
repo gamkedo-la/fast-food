@@ -58,6 +58,7 @@ public class AudioController : MonoBehaviour
 #region Public Functions
 //Three different jobs, job types
     public void PlayAudio(AudioType _type) {
+        Debug.Log("should be actually playing, but instead adding?");
         AddJob(new AudioJob(AudioAction.START, _type));
     }
 
@@ -104,8 +105,9 @@ public class AudioController : MonoBehaviour
 
     private IEnumerator RunAudioJob(AudioJob _job) {
         AudioTrack _track = GetAudioTrack(_job.type);
+        Debug.Log(_track.source.clip);
         _track.source.clip = GetAudioClipFromAudioTrack(_job.type, _track);
-
+        Debug.Log("inside RunAudioJob");
         switch (_job.action) {
             case AudioAction.START:
                 _track.source.Play();
@@ -134,16 +136,18 @@ public class AudioController : MonoBehaviour
 
         // start job
         IEnumerator _jobRunner = RunAudioJob(_job);
+        StartCoroutine(_jobRunner);
         m_JobTable.Add(_job.type, _jobRunner);
-        Log("Starting job on ["+_job.type+"] with operation: "+_job.action);
+        Log("Adding job on ["+_job.type+"] with operation: "+_job.action);
     }
 
     private void RemoveJob(AudioType _type){
         if (!m_JobTable.ContainsKey(_type)){
-            LogWarning("rying to stop a job ["+_type+"] that is not running.");
+            LogWarning("Trying to stop a job ["+_type+"] that is not running.");
             return;
         }
 
+        Log("Removing job of [" + _type + "]");
         IEnumerator _runningJob = (IEnumerator)m_JobTable[_type];
         StopCoroutine(_runningJob);
         m_JobTable.Remove(_type);
@@ -172,16 +176,20 @@ public class AudioController : MonoBehaviour
     }
 
     private AudioTrack GetAudioTrack(AudioType _type, string _job="") {
+        
         if (!m_AudioTable.ContainsKey(_type)) {
             LogWarning("You are trying to <color=#fff>"+_job+"</color> for ["+_type+"] but no track was found supporting this audio type.");
             return null;
                 }
-            return (AudioTrack)m_AudioTable[_type];
+        Debug.Log("(AudioTrack)m_AudioTable[_type]: " + (AudioTrack)m_AudioTable[_type]);
+        return (AudioTrack)m_AudioTable[_type];
     }
 
     private AudioClip GetAudioClipFromAudioTrack(AudioType _type, AudioTrack _track){
+        Debug.Log("inside GetAudioClipFromAudioTrack");
         foreach (AudioObject _obj in _track.audio){
             if (_obj.type == _type) {
+                Debug.Log("_obj.clip: " + _obj.clip);
                 return _obj.clip;
             }
         }
