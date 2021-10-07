@@ -16,7 +16,20 @@ public class LoadSceneButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
+        //AudioManagerScript.audioManagerScript.PlayOneShot(buttonClickAudioClip);
+       
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
+
+        switch (mySceneToLoadEnumeration)
+        {
+            case ScenesToLoadEnumerations.MainMenu:
+                AudioController.instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
+                break;
+            case ScenesToLoadEnumerations.Gameplay:
+                AudioController.instance.PlayAudio(GameSoundEnum.Music_Level);
+                break;
+            default:
+                break;    
+        }
     }
 }
