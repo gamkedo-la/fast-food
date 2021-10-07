@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class AudioController : MonoBehaviour
@@ -48,6 +49,24 @@ public class AudioController : MonoBehaviour
             Configure();
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    void Start()
+    {
+        Scene currentScene = SceneManager.GetActiveScene ();
+        string sceneName = currentScene.name;
+
+        switch (sceneName)
+        {
+            case "MainMenu":
+                instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
+                break;
+            case "Gameplay":
+                instance.PlayAudio(GameSoundEnum.Music_Level);
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnDisable() {
