@@ -18,6 +18,10 @@ public class LoadSceneButtonScript : ButtonScript
     {  
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
+        //Play UI button sound
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+
+        //Play the correct music based on scene
         switch (mySceneToLoadEnumeration)
         {
             case ScenesToLoadEnumerations.MainMenu:

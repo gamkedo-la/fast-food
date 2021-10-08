@@ -12,5 +12,8 @@ public class LanguageButtonScript : ButtonScript
     {
         GameManagerScript.currentLanguage = language;
         currentLanguageTextbox.text = "Current Language: " + GameManagerScript.currentLanguage;
+
+        //Play button audio
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

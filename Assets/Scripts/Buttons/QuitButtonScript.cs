@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class QuitButtonScript : MonoBehaviour
 {
-    public AudioController audioController;
-
     public void HandleQuitButtonClick()
     {
-        audioController.PlayAudio(GameSoundEnum.UI_Button);
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
         Application.Quit();
     }
 }

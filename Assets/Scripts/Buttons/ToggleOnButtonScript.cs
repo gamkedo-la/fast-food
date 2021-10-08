@@ -26,5 +26,6 @@ public class ToggleOnButtonScript : ButtonScript
     {
         ToggleOn();
         ToggleOff();
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }
