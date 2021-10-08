@@ -2081,7 +2081,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevelText: {fileID: 721774178}
-  buttonClickAudioClip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
 --- !u!114 &796295463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2435,8 +2434,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 0.0020599}
+  m_SizeDelta: {x: 100, y: 116.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &846904733
 MonoBehaviour:
@@ -4469,7 +4468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevelTextbox: {fileID: 721774178}
-  buttonClickAudioClip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
 --- !u!1 &1557235339
 GameObject:
   m_ObjectHideFlags: 0
