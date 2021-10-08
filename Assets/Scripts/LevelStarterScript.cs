@@ -13,12 +13,18 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] GameObject fullTomatoe;
     [SerializeField] GameObject fullOnion;
 
+    [SerializeField] GameObject statsCanvas;
+    [SerializeField] Text statsCanvasLoadLevelButtonText;
+    [SerializeField] Text feedbackMessageTextbox;
+
     // Start is called before the first frame update
     void Start()
     {
         if (!GameManagerScript.levelStarterFirstTimeStarted)
         {
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
+            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.timerRanOutOfTimeEvent, HandleTimerRanOutOfTimeEvent);
+            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
         }
         EventManagerScript.initializeLevel.Invoke();
     }
@@ -58,5 +64,21 @@ public class LevelStarterScript : MonoBehaviour
         {
             fullOnion.SetActive(true);
         }
+    }
+
+    private void HandleTimerRanOutOfTimeEvent()
+    {
+        Debug.Log("calling ran out of time event");
+        statsCanvas.SetActive(true);
+        statsCanvasLoadLevelButtonText.text = "Try Again";
+        feedbackMessageTextbox.text = "You ran out of time! Please try again.";
+    }
+
+    private void HandleLevelCompletedEvent()
+    {
+        Debug.Log("calling level completed event");
+        statsCanvas.SetActive(true);
+        statsCanvasLoadLevelButtonText.text = "Next Level";
+        feedbackMessageTextbox.text = "Congratulations! You're ready for the next level.";
     }
 }

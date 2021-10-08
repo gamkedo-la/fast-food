@@ -33,8 +33,8 @@ public class CustomerOrderingScript : MonoBehaviour
     private float myPatienceSliderTimerStartingX;
     [SerializeField] GameObject exitLocation;
 
-    [SerializeField] private float minimumAmountOfTimeToWaitBeforeOrdering = 1.0f;
-    [SerializeField] private float maximumAmountOfTimeToWaitBeforeOrdering = 3.0f;
+    [SerializeField] private float minimumAmountOfTimeToWaitBeforeOrdering = 0.1f;
+    [SerializeField] private float maximumAmountOfTimeToWaitBeforeOrdering = 0.5f;
     private float myRandomTimeToWaitBeforeOrdering = 0.0f;
 
     private List<GameObject> listOfCustomerOrderingLocations = new List<GameObject>();
@@ -42,8 +42,8 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] private GameObject customerOrderingLocation2;
     [SerializeField] private GameObject customerOrderingLocation3;
 
-    [SerializeField] private float minimumXSpeed = 0.05f;
-    [SerializeField] private float maximumXSpeed = 0.125f;
+    [SerializeField] private float minimumXSpeed = 0.3f;
+    [SerializeField] private float maximumXSpeed = 0.5f;
     private float myRandomSpeed = 0.0f;
 
     private Vector2 currentTouchPositionVector2InScreenPixels;
@@ -86,6 +86,8 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSlider.transform.position = patienceSliderStartingVectorConverted;
 
         myRandomTimeToWaitBeforeOrdering = Random.Range(minimumAmountOfTimeToWaitBeforeOrdering, maximumAmountOfTimeToWaitBeforeOrdering);
+        myRandomTimeToWaitBeforeOrdering = myRandomTimeToWaitBeforeOrdering / 10;
+        Debug.Log("myRandomTimeToWaitBeforeOrdering: " + myRandomTimeToWaitBeforeOrdering);
         myRandomSpeed = Random.Range(minimumXSpeed, maximumXSpeed);
 
         listOfCustomerOrderingLocations.Add(customerOrderingLocation1);
@@ -150,7 +152,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
             if (myX < orderingLocationX)
             {
-                Vector2 newCustomerPosition = new Vector2(myX + myRandomSpeed, gameObject.transform.position.y);
+                Vector2 newCustomerPosition = new Vector2(myX + myRandomSpeed * 2, gameObject.transform.position.y);
                 gameObject.transform.position = newCustomerPosition;
                 
                 float orderingImageYOffSet = 2.0f;
@@ -170,7 +172,7 @@ public class CustomerOrderingScript : MonoBehaviour
     {
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
-            gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed, gameObject.transform.position.y);
+            gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
             customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
                     customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
             customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(customerOrderingCanvasToggleButton.transform.localPosition.x + myRandomSpeed * 51,
@@ -480,7 +482,7 @@ public class CustomerOrderingScript : MonoBehaviour
     
     IEnumerator DelayedNewOrder()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.1f);
         InitializeOrder();
     }
 

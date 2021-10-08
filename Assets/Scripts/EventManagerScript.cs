@@ -24,6 +24,8 @@ public static class EventManagerScript
     public static UnityEvent levelCompletedEvent = new UnityEvent();
 
     public static UnityEvent playerSelectsBurgerEvent = new UnityEvent();
+
+    public static UnityEvent timerRanOutOfTimeEvent = new UnityEvent();
     #endregion
 
     public static void AddEventHandlerToTargetEvent(UnityEvent targetEvent, UnityAction handlerToAdd)
