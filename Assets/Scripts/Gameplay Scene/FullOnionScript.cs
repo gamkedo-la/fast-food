@@ -10,6 +10,8 @@ public class FullOnionScript : ToppingOnCountertopScript
     private GameObject onionOnBurgerScriptablePrefab;
     private SpriteRenderer onionOnBurgerScriptablePrefabSpriteRenderer;
 
+    [SerializeField] SpriteRenderer onionOnDonerSpriteRenderer;
+
     public override void Start()
     {
         //onionOnBurgerGameObject = GameObject.FindGameObjectWithTag("OnionOnBurger");
@@ -29,15 +31,40 @@ public class FullOnionScript : ToppingOnCountertopScript
 
     private void ActualMethodHandlerOnPickupEvent()
     {
-        if (GameManagerScript.burgerHasOnion)
+        if (!GameManagerScript.chefHasBaseFood)
         {
             return;
         }
-        GameManagerScript.burgerHasOnion = true;
-        //onionOnBurgerSpriteRenderer.enabled = true;
-        onionOnBurgerScriptablePrefabSpriteRenderer.enabled = true;
-        Disappear();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
+        else
+        {
+            Debug.Log("GameManagerScript.burgerHasOnion: " + GameManagerScript.burgerHasOnion);
+            if (GameManagerScript.chefHasBurger)
+            {
+                if (GameManagerScript.burgerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
+                {
+                    return;
+                }
+                GameManagerScript.burgerHasOnion = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                onionOnBurgerScriptablePrefabSpriteRenderer.enabled = true;
+                Disappear();
+            }
+            else
+            {
+                Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
+                if (GameManagerScript.chickenDonerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
+                {
+                    return;
+                }
+                GameManagerScript.chickenDonerHasOnion = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                onionOnDonerSpriteRenderer.enabled = true;
+                Disappear();
+            }
+            Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
+
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
+        }
     }
     //Itch
     //private void OnMouseUp()

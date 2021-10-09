@@ -7,7 +7,7 @@ public abstract class ToppingOnBurgerScript : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Disappear);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, Disappear);
     }
 
     protected void Appear()

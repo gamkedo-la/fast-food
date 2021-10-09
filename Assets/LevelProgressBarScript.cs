@@ -12,10 +12,10 @@ public class LevelProgressBarScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, HandleBurgerSubmissionEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
     }
 
-    private void HandleBurgerSubmissionEvent()
+    private void HandleAnyOrderSubmissionEvent()
     {
         float currentMaxFillAmount;
         float percentOfCurrentMaxFillAmountToFill;

@@ -52,6 +52,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private CircleCollider2D customers2DCircleCollider;
 
+    private bool iWantAHamburger = false;
+    private bool iWantAChickenDoner = false;
     private bool iWantLettuce = false;
     private bool iWantTomatoe = false;
     private bool iWantOnion = false;
@@ -230,10 +232,16 @@ public class CustomerOrderingScript : MonoBehaviour
 
     void InitializeOrder()
     {
+        iWantAHamburger = false;
+        iWantAChickenDoner = false;
         iWantLettuce = false;
         iWantTomatoe = false;
         iWantOnion = false;
         #region HandleCoinFlipDesireForEachTopping
+        if (GameManagerScript.currentLevel < 3)
+        {
+            iWantAHamburger = true;//chicken doner doesn't get introduced until level 3
+        }
         float randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
         if (randomFloatForCoinFlip < 0.5f)
         {
@@ -254,13 +262,34 @@ public class CustomerOrderingScript : MonoBehaviour
             randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
             if (randomFloatForCoinFlip < 0.5f)
             {
+                iWantAHamburger = true;
+            }
+            else
+            {
+                iWantAChickenDoner = true;
+            }
+        }
+
+        if (GameManagerScript.currentLevel >= 4)
+        {
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip < 0.5f)
+            {
                 iWantOnion = true;
             }
         }
         #endregion
 
         #region HandleCustomerDialogBoxString
-        customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+        if (iWantAHamburger)
+        {
+            customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+        }
+        else
+        {
+            customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
+        }
+
         if (iWantLettuce || iWantTomatoe || iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
@@ -309,128 +338,249 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
         customerOrderingTextBoxObject.text = currentCustomerDialogueString;
-        myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
+        //myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab")
+        if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab" || 
+            collision.gameObject.name == "ChickenDonerScriptablePrefab")
         {
             return;
         }
 
-        if (collision.gameObject.name == "TrayAndPlate" && GameManagerScript.chefHasBurger)
+        if (collision.gameObject.name == "TrayAndPlate" && GameManagerScript.chefHasBaseFood)
         {
             isProcessingOrder = true;
 
             #region Handle Player Submission 
-            //customer wants all the toppings
-            if (iWantLettuce && iWantOnion && iWantTomatoe)
+            if (iWantAHamburger)
+            {
+                if (GameManagerScript.chefHasChickenDoner)
+                {
+                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                }
+                //customer wants all the toppings
+                else if (iWantLettuce && iWantOnion && iWantTomatoe)
                 {
                     if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
                     {
                         EventManagerScript.correctOrderSubmissionEvent.Invoke();
                     }
-                else
+                    else
                     {
                         EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                     }
-            }
-                
-            //customer wants no toppings
-            else if (!iWantLettuce && !iWantTomatoe && !iWantOnion)
+                }
+
+                //customer wants no toppings
+                else if (!iWantLettuce && !iWantTomatoe && !iWantOnion)
                 {
                     if (!GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
                     {
                         EventManagerScript.correctOrderSubmissionEvent.Invoke();
                     }
-                else
+                    else
                     {
                         EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                     }
-            }
-                        
-            //customer only wants lettuce
-            else if (iWantLettuce && !iWantTomatoe && !iWantOnion)
-            {
-                if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
-                {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
                 }
-                else
+
+                //customer only wants lettuce
+                else if (iWantLettuce && !iWantTomatoe && !iWantOnion)
                 {
-                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
+
+                //customer only wants tomato
+                else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
+                {
+                    if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+
+                //customer only wants onion
+                else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
+                {
+                    if (!GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+
+                //customer wants lettuce and tomato
+                else if (iWantLettuce && iWantTomatoe && !iWantOnion)
+                {
+                    if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+
+                //customer wants lettuce and onion
+                else if (iWantLettuce && !iWantTomatoe && iWantOnion)
+                {
+                    if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+
+                //customer wants tomato and onion
+                else if (!iWantLettuce && iWantTomatoe && iWantOnion)
+                {
+                    if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+                #endregion
+                customerOrderingTextBoxObject.text = currentCustomerDialogueString;
             }
 
-            //customer only wants tomato
-            else if  (!iWantLettuce && iWantTomatoe && !iWantOnion)
+            else if (iWantAChickenDoner)
             {
-                if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
-                {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
-                }
-                else
+                if (GameManagerScript.chefHasBurger)
                 {
                     EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
-            }
+                //customer wants all the toppings
+                else if (iWantLettuce && iWantOnion && iWantTomatoe)
+                {
+                    if (GameManagerScript.chickenDonerHasLettuce && GameManagerScript.chickenDonerHasTomatoe && GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
 
-            //customer only wants onion
-            else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
-            {
-                if (!GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                //customer wants no toppings
+                else if (!iWantLettuce && !iWantTomatoe && !iWantOnion)
                 {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    if (!GameManagerScript.chickenDonerHasLettuce && !GameManagerScript.chickenDonerHasTomatoe && !GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
-                else
-                {
-                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
-                }
-            }
 
-            //customer wants lettuce and tomato
-            else if (iWantLettuce && iWantTomatoe && !iWantOnion)
-            {
-                if (GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && !GameManagerScript.burgerHasOnion)
+                //customer only wants lettuce
+                else if (iWantLettuce && !iWantTomatoe && !iWantOnion)
                 {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    if (GameManagerScript.chickenDonerHasLettuce && !GameManagerScript.chickenDonerHasTomatoe && !GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
-                else
-                {
-                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
-                }
-            }
 
-            //customer wants lettuce and onion
-            else if (iWantLettuce && !iWantTomatoe && iWantOnion)
-            {
-                if (GameManagerScript.burgerHasLettuce && !GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                //customer only wants tomato
+                else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
                 {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    if (!GameManagerScript.chickenDonerHasLettuce && GameManagerScript.chickenDonerHasTomatoe && !GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
-                else
-                {
-                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
-                }
-            }
 
-            //customer wants tomato and onion
-            else if (!iWantLettuce && iWantTomatoe && iWantOnion)
-            {
-                if (!GameManagerScript.burgerHasLettuce && GameManagerScript.burgerHasTomatoe && GameManagerScript.burgerHasOnion)
+                //customer only wants onion
+                else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
                 {
-                    EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    if (!GameManagerScript.chickenDonerHasLettuce && !GameManagerScript.chickenDonerHasTomatoe && GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
-                else
+
+                //customer wants lettuce and tomato
+                else if (iWantLettuce && iWantTomatoe && !iWantOnion)
                 {
-                    EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    if (GameManagerScript.chickenDonerHasLettuce && GameManagerScript.chickenDonerHasTomatoe && !GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
                 }
+
+                //customer wants lettuce and onion
+                else if (iWantLettuce && !iWantTomatoe && iWantOnion)
+                {
+                    if (GameManagerScript.chickenDonerHasLettuce && !GameManagerScript.chickenDonerHasTomatoe && GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+
+                //customer wants tomato and onion
+                else if (!iWantLettuce && iWantTomatoe && iWantOnion)
+                {
+                    if (!GameManagerScript.chickenDonerHasLettuce && GameManagerScript.chickenDonerHasTomatoe && GameManagerScript.chickenDonerHasOnion)
+                    {
+                        EventManagerScript.correctOrderSubmissionEvent.Invoke();
+                    }
+                    else
+                    {
+                        EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                    }
+                }
+                customerOrderingTextBoxObject.text = currentCustomerDialogueString;
             }
-            #endregion
-            customerOrderingTextBoxObject.text = currentCustomerDialogueString;
         }
-        EventManagerScript.anyBurgerSubmissionEvent.Invoke();
+            
+        EventManagerScript.anyOrderSubmissionEvent.Invoke();
 
         isProcessingOrder = false;
     }

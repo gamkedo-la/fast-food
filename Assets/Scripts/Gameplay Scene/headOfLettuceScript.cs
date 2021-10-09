@@ -10,6 +10,8 @@ public class headOfLettuceScript : ToppingOnCountertopScript
     private GameObject lettuceOnBurgerScriptablePrefab;
     private SpriteRenderer lettuceOnBurgerScriptablePrefabSpriteRenderer;
 
+    [SerializeField] SpriteRenderer chickenDonerLettuceSpriteRenderer;
+
     public override void Start()
     {
         base.Start();
@@ -29,14 +31,36 @@ public class headOfLettuceScript : ToppingOnCountertopScript
 
     private void ActualMethodHandlerOnPickupEvent()
     {
-        if (GameManagerScript.burgerHasLettuce)
+        if (!GameManagerScript.chefHasBaseFood)
         {
             return;
         }
-        GameManagerScript.burgerHasLettuce = true;
-        //lettuceOnBurgerSpriteRenderer.enabled = true;
-        lettuceOnBurgerScriptablePrefabSpriteRenderer.enabled = true;
-        Disappear();
+        else
+        {
+            if (GameManagerScript.chefHasBurger)
+            {
+                if (GameManagerScript.burgerHasLettuce)
+                {
+                    return;
+                }
+                GameManagerScript.burgerHasLettuce = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                lettuceOnBurgerScriptablePrefabSpriteRenderer.enabled = true;
+                Disappear();
+            }
+            else
+            {
+                if (GameManagerScript.chickenDonerHasLettuce)
+                {
+                    return;
+                }
+                GameManagerScript.chickenDonerHasLettuce = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                chickenDonerLettuceSpriteRenderer.enabled = true;
+                Disappear();
+            }
+        }
+        
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
     }
     //Itch

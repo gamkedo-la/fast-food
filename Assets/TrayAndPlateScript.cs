@@ -25,7 +25,7 @@ public class TrayAndPlateScript : MonoBehaviour
 
         startingPositionVector2 = gameObject.transform.position;
 
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, HandleAnyBurgerSubmissionEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
     }
 
     //Update is called once per frame
@@ -50,7 +50,7 @@ public class TrayAndPlateScript : MonoBehaviour
         }
     }
 
-    private void HandleAnyBurgerSubmissionEvent()
+    private void HandleAnyOrderSubmissionEvent()
     {
         gameObject.transform.position = startingPositionVector2;
     }

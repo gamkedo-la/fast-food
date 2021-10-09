@@ -10,6 +10,7 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     private GameObject tomatoeOnBurgerScriptableObject;
     private SpriteRenderer tomatoeOnBurgerScriptableObjectSpriteRenderer;
+    [SerializeField] SpriteRenderer tomatoOnDonerSpriteRenderer;
 
     public override void Start()
     {
@@ -18,6 +19,7 @@ public class FullTomatoeScript : ToppingOnCountertopScript
         //tomatoeOnBurgerSpriteRenderer = tomatoeOnBurgerGameObject.GetComponent<SpriteRenderer>();
         tomatoeOnBurgerScriptableObject = GameObject.FindGameObjectWithTag("TomatoeOnBurgerScriptablePrefab");
         tomatoeOnBurgerScriptableObjectSpriteRenderer = tomatoeOnBurgerScriptableObject.GetComponent<SpriteRenderer>();
+
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
     }
@@ -35,15 +37,37 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     private void ActualMethodHandlerOnPickupEvent()
     {
-        if (GameManagerScript.burgerHasTomatoe)
+        if (!GameManagerScript.chefHasBaseFood)
         {
             return;
         }
-        GameManagerScript.burgerHasTomatoe = true;
-        //tomatoeOnBurgerSpriteRenderer.enabled = true;
-        tomatoeOnBurgerScriptableObjectSpriteRenderer.enabled = true;
-        Disappear();
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomato pickup"]);
+        else
+        {
+            if (GameManagerScript.chefHasBurger)
+            {
+                if (GameManagerScript.burgerHasTomatoe)//preventing multiple calls
+                {
+                    return;
+                }
+                GameManagerScript.burgerHasTomatoe = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                tomatoeOnBurgerScriptableObjectSpriteRenderer.enabled = true;
+                Disappear();
+            }
+            else
+            {
+                if (GameManagerScript.chickenDonerHasTomatoe)//preventing multiple calls
+                {
+                    return;
+                }
+                GameManagerScript.chickenDonerHasTomatoe = true;
+                //lettuceOnBurgerSpriteRenderer.enabled = true;
+                tomatoOnDonerSpriteRenderer.enabled = true;
+                Disappear();
+            }
+        }
+        
+        //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomato pickup"]);
     }
 
     //private void OnMouseUp()

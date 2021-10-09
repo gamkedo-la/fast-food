@@ -12,6 +12,7 @@ public class LevelStarterScript : MonoBehaviour
 
     [SerializeField] GameObject fullTomatoe;
     [SerializeField] GameObject fullOnion;
+    [SerializeField] GameObject chickenDoner;
 
     [SerializeField] GameObject statsCanvas;
     [SerializeField] Text statsCanvasLoadLevelButtonText;
@@ -25,6 +26,7 @@ public class LevelStarterScript : MonoBehaviour
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.timerRanOutOfTimeEvent, HandleTimerRanOutOfTimeEvent);
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
+            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelInitializationFinishedEvent, HandleInitalizationOfLevelFinishedEvent);
         }
         EventManagerScript.initializeLevel.Invoke();
     }
@@ -53,6 +55,9 @@ public class LevelStarterScript : MonoBehaviour
             case 3:
                 GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel = GameManagerScript.minimumSubmittedOrdersToCompleteLevel3;
                 break;
+            case 4:
+                GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel = GameManagerScript.minimumSubmittedOrdersToCompleteLevel4;
+                break;
         }
 
 
@@ -62,7 +67,21 @@ public class LevelStarterScript : MonoBehaviour
         }
         if (GameManagerScript.currentLevel >= 3)
         {
+            chickenDoner.SetActive(true);
+        }
+        if (GameManagerScript.currentLevel >= 4)
+        {
             fullOnion.SetActive(true);
+        }
+
+        EventManagerScript.levelInitializationFinishedEvent.Invoke();
+    }
+
+    private void HandleInitalizationOfLevelFinishedEvent()
+    {
+        if (GameManagerScript.currentLevel < 3)
+        {
+            chickenDoner.SetActive(false);
         }
     }
 

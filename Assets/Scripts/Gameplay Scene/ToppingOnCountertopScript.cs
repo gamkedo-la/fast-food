@@ -19,7 +19,7 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
         mainCamera = Camera.main;
         toppingOnCountertopCircleCollider = gameObject.GetComponent<CircleCollider2D>();
         mySpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, Reappear);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, Reappear);
     }
     //Android
     private void Update()

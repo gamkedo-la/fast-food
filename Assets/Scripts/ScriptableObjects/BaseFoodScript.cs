@@ -69,7 +69,7 @@ public abstract class BaseFoodScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
         //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBaseFood);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, ResetBaseFood);
     }
 
     //Android
@@ -100,7 +100,7 @@ public abstract class BaseFoodScript : MonoBehaviour
         if (!GameManagerScript.chefHasBaseFood)
         {
             GameManagerScript.chefHasBaseFood = true;
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
+            //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
         }
     }
     private void MoveToTray()

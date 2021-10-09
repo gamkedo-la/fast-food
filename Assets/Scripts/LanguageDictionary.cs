@@ -61,6 +61,7 @@ public class LanguageDictionary : MonoBehaviour
         //gameplay
         languageDictionary.Add("English", new Dictionary<string, string>());
         languageDictionary["English"].Add("I want a hamburger", "I would like a hamburger");
+        languageDictionary["English"].Add("I want a chicken doner", "I would like a chicken doner");
         languageDictionary["English"].Add("with", " with ");
         languageDictionary["English"].Add("only lettuce", "lettuce.");
         languageDictionary["English"].Add("only tomato", "tomato.");
@@ -74,6 +75,7 @@ public class LanguageDictionary : MonoBehaviour
 
         languageDictionary.Add("Albanian", new Dictionary<string, string>());
         languageDictionary["Albanian"].Add("I want a hamburger", "Unë dua një hamburger");
+        languageDictionary["Albanian"].Add("I want a chicken doner", "Unë dua një donator pule");
         languageDictionary["Albanian"].Add("with", " me ");
         languageDictionary["Albanian"].Add("only lettuce", "marule.");
         languageDictionary["Albanian"].Add("only tomato", "domate.");

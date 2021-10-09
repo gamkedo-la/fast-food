@@ -9,6 +9,7 @@ public static class EventManagerScript
 
     //utility
     public static UnityEvent initializeLevel = new UnityEvent();
+    public static UnityEvent levelInitializationFinishedEvent = new UnityEvent();
     //customers
     public static UnityEvent customerEntersRestaurantEvent = new UnityEvent();
     public static UnityEvent customerExitsRestaurantEvent = new UnityEvent();
@@ -20,7 +21,7 @@ public static class EventManagerScript
     //order submission
     public static UnityEvent correctOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent incorrectOrderSubmissionEvent = new UnityEvent();
-    public static UnityEvent anyBurgerSubmissionEvent = new UnityEvent();
+    public static UnityEvent anyOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent levelCompletedEvent = new UnityEvent();
 
     public static UnityEvent playerSelectsBurgerEvent = new UnityEvent();
