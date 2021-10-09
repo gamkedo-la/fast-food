@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BaseFoodScript : MonoBehaviour
+public abstract class BaseFoodScript : MonoBehaviour
 {
     #region Fields
 
@@ -59,7 +59,7 @@ public class BaseFoodScript : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         mainCamera = Camera.main;
         baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
@@ -69,8 +69,7 @@ public class BaseFoodScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
         //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBurger);
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandleChefPicksUpBurgerEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyBurgerSubmissionEvent, ResetBaseFood);
     }
 
     //Android
@@ -85,44 +84,38 @@ public class BaseFoodScript : MonoBehaviour
 
         if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            HandlePlayerSelectsBurger();
+            HandlePlayerSelectsBaseFoodEvent();
         }
     }
 
-    private void HandleChefPicksUpBurgerEvent()
-    {
-        HandlePlayerSelectsBurger();
-
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
-    }
     //Itch
     //private void OnMouseUp()
     //{
     //    EventManagerScript.playerSelectsBurgerEvent.Invoke();
     //}
 
-    private void HandlePlayerSelectsBurger()
+    public virtual void HandlePlayerSelectsBaseFoodEvent()
     {
         MoveToTray();
-        GameManagerScript.chefHasBurger = true;
+        if (!GameManagerScript.chefHasBaseFood)
+        {
+            GameManagerScript.chefHasBaseFood = true;
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
+        }
     }
     private void MoveToTray()
     {
         gameObject.transform.position = trayAndPlateLocation.transform.position;
     }
-    public void ResetBurger()
+    public virtual void ResetBaseFood()
     {
         gameObject.transform.position = startingPositionVector2;
-        GameManagerScript.chefHasBurger = false;
-        GameManagerScript.playerIsDraggingChef = false;
-
-        GameManagerScript.burgerHasLettuce = false;
-        GameManagerScript.burgerHasTomatoe = false;
-        GameManagerScript.burgerHasOnion = false;
 
         baseFoodSpriteRenderer.enabled = false;
         topping1SpriteRenderer.enabled = false;
         topping2SpriteRenderer.enabled = false;
         topping3SpriteRenderer.enabled = false;
+
+        GameManagerScript.chefHasBaseFood = false;
     }
 }

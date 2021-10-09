@@ -87,7 +87,6 @@ public class CustomerOrderingScript : MonoBehaviour
 
         myRandomTimeToWaitBeforeOrdering = Random.Range(minimumAmountOfTimeToWaitBeforeOrdering, maximumAmountOfTimeToWaitBeforeOrdering);
         myRandomTimeToWaitBeforeOrdering = myRandomTimeToWaitBeforeOrdering / 10;
-        Debug.Log("myRandomTimeToWaitBeforeOrdering: " + myRandomTimeToWaitBeforeOrdering);
         myRandomSpeed = Random.Range(minimumXSpeed, maximumXSpeed);
 
         listOfCustomerOrderingLocations.Add(customerOrderingLocation1);

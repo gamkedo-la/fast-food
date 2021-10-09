@@ -21,6 +21,8 @@ public static class GameManagerScript
     public static bool playerIsTouchingChef = false;
     public static bool playerIsDraggingChef = false;
 
+    public static bool chefHasBaseFood = false;
+
     public static bool chefHasBurger = false;
     public static float burgerBeingHeldXOffset = 1.0f;
     public static float burgerBeingHeldYOffset = 1.0f;
@@ -28,6 +30,14 @@ public static class GameManagerScript
     public static bool burgerHasLettuce = false;
     public static bool burgerHasTomatoe = false;
     public static bool burgerHasOnion = false;
+
+    public static bool chefHasChickenDoner = false;
+    public static float chickenDonerBeingHeldXOffset = 1.0f;
+    public static float chickenDonerBeingHeldYOffset = 1.0f;
+
+    public static bool chickenDonerHasLettuce = false;
+    public static bool chickenDonerHasTomatoe = false;
+    public static bool chickenDonerHasOnion = false;
 
     public static float numberOfCorrectOrders = 0;
     public static float numberOfIncorrectOrders = 0;

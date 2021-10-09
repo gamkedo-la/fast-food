@@ -362,7 +362,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.11
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7419506105773645614, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
 --- !u!1 &5658052 stripped
 GameObject:
@@ -395,6 +396,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5658055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5658052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5623529de33941144983b7cf14c88705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFoodScriptableObject: {fileID: 11400000, guid: 826447ea2fa0d0c4a8bc08a9a0671afb, type: 2}
+  englishWord: hamburger
+  baseFoodImage: {fileID: 21300000, guid: 4ab97a7fd0ebee74097c3cd036859f32, type: 3}
+  baseFoodImage2: {fileID: 21300000, guid: cfb4407d03ffbc04d85214ef9bd70152, type: 3}
+  topping1Image: {fileID: 21300000, guid: 90075dedb8035744f95d91a4c67d0c25, type: 3}
+  topping2Image: {fileID: 21300000, guid: 98237434e40f80547a685216c02d78c5, type: 3}
+  topping3Image: {fileID: 21300000, guid: 4d199c67bf8482646b796913ebcb3740, type: 3}
+  trayAndPlateLocation: {fileID: 190362878}
 --- !u!1 &150302098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,16 +3536,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c7c930deafc7ce3489dc1c231f967436, type: 3}
     - target: {fileID: 7419506105773645614, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: trayAndPlateLocation
+      value: 
+      objectReference: {fileID: 190362878}
+    - target: {fileID: 7419506105773645614, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: baseFoodScriptableObject
       value: 
       objectReference: {fileID: 11400000, guid: 09aab36548301a047a2f47b8d9690814, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7419506105773645614, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
 --- !u!4 &2101295224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2698658823231994079, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
   m_PrefabInstance: {fileID: 2101295223}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2101295225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779914993011922268, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+  m_PrefabInstance: {fileID: 2101295223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2101295226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101295225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61f07f3a1a0c63748a35f7bcdff0b4c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseFoodScriptableObject: {fileID: 11400000, guid: 09aab36548301a047a2f47b8d9690814, type: 2}
+  englishWord: ChickenDoner
+  baseFoodImage: {fileID: 21300000, guid: cb6b36d50256ae949926b194f86bd0a2, type: 3}
+  baseFoodImage2: {fileID: 21300000, guid: c7c930deafc7ce3489dc1c231f967436, type: 3}
+  topping1Image: {fileID: 21300000, guid: f55d4fac27a06d542944fb00420d2a86, type: 3}
+  topping2Image: {fileID: 21300000, guid: d3e92da70a6031a46953db71720e4957, type: 3}
+  topping3Image: {fileID: 21300000, guid: ed95c4692f422a248b6c4948df3cbe71, type: 3}
+  trayAndPlateLocation: {fileID: 190362878}
 --- !u!1001 &2134906073
 PrefabInstance:
   m_ObjectHideFlags: 0
