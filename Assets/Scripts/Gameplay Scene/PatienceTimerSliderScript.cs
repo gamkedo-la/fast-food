@@ -5,16 +5,29 @@ using UnityEngine.UI;
 
 public class PatienceTimerSliderScript : MonoBehaviour
 {
+
     public bool isActive = false;
 
     private float timerDuration;
     [SerializeField] private float minimumTimerDuration = 10.0f;
     [SerializeField] private float maximumTimerDuration = 20.0f;
 
+    [SerializeField] private Image fill;
+    private Color greenColor;
+    private Color yellowColor;
+    private Color redColor;
+
+    public Gradient gradient;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         InitializeTimer();
+
+        greenColor = Color.green;
+        yellowColor = Color.yellow;
+        redColor = Color.red;
+
     }
 
     public void InitializeTimer()
@@ -31,6 +44,20 @@ public class PatienceTimerSliderScript : MonoBehaviour
             if (gameObject.GetComponent<Slider>().value > 0)
             {
                 gameObject.GetComponent<Slider>().value -= Time.deltaTime;
+                float percentageOfTimerLeft = PercentageOfTimerLeft();
+                float adjustedLerpValue;
+                Debug.Log("percentageOfTimerLeft: " + percentageOfTimerLeft);
+                if (percentageOfTimerLeft < 0.5f)
+                {
+                    adjustedLerpValue = percentageOfTimerLeft * 2;
+                    fill.color = Color.Lerp(greenColor, yellowColor, adjustedLerpValue);
+                }
+                else
+                {
+                    adjustedLerpValue = (percentageOfTimerLeft - 0.5f) * 2;
+                    fill.color = Color.Lerp(yellowColor, redColor, adjustedLerpValue);
+                }
+
             }
         }
     }
