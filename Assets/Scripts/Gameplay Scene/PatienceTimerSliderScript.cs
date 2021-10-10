@@ -19,6 +19,8 @@ public class PatienceTimerSliderScript : MonoBehaviour
 
     public Gradient gradient;
 
+    [SerializeField] GameObject parentCustomerObject;
+
     // Start is called before the first frame update
     void Start()
     {        
@@ -46,7 +48,6 @@ public class PatienceTimerSliderScript : MonoBehaviour
                 gameObject.GetComponent<Slider>().value -= Time.deltaTime;
                 float percentageOfTimerLeft = PercentageOfTimerLeft();
                 float adjustedLerpValue;
-                Debug.Log("percentageOfTimerLeft: " + percentageOfTimerLeft);
                 if (percentageOfTimerLeft < 0.5f)
                 {
                     adjustedLerpValue = percentageOfTimerLeft * 2;
@@ -54,6 +55,8 @@ public class PatienceTimerSliderScript : MonoBehaviour
                 }
                 else
                 {
+                    parentCustomerObject.GetComponent<CustomerOrderingScript>().losingPatience = true;
+                    EventManagerScript.customerLosingPatienceEvent.Invoke();
                     adjustedLerpValue = (percentageOfTimerLeft - 0.5f) * 2;
                     fill.color = Color.Lerp(yellowColor, redColor, adjustedLerpValue);
                 }

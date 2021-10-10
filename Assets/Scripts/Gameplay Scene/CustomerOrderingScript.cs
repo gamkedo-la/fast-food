@@ -72,6 +72,12 @@ public class CustomerOrderingScript : MonoBehaviour
     public AudioClip myCurrentOrdersAudioClip;
 
     private bool isProcessingOrder = false;
+
+    public bool losingPatience = false;
+    [SerializeField] private ParticleSystem particleSystem1;
+    [SerializeField] private ParticleSystem particleSystem2;
+    private ParticleSystem.MinMaxCurve previousFramesStartLifetime = new ParticleSystem.MinMaxCurve();
+
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -107,9 +113,24 @@ public class CustomerOrderingScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerEntersRestaurantEvent, HandleCustomerEntersRestaurantEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerLosingPatienceEvent, HandleLosingPatienceEvent);
+        //particleSystem1.GetComponent<Renderer>().sortingLayerName = "Foreground";
+        //particleSystem2.GetComponent<Renderer>().sortingLayerName = "Foreground";
     }
 
-
+    private void HandleLosingPatienceEvent()
+    {
+        Debug.Log("inside losing patience handler");
+        Debug.Log("losingPatience" + losingPatience);
+        if (!losingPatience)
+        {
+            return;
+        }
+        Debug.Log("should be activating particle systems");
+        particleSystem1.gameObject.SetActive(true);
+        particleSystem2.gameObject.SetActive(true);
+    }
     IEnumerator SelectRandomOrderingLocationAfterARandomAmountOfTime()
     {
         yield return new WaitForSeconds(myRandomTimeToWaitBeforeOrdering);
@@ -227,6 +248,20 @@ public class CustomerOrderingScript : MonoBehaviour
         else if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant)
         {
             MoveTowardsExit();
+        }
+
+        if (losingPatience)
+        {
+            ParticleSystem.MainModule psMain1 = particleSystem1.main;
+            ParticleSystem.MainModule psMain2 = particleSystem2.main;
+
+            psMain1.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
+            psMain2.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
+            psMain1.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
+            psMain2.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
+            //psMain1.startSpeed += Time.deltaTime;
+            //particleLauncher.Emit(1);
+
         }
     }
 
@@ -603,7 +638,18 @@ public class CustomerOrderingScript : MonoBehaviour
         GameManagerScript.speedBonus = myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10;
         speedBonusPointsTextbox.text = "Speed Bonus Points: " + GameManagerScript.speedBonus.ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
+        losingPatience = false;
         CheckForLevelCompletion();
+
+        
+        ParticleSystem.MainModule psMain1 = particleSystem1.main;
+        ParticleSystem.MainModule psMain2 = particleSystem2.main;
+        psMain1.startSpeed = 1.0f;
+        psMain2.startSpeed = 1.0f;
+        psMain1.startLifetime = 0.75f;
+        psMain2.startLifetime = 0.75f;
+        particleSystem1.gameObject.SetActive(false);
+        particleSystem2.gameObject.SetActive(false);
     }
 
     private void CheckForLevelCompletion()

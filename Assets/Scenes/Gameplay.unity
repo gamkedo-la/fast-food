@@ -1028,6 +1028,10 @@ PrefabInstance:
       propertyPath: customer
       value: 
       objectReference: {fileID: 412680740}
+    - target: {fileID: 4517263753470677206, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: parentCustomerObject
+      value: 
+      objectReference: {fileID: 412680740}
     - target: {fileID: 4517263753575141587, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1044,6 +1048,14 @@ PrefabInstance:
       propertyPath: exitLocation
       value: 
       objectReference: {fileID: 1186824023}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem1
+      value: 
+      objectReference: {fileID: 412680742}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem2
+      value: 
+      objectReference: {fileID: 412680741}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
@@ -1117,6 +1129,16 @@ PrefabInstance:
 --- !u!1 &412680740 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4517263754366804213, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 412680739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &412680741 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 412680739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &412680742 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
   m_PrefabInstance: {fileID: 412680739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &455572395
@@ -2590,6 +2612,10 @@ PrefabInstance:
       propertyPath: customer
       value: 
       objectReference: {fileID: 1750545665}
+    - target: {fileID: 4517263753470677206, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: parentCustomerObject
+      value: 
+      objectReference: {fileID: 1750545665}
     - target: {fileID: 4517263753575141587, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2606,6 +2632,14 @@ PrefabInstance:
       propertyPath: exitLocation
       value: 
       objectReference: {fileID: 1186824023}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem1
+      value: 
+      objectReference: {fileID: 1750545667}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem2
+      value: 
+      objectReference: {fileID: 1750545666}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
@@ -2679,6 +2713,16 @@ PrefabInstance:
 --- !u!1 &1750545665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4517263754366804213, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 1750545664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1750545666 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 1750545664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1750545667 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
   m_PrefabInstance: {fileID: 1750545664}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1812770008
@@ -5051,10 +5095,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1016359644954546154, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4517263753470677206, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: fill
       value: 
       objectReference: {fileID: 4517263753423223788}
+    - target: {fileID: 4517263753470677206, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: parentCustomerObject
+      value: 
+      objectReference: {fileID: 4517263753423223787}
     - target: {fileID: 4517263753575141587, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5075,6 +5131,14 @@ PrefabInstance:
       propertyPath: exitLocation
       value: 
       objectReference: {fileID: 1186824023}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem1
+      value: 
+      objectReference: {fileID: 4517263753423223790}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: particleSystem2
+      value: 
+      objectReference: {fileID: 4517263753423223789}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
@@ -5161,6 +5225,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!198 &4517263753423223789 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 4517263753423223786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4517263753423223790 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+  m_PrefabInstance: {fileID: 4517263753423223786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7059690951495675778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5013308290323242110, guid: 8e878e54272bef245a04022eaa8aa763, type: 3}

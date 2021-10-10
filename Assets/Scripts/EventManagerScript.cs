@@ -28,6 +28,9 @@ public static class EventManagerScript
     public static UnityEvent playerSelectsChickenDonerEvent = new UnityEvent();
 
     public static UnityEvent timerRanOutOfTimeEvent = new UnityEvent();
+
+    public static UnityEvent customerLosingPatienceEvent = new UnityEvent();
+    
     #endregion
 
     public static void AddEventHandlerToTargetEvent(UnityEvent targetEvent, UnityAction handlerToAdd)
