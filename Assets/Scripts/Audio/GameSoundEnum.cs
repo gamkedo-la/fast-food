@@ -8,11 +8,12 @@ public enum GameSoundEnum{
     Music_Main_Menu,
     Music_Level,
     //UI
-    UI_Button
+    UI_Button,
     //VO
-
+    EnglishIWouldLikeAHamburgerAudioClip,
+    EnglishIWouldLikeAHamburgerWithLettuceAudioClip
     //SFX
-    
+
 
 }
 

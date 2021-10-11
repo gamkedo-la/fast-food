@@ -8661,7 +8661,7 @@ GameObject:
   - component: {fileID: 1490618636}
   m_Layer: 0
   m_Name: AudioController
-  m_TagString: Untagged
+  m_TagString: AudioController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8691,7 +8691,11 @@ MonoBehaviour:
     - sound: 3
       clip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
   - source: {fileID: 1673899406}
-    audio: []
+    audio:
+    - sound: 4
+      clip: {fileID: 8300000, guid: 83489f5241d107e4dbce02a402860e86, type: 3}
+    - sound: 5
+      clip: {fileID: 8300000, guid: f6de096ec9a14324d9669346e8f85090, type: 3}
   - source: {fileID: 341334373}
     audio: []
 --- !u!4 &1490618637

@@ -16,7 +16,6 @@ public class TogglePromptModeButtonScript : ButtonScript
         {
             GameManagerScript.currentCustomerPromptType = CustomerPromptTypeEnumerables.Text;
         }
-        Debug.Log("GameManagerScript.currentCustomerPromptType.ToString();" + GameManagerScript.currentCustomerPromptType.ToString());
         currentModeTextbox.text = GameManagerScript.currentCustomerPromptType.ToString();
 
         //Play button sound

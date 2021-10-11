@@ -17,6 +17,8 @@ public enum CustomerStateEnumerations
 public class CustomerOrderingScript : MonoBehaviour
 {
     #region Fields
+    [SerializeField] private GameObject audioController;
+
     [SerializeField] private InputActionAsset inputMap;
     private InputAction customerClick;
 
@@ -65,10 +67,10 @@ public class CustomerOrderingScript : MonoBehaviour
     private Vector3 customerOrderingCanvasImageStartingPosition;
     
     [SerializeField] Text customerOrderingTextBoxObject;
-    private string customersOrderString;
+    public string customersOrderString;
     [SerializeField] Button customerOrderingCanvasToggleButton;
 
-    private string currentCustomerDialogueString;
+    public string currentCustomerDialogueString;
     public AudioClip myCurrentOrdersAudioClip;
 
     private bool isProcessingOrder = false;
@@ -82,6 +84,8 @@ public class CustomerOrderingScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioController = GameObject.FindGameObjectWithTag("AudioController");
+
         Time.timeScale = 1;
         myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
         myStartingX = gameObject.transform.position.x;
@@ -115,19 +119,14 @@ public class CustomerOrderingScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerLosingPatienceEvent, HandleLosingPatienceEvent);
-        //particleSystem1.GetComponent<Renderer>().sortingLayerName = "Foreground";
-        //particleSystem2.GetComponent<Renderer>().sortingLayerName = "Foreground";
     }
 
     private void HandleLosingPatienceEvent()
     {
-        Debug.Log("inside losing patience handler");
-        Debug.Log("losingPatience" + losingPatience);
         if (!losingPatience)
         {
             return;
         }
-        Debug.Log("should be activating particle systems");
         particleSystem1.gameObject.SetActive(true);
         particleSystem2.gameObject.SetActive(true);
     }

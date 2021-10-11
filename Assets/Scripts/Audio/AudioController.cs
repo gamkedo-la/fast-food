@@ -120,6 +120,21 @@ public class AudioController : MonoBehaviour
         }
     }
 
+    public GameSoundEnum ConvertCustomerOrderStringToGameSoundEnum(string customerOrderString)
+    {
+        switch (customerOrderString)
+        {
+            case "I would like a hamburger":
+                return GameSoundEnum.EnglishIWouldLikeAHamburgerAudioClip;
+                
+            case "I would like a hamburger with lettuce.":
+                return GameSoundEnum.EnglishIWouldLikeAHamburgerWithLettuceAudioClip;
+                
+            default:
+                return GameSoundEnum.EnglishIWouldLikeAHamburgerAudioClip;
+                
+        }
+    }
     private IEnumerator RunAudioJob(AudioJob _job) {
         AudioTrack _track = GetAudioTrack(_job.sound);
         _track.source.clip = GetAudioClipFromAudioTrack(_job.sound, _track);
