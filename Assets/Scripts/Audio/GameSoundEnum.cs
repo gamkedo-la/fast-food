@@ -13,7 +13,9 @@ public enum GameSoundEnum{
     EnglishIWouldLikeAHamburgerAudioClip,
     EnglishIWouldLikeAHamburgerWithLettuceAudioClip,
     //SFX
-    SFX_Customer_Impatience
+    SFX_Customer_Impatience,
+    SFX_Customer_Enter,
+    SFX_Correct_Order
 
 }
 

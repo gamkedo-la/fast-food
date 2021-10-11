@@ -630,6 +630,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
+        AudioController.instance.OneShot(GameSoundEnum.SFX_Correct_Order);
         myStateEnumeration = CustomerStateEnumerations.LeavingRestaurant;
         myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
         myOrderingLocation = null;
