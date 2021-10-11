@@ -12,6 +12,7 @@ public class LanguageDictionary : MonoBehaviour
     //for study cards and picking up food items during gameplay
     [SerializeField] AudioClip englishIWouldLikeAAudioClip;
     [SerializeField] AudioClip englishHamburgerAudioClip;
+    [SerializeField] AudioClip englishChickenDonerAudioClip;
     [SerializeField] AudioClip englishLettuceAudioClip;
     [SerializeField] AudioClip englishTomatoAudioClip;
     [SerializeField] AudioClip englishOnionAudioClip;
@@ -22,6 +23,7 @@ public class LanguageDictionary : MonoBehaviour
     [SerializeField] AudioClip englishOnionPickupAudioClip;
 
     //for customer orders
+    //hamburger
     [SerializeField] AudioClip iWouldLikeAHamburgerEnglishPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithLettuceEnglishPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithTomatoEnglishPrompt;
@@ -30,11 +32,22 @@ public class LanguageDictionary : MonoBehaviour
     [SerializeField] AudioClip iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt;
+    //chicken doner
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithLettucePrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithTomatoPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithOnionPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt;
+    [SerializeField] AudioClip englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt;
+
 
 
     //for study cards and picking up food items during gameplay
     [SerializeField] AudioClip albanianIWouldLikeAAudioClip;
     [SerializeField] AudioClip albanianHamburgerAudioClip;
+    [SerializeField] AudioClip albanianChickenDonerAudioClip;
     [SerializeField] AudioClip albanianLettuceAudioClip;
     [SerializeField] AudioClip albanianTomatoAudioClip;
     [SerializeField] AudioClip albanianOnionAudioClip;
@@ -53,6 +66,15 @@ public class LanguageDictionary : MonoBehaviour
     [SerializeField] AudioClip iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt;
     [SerializeField] AudioClip iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt;
+
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerPrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithLettucePrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithTomatoPrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithOnionPrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt;
+    [SerializeField] AudioClip albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt;
+    [SerializeField] AudioClip albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt;
     #endregion
 
     void Start()
@@ -75,7 +97,7 @@ public class LanguageDictionary : MonoBehaviour
 
         languageDictionary.Add("Albanian", new Dictionary<string, string>());
         languageDictionary["Albanian"].Add("I want a hamburger", "Unë dua një hamburger");
-        languageDictionary["Albanian"].Add("I want a chicken doner", "Unë dua një donator pule");
+        languageDictionary["Albanian"].Add("I want a chicken doner", "Unë dua një doner pule");
         languageDictionary["Albanian"].Add("with", " me ");
         languageDictionary["Albanian"].Add("only lettuce", "marule.");
         languageDictionary["Albanian"].Add("only tomato", "domate.");
@@ -108,6 +130,7 @@ public class LanguageDictionary : MonoBehaviour
         audioLanguageDictionary.Add("English", new Dictionary<string, AudioClip>());
         audioLanguageDictionary["English"].Add("I would like a", englishIWouldLikeAAudioClip);
         audioLanguageDictionary["English"].Add("hamburger", englishHamburgerAudioClip);
+        audioLanguageDictionary["English"].Add("chicken doner", englishHamburgerAudioClip);
         audioLanguageDictionary["English"].Add("lettuce", englishLettuceAudioClip);
         audioLanguageDictionary["English"].Add("tomato", englishTomatoAudioClip);
         audioLanguageDictionary["English"].Add("onion", englishOnionAudioClip);
@@ -128,6 +151,14 @@ public class LanguageDictionary : MonoBehaviour
         audioLanguageDictionary["English"].Add("I would like a hamburger with tomato and onion.", iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt);
         audioLanguageDictionary["English"].Add("I would like a hamburger with lettuce, tomato, and onion.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt);
 
+        audioLanguageDictionary["English"].Add("I would like a chicken doner", englishIWouldLikeAChickenDonerPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce.", englishIWouldLikeAChickenDonerWithLettucePrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with tomato.", englishIWouldLikeAChickenDonerWithTomatoPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with onion.", englishIWouldLikeAChickenDonerWithOnionPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce and tomato.", englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce and onion.", englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with tomato and onion.", englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
+        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce, tomato, and onion.", englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
 
 
         //Albanian
@@ -154,6 +185,15 @@ public class LanguageDictionary : MonoBehaviour
         audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule dhe qepë.", iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt);
         audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me domate dhe qepë.", iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt);
         audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule, tomato, dhe qepë.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt);
+
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule", albanianIWouldLikeAChickenDonerPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule.", albanianIWouldLikeAChickenDonerWithLettucePrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me domate.", albanianIWouldLikeAChickenDonerWithTomatoPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me qepë.", albanianIWouldLikeAChickenDonerWithOnionPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule dhe domate.", albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule dhe qepë.", albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me domate dhe qepë.", albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
+        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule, tomato, dhe qepë.", albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
         #endregion
     }
 

@@ -373,7 +373,7 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
         customerOrderingTextBoxObject.text = currentCustomerDialogueString;
-        //myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
+        myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

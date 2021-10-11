@@ -14433,13 +14433,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   englishIWouldLikeAAudioClip: {fileID: 8300000, guid: 9ab6c369160d8ad4b937fe4c9e8e49ba, type: 3}
   englishHamburgerAudioClip: {fileID: 8300000, guid: 07d2decd03e94ef429a3d7167118f1b9, type: 3}
+  englishChickenDonerAudioClip: {fileID: 8300000, guid: bb1f43e4269879f4cbdc07cae70a2e95, type: 3}
   englishLettuceAudioClip: {fileID: 8300000, guid: d1d46124150e3fd4c990fbc8f085b294, type: 3}
-  englishTomatoAudioClip: {fileID: 0}
+  englishTomatoAudioClip: {fileID: 8300000, guid: 1679c156352f7b74e87c9500639e79af, type: 3}
   englishOnionAudioClip: {fileID: 8300000, guid: cda6992c3c207bf478c8c53f61a55df0, type: 3}
   englishThankYouAudioClip: {fileID: 8300000, guid: ee07d25a29930f141b0c58415f05f3f8, type: 3}
   englishNoAudioClip: {fileID: 8300000, guid: 960911448e9a7a041bfa7efde013c116, type: 3}
   englishLettucePickupAudioClip: {fileID: 8300000, guid: e2a535ff526dd88479a16c8fe3cce3c3, type: 3}
-  englishTomatoPickupAudioClip: {fileID: 0}
+  englishTomatoPickupAudioClip: {fileID: 8300000, guid: 9d417c08480d9d940b6ed94ecb1272e1, type: 3}
   englishOnionPickupAudioClip: {fileID: 8300000, guid: 8c13be480dc27ba45ab58e38ee640caa, type: 3}
   iWouldLikeAHamburgerEnglishPrompt: {fileID: 8300000, guid: 83489f5241d107e4dbce02a402860e86, type: 3}
   iWouldLikeAHamburgerWithLettuceEnglishPrompt: {fileID: 8300000, guid: f6de096ec9a14324d9669346e8f85090, type: 3}
@@ -14449,15 +14450,24 @@ MonoBehaviour:
   iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt: {fileID: 8300000, guid: 72f22752ce2ec1441896df91d3156df9, type: 3}
   iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt: {fileID: 8300000, guid: 1ccafd6f0cf598d45af2e4333cd79c67, type: 3}
   iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt: {fileID: 8300000, guid: 32ad4687e8de38f4e9376ca8515ed9ff, type: 3}
+  englishIWouldLikeAChickenDonerPrompt: {fileID: 8300000, guid: 7882660e37bc20a4ab4330e653279a6a, type: 3}
+  englishIWouldLikeAChickenDonerWithLettucePrompt: {fileID: 8300000, guid: 665e431db3a843e4a84305dd7214e1f8, type: 3}
+  englishIWouldLikeAChickenDonerWithTomatoPrompt: {fileID: 8300000, guid: f758f0a435dd2f14eb4e8c6194152361, type: 3}
+  englishIWouldLikeAChickenDonerWithOnionPrompt: {fileID: 8300000, guid: b0223d12c85fac54aa8b2baa668fdf81, type: 3}
+  englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt: {fileID: 8300000, guid: f7b5e5fb9894d144e92f22180302e157, type: 3}
+  englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt: {fileID: 8300000, guid: 37a816f446f24794aaaa47e46533a139, type: 3}
+  englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt: {fileID: 8300000, guid: ebda0bafcad403b489b0ff52c5a7f76a, type: 3}
+  englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt: {fileID: 8300000, guid: b9dccbeb70737c742b26179458be16d0, type: 3}
   albanianIWouldLikeAAudioClip: {fileID: 8300000, guid: 72249ab2c7dc99f44b8b2c344032ab5e, type: 3}
   albanianHamburgerAudioClip: {fileID: 8300000, guid: 7527459c04c0e7445a8935799f8dca01, type: 3}
+  albanianChickenDonerAudioClip: {fileID: 8300000, guid: ab3364b50a192684fb8b73dcb9195bec, type: 3}
   albanianLettuceAudioClip: {fileID: 8300000, guid: 6d6fa5f529f878b4295435b5a5f46696, type: 3}
-  albanianTomatoAudioClip: {fileID: 0}
+  albanianTomatoAudioClip: {fileID: 8300000, guid: 8464661c828868448a8641894c4fbf04, type: 3}
   albanianOnionAudioClip: {fileID: 8300000, guid: d6b10b80e0538b24d8b10f463cbc2edb, type: 3}
   albanianThankYouAudioClip: {fileID: 8300000, guid: 08887528db9ec4f498e18cee7983b02f, type: 3}
   albanianNoAudioClip: {fileID: 8300000, guid: df294d4505019af449cef93eadc355d3, type: 3}
   albanianLettucePickupAudioClip: {fileID: 8300000, guid: 11a40e62465cdfb49baaace53ddc1dfe, type: 3}
-  albanianTomatoPickupAudioClip: {fileID: 0}
+  albanianTomatoPickupAudioClip: {fileID: 8300000, guid: 2449a7c8bd39cd94ca4f545b74e3c00a, type: 3}
   albanianOnionPickupAudioClip: {fileID: 8300000, guid: ed549c2d57ee54446be8b935de24a3e4, type: 3}
   iWouldLikeAHamburgerAlbanianPrompt: {fileID: 8300000, guid: 1459c84f8061ffc44b56d419c848f887, type: 3}
   iWouldLikeAHamburgerWithLettuceAlbanianPrompt: {fileID: 8300000, guid: f2f11dcab352bc1438eb93dfc5c63af1, type: 3}
@@ -14467,6 +14477,14 @@ MonoBehaviour:
   iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt: {fileID: 8300000, guid: 75d29cc87dc51bb4e9a4493daf27e020, type: 3}
   iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt: {fileID: 8300000, guid: 1320710337ef2f44885f526f4c02c814, type: 3}
   iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt: {fileID: 8300000, guid: 5ccf9e7309b258549be69b50a8403349, type: 3}
+  albanianIWouldLikeAChickenDonerPrompt: {fileID: 8300000, guid: a0e753e8704aa374c842f85c4ad7cd52, type: 3}
+  albanianIWouldLikeAChickenDonerWithLettucePrompt: {fileID: 8300000, guid: ec62cbbe64af7924bb0c5ec839db0e86, type: 3}
+  albanianIWouldLikeAChickenDonerWithTomatoPrompt: {fileID: 8300000, guid: 5d0698db6fe1c6a4c9ce3720e4dbf221, type: 3}
+  albanianIWouldLikeAChickenDonerWithOnionPrompt: {fileID: 8300000, guid: e74998df5802b46409b2bc50277bbd53, type: 3}
+  albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt: {fileID: 8300000, guid: 276d23b9ac98b614ab98273298b10879, type: 3}
+  albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt: {fileID: 8300000, guid: 139ee714c38d59e4cadd1c33a13fe1bd, type: 3}
+  albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt: {fileID: 8300000, guid: e65c21d5b090ef4469c248e82f5cee86, type: 3}
+  albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt: {fileID: 8300000, guid: db57278f407863c48b2960d994e6c77f, type: 3}
 --- !u!4 &1957484832
 Transform:
   m_ObjectHideFlags: 0
