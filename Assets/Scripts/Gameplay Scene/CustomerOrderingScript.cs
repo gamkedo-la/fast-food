@@ -676,6 +676,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
+        AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
     }
     

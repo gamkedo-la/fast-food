@@ -15,7 +15,8 @@ public enum GameSoundEnum{
     //SFX
     SFX_Customer_Impatience,
     SFX_Customer_Enter,
-    SFX_Correct_Order
+    SFX_Correct_Order,
+    SFX_Incorrect_Order
 
 }
 
