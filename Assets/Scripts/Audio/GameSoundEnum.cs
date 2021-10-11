@@ -11,9 +11,9 @@ public enum GameSoundEnum{
     UI_Button,
     //VO
     EnglishIWouldLikeAHamburgerAudioClip,
-    EnglishIWouldLikeAHamburgerWithLettuceAudioClip
+    EnglishIWouldLikeAHamburgerWithLettuceAudioClip,
     //SFX
-
+    SFX_Customer_Impatience
 
 }
 

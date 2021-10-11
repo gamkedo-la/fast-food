@@ -39,7 +39,8 @@ public class AudioController : MonoBehaviour
     private enum AudioAction {
         START,
         STOP,
-        RESTART
+        RESTART,
+        ONESHOT
     }
 
 #region Unity Functions
@@ -76,6 +77,10 @@ public class AudioController : MonoBehaviour
 
 #region Public Functions
 //Three different jobs
+    public void OneShot(GameSoundEnum _sound){
+        AddJob(new AudioJob(AudioAction.ONESHOT, _sound));
+    }
+
     public void PlayAudio(GameSoundEnum _sound) {
         AddJob(new AudioJob(AudioAction.START, _sound));
     }
@@ -139,6 +144,9 @@ public class AudioController : MonoBehaviour
         AudioTrack _track = GetAudioTrack(_job.sound);
         _track.source.clip = GetAudioClipFromAudioTrack(_job.sound, _track);
         switch (_job.action) {
+            case AudioAction.ONESHOT:
+                _track.source.PlayOneShot(_track.source.clip);
+            break;
             case AudioAction.START:
                 _track.source.Play();
             break;
