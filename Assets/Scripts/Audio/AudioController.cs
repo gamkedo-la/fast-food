@@ -129,14 +129,83 @@ public class AudioController : MonoBehaviour
     {
         switch (customerOrderString)
         {
+            //English
+
+                //Order Hamburger
             case "I would like a hamburger":
-                return GameSoundEnum.EnglishIWouldLikeAHamburgerAudioClip;
-                
+                return GameSoundEnum.English_Order_Hamburger;
             case "I would like a hamburger with lettuce.":
-                return GameSoundEnum.EnglishIWouldLikeAHamburgerWithLettuceAudioClip;
-                
+                return GameSoundEnum.English_Order_Hamburger_Lettuce;
+            case "I would like a hamburger with tomato.":
+                return GameSoundEnum.English_Order_Hamburger_Tomato;
+            case "I would like a hamburger with onion.":
+                return GameSoundEnum.English_Order_Hamburger_Onion;
+            case "I would like a hamburger with lettuce and tomato.":
+                return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato;
+            case "I would like a hamburger with lettuce and onion.":
+                return GameSoundEnum.English_Order_Hamburger_Lettuce_Onion;
+            case "I would like a hamburger with tomato and onion.":
+                return GameSoundEnum.English_Order_Hamburger_Tomato_Onion;
+            case "I would like a hamburger with lettuce, tomato, and onion.":
+                return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato_Onion;
+                //Order Chicken Doner
+            case "I would like a chicken doner":
+                return GameSoundEnum.English_Order_Chicken_Doner;
+            case "I would like a chicken doner with lettuce.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce;
+            case "I would like a chicken doner with tomato.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Tomato;
+            case "I would like a chicken doner with onion.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Onion;
+            case "I would like a chicken doner with lettuce and tomato.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato;
+            case "I would like a chicken doner with lettuce and onion.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Onion;
+            case "I would like a chicken doner with tomato and onion.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Tomato_Onion;
+            case "I would like a chicken doner with lettuce, tomato, and onion.":
+                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+
+            //Albanian
+
+                //Order Hamburger
+            case "Un� dua nj� hamburger":
+                return GameSoundEnum.Albanian_Order_Hamburger;
+            case "Un� dua nj� hamburger me marule.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce;
+            case "Un� dua nj� hamburger me domate.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Tomato;
+            case "Un� dua nj� hamburger me qep�.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Onion;
+            case "Un� dua nj� hamburger me marule dhe domate.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato;
+            case "Un� dua nj� hamburger me marule dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Onion;
+            case "Un� dua nj� hamburger me domate dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Tomato_Onion;
+            case "Un� dua nj� hamburger me marule, tomato, dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato_Onion;
+
+                //Order Chicken Doner
+            case "Un� dua nj� doner pule":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner;
+            case "Un� dua nj� doner pule me marule.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce;
+            case "Un� dua nj� doner pule me domate.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato;
+            case "Un� dua nj� doner pule me qep�.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Onion;
+            case "Un� dua nj� doner pule me marule dhe domate.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato;
+            case "Un� dua nj� doner pule me marule dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Onion;
+            case "Un� dua nj� doner pule me domate dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato_Onion;
+            case "Un� dua nj� doner pule me marule, tomato, dhe qep�.":
+                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+
             default:
-                return GameSoundEnum.EnglishIWouldLikeAHamburgerAudioClip;
+                return GameSoundEnum.English_Order_Hamburger;
                 
         }
     }
