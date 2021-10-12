@@ -80,6 +80,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] private ParticleSystem particleSystem2;
     private ParticleSystem.MinMaxCurve previousFramesStartLifetime = new ParticleSystem.MinMaxCurve();
 
+    [SerializeField] GameObject customerManagerObject;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -632,10 +633,11 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        losingPatience = false;
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
         AudioController.instance.OneShot(GameSoundEnum.SFX_Correct_Order);
-        if (losingPatience){ //if the customer is losing patience when their order is delivered, the customer impatience sound should stop
+        if (!customerManagerObject.GetComponent<CustomerManagerScript>().AreAnyCustomersLosingPatience()){ //if the customer is losing patience when their order is delivered, the customer impatience sound should stop
             AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
             GameManagerScript.impatienceSoundIsPlaying = false; //the public bool that says whether the impatience sound is playing needs to be set to false since we just stopped the sound
         }
@@ -646,7 +648,7 @@ public class CustomerOrderingScript : MonoBehaviour
         GameManagerScript.speedBonus = myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10;
         speedBonusPointsTextbox.text = "Speed Bonus Points: " + GameManagerScript.speedBonus.ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
-        losingPatience = false;
+        
         CheckForLevelCompletion();
 
         

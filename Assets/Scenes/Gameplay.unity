@@ -1057,6 +1057,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 412680741}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customerManagerObject
+      value: 
+      objectReference: {fileID: 1846346931}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -1074,7 +1078,7 @@ PrefabInstance:
       objectReference: {fileID: 961344801}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2641,6 +2645,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1750545666}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customerManagerObject
+      value: 
+      objectReference: {fileID: 1846346931}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -2658,7 +2666,7 @@ PrefabInstance:
       objectReference: {fileID: 961344801}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2954,6 +2962,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1846346931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1846346933}
+  - component: {fileID: 1846346932}
+  m_Layer: 0
+  m_Name: CustomerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1846346932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846346931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c79a01b1c9fe34684ca4f241f24bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customer1: {fileID: 4517263753423223787}
+  customer2: {fileID: 412680740}
+  customer3: {fileID: 1750545665}
+--- !u!4 &1846346933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846346931}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1586.528, y: 837.82153, z: -163.21411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1905391518
 GameObject:
@@ -5140,6 +5194,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4517263753423223789}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: customerManagerObject
+      value: 
+      objectReference: {fileID: 1846346931}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -5157,7 +5215,7 @@ PrefabInstance:
       objectReference: {fileID: 961344801}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_LocalPosition.x
