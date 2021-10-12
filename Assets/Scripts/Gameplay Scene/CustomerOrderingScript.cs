@@ -76,7 +76,6 @@ public class CustomerOrderingScript : MonoBehaviour
     private bool isProcessingOrder = false;
 
     public bool losingPatience = false;
-    public bool impatienceSoundisPlaying = false;
     [SerializeField] private ParticleSystem particleSystem1;
     [SerializeField] private ParticleSystem particleSystem2;
     private ParticleSystem.MinMaxCurve previousFramesStartLifetime = new ParticleSystem.MinMaxCurve();
@@ -128,10 +127,10 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             return;
         }
-        if (!impatienceSoundisPlaying){
+        if (!GameManagerScript.impatienceSoundIsPlaying){
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Customer_Impatience);
         }
-        impatienceSoundisPlaying = true;
+        GameManagerScript.impatienceSoundIsPlaying = true;
         particleSystem1.gameObject.SetActive(true);
         particleSystem2.gameObject.SetActive(true);
     }

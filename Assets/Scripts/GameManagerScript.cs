@@ -57,4 +57,6 @@ public static class GameManagerScript
     public static float minimumAccuracyToCompleteLevel = 90.0f;
 
     public static bool levelStarterFirstTimeStarted = false;
+
+    public static bool impatienceSoundIsPlaying = false;
 }
