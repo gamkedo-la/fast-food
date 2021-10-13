@@ -120,6 +120,7 @@ public class CustomerOrderingScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerLosingPatienceEvent, HandleLosingPatienceEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.lostCustomerEvent, HandleLostCustomerEvent);
     }
 
     private void HandleLosingPatienceEvent()
@@ -685,7 +686,32 @@ public class CustomerOrderingScript : MonoBehaviour
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
     }
     
-    
+    private void HandleLostCustomerEvent()
+    {
+        if (myPatienceTimerSlider.value != 0)
+        {
+            return;
+        }
+        losingPatience = false;
+        myStateEnumeration = CustomerStateEnumerations.LeavingRestaurant;
+        if (!customerManagerObject.GetComponent<CustomerManagerScript>().AreAnyCustomersLosingPatience())
+        { //if no customers are losing patience when a correct order is delivered, the customer impatience sound should stop
+            AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
+            GameManagerScript.impatienceSoundIsPlaying = false; //the public bool that says whether the impatience sound is playing needs to be set to false since we just stopped the sound
+        }
+        myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
+        myOrderingLocation = null;
+        myPatienceTimerSliderGameObject.SetActive(false);
+
+        ParticleSystem.MainModule psMain1 = particleSystem1.main;
+        ParticleSystem.MainModule psMain2 = particleSystem2.main;
+        psMain1.startSpeed = 1.0f;
+        psMain2.startSpeed = 1.0f;
+        psMain1.startLifetime = 0.75f;
+        psMain2.startLifetime = 0.75f;
+        particleSystem1.gameObject.SetActive(false);
+        particleSystem2.gameObject.SetActive(false);
+    }
     IEnumerator DelayedNewOrder()
     {
         yield return new WaitForSeconds(0.1f);

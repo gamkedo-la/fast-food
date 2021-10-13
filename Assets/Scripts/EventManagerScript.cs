@@ -22,6 +22,7 @@ public static class EventManagerScript
     public static UnityEvent correctOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent incorrectOrderSubmissionEvent = new UnityEvent();
     public static UnityEvent anyOrderSubmissionEvent = new UnityEvent();
+    public static UnityEvent lostCustomerEvent = new UnityEvent();
     public static UnityEvent levelCompletedEvent = new UnityEvent();
 
     public static UnityEvent playerSelectsBurgerEvent = new UnityEvent();

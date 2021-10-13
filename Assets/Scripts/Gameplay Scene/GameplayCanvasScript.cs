@@ -15,6 +15,7 @@ public class GameplayCanvasScript : MonoBehaviour
     {
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.correctOrderSubmissionEvent, HandleCorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.lostCustomerEvent, HandleLostCustomerEvent);
     }
 
     private void IncreaseNumberOfCorrectOrders()
@@ -62,6 +63,15 @@ public class GameplayCanvasScript : MonoBehaviour
     }    
 
     private void HandleIncorrectOrderSubmission()
+    {
+        IncreaseNumberOfTotalSubmittedOrders();
+        IncreaseNumberOfIncorrectOrders();
+        UpdateIncorrectOrdersTextBox();
+        CalculateAccuracy();
+        UpdateAccuracyTextBox();
+    }
+
+    private void HandleLostCustomerEvent()
     {
         IncreaseNumberOfTotalSubmittedOrders();
         IncreaseNumberOfIncorrectOrders();
