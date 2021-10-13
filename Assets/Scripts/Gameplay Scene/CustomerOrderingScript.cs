@@ -28,7 +28,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Text speedBonusPointsTextbox;
     [SerializeField] private GameObject customerOrderingLocationManager;
 
-    private CustomerStateEnumerations myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
+    public CustomerStateEnumerations myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
     private float myStartingX;
     private float myOrderingImageStartingX;
     private float myOrderingImageToggleButtonsStartingX;
@@ -73,7 +73,7 @@ public class CustomerOrderingScript : MonoBehaviour
     public string currentCustomerDialogueString;
     public AudioClip myCurrentOrdersAudioClip;
 
-    private bool isProcessingOrder = false;
+    public bool isProcessingOrder = false;
 
     public bool losingPatience = false;
     [SerializeField] private ParticleSystem particleSystem1;

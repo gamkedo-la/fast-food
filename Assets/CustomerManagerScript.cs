@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerManagerScript : MonoBehaviour
 {
-    private List<GameObject> listOfCustomers = new List<GameObject>();
+    public List<GameObject> listOfCustomers = new List<GameObject>();
     [SerializeField] GameObject customer1;
     [SerializeField] GameObject customer2;
     [SerializeField] GameObject customer3;
@@ -15,7 +15,6 @@ public class CustomerManagerScript : MonoBehaviour
         listOfCustomers.Add(customer1);
         listOfCustomers.Add(customer2);
         listOfCustomers.Add(customer3);
-        Debug.Log("listOfCustomers: " + listOfCustomers);
     }
 
     public bool AreAnyCustomersLosingPatience()
