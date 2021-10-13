@@ -8,7 +8,7 @@ public class PatienceTimerSliderScript : MonoBehaviour
 
     public bool isActive = false;
 
-    private float timerDuration;
+    public float timerDuration;
     [SerializeField] private float minimumTimerDuration = 10.0f;
     [SerializeField] private float maximumTimerDuration = 20.0f;
 
@@ -55,6 +55,7 @@ public class PatienceTimerSliderScript : MonoBehaviour
                 }
                 else
                 {
+                    
                     parentCustomerObject.GetComponent<CustomerOrderingScript>().losingPatience = true;
                     EventManagerScript.customerLosingPatienceEvent.Invoke();
                     adjustedLerpValue = (percentageOfTimerLeft - 0.5f) * 2;
@@ -67,9 +68,8 @@ public class PatienceTimerSliderScript : MonoBehaviour
 
     public float PercentageOfTimerLeft()
     {
-        float percentageOfTimerLeft = 0.0f;
         float timeLeft = timerDuration - gameObject.GetComponent<Slider>().value;
-        percentageOfTimerLeft = timeLeft / timerDuration;
+        float percentageOfTimerLeft = timeLeft / timerDuration;
         if (percentageOfTimerLeft < 0)
         {
             percentageOfTimerLeft = 0.0f;
