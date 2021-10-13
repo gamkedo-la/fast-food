@@ -2142,27 +2142,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 472
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 1334780518393054986, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4462421701647991680, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: m_Name
@@ -2452,6 +2452,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3112279894223454535, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3112279894223454536, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2564,6 +2568,34 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3343367420463680373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_text
+      value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343367420463680373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_fontSize
+      value: 28.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343367420463680373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387120300816375373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_text
+      value: Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387120300816375373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_fontSize
+      value: 28.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387120300816375373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387120300816375373, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4902459557903576034, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: objectToToggleOff
       value: 
@@ -2599,6 +2631,46 @@ PrefabInstance:
     - target: {fileID: 4902459557903576037, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163843588336315050, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_text
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163843588336315050, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_fontSize
+      value: 28.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163843588336315050, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163843588336315050, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387994091377504551, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc222f95182bbf24eb0041318c032411, type: 3}
@@ -3318,7 +3390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1947016983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3786,6 +3858,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlsCanvasBackButton
       objectReference: {fileID: 0}
+    - target: {fileID: 2469305305920322808, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_text
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469305305920322808, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_fontSize
+      value: 28.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469305305920322808, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2469305305920322808, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Text
       value: 'Click on customers to get their orders
@@ -3838,6 +3926,10 @@ PrefabInstance:
     - target: {fileID: 5529033243019084071, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5529033243019084088, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084091, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Pivot.x
