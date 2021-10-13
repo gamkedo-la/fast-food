@@ -7,7 +7,15 @@ public class SpriteFlipper : MonoBehaviour
     public float minFrametime = 0.25f;
     public float maxFrametime = 1.5f;
     public bool oddFramesBlinkFast = true;
+    
+    [Header("Happy Sprites - used by default")]
     public Sprite[] mySprites;
+
+    [Header("Worried Sprites - after waiting")]
+    public Sprite[] worriedSprites;
+
+    [Header("Angry Sprites - customer is impatient!")]
+    public Sprite[] angrySprites;
     
     private SpriteRenderer flipMe;
     private int spriteIndex = 0;
