@@ -17,6 +17,7 @@ public class IncorrectOrderButtonCheatScript : ButtonScript
             {
                 customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().isProcessingOrder = true;
                 EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+                EventManagerScript.anyOrderSubmissionEvent.Invoke();
                 customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().isProcessingOrder = false;
 
                 return;
