@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CorrectOrderCheatButtonScript : ButtonScript
+public class IncorrectOrderButtonCheatScript : ButtonScript
 {
     [SerializeField] GameObject customerManager;
 
@@ -16,8 +16,7 @@ public class CorrectOrderCheatButtonScript : ButtonScript
                 CustomerStateEnumerations.EnteringRestaurant)
             {
                 customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().isProcessingOrder = true;
-                EventManagerScript.correctOrderSubmissionEvent.Invoke();
-                EventManagerScript.anyOrderSubmissionEvent.Invoke();
+                EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().isProcessingOrder = false;
 
                 return;
