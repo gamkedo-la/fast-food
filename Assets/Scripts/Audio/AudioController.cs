@@ -62,6 +62,9 @@ public class AudioController : MonoBehaviour
             case "MainMenu":
                 instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
                 break;
+            case "MainMenu 1":
+                instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
+                break;
             case "Gameplay":
                 instance.PlayAudio(GameSoundEnum.Music_Level);
                 break;
