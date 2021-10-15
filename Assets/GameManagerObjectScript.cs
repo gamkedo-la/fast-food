@@ -14,6 +14,9 @@ public class GameManagerObjectScript : MonoBehaviour
     public static void ProgressToNextLevel()
     {
         GameManagerScript.currentLevel++;
+        GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
+        SaveSystem.SaveProfileData(GameManagerScript.currentProfile);
+        Debug.Log("profile load check: " + SaveSystem.LoadProfileData(GameManagerScript.currentProfile).currentLevel);
     }
 
     

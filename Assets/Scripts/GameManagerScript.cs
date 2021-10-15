@@ -45,9 +45,10 @@ public static class GameManagerScript
     public static float accuracy = 0;
     public static float speedBonus = 0;
 
-    public static string currentProfile = "Profile 1";
-
+    public static ProfileDataScript currentProfile;
+    public static List<ProfileDataScript> listOfProfiles = new List<ProfileDataScript>();
     public static int currentLevel = 1;
+
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
     public static int minimumSubmittedOrdersToCompleteLevel2 = 10;
     public static int minimumSubmittedOrdersToCompleteLevel3 = 15;

@@ -24,6 +24,11 @@ public class ToggleOnButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
+        if (gameObject.name == "LanguageSelectButton" && GameManagerScript.currentProfile.userName == null)
+        {
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
+            return;
+        }
         ToggleOn();
         ToggleOff();
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);

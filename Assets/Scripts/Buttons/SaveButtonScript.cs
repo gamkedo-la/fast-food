@@ -10,6 +10,15 @@ public class SaveButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
+        if (newPlayerNameInputField.text == "")
+        {
+            newPlayerNameInputField.text = "You didn't enter a name";
+            return;
+        }
         savedNameTextField.text = "New profile create for: " + newPlayerNameInputField.text;
+        GameManagerScript.currentProfile = new ProfileDataScript(newPlayerNameInputField.text);
+        SaveSystem.SaveProfileData(GameManagerScript.currentProfile);
+     
+        GameManagerScript.currentLevel = 1;
     }
 }
