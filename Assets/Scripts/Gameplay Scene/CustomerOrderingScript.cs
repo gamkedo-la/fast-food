@@ -135,6 +135,23 @@ public class CustomerOrderingScript : MonoBehaviour
         GameManagerScript.impatienceSoundIsPlaying = true;
         particleSystem1.gameObject.SetActive(true);
         particleSystem2.gameObject.SetActive(true);
+        StartCoroutine(SlowDownImpatienceSmokeAfterInitialBurst());
+    }
+
+    IEnumerator SlowDownImpatienceSmokeAfterInitialBurst()
+    {
+        yield return new WaitForSeconds(1);
+        ParticleSystem.MainModule psMain1 = particleSystem1.main;
+        ParticleSystem.MainModule psMain2 = particleSystem2.main;
+
+        psMain1.startLifetime = 1.0f;
+        psMain2.startLifetime = 1.0f;
+        psMain1.startSpeed = 3.0f;
+        psMain2.startSpeed = 3.0f;
+        var particleSystem1Emitter = particleSystem1.emission;
+        particleSystem1Emitter.rateOverTime = 5.0f;
+        var particleSystem2Emitter = particleSystem2.emission;
+        particleSystem2Emitter.rateOverTime = 5.0f;
     }
     IEnumerator SelectRandomOrderingLocationAfterARandomAmountOfTime()
     {
@@ -255,19 +272,19 @@ public class CustomerOrderingScript : MonoBehaviour
             MoveTowardsExit();
         }
 
-        if (losingPatience)
-        {
-            ParticleSystem.MainModule psMain1 = particleSystem1.main;
-            ParticleSystem.MainModule psMain2 = particleSystem2.main;
+        //if (losingPatience)
+        //{
+        //    ParticleSystem.MainModule psMain1 = particleSystem1.main;
+        //    ParticleSystem.MainModule psMain2 = particleSystem2.main;
 
-            psMain1.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
-            psMain2.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
-            psMain1.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
-            psMain2.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
-            //psMain1.startSpeed += Time.deltaTime;
-            //particleLauncher.Emit(1);
+        //    psMain1.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
+        //    psMain2.startLifetime = 1.0f - (myPatienceTimerSlider.value/10);
+        //    psMain1.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
+        //    psMain2.startSpeed = 3.0f - (myPatienceTimerSlider.value / 10);
+        //    //psMain1.startSpeed += Time.deltaTime;
+        //    //particleLauncher.Emit(1);
 
-        }
+        //}
     }
 
     void InitializeOrder()

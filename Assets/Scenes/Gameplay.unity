@@ -1048,6 +1048,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4517263752320679865, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: customer
       value: 
@@ -3358,6 +3374,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4517263752320679865, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: customer
       value: 
@@ -6139,8 +6171,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815133781848677341, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2163766542353716741, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720068491595917720, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4517263753470677206, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: fill
