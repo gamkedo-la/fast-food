@@ -17,7 +17,12 @@ public class SaveButtonScript : ButtonScript
         }
         savedNameTextField.text = "New profile create for: " + newPlayerNameInputField.text;
         GameManagerScript.currentProfile = new ProfileDataScript(newPlayerNameInputField.text);
-        SaveSystem.SaveProfileData(GameManagerScript.currentProfile);
+        ProfileManagerScript.listOfProfiles.Add(GameManagerScript.currentProfile);
+        for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
+        {
+            Debug.Log("ProfileManagerScript.listOfProfiles[i].userName: " + ProfileManagerScript.listOfProfiles[i].userName);
+        }
+        SaveSystem.SaveListOfProfilesData();
      
         GameManagerScript.currentLevel = 1;
     }

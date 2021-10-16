@@ -4,33 +4,34 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SaveProfileData(ProfileDataScript profileToSave)
+    public static void SaveListOfProfilesData()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/profileData." + profileToSave.userName;
+        string path = Application.persistentDataPath + "/profileData.listOfProfiles";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        formatter.Serialize(stream, profileToSave);
+        formatter.Serialize(stream, ProfileManagerScript.listOfProfiles);
         stream.Close();
     }
 
-    public static ProfileDataScript LoadProfileData(ProfileDataScript profileToLoad)
+    public static void LoadListOfProfilesData()
     {
-        string path = Application.persistentDataPath + "/profileData." + profileToLoad.userName;
+        string path = Application.persistentDataPath + "/profileData.listOfProfiles";
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            profileToLoad = formatter.Deserialize(stream) as ProfileDataScript;
+            ProfileManagerScript.listOfProfiles = formatter.Deserialize(stream) as System.Collections.Generic.List<ProfileDataScript>;
+            for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
+            {
+                Debug.Log("ProfileManagerScript.listOfProfiles[i].username: " + ProfileManagerScript.listOfProfiles[i].userName);
+            }
             stream.Close();
-
-            return profileToLoad;
         }
         else
         {
             Debug.LogError("Save file not found in " + path);
-            return null;
         }
     }
 }

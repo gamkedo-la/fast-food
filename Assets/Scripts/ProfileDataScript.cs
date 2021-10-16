@@ -12,6 +12,6 @@ public class ProfileDataScript
     {
         userName = newUserName;
         currentLevel = 1;
-        GameManagerScript.listOfProfiles.Add(this);
+        ProfileManagerScript.listOfProfiles.Add(this);
     }
 }
