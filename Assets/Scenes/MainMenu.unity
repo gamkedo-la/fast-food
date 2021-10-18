@@ -6322,6 +6322,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
+--- !u!114 &570585969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6292724826840029362, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+  m_PrefabInstance: {fileID: 1714256592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &586120947
 GameObject:
   m_ObjectHideFlags: 0
@@ -7561,6 +7572,21 @@ MonoBehaviour:
   levelTextbox2: {fileID: 1892587189}
   levelTextbox3: {fileID: 397239866}
   levelTextbox4: {fileID: 1070419036}
+  languageTextbox1: {fileID: 833381662}
+  languageTextbox2: {fileID: 1944265292}
+  languageTextbox3: {fileID: 570585969}
+  languageTextbox4: {fileID: 1307556042}
+--- !u!114 &833381662 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6292724826840029362, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+  m_PrefabInstance: {fileID: 479911812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841645935
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,6 +8653,17 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0.7153816, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1307556042 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6292724826840029362, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+  m_PrefabInstance: {fileID: 1822478185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408687743
 GameObject:
   m_ObjectHideFlags: 0
@@ -8703,7 +8740,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -14621,6 +14658,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1944265292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6292724826840029362, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+  m_PrefabInstance: {fileID: 757782749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1957484830
 GameObject:
   m_ObjectHideFlags: 0
@@ -15860,6 +15908,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1408687747}
     m_Modifications:
+    - target: {fileID: 8978760570636807547, guid: ec2c67e5da3d4bb489136f7773b0b547, type: 3}
+      propertyPath: m_Text
+      value: 'Current Language: '
+      objectReference: {fileID: 0}
     - target: {fileID: 8978760570636807547, guid: ec2c67e5da3d4bb489136f7773b0b547, type: 3}
       propertyPath: m_Color.b
       value: 0

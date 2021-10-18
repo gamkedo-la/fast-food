@@ -27,6 +27,12 @@ public class ProfileManagerScript : MonoBehaviour
     [SerializeField] Text levelTextbox4;
     private List<Text> listOfLevelTextboxes = new List<Text>();
 
+    [SerializeField] Text languageTextbox1;
+    [SerializeField] Text languageTextbox2;
+    [SerializeField] Text languageTextbox3;
+    [SerializeField] Text languageTextbox4;
+    private List<Text> listOfLanguageTextboxes = new List<Text>();
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +52,11 @@ public class ProfileManagerScript : MonoBehaviour
         listOfLevelTextboxes.Add(levelTextbox3);
         listOfLevelTextboxes.Add(levelTextbox4);
 
+        listOfLanguageTextboxes.Add(languageTextbox1);
+        listOfLanguageTextboxes.Add(languageTextbox2);
+        listOfLanguageTextboxes.Add(languageTextbox3);
+        listOfLanguageTextboxes.Add(languageTextbox4);
+
         SaveSystem.LoadListOfProfilesData();
         
         if (listOfProfiles.Count != 0)
@@ -56,6 +67,8 @@ public class ProfileManagerScript : MonoBehaviour
                 listOfProfilePrefabs[i].SetActive(true);
                 listOfUsernameTextboxes[i].text = listOfProfiles[i].userName;
                 listOfLevelTextboxes[i].text = listOfProfiles[i].currentLevel.ToString();
+                Debug.Log("listOfProfiles[i].targetLanguage: " + listOfProfiles[i].targetLanguage);
+                listOfLanguageTextboxes[i].text = listOfProfiles[i].targetLanguage;
             }
         }
     }

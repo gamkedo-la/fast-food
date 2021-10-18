@@ -28,6 +28,11 @@ public class ToggleOnButtonScript : ButtonScript
         {
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
             return;
+        } 
+        else if (gameObject.name == "LanguageScreenNextButton" && GameManagerScript.currentLanguage == "")
+        {
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
+            return;
         }
         ToggleOn();
         ToggleOff();
