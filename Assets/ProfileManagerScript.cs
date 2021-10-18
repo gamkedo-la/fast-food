@@ -57,6 +57,15 @@ public class ProfileManagerScript : MonoBehaviour
                 listOfUsernameTextboxes[i].text = listOfProfiles[i].userName;
                 listOfLevelTextboxes[i].text = listOfProfiles[i].currentLevel.ToString();
             }
+
+            for (int i = 1; i < listOfProfiles.Count; i++)
+            {
+                if (listOfProfiles[i].userName == listOfProfiles[i-1].userName)
+                {
+                    listOfProfilePrefabs[i].SetActive(false);
+                    listOfProfiles.RemoveAt(i);
+                }
+            }
         }
     }
 

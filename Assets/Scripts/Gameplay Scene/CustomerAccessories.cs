@@ -19,7 +19,7 @@ public class CustomerAccessories : MonoBehaviour
 
     public void RandomizeAccesories()
     {
-        Debug.Log("Randomizing customer accessories!");
+        //Debug.Log("Randomizing customer accessories!");
 
         bool accessorize = (Random.Range(0, 100) <= percentAny);
         int count = 0;
@@ -34,19 +34,19 @@ public class CustomerAccessories : MonoBehaviour
             {
                 if (Random.Range(0, 100) <= percentEach)
                 {
-                    Debug.Log("WEARING: " + child.name);
+                    //Debug.Log("WEARING: " + child.name);
                     child.gameObject.SetActive(true);
                     count++;
                 }
                 else
                 {
-                    Debug.Log("Not wearing " + child.name);
+                    //Debug.Log("Not wearing " + child.name);
                     child.gameObject.SetActive(false);
                 }
             }
             else
             {
-                Debug.Log("Skipping " + child.name);
+                //Debug.Log("Skipping " + child.name);
                 child.gameObject.SetActive(false);
             }
         }
