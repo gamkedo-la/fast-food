@@ -14,30 +14,42 @@ public class CustomerAccessories : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RandomizeAccesories();
+    }
+
+    public void RandomizeAccesories()
+    {
         Debug.Log("Randomizing customer accessories!");
 
-        bool accessorize = (Random.Range(0,100)<=percentAny);
+        bool accessorize = (Random.Range(0, 100) <= percentAny);
         int count = 0;
 
         // randomly leave a couple sprites visible
-        for(int i = 0; i < transform.childCount; i++) {
-        
-           Transform child = transform.GetChild(i);
+        for (int i = 0; i < transform.childCount; i++)
+        {
 
-            if (accessorize && count<maxAccessories) {
-                if (Random.Range(0,100)<=percentEach) {
-                    Debug.Log("WEARING: "+child.name);
+            Transform child = transform.GetChild(i);
+
+            if (accessorize && count < maxAccessories)
+            {
+                if (Random.Range(0, 100) <= percentEach)
+                {
+                    Debug.Log("WEARING: " + child.name);
                     child.gameObject.SetActive(true);
                     count++;
-                } else {
-                    Debug.Log("Not wearing "+child.name);
+                }
+                else
+                {
+                    Debug.Log("Not wearing " + child.name);
                     child.gameObject.SetActive(false);
                 }
-            } else {
-                Debug.Log("Skipping "+child.name);
+            }
+            else
+            {
+                Debug.Log("Skipping " + child.name);
                 child.gameObject.SetActive(false);
             }
-        }        
+        }
     }
 
 }

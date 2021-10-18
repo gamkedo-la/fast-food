@@ -11983,6 +11983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567e5f577ee6bda478e6a7404e698757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myAccessoriesPrefab: {fileID: 5318530424979658436}
   audioController: {fileID: 0}
   inputMap: {fileID: -944628639613478452, guid: e042cd7be0a1fd740a37538f4f50fabf, type: 3}
   myPatienceTimerSlider: {fileID: 4517263753470677207}

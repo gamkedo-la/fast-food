@@ -17,6 +17,8 @@ public enum CustomerStateEnumerations
 public class CustomerOrderingScript : MonoBehaviour
 {
     #region Fields
+    [SerializeField] private GameObject myAccessoriesPrefab;
+
     [SerializeField] private GameObject audioController;
 
     [SerializeField] private InputActionAsset inputMap;
@@ -238,6 +240,7 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        myAccessoriesPrefab.GetComponent<CustomerAccessories>().RandomizeAccesories();
         gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
         customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
         customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
