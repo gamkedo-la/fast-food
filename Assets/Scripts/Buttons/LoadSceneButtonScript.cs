@@ -21,6 +21,10 @@ public class LoadSceneButtonScript : ButtonScript
         //Play UI button sound
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
 
+        if (gameObject.name == "SkipToRestaurantButton" && GameManagerScript.currentLanguage == "")
+        {
+            GameManagerScript.currentLanguage = "English";
+        }
         //Play the correct music based on scene
         switch (mySceneToLoadEnumeration)
         {
