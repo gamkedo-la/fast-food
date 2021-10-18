@@ -8,24 +8,25 @@ public class SpriteFlipper : MonoBehaviour
     public float maxFrametime = 1.5f;
     public bool oddFramesBlinkFast = true;
     
-    [Header("Happy Sprites - used by default")]
+    [Header("When customer is happy")]
     public Sprite[] mySprites;
 
-    [Header("Worried Sprites - after waiting")]
-    public Sprite[] worriedSprites;
+    [Header("When waiting too long")]
+    public Sprite[] impatientSprites;
 
-    [Header("Angry Sprites - customer is impatient!")]
-    public Sprite[] angrySprites;
-    
     private SpriteRenderer flipMe;
     private int spriteIndex = 0;
+    private bool wasImpatientLastFrame = false;
+
+    private CustomerOrderingScript myOrderingScript;
     
     // Start is called before the first frame update
     void Start()
     {
         flipMe = gameObject.GetComponent<SpriteRenderer>();
+        myOrderingScript = gameObject.GetComponent<CustomerOrderingScript>();   
         spriteIndex = Random.Range(0,mySprites.Length-1);
-        StartCoroutine(flippingSprite());    
+        StartCoroutine(flippingSprite());  
     }
 
     IEnumerator flippingSprite() {
@@ -40,8 +41,21 @@ public class SpriteFlipper : MonoBehaviour
             
             spriteIndex++;
             //Debug.Log("Flipping sprite index: "+spriteIndex);
-            if (spriteIndex>mySprites.Length-1) spriteIndex = 0;
-            flipMe.sprite = mySprites[spriteIndex];
+
+            if (myOrderingScript.losingPatience) {
+                // IMPATIENT SPRITES
+                if (!wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
+                if (spriteIndex>impatientSprites.Length-1) spriteIndex = 0;
+                flipMe.sprite = impatientSprites[spriteIndex];
+                wasImpatientLastFrame = true;
+            } else {
+                // NORMAL HAPPY SPRITES
+                if (wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
+                if (spriteIndex>mySprites.Length-1) spriteIndex = 0;
+                flipMe.sprite = mySprites[spriteIndex];
+                wasImpatientLastFrame = false;
+            }
+
             
         }
     }
