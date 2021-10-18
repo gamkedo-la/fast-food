@@ -15,11 +15,17 @@ public class SaveButtonScript : ButtonScript
             newPlayerNameInputField.text = "You didn't enter a name";
             return;
         }
+        
         savedNameTextField.text = "New profile create for: " + newPlayerNameInputField.text;
         GameManagerScript.currentProfile = new ProfileDataScript(newPlayerNameInputField.text);
+        
         ProfileManagerScript.listOfProfiles.Add(GameManagerScript.currentProfile);
         for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
         {
+            if (ProfileManagerScript.listOfProfiles[i] == ProfileManagerScript.listOfProfiles[i - 1])
+            {
+                ProfileManagerScript.listOfProfiles.RemoveAt(i - 1);
+            }
             Debug.Log("ProfileManagerScript.listOfProfiles[i].userName: " + ProfileManagerScript.listOfProfiles[i].userName);
         }
         SaveSystem.SaveListOfProfilesData();
