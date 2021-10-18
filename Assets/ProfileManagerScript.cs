@@ -63,10 +63,8 @@ public class ProfileManagerScript : MonoBehaviour
     public void DeactivateProfiles()
     {
         listOfProfiles.Clear();
-        Debug.Log("inside DeactivateProfiles()");
         for (int i = 0; i < listOfProfilePrefabs.Count; i++)
         {
-            Debug.Log("inside deactivation for loop");
             listOfProfilePrefabs[i].SetActive(false);
         }
     }
