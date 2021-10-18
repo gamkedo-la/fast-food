@@ -7,11 +7,11 @@ public class ProfileDataScript
 {
     public string userName;
     public int currentLevel;
+    public string targetLanguage;
 
     public ProfileDataScript (string newUserName)
     {
         userName = newUserName;
         currentLevel = 1;
-        ProfileManagerScript.listOfProfiles.Add(this);
     }
 }

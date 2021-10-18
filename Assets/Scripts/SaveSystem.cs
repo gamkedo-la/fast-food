@@ -23,10 +23,7 @@ public static class SaveSystem
             FileStream stream = new FileStream(path, FileMode.Open);
 
             ProfileManagerScript.listOfProfiles = formatter.Deserialize(stream) as System.Collections.Generic.List<ProfileDataScript>;
-            //for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
-            //{
-            //    Debug.Log("ProfileManagerScript.listOfProfiles[i].username: " + ProfileManagerScript.listOfProfiles[i].userName);
-            //}
+            
             stream.Close();
         }
         else
