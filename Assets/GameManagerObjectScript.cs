@@ -16,9 +16,5 @@ public class GameManagerObjectScript : MonoBehaviour
         GameManagerScript.currentLevel++;
         GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
         SaveSystem.SaveListOfProfilesData();
-        //SaveSystem.SaveProfileData(GameManagerScript.currentProfile);
-        //Debug.Log("profile load check: " + SaveSystem.LoadProfileData(GameManagerScript.currentProfile).currentLevel);
     }
-
-    
 }
