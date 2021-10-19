@@ -671,8 +671,9 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSliderGameObject.SetActive(false);
         
         CheckForLevelCompletion();
+        CheckForReviewNotification();
 
-        
+
         ParticleSystem.MainModule psMain1 = particleSystem1.main;
         ParticleSystem.MainModule psMain2 = particleSystem2.main;
         psMain1.startSpeed = 1.0f;
@@ -692,6 +693,15 @@ public class CustomerOrderingScript : MonoBehaviour
         }
     }
 
+    private void CheckForReviewNotification()
+    {
+        if (GameManagerScript.totalSubmittedOrders >= GameManagerScript.minimumSubmittedOrdersToCompleteCurrentLevel &&
+            GameManagerScript.accuracy < GameManagerScript.minimumAccuracyToCompleteLevel)
+        {
+            EventManagerScript.suggestReviewToPlayerEvent.Invoke();
+        }
+    }
+
     private void HandleIncorrectOrderSubmission()
     {
         //prevent duplicate event calls
@@ -700,6 +710,7 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        CheckForReviewNotification();
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
         AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);
