@@ -60,4 +60,6 @@ public static class GameManagerScript
     public static bool levelStarterFirstTimeStarted = false;
 
     public static bool impatienceSoundIsPlaying = false;
+
+    public static bool shouldIntroduceNewWord = false;
 }

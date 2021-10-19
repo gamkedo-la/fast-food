@@ -42,11 +42,17 @@ public class StudyCard : MonoBehaviour
         }   
     }
 
-    //private void Start()
-    //{
-    //    Debug.Log("dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage]: " + dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage]);
-    //    dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].enabled = true;
-    //}
+    private void Start()
+    {
+        if (gameObject.name == "WordIntroductionStudyImage")
+        {
+            if (GameManagerScript.currentLevel == 2)
+            {
+                var wordObjectToLoad = Resources.Load<WordObject>("Tomatoe");
+                wordObject = wordObjectToLoad;
+            }
+        }
+    }
     public void PlayAudioClip()
     {
         AudioManagerScript.audioManagerScript.PlayOneShot(dictionaryOfAudioClips[GameManagerScript.currentLanguage]);
