@@ -15,7 +15,7 @@ public class GameManagerObjectScript : MonoBehaviour
     {
         GameManagerScript.currentLevel++;
         GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
-        GameManagerScript.shouldIntroduceNewWord = true;
+
         SaveSystem.SaveListOfProfilesData();
     }
 }

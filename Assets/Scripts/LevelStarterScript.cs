@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelStarterScript : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] GameObject chickenDoner;
 
     [SerializeField] GameObject statsCanvas;
-    [SerializeField] Text statsCanvasLoadLevelButtonText;
+    [SerializeField] TMP_Text statsCanvasLoadLevelButtonText;
     [SerializeField] Text feedbackMessageTextbox;
 
     // Start is called before the first frame update

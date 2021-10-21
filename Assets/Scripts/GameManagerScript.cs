@@ -61,5 +61,10 @@ public static class GameManagerScript
 
     public static bool impatienceSoundIsPlaying = false;
 
-    public static bool shouldIntroduceNewWord = false;
+    public static bool shouldIntroduceNewLevel = false;
+    public static bool hasIntroducedLevel1 = false;
+    public static bool hasIntroducedLevel2 = false;
+    public static bool hasIntroducedLevel3 = false;
+    public static bool hasIntroducedLevel4 = false;
+
 }

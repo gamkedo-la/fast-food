@@ -34,6 +34,10 @@ public class ToggleOnButtonScript : ButtonScript
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
             return;
         }
+        else if (gameObject.name == "OKToggleButton")
+        {
+            Time.timeScale = 1;
+        }
         ToggleOn();
         ToggleOff();
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
