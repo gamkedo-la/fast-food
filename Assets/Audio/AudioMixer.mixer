@@ -34,26 +34,6 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!244 &-8081587957701201975
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 48fd36d71a33742ae8e93c8ef3a8de77
-  m_EffectName: Normalize
-  m_MixLevel: f55d2179ac8fc41ada5eb30bdc065ee0
-  m_Parameters:
-  - m_ParameterName: Fade in time
-    m_GUID: f6fdf9e17d65e4046b6ef386e6af1fd5
-  - m_ParameterName: Lowest volume
-    m_GUID: 42586955e459948fab0b673005d2fb76
-  - m_ParameterName: Maximum amp
-    m_GUID: 92b57b49b96c74ce9953e7625b73abc3
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
 --- !u!243 &-7509573585105485200
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -194,7 +174,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  - {fileID: -8081587957701201975}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -224,13 +203,14 @@ AudioMixerSnapshotController:
   m_SnapshotID: 4dfa1c2cfbf4540b7ba544ccc164fff4
   m_FloatValues:
     32587dd0aa3224d91b573dbcd019b2ba: 0.01
-    f6fdf9e17d65e4046b6ef386e6af1fd5: 2000
+    f6fdf9e17d65e4046b6ef386e6af1fd5: 1300
     af6662e22a2cc407b9d68cef33dded11: -20
     dbcca19389d0941c3bcc456f348c9cee: 1
     2b4096d30edee4ba1999d000a241c914: -5.7224774
     6805da740d875415fbe31696ea652ef0: -6
     42586955e459948fab0b673005d2fb76: 0.012
     bf2098d541e1c4fec85291c69a922884: 0.01
+    ee858f37622cc43fa89d57957f0e91aa: 0
     cd6684571bdd542f0bd00f2728676736: 150
     fa59063992e8f47e2be464ca28dc79ec: 5
     92b57b49b96c74ce9953e7625b73abc3: 5
@@ -243,6 +223,7 @@ AudioMixerSnapshotController:
     99d4aa1ebc6ab48b2a534e0775769aea: 0.01
     0912012efa4154db1b5293bedb6b3e15: 0.01
     7ab6770fddbb34e4b8dd700e609c1090: 5
+    0b57d1cf6c3874031af9a58a6b755fd9: 6.26
   m_TransitionOverrides: {}
 --- !u!244 &272454712837645157
 AudioMixerEffectController:
