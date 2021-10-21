@@ -271,6 +271,13 @@ public class AudioController : MonoBehaviour
         foreach (DictionaryEntry _entry in m_JobTable) {
             GameSoundEnum _GameSoundEnum = (GameSoundEnum)_entry.Key;
             AudioTrack _audioTrackInUse = GetAudioTrack(_GameSoundEnum, "Get Audio Track In Use");
+
+            //TEMP WORKAROUND: fix me
+            if (_audioTrackInUse == null || _audioTrackNeeded == null)
+            {
+                return;
+            }
+
             if (_audioTrackInUse.source == _audioTrackNeeded.source) {
                 _conflictAudio = _GameSoundEnum;
                 break;
