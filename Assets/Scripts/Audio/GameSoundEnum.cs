@@ -11,7 +11,7 @@ public enum GameSoundEnum{
     //UI
     UI_Button,
 
-    //VO
+    //VO Orders English
     English_Order_Hamburger,
     English_Order_Hamburger_Lettuce,
     English_Order_Hamburger_Tomato,
@@ -30,6 +30,7 @@ public enum GameSoundEnum{
     English_Order_Chicken_Doner_Tomato_Onion,
     English_Order_Chicken_Doner_Lettuce_Tomato_Onion,
 
+    //VO Albanian Orders
     Albanian_Order_Hamburger,
     Albanian_Order_Hamburger_Lettuce,
     Albanian_Order_Hamburger_Tomato,
@@ -48,11 +49,24 @@ public enum GameSoundEnum{
     Albanian_Order_Chicken_Doner_Tomato_Onion,
     Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion,
 
+    //VO Study Cards English
+    English_Hamburger,
+    English_Chicken_Doner,
+    English_Lettuce,
+    English_Tomato,
+    English_Onion,
+
+    //VO Albanian Study Cards
+    Albanian_Hamburger,
+    Albanian_Chicken_Doner,
+    Albanian_Lettuce,
+    Albanian_Tomato,
+    Albanian_Onion,
+
     //SFX
     SFX_Customer_Impatience,
     SFX_Customer_Enter,
     SFX_Correct_Order,
     SFX_Incorrect_Order
-
 }
 

@@ -22,6 +22,9 @@ public class StudyCard : MonoBehaviour
     [SerializeField]
     Image wordImage;
 
+    private string currentTextString;
+    private GameSoundEnum myGameSoundEnum;
+
     private void OnValidate()
     {
         if (wordObject != null)
@@ -44,17 +47,64 @@ public class StudyCard : MonoBehaviour
 
     private void Start()
     {
-        if (gameObject.name == "WordIntroductionStudyImage")
-        {
-            if (GameManagerScript.currentLevel == 2)
-            {
-                var wordObjectToLoad = Resources.Load<WordObject>("Tomatoe");
-                wordObject = wordObjectToLoad;
-            }
-        }
+        InitializeMyGameSoundEnum();
     }
     public void PlayAudioClip()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(dictionaryOfAudioClips[GameManagerScript.currentLanguage]);
+        AudioController.instance.PlayAudio(myGameSoundEnum);
+    }
+
+    private void InitializeMyGameSoundEnum()
+    {
+        
+        switch (GameManagerScript.currentLanguage)
+        {
+            case "English":
+                currentTextString = englishWord.text;
+                break;
+
+            case "Albanian":
+                currentTextString = albanianWord.text;
+                break;
+        }
+
+        switch (currentTextString)
+        {
+            case "Hamburger":
+                if (GameManagerScript.currentLanguage == "English")
+                {
+                    myGameSoundEnum = GameSoundEnum.English_Hamburger;
+                }
+                else if (GameManagerScript.currentLanguage == "Albanian")
+                {
+                    myGameSoundEnum = GameSoundEnum.Albanian_Hamburger;
+                }
+                break;
+            case "Chicken Doner":
+                myGameSoundEnum = GameSoundEnum.English_Chicken_Doner;
+                break;
+            case "Doner Pule":
+                myGameSoundEnum = GameSoundEnum.Albanian_Chicken_Doner;
+                break;
+            case "Lettuce":
+                myGameSoundEnum = GameSoundEnum.English_Lettuce;
+                break;
+            case "Marule":
+                myGameSoundEnum = GameSoundEnum.Albanian_Lettuce;
+                break;
+            case "Tomato":
+                myGameSoundEnum = GameSoundEnum.English_Tomato;
+                break;
+            case "Domate":
+                myGameSoundEnum = GameSoundEnum.Albanian_Tomato;
+                break;
+            case "Onion":
+                myGameSoundEnum = GameSoundEnum.English_Onion;
+                break;
+            case "Qepe":
+                myGameSoundEnum = GameSoundEnum.Albanian_Onion;
+                break;
+        }
+
     }
 }
