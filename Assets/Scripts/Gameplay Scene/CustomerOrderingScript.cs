@@ -83,6 +83,10 @@ public class CustomerOrderingScript : MonoBehaviour
     private ParticleSystem.MinMaxCurve previousFramesStartLifetime = new ParticleSystem.MinMaxCurve();
 
     [SerializeField] GameObject customerManagerObject;
+
+    [SerializeField] GameObject myThumbsUpImage;
+    [SerializeField] GameObject myThumbsDownImage;
+
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -682,6 +686,30 @@ public class CustomerOrderingScript : MonoBehaviour
         psMain2.startLifetime = 0.75f;
         particleSystem1.gameObject.SetActive(false);
         particleSystem2.gameObject.SetActive(false);
+
+        ShowThumbsUp();
+    }
+
+    private void ShowThumbsUp()
+    {
+        myThumbsUpImage.SetActive(true);
+        StartCoroutine(TurnOffThumbsUp());
+    }
+    IEnumerator TurnOffThumbsUp()
+    {
+        yield return new WaitForSeconds(1);
+        myThumbsUpImage.SetActive(false);
+    }
+
+    private void ShowThumbsDown()
+    {
+        myThumbsDownImage.SetActive(true);
+        StartCoroutine(TurnOffThumbsDown());
+    }
+    IEnumerator TurnOffThumbsDown()
+    {
+        yield return new WaitForSeconds(1);
+        myThumbsDownImage.SetActive(false);
     }
 
     private void CheckForLevelCompletion()
@@ -715,6 +743,7 @@ public class CustomerOrderingScript : MonoBehaviour
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
         AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
+        ShowThumbsDown();
     }
     
     private void HandleLostCustomerEvent()
