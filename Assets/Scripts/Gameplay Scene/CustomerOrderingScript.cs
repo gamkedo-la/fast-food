@@ -80,7 +80,6 @@ public class CustomerOrderingScript : MonoBehaviour
     public bool losingPatience = false;
     [SerializeField] private ParticleSystem particleSystem1;
     [SerializeField] private ParticleSystem particleSystem2;
-    private ParticleSystem.MinMaxCurve previousFramesStartLifetime = new ParticleSystem.MinMaxCurve();
 
     [SerializeField] GameObject customerManagerObject;
 

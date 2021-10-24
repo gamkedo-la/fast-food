@@ -38,8 +38,7 @@ public class StudyCard : MonoBehaviour
             dictionaryOfAudioClips.Add("English", englishAudio);
             albanianAudio = wordObject.albanianAudio;
             dictionaryOfAudioClips.Add("Albanian", albanianAudio);
-            Debug.Log("dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage]: " + dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage]);
-            dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+            //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             wordImage.sprite = wordObject.icon;
         }   
