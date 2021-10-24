@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class LevelProgressBarScript : MonoBehaviour
 {
     [SerializeField] Image levelProgressBarMaskImage;
-    private float currentProgressAmount = 0.0f;
-    private float numberOfBurgersSubmitted = 0.0f;
 
     // Start is called before the first frame update
     void Start()
