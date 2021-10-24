@@ -27,8 +27,6 @@ public abstract class BaseFoodScript : MonoBehaviour
     [SerializeField] private GameObject trayAndPlateLocation;
 
     private Camera mainCamera;
-    private CircleCollider2D baseFoodCircleCollider;
-    private CapsuleCollider2D baseFoodCapsuleCollider;
 
     private Vector2 currentTouchPositionVector2InScreenPixels;
     private Vector3 currentTouchPositionVector3InWorldUnits;
@@ -64,41 +62,20 @@ public abstract class BaseFoodScript : MonoBehaviour
     {
         mainCamera = Camera.main;
 
-        if (gameObject.name == "BurgerScriptablePrefab")
-        {
-            baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
-        }
-        else if (gameObject.name == "ChickenDonerScriptablePrefab")
-        {
-            baseFoodCapsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
-        }
-
         startingPositionVector2 = gameObject.transform.position;
 
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
         //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, ResetBaseFood);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBaseFoodEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsChickenDonerEvent, HandlePlayerSelectsBaseFoodEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBaseFoodEvent, HandlePlayerSelectsBaseFoodEvent);
     }
 
     //Android
-    private void Update()
+    public virtual void Update()
     {
-        currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
-
-        currentTouchPositionVector3InWorldUnits = mainCamera.ScreenToWorldPoint(currentTouchPositionVector2InScreenPixels);
-
-        //prevent the z coordinate from making the chef disappear
-        currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
-
-        if (gameObject.name == "BurgerScriptablePrefab" && baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
-        {
-            HandlePlayerSelectsBaseFoodEvent();
-        }
-        else if (gameObject.name == "ChickenDonerScriptablePrefab" && baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
-        {
-            HandlePlayerSelectsBaseFoodEvent();
-        }
     }
 
     //Itch
@@ -116,18 +93,8 @@ public abstract class BaseFoodScript : MonoBehaviour
             //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
         }
     }
-    private void MoveToTray()
+    public virtual void MoveToTray()
     {
-        if (gameObject.name == "ChickenDonerScriptablePrefab")
-        {
-            gameObject.transform.position = trayAndPlateLocation.transform.position;
-        }
-        else if (gameObject.name == "BurgerScriptablePrefab")
-        {
-            float burgerYPositionWithOffset = trayAndPlateLocation.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
-            //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-            gameObject.transform.position = new Vector3(trayAndPlateLocation.transform.position.x, burgerYPositionWithOffset, 0);
-        }
     }
     public virtual void ResetBaseFood()
     {

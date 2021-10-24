@@ -1,35 +1,112 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class ChickenDonerBaseFoodScript : BaseFoodScript
+public class ChickenDonerBaseFoodScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public override void Start()
+    [SerializeField] private BaseFoodScriptableObject baseFoodScriptableObject;
+
+    [SerializeField] private string englishWord;
+
+    [SerializeField] GameObject trayAndPlateLocation;
+
+    private Vector2 currentTouchPositionVector2InScreenPixels;
+    private Vector3 currentTouchPositionVector3InWorldUnits;
+
+    private Camera mainCamera;
+    private Vector2 startingPositionVector2;
+
+    private CapsuleCollider2D baseFoodCapsuleCollider;
+
+    [SerializeField] private Sprite baseFoodImage;
+    private SpriteRenderer baseFoodSpriteRenderer;
+    [SerializeField] private Sprite baseFoodImage2;
+    private SpriteRenderer baseFoodSpriteRenderer2;
+    [SerializeField] private Sprite topping1Image;
+    private SpriteRenderer topping1SpriteRenderer;
+    [SerializeField] private Sprite topping2Image;
+    private SpriteRenderer topping2SpriteRenderer;
+    [SerializeField] private Sprite topping3Image;
+    private SpriteRenderer topping3SpriteRenderer;
+
+    private void OnValidate()
     {
-        base.Start();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsChickenDonerEvent, HandlePlayerSelectsBaseFoodEvent);
+        if (baseFoodScriptableObject != null)
+        {
+            englishWord = baseFoodScriptableObject.englishWord;
+
+            baseFoodSpriteRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            baseFoodSpriteRenderer2 = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
+            topping1SpriteRenderer = gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
+            topping2SpriteRenderer = gameObject.transform.GetChild(3).GetComponent<SpriteRenderer>();
+            topping3SpriteRenderer = gameObject.transform.GetChild(4).GetComponent<SpriteRenderer>();
+
+            baseFoodImage = baseFoodScriptableObject.baseFoodImage;
+            baseFoodImage2 = baseFoodScriptableObject.baseFoodImage2;
+            topping1Image = baseFoodScriptableObject.topping1Image;
+            topping2Image = baseFoodScriptableObject.topping2Image;
+            topping3Image = baseFoodScriptableObject.topping3Image;
+
+            baseFoodSpriteRenderer.sprite = baseFoodImage;
+            topping1SpriteRenderer.sprite = topping1Image;
+            topping2SpriteRenderer.sprite = topping2Image;
+            topping3SpriteRenderer.sprite = topping3Image;
+        }
+    }
+    // Start is called before the first frame update
+    private void Start()
+    {
+        startingPositionVector2 = gameObject.transform.position;
+        gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
+        mainCamera = Camera.main;
+        baseFoodCapsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsChickenDonerEvent, HandlePlayerSelectsChickenDonerEvent);
     }
 
-    public override void HandlePlayerSelectsBaseFoodEvent()
+    private void Update()
     {
-        base.HandlePlayerSelectsBaseFoodEvent();
+        currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
 
-        if (gameObject.name == "ChickenDonerScriptablePrefab")
+        currentTouchPositionVector3InWorldUnits = mainCamera.ScreenToWorldPoint(currentTouchPositionVector2InScreenPixels);
+
+        //prevent the z coordinate from making the chef disappear
+        currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
+
+        if (baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            GameManagerScript.chefHasChickenDoner = true;
+            Debug.Log("selected object: " + gameObject.name);
+            EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
         }
     }
 
-    public override void ResetBaseFood()
+    private void HandlePlayerSelectsChickenDonerEvent()
     {
-        base.ResetBaseFood();
-        if (gameObject.name == "ChickenDonerScriptablePrefab")
-        {
-            GameManagerScript.chefHasChickenDoner = false;
-            GameManagerScript.chickenDonerHasLettuce = false;
-            GameManagerScript.chickenDonerHasTomatoe = false;
-            GameManagerScript.chickenDonerHasOnion = false;
-        }   
+        MoveToTray();
+        GameManagerScript.chefHasBaseFood = true;
+
+        GameManagerScript.chefHasChickenDoner = true;
+    }
+
+    public void ResetFood()
+    {
+        gameObject.transform.position = startingPositionVector2;
+
+        GameManagerScript.chefHasChickenDoner = false;
+        GameManagerScript.chickenDonerHasLettuce = false;
+        GameManagerScript.chickenDonerHasTomatoe = false;
+        GameManagerScript.chickenDonerHasOnion = false;
+
+        baseFoodSpriteRenderer.enabled = false;
+        topping1SpriteRenderer.enabled = false;
+        topping2SpriteRenderer.enabled = false;
+        topping3SpriteRenderer.enabled = false;
+
+        GameManagerScript.chefHasBaseFood = false;
+    }
+
+    private void MoveToTray()
+    {
+        gameObject.transform.position = trayAndPlateLocation.transform.position;
     }
 }

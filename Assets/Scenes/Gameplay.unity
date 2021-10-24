@@ -410,12 +410,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseFoodScriptableObject: {fileID: 11400000, guid: 826447ea2fa0d0c4a8bc08a9a0671afb, type: 2}
   englishWord: hamburger
+  trayAndPlateLocation: {fileID: 190362878}
   baseFoodImage: {fileID: 21300000, guid: 4ab97a7fd0ebee74097c3cd036859f32, type: 3}
   baseFoodImage2: {fileID: 21300000, guid: cfb4407d03ffbc04d85214ef9bd70152, type: 3}
   topping1Image: {fileID: 21300000, guid: 90075dedb8035744f95d91a4c67d0c25, type: 3}
   topping2Image: {fileID: 21300000, guid: 98237434e40f80547a685216c02d78c5, type: 3}
   topping3Image: {fileID: 21300000, guid: 4d199c67bf8482646b796913ebcb3740, type: 3}
-  trayAndPlateLocation: {fileID: 190362878}
 --- !u!1 &13956791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1424,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1846346931}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: burgerScriptablePrefab
+      value: 
+      objectReference: {fileID: 5658052}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -1439,6 +1443,10 @@ PrefabInstance:
       propertyPath: customerOrderingLocation3
       value: 
       objectReference: {fileID: 961344801}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: chickenDonerScriptablePrefab
+      value: 
+      objectReference: {fileID: 2101295225}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -4396,6 +4404,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1846346931}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: burgerScriptablePrefab
+      value: 
+      objectReference: {fileID: 5658052}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -4411,6 +4423,10 @@ PrefabInstance:
       propertyPath: customerOrderingLocation3
       value: 
       objectReference: {fileID: 961344801}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: chickenDonerScriptablePrefab
+      value: 
+      objectReference: {fileID: 2101295225}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -5666,12 +5682,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseFoodScriptableObject: {fileID: 11400000, guid: 09aab36548301a047a2f47b8d9690814, type: 2}
   englishWord: ChickenDoner
+  trayAndPlateLocation: {fileID: 190362878}
   baseFoodImage: {fileID: 21300000, guid: cb6b36d50256ae949926b194f86bd0a2, type: 3}
   baseFoodImage2: {fileID: 21300000, guid: c7c930deafc7ce3489dc1c231f967436, type: 3}
   topping1Image: {fileID: 21300000, guid: f55d4fac27a06d542944fb00420d2a86, type: 3}
   topping2Image: {fileID: 21300000, guid: d3e92da70a6031a46953db71720e4957, type: 3}
   topping3Image: {fileID: 21300000, guid: ed95c4692f422a248b6c4948df3cbe71, type: 3}
-  trayAndPlateLocation: {fileID: 190362878}
 --- !u!212 &2101295227 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5897671983130274251, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
@@ -7509,6 +7525,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1846346931}
     - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: burgerScriptablePrefab
+      value: 
+      objectReference: {fileID: 5658052}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: speedBonusPointsTextbox
       value: 
       objectReference: {fileID: 1730095125659171538}
@@ -7524,6 +7544,10 @@ PrefabInstance:
       propertyPath: customerOrderingLocation3
       value: 
       objectReference: {fileID: 961344801}
+    - target: {fileID: 4517263754366804171, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
+      propertyPath: chickenDonerScriptablePrefab
+      value: 
+      objectReference: {fileID: 2101295225}
     - target: {fileID: 4517263754366804174, guid: 1b77a7a9e58da7841bdc096c384cc5cd, type: 3}
       propertyPath: m_RootOrder
       value: 15

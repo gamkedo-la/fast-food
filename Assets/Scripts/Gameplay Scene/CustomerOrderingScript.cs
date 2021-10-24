@@ -86,6 +86,9 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject myThumbsUpImage;
     [SerializeField] GameObject myThumbsDownImage;
 
+    [SerializeField] GameObject burgerScriptablePrefab;
+    [SerializeField] GameObject chickenDonerScriptablePrefab;
+
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -121,6 +124,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.correctOrderSubmissionEvent, HandleCorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
+
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerEntersRestaurantEvent, HandleCustomerEntersRestaurantEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
 
@@ -128,6 +133,12 @@ public class CustomerOrderingScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.lostCustomerEvent, HandleLostCustomerEvent);
     }
 
+    private void HandleAnyOrderSubmissionEvent()
+    {
+        Debug.Log("inside handle any order submission event");
+        burgerScriptablePrefab.GetComponent<HamburgerBaseFoodScript>().ResetFood();
+        chickenDonerScriptablePrefab.GetComponent<ChickenDonerBaseFoodScript>().ResetFood();
+    }
     private void HandleLosingPatienceEvent()
     {
         if (!losingPatience)
