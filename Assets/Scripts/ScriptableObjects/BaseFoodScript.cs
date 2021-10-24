@@ -118,7 +118,16 @@ public abstract class BaseFoodScript : MonoBehaviour
     }
     private void MoveToTray()
     {
-        gameObject.transform.position = trayAndPlateLocation.transform.position;
+        if (gameObject.name == "ChickenDonerScriptablePrefab")
+        {
+            gameObject.transform.position = trayAndPlateLocation.transform.position;
+        }
+        else if (gameObject.name == "BurgerScriptablePrefab")
+        {
+            float burgerYPositionWithOffset = trayAndPlateLocation.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
+            //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+            gameObject.transform.position = new Vector3(trayAndPlateLocation.transform.position.x, burgerYPositionWithOffset, 0);
+        }
     }
     public virtual void ResetBaseFood()
     {
