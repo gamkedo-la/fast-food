@@ -260,15 +260,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Radius
-      value: 1.1284348
+      value: 1.4125047
       objectReference: {fileID: 0}
     - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Offset.x
-      value: -0.14703329
+      value: -0.10421189
       objectReference: {fileID: 0}
     - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.70384693
+      value: -0.9580147
       objectReference: {fileID: 0}
     - target: {fileID: 4929245247744725731, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Size.x
@@ -732,6 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burgerScriptablePrefab: {fileID: 5658052}
+  chickenDonerScriptablePrefab: {fileID: 2101295225}
 --- !u!61 &190362882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5545,6 +5546,18 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Radius
+      value: 0.7370639
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.046096314
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.046573788
+      objectReference: {fileID: 0}
     - target: {fileID: 4929245247744725731, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
       propertyPath: m_Size.x
       value: 1.01
@@ -5627,6 +5640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7419506105773645614, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
+    - {fileID: 4048185847155898390, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
 --- !u!4 &2101295224 stripped
 Transform:
@@ -5673,6 +5687,22 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1542710653966626171, guid: ffb3430ec39bfef4a871f4c6315d54e1, type: 3}
   m_PrefabInstance: {fileID: 2101295223}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &2101295230
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101295225}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.006585115, y: -0.018628556}
+  m_Size: {x: 0.85559547, y: 2.1922889}
+  m_Direction: 0
 --- !u!1001 &2134906073
 PrefabInstance:
   m_ObjectHideFlags: 0

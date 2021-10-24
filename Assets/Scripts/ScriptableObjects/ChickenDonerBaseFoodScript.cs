@@ -15,15 +15,21 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
     {
         base.HandlePlayerSelectsBaseFoodEvent();
 
-        GameManagerScript.chefHasChickenDoner = true;
+        if (gameObject.name == "ChickenDonerScriptablePrefab")
+        {
+            GameManagerScript.chefHasChickenDoner = true;
+        }
     }
 
     public override void ResetBaseFood()
     {
         base.ResetBaseFood();
-        GameManagerScript.chefHasChickenDoner = false;
-        GameManagerScript.chickenDonerHasLettuce = false;
-        GameManagerScript.chickenDonerHasTomatoe = false;
-        GameManagerScript.chickenDonerHasOnion = false;
+        if (gameObject.name == "ChickenDonerScriptablePrefab")
+        {
+            GameManagerScript.chefHasChickenDoner = false;
+            GameManagerScript.chickenDonerHasLettuce = false;
+            GameManagerScript.chickenDonerHasTomatoe = false;
+            GameManagerScript.chickenDonerHasOnion = false;
+        }   
     }
 }

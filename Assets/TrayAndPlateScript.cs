@@ -15,6 +15,7 @@ public class TrayAndPlateScript : MonoBehaviour
     private Vector2 startingPositionVector2;
 
     [SerializeField] GameObject burgerScriptablePrefab;
+    [SerializeField] GameObject chickenDonerScriptablePrefab;
     
 
     // Start is called before the first frame update
@@ -41,12 +42,18 @@ public class TrayAndPlateScript : MonoBehaviour
         if (trayAndPlateBoxCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
             gameObject.transform.position = currentTouchPositionVector3InWorldUnits;
-        }
-        if (GameManagerScript.chefHasBurger)
-        {
-            float burgerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
-            //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-            burgerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, burgerYPositionWithOffset, 0);
+
+            if (GameManagerScript.chefHasBurger)
+            {
+                float burgerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
+                //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+                burgerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, burgerYPositionWithOffset, 0);
+            }
+            else if (GameManagerScript.chefHasChickenDoner)
+            {
+                float chickenDonerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.chickenDonerBeingHeldYOffset;
+                chickenDonerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, chickenDonerYPositionWithOffset, 0);
+            }
         }
     }
 

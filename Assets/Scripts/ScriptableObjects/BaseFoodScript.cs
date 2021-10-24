@@ -28,6 +28,7 @@ public abstract class BaseFoodScript : MonoBehaviour
 
     private Camera mainCamera;
     private CircleCollider2D baseFoodCircleCollider;
+    private CapsuleCollider2D baseFoodCapsuleCollider;
 
     private Vector2 currentTouchPositionVector2InScreenPixels;
     private Vector3 currentTouchPositionVector3InWorldUnits;
@@ -62,7 +63,15 @@ public abstract class BaseFoodScript : MonoBehaviour
     public virtual void Start()
     {
         mainCamera = Camera.main;
-        baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+
+        if (gameObject.name == "BurgerScriptablePrefab")
+        {
+            baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+        }
+        else if (gameObject.name == "ChickenDonerScriptablePrefab")
+        {
+            baseFoodCapsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
+        }
 
         startingPositionVector2 = gameObject.transform.position;
 
@@ -82,7 +91,11 @@ public abstract class BaseFoodScript : MonoBehaviour
         //prevent the z coordinate from making the chef disappear
         currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
 
-        if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
+        if (gameObject.name == "BurgerScriptablePrefab" && baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
+        {
+            HandlePlayerSelectsBaseFoodEvent();
+        }
+        else if (gameObject.name == "ChickenDonerScriptablePrefab" && baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
             HandlePlayerSelectsBaseFoodEvent();
         }
