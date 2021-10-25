@@ -10,6 +10,8 @@ public class CustomerAccessories : MonoBehaviour
     public int percentEach = 5;
     [Range(0, 10)]
     public int maxAccessories = 2;
+
+    public SpriteRenderer RainbowShirt; 
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,12 @@ public class CustomerAccessories : MonoBehaviour
     public void RandomizeAccesories()
     {
         //Debug.Log("Randomizing customer accessories!");
+
+        // tint the rainbow shirt a random colour!
+        if (RainbowShirt) {
+            //Debug.Log("Randomizing shirt color!");
+            RainbowShirt.color = Random.ColorHSV();
+        }
 
         bool accessorize = (Random.Range(0, 100) <= percentAny);
         int count = 0;

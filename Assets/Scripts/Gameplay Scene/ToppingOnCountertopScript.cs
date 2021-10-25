@@ -24,6 +24,8 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
     //Android
     private void Update()
     {
+        if (Touchscreen.current == null) return; // avoid errors when testing with a mouse
+        
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
 
         currentTouchPositionVector3InWorldUnits = mainCamera.ScreenToWorldPoint(currentTouchPositionVector2InScreenPixels);
