@@ -33,7 +33,7 @@ public class CustomerManagerScript : MonoBehaviour
     {
         for (int i = 0; i < listOfCustomers.Count; i++)
         {
-            if (listOfCustomers[i].GetComponent<CustomerOrderingScript>().losingPatience)
+            if (listOfCustomers[i].GetComponent<CustomerScript>().losingPatience)
             {
                 return true;
             }

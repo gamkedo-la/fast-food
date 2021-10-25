@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class HamburgerBaseFoodScript : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class HamburgerBaseFoodScript : MonoBehaviour
     [SerializeField] private Sprite topping3Image;
     private SpriteRenderer topping3SpriteRenderer;
 
+    PlayerPicksUpHamburgerEvent playerPicksUpHamgurgerEvent = new PlayerPicksUpHamburgerEvent();
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -37,7 +40,14 @@ public class HamburgerBaseFoodScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
         mainCamera = Camera.main;
         baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBurgerEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBurgerEvent);
+        EventManagerScript2.AddPlayerPicksUpHamburgerEventInvoker(this);
+        EventManagerScript2.AddPlayerPicksUpHamburgerEventHandler(HandlePlayerSelectsBurgerEvent);
+    }
+
+    public void AddPlayerPicksUpHamburgerEventHandler(UnityAction handler)
+    {
+        playerPicksUpHamgurgerEvent.AddListener(handler);
     }
 
     private void OnValidate()
@@ -77,13 +87,15 @@ public class HamburgerBaseFoodScript : MonoBehaviour
         if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
             Debug.Log("selected object: " + gameObject.name);
-            EventManagerScript.playerSelectsBurgerEvent.Invoke();
+            playerPicksUpHamgurgerEvent.Invoke();
+            //EventManagerScript.playerSelectsBurgerEvent.Invoke();
         }
     }
 
     private void HandlePlayerSelectsBurgerEvent()
     {
         MoveToTray();
+        Debug.Log("test");
         GameManagerScript.chefHasBaseFood = true;
         GameManagerScript.chefHasBurger = true;
     }

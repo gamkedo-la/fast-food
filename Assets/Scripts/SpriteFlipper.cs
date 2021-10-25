@@ -18,13 +18,13 @@ public class SpriteFlipper : MonoBehaviour
     private int spriteIndex = 0;
     private bool wasImpatientLastFrame = false;
 
-    private CustomerOrderingScript myOrderingScript;
+    private CustomerScript myOrderingScript;
     
     // Start is called before the first frame update
     void Start()
     {
         flipMe = gameObject.GetComponent<SpriteRenderer>();
-        myOrderingScript = gameObject.GetComponent<CustomerOrderingScript>();   
+        myOrderingScript = gameObject.GetComponent<CustomerScript>();   
         spriteIndex = Random.Range(0,mySprites.Length-1);
         StartCoroutine(flippingSprite());  
     }

@@ -14,7 +14,7 @@ public enum CustomerStateEnumerations
     LeavingRestaurant,
     ExitingRestaurant
 }
-public class CustomerOrderingScript : MonoBehaviour
+public class CustomerScript : MonoBehaviour
 {
     #region Fields
     [SerializeField] private GameObject myAccessoriesPrefab;

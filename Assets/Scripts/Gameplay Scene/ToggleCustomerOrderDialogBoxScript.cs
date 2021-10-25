@@ -28,7 +28,7 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
     {
         //AudioManagerScript.audioManagerScript.PlayOneShot(customer.GetComponent<CustomerOrderingScript>().myCurrentOrdersAudioClip);
         AudioController.instance.PlayAudio(
-            AudioController.instance.ConvertCustomerOrderStringToGameSoundEnum(customer.GetComponent<CustomerOrderingScript>().currentCustomerDialogueString) );
+            AudioController.instance.ConvertCustomerOrderStringToGameSoundEnum(customer.GetComponent<CustomerScript>().currentCustomerDialogueString) );
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(customer.GetComponent<CustomerOrderingScript>().myCurrentOrdersAudioClip);
     }
 
