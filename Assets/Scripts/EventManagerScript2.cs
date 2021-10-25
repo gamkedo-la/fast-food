@@ -9,49 +9,55 @@ using UnityEngine.Events;
 public static class EventManagerScript2
 {
     #region Fields
-    public static HamburgerBaseFoodScript playerPicksUpHamburgerEventInvokerField;
-    public static UnityAction playerPicksUpHamburgerEventHandlerField;
+    public static List<HamburgerBaseFoodScript> listOfPlayerPicksUpHamburgerEventInvokerFields = new List<HamburgerBaseFoodScript>();
+    public static List<UnityAction> listOfPlayerPicksUpHamburgerEventHandlerFields = new List<UnityAction>();
 
-    public static FullHeadOfLettuceScript playerPicksUpLettuceEventInvokerField;
-    public static UnityAction playerPicksUpLettuceEventHandlerField;
+    public static List<FullHeadOfLettuceScript> listOfPlayerPicksUpLettuceEventInvokerFields = new List<FullHeadOfLettuceScript>();
+    public static List<UnityAction> listOfPlayerPicksUpLettuceEventHandlerFields = new List<UnityAction>();
     #endregion
 
     #region Methods
+
+    #region Pick up hamburger event
     public static void AddPlayerPicksUpHamburgerEventInvoker(HamburgerBaseFoodScript playerPicksUpHamburgerEventInvokerArgument)
     {
-        playerPicksUpHamburgerEventInvokerField = playerPicksUpHamburgerEventInvokerArgument;
-        if (playerPicksUpHamburgerEventHandlerField != null)
+        listOfPlayerPicksUpHamburgerEventInvokerFields.Add(playerPicksUpHamburgerEventInvokerArgument);
+        foreach (UnityAction handler in listOfPlayerPicksUpHamburgerEventHandlerFields)
         {
-            playerPicksUpHamburgerEventInvokerField.AddPlayerPicksUpHamburgerEventHandler(playerPicksUpHamburgerEventHandlerField);
+            playerPicksUpHamburgerEventInvokerArgument.AddPlayerPicksUpHamburgerEventHandler(handler);
         }
     }
 
     public static void AddPlayerPicksUpHamburgerEventHandler(UnityAction eventHandlerArgument)
     {
-        playerPicksUpHamburgerEventHandlerField = eventHandlerArgument;
-        if (playerPicksUpHamburgerEventInvokerField != null)
+        listOfPlayerPicksUpHamburgerEventHandlerFields.Add(eventHandlerArgument);
+        foreach (HamburgerBaseFoodScript invoker in listOfPlayerPicksUpHamburgerEventInvokerFields)
         {
-            playerPicksUpHamburgerEventInvokerField.AddPlayerPicksUpHamburgerEventHandler(playerPicksUpHamburgerEventHandlerField);
+            invoker.AddPlayerPicksUpHamburgerEventHandler(eventHandlerArgument);
         }
     }
+    #endregion
 
-
+    #region Pick up lettuce event
     public static void AddPlayerPicksUpLettuceEventInvoker(FullHeadOfLettuceScript playerPicksUpLettuceEventInvokerArgument)
     {
-        playerPicksUpLettuceEventInvokerField = playerPicksUpLettuceEventInvokerArgument;
-        if (playerPicksUpLettuceEventHandlerField != null)
+        listOfPlayerPicksUpLettuceEventInvokerFields.Add(playerPicksUpLettuceEventInvokerArgument);
+        foreach (UnityAction handler in listOfPlayerPicksUpLettuceEventHandlerFields)
         {
-            playerPicksUpLettuceEventInvokerField.AddPlayerPicksUpLettuceEventHandler(playerPicksUpLettuceEventHandlerField);
+            playerPicksUpLettuceEventInvokerArgument.AddPlayerPicksUpLettuceEventHandler(handler);
         }
     }
 
+    
     public static void AddPlayerPicksUpLettuceEventHandler(UnityAction eventHandlerArgument)
     {
-        playerPicksUpLettuceEventHandlerField = eventHandlerArgument;
-        if (playerPicksUpLettuceEventInvokerField != null)
+        listOfPlayerPicksUpHamburgerEventHandlerFields.Add(eventHandlerArgument);
+        foreach (FullHeadOfLettuceScript invoker in listOfPlayerPicksUpLettuceEventInvokerFields)
         {
-            playerPicksUpLettuceEventInvokerField.AddPlayerPicksUpLettuceEventHandler(playerPicksUpLettuceEventHandlerField);
+            invoker.AddPlayerPicksUpLettuceEventHandler(eventHandlerArgument);
         }
     }
+    #endregion
+
     #endregion
 }
