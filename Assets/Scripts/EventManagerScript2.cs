@@ -20,6 +20,9 @@ public static class EventManagerScript2
 
     public static List<FullOnionScript> listOfPlayerPicksUpOnionEventInvokerFields = new List<FullOnionScript>();
     public static List<UnityAction> listOfPlayerPicksUpOnionEventHandlerFields = new List<UnityAction>();
+
+    public static List<ChickenDonerBaseFoodScript> listOfPlayerPicksUpChickenDonerEventInvokerFields = new List<ChickenDonerBaseFoodScript>();
+    public static List<UnityAction> listOfPlayerPicksUpChickenDonerEventHandlerFields = new List<UnityAction>();
     #endregion
 
     #region Methods
@@ -106,6 +109,29 @@ public static class EventManagerScript2
         foreach (FullOnionScript invoker in listOfPlayerPicksUpOnionEventInvokerFields)
         {
             invoker.AddPlayerPicksUpOnionEventHandler(eventHandlerArgument);
+        }
+    }
+
+    #endregion
+
+    #region Player picks up chicken doner
+
+    public static void AddPlayerPicksUpChickenDonerEventInvoker(ChickenDonerBaseFoodScript playerPicksUpChickenDonerEventInvokerArgument)
+    {
+        listOfPlayerPicksUpChickenDonerEventInvokerFields.Add(playerPicksUpChickenDonerEventInvokerArgument);
+        foreach (UnityAction handler in listOfPlayerPicksUpChickenDonerEventHandlerFields)
+        {
+            playerPicksUpChickenDonerEventInvokerArgument.AddPlayerPicksUpChickenDonerEventHandler(handler);
+        }
+    }
+
+
+    public static void AddPlayerPicksUpChickenDonerEventHandler(UnityAction eventHandlerArgument)
+    {
+        listOfPlayerPicksUpChickenDonerEventHandlerFields.Add(eventHandlerArgument);
+        foreach (ChickenDonerBaseFoodScript invoker in listOfPlayerPicksUpChickenDonerEventInvokerFields)
+        {
+            invoker.AddPlayerPicksUpChickenDonerEventHandler(eventHandlerArgument);
         }
     }
 

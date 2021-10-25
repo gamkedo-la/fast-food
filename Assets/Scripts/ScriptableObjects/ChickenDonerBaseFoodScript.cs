@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class ChickenDonerBaseFoodScript : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class ChickenDonerBaseFoodScript : MonoBehaviour
     [SerializeField] private Sprite topping3Image;
     private SpriteRenderer topping3SpriteRenderer;
 
+    PlayerPicksUpChickenDonerEvent playerPicksUpChickenDonerEvent = new PlayerPicksUpChickenDonerEvent();
     private void OnValidate()
     {
         if (baseFoodScriptableObject != null)
@@ -61,7 +63,10 @@ public class ChickenDonerBaseFoodScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
         mainCamera = Camera.main;
         baseFoodCapsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsChickenDonerEvent, HandlePlayerSelectsChickenDonerEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsChickenDonerEvent, HandlePlayerSelectsChickenDonerEvent);
+
+        EventManagerScript2.AddPlayerPicksUpChickenDonerEventInvoker(this);
+        EventManagerScript2.AddPlayerPicksUpChickenDonerEventHandler(HandlePlayerSelectsChickenDonerEvent);
     }
 
     private void Update()
@@ -75,8 +80,14 @@ public class ChickenDonerBaseFoodScript : MonoBehaviour
 
         if (baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
+            //EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
+            playerPicksUpChickenDonerEvent.Invoke();
         }
+    }
+
+    public void AddPlayerPicksUpChickenDonerEventHandler(UnityAction handler)
+    {
+        playerPicksUpChickenDonerEvent.AddListener(handler);
     }
 
     private void HandlePlayerSelectsChickenDonerEvent()
