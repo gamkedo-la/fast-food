@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FullOnionScript : ToppingOnCountertopScript
 {
@@ -12,6 +13,8 @@ public class FullOnionScript : ToppingOnCountertopScript
 
     [SerializeField] SpriteRenderer onionOnDonerSpriteRenderer;
 
+    PlayerPicksUpOnionEvent playerPicksUpOnionEvent = new PlayerPicksUpOnionEvent();
+    
     public override void Start()
     {
         //onionOnBurgerGameObject = GameObject.FindGameObjectWithTag("OnionOnBurger");
@@ -21,12 +24,19 @@ public class FullOnionScript : ToppingOnCountertopScript
         onionOnBurgerScriptablePrefabSpriteRenderer = onionOnBurgerScriptablePrefab.GetComponent<SpriteRenderer>();
 
         base.Start();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, ActualMethodHandlerOnPickupEvent);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, ActualMethodHandlerOnPickupEvent);
+
+        EventManagerScript2.AddPlayerPicksUpOnionEventInvoker(this);
+        EventManagerScript2.AddPlayerPicksUpOnionEventHandler(ActualMethodHandlerOnPickupEvent);
     }
 
+    public void AddPlayerPicksUpOnionEventHandler(UnityAction handler)
+    {
+        playerPicksUpOnionEvent.AddListener(handler);
+    }
     public override void HandleChefPicksMeUpEvent()
     {
-        EventManagerScript.chefPicksUpOnionEvent.Invoke();
+        playerPicksUpOnionEvent.Invoke();
     }
 
     private void ActualMethodHandlerOnPickupEvent()
@@ -37,7 +47,6 @@ public class FullOnionScript : ToppingOnCountertopScript
         }
         else
         {
-            Debug.Log("GameManagerScript.burgerHasOnion: " + GameManagerScript.burgerHasOnion);
             if (GameManagerScript.chefHasBurger)
             {
                 if (GameManagerScript.burgerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
@@ -51,7 +60,6 @@ public class FullOnionScript : ToppingOnCountertopScript
             }
             else
             {
-                Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
                 if (GameManagerScript.chickenDonerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
                 {
                     return;
@@ -61,8 +69,6 @@ public class FullOnionScript : ToppingOnCountertopScript
                 onionOnDonerSpriteRenderer.enabled = true;
                 Disappear();
             }
-            Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
-
             Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
         }
     }
