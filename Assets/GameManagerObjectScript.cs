@@ -14,7 +14,12 @@ public class GameManagerObjectScript : MonoBehaviour
     public static void ProgressToNextLevel()
     {
         GameManagerScript.currentLevel++;
-        GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
+        
+        if (GameManagerScript.currentProfile != null) {
+            GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
+        } else {
+            Debug.Log("ERROR - missing player profile");
+        }
 
         SaveSystem.SaveListOfProfilesData();
     }

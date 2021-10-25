@@ -358,7 +358,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!198 &1815133781848677341
 ParticleSystem:
@@ -5489,7 +5489,7 @@ Transform:
   m_LocalScale: {x: 0.32559538, y: 0.3011172, z: 1}
   m_Children: []
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3155201119857771751
 SpriteRenderer:
@@ -5818,7 +5818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!198 &2163766542353716741
 ParticleSystem:
@@ -11678,7 +11678,7 @@ RectTransform:
   - {fileID: 4517263753470677201}
   - {fileID: 4517263752320679864}
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11928,6 +11928,7 @@ Transform:
   m_LocalPosition: {x: -13.24, y: 3.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8438418182440576353}
   - {fileID: 4434069007416326682}
   - {fileID: 4517263753575141596}
   - {fileID: 7911118349153565814}
@@ -12098,6 +12099,8 @@ MonoBehaviour:
   customerManagerObject: {fileID: 0}
   myThumbsUpImage: {fileID: 8277841609168083717}
   myThumbsDownImage: {fileID: 2082541273928023129}
+  burgerScriptablePrefab: {fileID: 0}
+  chickenDonerScriptablePrefab: {fileID: 0}
 --- !u!114 &4517263754366804170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12331,7 +12334,7 @@ Transform:
   - {fileID: 4807525588760969036}
   - {fileID: 4004083341569213063}
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1082213235734705318
 MonoBehaviour:
@@ -12348,6 +12351,7 @@ MonoBehaviour:
   percentAny: 100
   percentEach: 5
   maxAccessories: 2
+  RainbowShirt: {fileID: 86713004711712603}
 --- !u!1 &5319345542211403420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12421,6 +12425,88 @@ SpriteRenderer:
   m_SortingOrder: 96
   m_Sprite: {fileID: 21300000, guid: 8627132d637a7cf428f79d5d96916bda, type: 3}
   m_Color: {r: 1, g: 0.8848573, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &5319811273998147542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8438418182440576353}
+  - component: {fileID: 86713004711712603}
+  m_Layer: 0
+  m_Name: Rainbow Shirt of Magic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8438418182440576353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319811273998147542}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4517263754366804174}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &86713004711712603
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319811273998147542}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 49
+  m_Sprite: {fileID: 21300000, guid: 1735a42aae2a3494a9623dd35f0b5e5f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13033,7 +13119,7 @@ Transform:
   m_LocalScale: {x: 0.31001952, y: 0.29513276, z: 1}
   m_Children: []
   m_Father: {fileID: 4517263754366804174}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2285629489615404648
 SpriteRenderer:
