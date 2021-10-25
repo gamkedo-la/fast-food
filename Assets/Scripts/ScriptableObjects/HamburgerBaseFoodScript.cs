@@ -40,7 +40,7 @@ public class HamburgerBaseFoodScript : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
         mainCamera = Camera.main;
         baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
-        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBurgerEvent);
+
         EventManagerScript2.AddPlayerPicksUpHamburgerEventInvoker(this);
         EventManagerScript2.AddPlayerPicksUpHamburgerEventHandler(HandlePlayerSelectsBurgerEvent);
     }
@@ -86,16 +86,13 @@ public class HamburgerBaseFoodScript : MonoBehaviour
 
         if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            Debug.Log("selected object: " + gameObject.name);
             playerPicksUpHamgurgerEvent.Invoke();
-            //EventManagerScript.playerSelectsBurgerEvent.Invoke();
         }
     }
 
     private void HandlePlayerSelectsBurgerEvent()
     {
         MoveToTray();
-        Debug.Log("test");
         GameManagerScript.chefHasBaseFood = true;
         GameManagerScript.chefHasBurger = true;
     }

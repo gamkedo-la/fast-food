@@ -8,6 +8,7 @@ public class LettuceOnBurgerScript : ToppingOnBurgerScript
     public override void Start()
     {
         base.Start();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, Appear);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, Appear);
+        EventManagerScript2.AddPlayerPicksUpLettuceEventHandler(Appear);
     }
 }
