@@ -8,6 +8,7 @@ public class TomatoeOnBurgerScript : ToppingOnBurgerScript
     public override void Start()
     {
         base.Start();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, Appear);
+        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, Appear);
+        EventManagerScript2.AddPlayerPicksUpTomatoEventHandler(Appear);
     }
 }

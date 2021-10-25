@@ -135,7 +135,6 @@ public class CustomerScript : MonoBehaviour
 
     private void HandleAnyOrderSubmissionEvent()
     {
-        Debug.Log("inside handle any order submission event");
         burgerScriptablePrefab.GetComponent<HamburgerBaseFoodScript>().ResetFood();
         chickenDonerScriptablePrefab.GetComponent<ChickenDonerBaseFoodScript>().ResetFood();
     }
