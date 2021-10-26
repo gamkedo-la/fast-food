@@ -4238,6 +4238,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6558233938045254701, guid: cc222f95182bbf24eb0041318c032411, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7163843588336315050, guid: cc222f95182bbf24eb0041318c032411, type: 3}
       propertyPath: m_text
       value: Resume

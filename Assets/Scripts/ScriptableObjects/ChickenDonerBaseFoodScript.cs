@@ -72,7 +72,7 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
         //prevent the z coordinate from making the chef disappear
         currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
 
-        if (baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
+        if (!GameManagerScript.chefHasChickenDoner && baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
             Debug.Log("selected object: " + gameObject.name);
             EventManagerScript.playerSelectsChickenDonerEvent.Invoke();

@@ -68,6 +68,7 @@ public class ProfileManagerScript : MonoBehaviour
                 listOfUsernameTextboxes[i].text = listOfProfiles[i].userName;
                 listOfLevelTextboxes[i].text = listOfProfiles[i].currentLevel.ToString();
                 Debug.Log("listOfProfiles[i].targetLanguage: " + listOfProfiles[i].targetLanguage);
+                Debug.Log("listOfProfiles[i].currentLevel: " + listOfProfiles[i].currentLevel);
                 listOfLanguageTextboxes[i].text = listOfProfiles[i].targetLanguage;
             }
         }

@@ -67,4 +67,5 @@ public static class GameManagerScript
     public static bool hasIntroducedLevel3 = false;
     public static bool hasIntroducedLevel4 = false;
 
+    public static bool progressToNextLevelEventHasBeenAdded = false;
 }
