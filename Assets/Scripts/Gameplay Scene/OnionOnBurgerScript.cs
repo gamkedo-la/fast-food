@@ -8,7 +8,6 @@ public class OnionOnBurgerScript : ToppingOnBurgerScript
     public override void Start()
     {
         base.Start();
-        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, Appear);
-        EventManagerScript2.AddPlayerPicksUpOnionEventHandler(Appear);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, Appear);
     }
 }

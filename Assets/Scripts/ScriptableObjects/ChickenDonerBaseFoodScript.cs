@@ -75,6 +75,7 @@ public class ChickenDonerBaseFoodScript : MonoBehaviour
 
         if (baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
+            Debug.Log("selected object: " + gameObject.name);
             EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
         }
     }

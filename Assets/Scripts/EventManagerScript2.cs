@@ -17,9 +17,6 @@ public static class EventManagerScript2
 
     public static List<FullTomatoeScript> listOfPlayerPicksUpTomatoEventInvokerFields = new List<FullTomatoeScript>();
     public static List<UnityAction> listOfPlayerPicksUpTomatoEventHandlerFields = new List<UnityAction>();
-
-    public static List<FullOnionScript> listOfPlayerPicksUpOnionEventInvokerFields = new List<FullOnionScript>();
-    public static List<UnityAction> listOfPlayerPicksUpOnionEventHandlerFields = new List<UnityAction>();
     #endregion
 
     #region Methods
@@ -83,29 +80,6 @@ public static class EventManagerScript2
         foreach (FullTomatoeScript invoker in listOfPlayerPicksUpTomatoEventInvokerFields)
         {
             invoker.AddPlayerPicksUpTomatoEventHandler(eventHandlerArgument);
-        }
-    }
-
-    #endregion
-
-    #region Player picks up onion event
-
-    public static void AddPlayerPicksUpOnionEventInvoker(FullOnionScript playerPicksUpOnionEventInvokerArgument)
-    {
-        listOfPlayerPicksUpOnionEventInvokerFields.Add(playerPicksUpOnionEventInvokerArgument);
-        foreach (UnityAction handler in listOfPlayerPicksUpOnionEventHandlerFields)
-        {
-            playerPicksUpOnionEventInvokerArgument.AddPlayerPicksUpOnionEventHandler(handler);
-        }
-    }
-
-
-    public static void AddPlayerPicksUpOnionEventHandler(UnityAction eventHandlerArgument)
-    {
-        listOfPlayerPicksUpOnionEventHandlerFields.Add(eventHandlerArgument);
-        foreach (FullOnionScript invoker in listOfPlayerPicksUpOnionEventInvokerFields)
-        {
-            invoker.AddPlayerPicksUpOnionEventHandler(eventHandlerArgument);
         }
     }
 
