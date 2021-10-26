@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2698658823231994079}
-  - component: {fileID: 7419506105773645614}
   - component: {fileID: 731702626811366197}
   - component: {fileID: 4048185847155898390}
   - component: {fileID: 2805708555790154232}
@@ -39,26 +38,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7419506105773645614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779914993011922268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266a0cc18bcc5ae48bb99575c4feccd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseFoodScriptableObject: {fileID: 0}
-  englishWord: 
-  baseFoodImage: {fileID: 0}
-  baseFoodImage2: {fileID: 0}
-  topping1Image: {fileID: 0}
-  topping2Image: {fileID: 0}
-  topping3Image: {fileID: 0}
-  trayAndPlateLocation: {fileID: 0}
 --- !u!212 &731702626811366197
 SpriteRenderer:
   m_ObjectHideFlags: 0

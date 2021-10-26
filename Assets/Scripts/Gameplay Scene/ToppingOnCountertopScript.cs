@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public abstract class ToppingOnCountertopScript : MonoBehaviour
 {
-    private SpriteRenderer mySpriteRenderer;
+    protected SpriteRenderer mySpriteRenderer;
 
     private Camera mainCamera;
     private CircleCollider2D toppingOnCountertopCircleCollider;
@@ -39,9 +39,9 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
         }
     }
 
-    private void Reappear()
+    public virtual void Reappear()
     {
-        mySpriteRenderer.enabled = true;
+        
     }
 
     protected void Disappear()

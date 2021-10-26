@@ -24,6 +24,14 @@ public class FullOnionScript : ToppingOnCountertopScript
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, ActualMethodHandlerOnPickupEvent);
     }
 
+    public override void Reappear()
+    {
+        if (GameManagerScript.currentLevel >= 4)
+        {
+            Debug.Log("inside reappear of full onion");
+            mySpriteRenderer.enabled = true;
+        }
+    }
     public override void HandleChefPicksMeUpEvent()
     {
         EventManagerScript.chefPicksUpOnionEvent.Invoke();

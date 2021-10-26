@@ -24,9 +24,13 @@ public class FullTomatoeScript : ToppingOnCountertopScript
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
     }
 
-    private void Reappear()
+    public override void Reappear()
     {
-        fullTomatoeSpriteRenderer.enabled = true;
+        if (GameManagerScript.currentLevel >= 2)
+        {
+            Debug.Log("inside reappear of full tomato");
+            mySpriteRenderer.enabled = true;
+        }
     }
 
     public override void HandleChefPicksMeUpEvent()

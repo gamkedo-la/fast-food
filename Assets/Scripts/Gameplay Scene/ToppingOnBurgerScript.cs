@@ -17,6 +17,7 @@ public abstract class ToppingOnBurgerScript : MonoBehaviour
 
     protected void Disappear()
     {
+        Debug.Log("inside disappear of parent class ToppingOnBurgerScript.cs");
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
 }

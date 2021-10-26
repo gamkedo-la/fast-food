@@ -29,6 +29,12 @@ public class headOfLettuceScript : ToppingOnCountertopScript
         EventManagerScript.chefPicksUpLettuceEvent.Invoke();
     }
 
+    public override void Reappear()
+    {
+        Debug.Log("inside reappear of full head of lettuce");
+        mySpriteRenderer.enabled = true;
+    }
+
     private void ActualMethodHandlerOnPickupEvent()
     {
         if (!GameManagerScript.chefHasBaseFood)

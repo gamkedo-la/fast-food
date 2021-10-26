@@ -3,41 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HamburgerBaseFoodScript : MonoBehaviour
+public class HamburgerBaseFoodScript : BaseFoodScript
 {
-    [SerializeField] private BaseFoodScriptableObject baseFoodScriptableObject;
+    //[SerializeField] private BaseFoodScriptableObject baseFoodScriptableObject;
 
-    [SerializeField] private string englishWord;
+    //[SerializeField] private string englishWord;
 
-    [SerializeField] GameObject trayAndPlateLocation;
+    //[SerializeField] GameObject trayAndPlateLocation;
     private CircleCollider2D baseFoodCircleCollider;
 
-    private Vector2 currentTouchPositionVector2InScreenPixels;
-    private Vector3 currentTouchPositionVector3InWorldUnits;
+    //private Vector2 currentTouchPositionVector2InScreenPixels;
+    //private Vector3 currentTouchPositionVector3InWorldUnits;
 
-    private Camera mainCamera;
+    //private Camera mainCamera;
 
-    private Vector2 startingPositionVector2;
+    //private Vector2 startingPositionVector2;
 
-    [SerializeField] private Sprite baseFoodImage;
-    private SpriteRenderer baseFoodSpriteRenderer;
-    [SerializeField] private Sprite baseFoodImage2;
-    private SpriteRenderer baseFoodSpriteRenderer2;
-    [SerializeField] private Sprite topping1Image;
-    private SpriteRenderer topping1SpriteRenderer;
-    [SerializeField] private Sprite topping2Image;
-    private SpriteRenderer topping2SpriteRenderer;
-    [SerializeField] private Sprite topping3Image;
-    private SpriteRenderer topping3SpriteRenderer;
+    //[SerializeField] private Sprite baseFoodImage;
+    //private SpriteRenderer baseFoodSpriteRenderer;
+    //[SerializeField] private Sprite baseFoodImage2;
+    //private SpriteRenderer baseFoodSpriteRenderer2;
+    //[SerializeField] private Sprite topping1Image;
+    //private SpriteRenderer topping1SpriteRenderer;
+    //[SerializeField] private Sprite topping2Image;
+    //private SpriteRenderer topping2SpriteRenderer;
+    //[SerializeField] private Sprite topping3Image;
+    //private SpriteRenderer topping3SpriteRenderer;
 
     // Start is called before the first frame update
-    private void Start()
+    public override void Start()
     {
-        startingPositionVector2 = gameObject.transform.position;
-        gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
-        mainCamera = Camera.main;
+        base.Start();
+        
         baseFoodCircleCollider = gameObject.GetComponent<CircleCollider2D>();
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBurgerEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBaseFoodEvent);
     }
 
     private void OnValidate()
@@ -64,7 +63,7 @@ public class HamburgerBaseFoodScript : MonoBehaviour
             topping3SpriteRenderer.sprite = topping3Image;
         }
     }
-    private void Update()
+    public override void Update()
     {
         
         if (Touchscreen.current == null) return; // avoid errors when testing with a mouse
@@ -78,36 +77,28 @@ public class HamburgerBaseFoodScript : MonoBehaviour
 
         if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            Debug.Log("selected object: " + gameObject.name);
+            Debug.Log("should be calling player selects burger event");
             EventManagerScript.playerSelectsBurgerEvent.Invoke();
         }
     }
 
-    private void HandlePlayerSelectsBurgerEvent()
+    public override void HandlePlayerSelectsBaseFoodEvent()
     {
-        MoveToTray();
-        GameManagerScript.chefHasBaseFood = true;
+        base.HandlePlayerSelectsBaseFoodEvent();
         GameManagerScript.chefHasBurger = true;
     }
 
-    public void ResetFood()
+    public override void ResetBaseFood()
     {
-        gameObject.transform.position = startingPositionVector2;
+        base.ResetBaseFood();
 
         GameManagerScript.chefHasBurger = false;
         GameManagerScript.burgerHasLettuce = false;
         GameManagerScript.burgerHasTomatoe = false;
         GameManagerScript.burgerHasOnion = false;
-
-        baseFoodSpriteRenderer.enabled = false;
-        topping1SpriteRenderer.enabled = false;
-        topping2SpriteRenderer.enabled = false;
-        topping3SpriteRenderer.enabled = false;
-
-        GameManagerScript.chefHasBaseFood = false;
     }
 
-    private void MoveToTray()
+    public override void MoveToTray()
     {
         float burgerYPositionWithOffset = trayAndPlateLocation.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
         //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);

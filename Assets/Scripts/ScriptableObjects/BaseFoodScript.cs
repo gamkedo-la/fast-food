@@ -7,29 +7,29 @@ public abstract class BaseFoodScript : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private BaseFoodScriptableObject baseFoodScriptableObject;
+    [SerializeField] protected BaseFoodScriptableObject baseFoodScriptableObject;
 
-    [SerializeField] private string englishWord;
+    [SerializeField] protected string englishWord;
 
-    private Vector2 startingPositionVector2;
+    protected Vector2 startingPositionVector2;
 
-    [SerializeField] private Sprite baseFoodImage;
-    private SpriteRenderer baseFoodSpriteRenderer;
-    [SerializeField] private Sprite baseFoodImage2;
-    private SpriteRenderer baseFoodSpriteRenderer2;
-    [SerializeField] private Sprite topping1Image;
-    private SpriteRenderer topping1SpriteRenderer;
-    [SerializeField] private Sprite topping2Image;
-    private SpriteRenderer topping2SpriteRenderer;
-    [SerializeField] private Sprite topping3Image;
-    private SpriteRenderer topping3SpriteRenderer;
+    [SerializeField] protected Sprite baseFoodImage;
+    protected SpriteRenderer baseFoodSpriteRenderer;
+    [SerializeField] protected Sprite baseFoodImage2;
+    protected SpriteRenderer baseFoodSpriteRenderer2;
+    [SerializeField] protected Sprite topping1Image;
+    protected SpriteRenderer topping1SpriteRenderer;
+    [SerializeField] protected Sprite topping2Image;
+    protected SpriteRenderer topping2SpriteRenderer;
+    [SerializeField] protected Sprite topping3Image;
+    protected SpriteRenderer topping3SpriteRenderer;
 
-    [SerializeField] private GameObject trayAndPlateLocation;
+    [SerializeField] protected GameObject trayAndPlateLocation;
 
-    private Camera mainCamera;
+    protected Camera mainCamera;
 
-    private Vector2 currentTouchPositionVector2InScreenPixels;
-    private Vector3 currentTouchPositionVector3InWorldUnits;
+    protected Vector2 currentTouchPositionVector2InScreenPixels;
+    protected Vector3 currentTouchPositionVector3InWorldUnits;
     #endregion
 
     private void OnValidate()
@@ -66,6 +66,27 @@ public abstract class BaseFoodScript : MonoBehaviour
 
         gameObject.GetComponent<SpriteRenderer>().sprite = baseFoodImage;
 
+        if (baseFoodScriptableObject != null)
+        {
+            englishWord = baseFoodScriptableObject.englishWord;
+
+            baseFoodSpriteRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            baseFoodSpriteRenderer2 = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
+            topping1SpriteRenderer = gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>();
+            topping2SpriteRenderer = gameObject.transform.GetChild(3).GetComponent<SpriteRenderer>();
+            topping3SpriteRenderer = gameObject.transform.GetChild(4).GetComponent<SpriteRenderer>();
+
+            baseFoodImage = baseFoodScriptableObject.baseFoodImage;
+            baseFoodImage2 = baseFoodScriptableObject.baseFoodImage2;
+            topping1Image = baseFoodScriptableObject.topping1Image;
+            topping2Image = baseFoodScriptableObject.topping2Image;
+            topping3Image = baseFoodScriptableObject.topping3Image;
+
+            baseFoodSpriteRenderer.sprite = baseFoodImage;
+            topping1SpriteRenderer.sprite = topping1Image;
+            topping2SpriteRenderer.sprite = topping2Image;
+            topping3SpriteRenderer.sprite = topping3Image;
+        }
         //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpHamburgerEvent, HandleChefPicksUpBurgerEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, ResetBaseFood);
         //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.playerSelectsBurgerEvent, HandlePlayerSelectsBaseFoodEvent);
@@ -99,10 +120,19 @@ public abstract class BaseFoodScript : MonoBehaviour
     public virtual void ResetBaseFood()
     {
         gameObject.transform.position = startingPositionVector2;
+        Debug.Log("anything");
 
-        baseFoodSpriteRenderer.enabled = false;
+        //baseFoodSpriteRenderer.enabled = false;
+        Debug.Log("anything 2");
+        Debug.Log("topping1SpriteRenderer: " + topping1SpriteRenderer);
+        Debug.Log("topping2SpriteRenderer: " + topping2SpriteRenderer);
+        Debug.Log("topping3SpriteRenderer: " + topping3SpriteRenderer);
+
+        Debug.Log("anything 3");
         topping1SpriteRenderer.enabled = false;
+        Debug.Log("anything 4");
         topping2SpriteRenderer.enabled = false;
+        Debug.Log("anything 5");
         topping3SpriteRenderer.enabled = false;
 
         GameManagerScript.chefHasBaseFood = false;
