@@ -8,7 +8,16 @@ public class PrepSceneAudioButtonScript : ButtonScript
 
     public void PlayMyAudio()
     {
-        AudioManagerScript.audioManagerScript.PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][languageDictionaryKeyString]);
+        switch (GameManagerScript.currentLanguage)
+        {
+            case "English":
+                AudioController.instance.PlayAudio(GameSoundEnum.English_I_Would_Like_A);
+                break;
+
+            case "Albanian":
+                AudioController.instance.PlayAudio(GameSoundEnum.Albanian_I_Would_Like_A);
+                break;
+        }
     }
 
     public override void HandleButtonClick()
