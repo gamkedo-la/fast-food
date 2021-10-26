@@ -15,6 +15,9 @@ public static class EventManagerScript2
     public static List<LevelStarterScript> listOfLevelInitializationEventInvokerFields = new List<LevelStarterScript>();
     public static List<UnityAction> listOfLevelInitializationEventHandlerFields = new List<UnityAction>();
 
+    public static List<LevelStarterScript> listOfLevelInitializationFinishedEventInvokerFields = new List<LevelStarterScript>();
+    public static List<UnityAction> listOfLevelInitializationFinishedEventHandlerFields = new List<UnityAction>();
+
     #endregion
 
     #region Player Selects Food Item Events
@@ -53,6 +56,25 @@ public static class EventManagerScript2
         foreach (LevelStarterScript invoker in listOfLevelInitializationEventInvokerFields)
         {
             invoker.AddLevelInitializationEventHandler(eventHandlerArgument);
+        }
+    }
+
+
+    public static void AddLevelInitializationFinishedEventInvoker(LevelStarterScript levelInitializationFinishedEventInvokerArgument)
+    {
+        listOfLevelInitializationFinishedEventInvokerFields.Add(levelInitializationFinishedEventInvokerArgument);
+        foreach (UnityAction handler in listOfLevelInitializationFinishedEventHandlerFields)
+        {
+            levelInitializationFinishedEventInvokerArgument.AddLevelInitializationFinishedEventHandler(handler);
+        }
+    }
+
+    public static void AddLevelInitialzationFinishedFinishedEventHandler(UnityAction eventHandlerArgument)
+    {
+        listOfLevelInitializationFinishedEventHandlerFields.Add(eventHandlerArgument);
+        foreach (LevelStarterScript invoker in listOfLevelInitializationFinishedEventInvokerFields)
+        {
+            invoker.AddLevelInitializationFinishedEventHandler(eventHandlerArgument);
         }
     }
 
