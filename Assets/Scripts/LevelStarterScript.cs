@@ -21,7 +21,6 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] Text feedbackMessageTextbox;
 
     InitializeLevelEvent initializeLevelEvent = new InitializeLevelEvent();
-    LevelInitializationFinishedEvent levelInitializationFinishedEvent = new LevelInitializationFinishedEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +33,7 @@ public class LevelStarterScript : MonoBehaviour
 
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.timerRanOutOfTimeEvent, HandleTimerRanOutOfTimeEvent);
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
-
-            //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelInitializationFinishedEvent, HandleInitalizationOfLevelFinishedEvent);
-            EventManagerScript2.AddLevelInitializationFinishedEventInvoker(this);
-            EventManagerScript2.AddLevelInitialzationFinishedFinishedEventHandler(HandleInitalizationOfLevelFinishedEvent);
+            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelInitializationFinishedEvent, HandleInitalizationOfLevelFinishedEvent);
         }
         initializeLevelEvent.Invoke();
     }
@@ -45,11 +41,6 @@ public class LevelStarterScript : MonoBehaviour
     public void AddLevelInitializationEventHandler(UnityAction handler)
     {
         initializeLevelEvent.AddListener(handler);
-    }
-
-    public void AddLevelInitializationFinishedEventHandler(UnityAction handler)
-    {
-        levelInitializationFinishedEvent.AddListener(handler);
     }
 
     private void HandleStartOfLevelEvent()
@@ -95,7 +86,7 @@ public class LevelStarterScript : MonoBehaviour
             fullOnion.SetActive(true);
         }
 
-        levelInitializationFinishedEvent.Invoke();
+        EventManagerScript.levelInitializationFinishedEvent.Invoke();
     }
 
     private void HandleInitalizationOfLevelFinishedEvent()
