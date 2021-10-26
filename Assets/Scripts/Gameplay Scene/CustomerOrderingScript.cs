@@ -138,6 +138,7 @@ public class CustomerOrderingScript : MonoBehaviour
         Debug.Log("inside handle any order submission event");
         burgerScriptablePrefab.GetComponent<HamburgerBaseFoodScript>().ResetFood();
         chickenDonerScriptablePrefab.GetComponent<ChickenDonerBaseFoodScript>().ResetFood();
+        isProcessingOrder = false;
     }
     private void HandleLosingPatienceEvent()
     {
@@ -423,6 +424,7 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        Debug.Log("from customer ordering script, gameObject.name: " + gameObject.name);
         if (collision.gameObject.name == "TrayAndPlate" && GameManagerScript.chefHasBaseFood)
         {
             isProcessingOrder = true;
@@ -656,6 +658,7 @@ public class CustomerOrderingScript : MonoBehaviour
             
         EventManagerScript.anyOrderSubmissionEvent.Invoke();
 
+        Debug.Log("should be toggling false isProcessingOrder");
         isProcessingOrder = false;
     }
 
@@ -663,6 +666,7 @@ public class CustomerOrderingScript : MonoBehaviour
     private void HandleCorrectOrderSubmission()
     {
         //prevent duplicate event calls
+        Debug.Log("gameObject.name: " + gameObject.name + " isProcessingOrder: " + isProcessingOrder);
         if (!isProcessingOrder)
         {
             return;
@@ -698,6 +702,7 @@ public class CustomerOrderingScript : MonoBehaviour
         particleSystem2.gameObject.SetActive(false);
 
         ShowThumbsUp();
+        isProcessingOrder = false;
     }
 
     private void ShowThumbsUp()
@@ -754,6 +759,7 @@ public class CustomerOrderingScript : MonoBehaviour
         AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
         ShowThumbsDown();
+        isProcessingOrder = false;
     }
     
     private void HandleLostCustomerEvent()
