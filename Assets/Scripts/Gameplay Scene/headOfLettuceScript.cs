@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class FullHeadOfLettuceScript : ToppingOnCountertopScript
+public class headOfLettuceScript : ToppingOnCountertopScript
 {
     private GameObject lettuceOnBurgerGameObject;
     private SpriteRenderer lettuceOnBurgerSpriteRenderer;
@@ -13,27 +12,21 @@ public class FullHeadOfLettuceScript : ToppingOnCountertopScript
 
     [SerializeField] SpriteRenderer chickenDonerLettuceSpriteRenderer;
 
-    PlayerPicksUpLettuceEvent playerPicksUpLettuceEvent = new PlayerPicksUpLettuceEvent();
-
     public override void Start()
     {
         base.Start();
+        //lettuceOnBurgerGameObject = GameObject.FindGameObjectWithTag("LettuceOnBurger");
+        //lettuceOnBurgerSpriteRenderer = lettuceOnBurgerGameObject.GetComponent<SpriteRenderer>();
 
         lettuceOnBurgerScriptablePrefab = GameObject.FindGameObjectWithTag("LettuceOnBurgerScriptablePrefab");
         lettuceOnBurgerScriptablePrefabSpriteRenderer = lettuceOnBurgerScriptablePrefab.GetComponent<SpriteRenderer>();
 
-        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, ActualMethodHandlerOnPickupEvent);
-        EventManagerScript2.AddPlayerPicksUpLettuceEventInvoker(this);
-        EventManagerScript2.AddPlayerPicksUpLettuceEventHandler(ActualMethodHandlerOnPickupEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, ActualMethodHandlerOnPickupEvent);
     }
 
-    public void AddPlayerPicksUpLettuceEventHandler(UnityAction handler)
-    {
-        playerPicksUpLettuceEvent.AddListener(handler);
-    }
     public override void HandleChefPicksMeUpEvent()
     {
-        playerPicksUpLettuceEvent.Invoke();
+        EventManagerScript.chefPicksUpLettuceEvent.Invoke();
     }
 
     private void ActualMethodHandlerOnPickupEvent()
