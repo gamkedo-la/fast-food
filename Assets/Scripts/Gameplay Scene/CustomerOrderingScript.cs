@@ -135,6 +135,11 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void HandleAnyOrderSubmissionEvent()
     {
+        if (!isProcessingOrder)
+        {
+            return;
+        }
+        Debug.Log("inside HandleAnyOrderSubmissionEvent");
         burgerScriptablePrefab.GetComponent<HamburgerBaseFoodScript>().ResetBaseFood();
         chickenDonerScriptablePrefab.GetComponent<ChickenDonerBaseFoodScript>().ResetBaseFood();
         isProcessingOrder = false;

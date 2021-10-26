@@ -75,7 +75,7 @@ public class HamburgerBaseFoodScript : BaseFoodScript
         //prevent the z coordinate from making the chef disappear
         currentTouchPositionVector3InWorldUnits = new Vector3(currentTouchPositionVector3InWorldUnits.x, currentTouchPositionVector3InWorldUnits.y, 0);
 
-        if (baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
+        if (!GameManagerScript.chefHasBurger && baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
             Debug.Log("should be calling player selects burger event");
             EventManagerScript.playerSelectsBurgerEvent.Invoke();

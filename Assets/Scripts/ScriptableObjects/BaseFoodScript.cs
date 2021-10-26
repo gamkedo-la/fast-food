@@ -119,20 +119,10 @@ public abstract class BaseFoodScript : MonoBehaviour
     }
     public virtual void ResetBaseFood()
     {
-        gameObject.transform.position = startingPositionVector2;
-        Debug.Log("anything");
+        gameObject.transform.position = startingPositionVector2;        
 
-        //baseFoodSpriteRenderer.enabled = false;
-        Debug.Log("anything 2");
-        Debug.Log("topping1SpriteRenderer: " + topping1SpriteRenderer);
-        Debug.Log("topping2SpriteRenderer: " + topping2SpriteRenderer);
-        Debug.Log("topping3SpriteRenderer: " + topping3SpriteRenderer);
-
-        Debug.Log("anything 3");
         topping1SpriteRenderer.enabled = false;
-        Debug.Log("anything 4");
         topping2SpriteRenderer.enabled = false;
-        Debug.Log("anything 5");
         topping3SpriteRenderer.enabled = false;
 
         GameManagerScript.chefHasBaseFood = false;
