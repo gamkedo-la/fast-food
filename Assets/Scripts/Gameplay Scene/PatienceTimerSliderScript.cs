@@ -55,7 +55,7 @@ public class PatienceTimerSliderScript : MonoBehaviour
                 }
                 else
                 {
-                    parentCustomerObject.GetComponent<CustomerScript>().losingPatience = true;
+                    parentCustomerObject.GetComponent<CustomerOrderingScript>().losingPatience = true;
                     EventManagerScript.customerLosingPatienceEvent.Invoke();
                     adjustedLerpValue = (percentageOfTimerLeft - 0.5f) * 2;
                     fill.color = Color.Lerp(yellowColor, redColor, adjustedLerpValue);

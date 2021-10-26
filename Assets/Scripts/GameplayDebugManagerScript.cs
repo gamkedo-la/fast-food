@@ -23,12 +23,12 @@ public class GameplayDebugManagerScript : MonoBehaviour
             Debug.Log("c key recognized");
             for (int i = 0; i < customerManager.GetComponent<CustomerManagerScript>().listOfCustomers.Count; i++)
             {
-                if (customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerScript>().myStateEnumeration == 
+                if (customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().myStateEnumeration == 
                     CustomerStateEnumerations.WaitingForMyOrder ||
-                    customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerScript>().myStateEnumeration ==
+                    customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().myStateEnumeration ==
                     CustomerStateEnumerations.EnteringRestaurant)
                 {
-                    customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerScript>().isProcessingOrder = true;
+                    customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().isProcessingOrder = true;
                     EventManagerScript.correctOrderSubmissionEvent.Invoke();
                     return;
                 }
