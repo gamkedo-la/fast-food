@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class LevelStarterScript : MonoBehaviour
 {
@@ -19,17 +20,27 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] TMP_Text statsCanvasLoadLevelButtonText;
     [SerializeField] Text feedbackMessageTextbox;
 
+    InitializeLevelEvent initializeLevelEvent = new InitializeLevelEvent();
+
     // Start is called before the first frame update
     void Start()
     {
         if (!GameManagerScript.levelStarterFirstTimeStarted)
         {
-            EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
+            //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.initializeLevel, HandleStartOfLevelEvent);
+            EventManagerScript2.AddLevelInitializationEventInvoker(this);
+            EventManagerScript2.AddLevelInitialzationEventHandler(HandleStartOfLevelEvent);
+
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.timerRanOutOfTimeEvent, HandleTimerRanOutOfTimeEvent);
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelInitializationFinishedEvent, HandleInitalizationOfLevelFinishedEvent);
         }
-        EventManagerScript.initializeLevel.Invoke();
+        initializeLevelEvent.Invoke();
+    }
+
+    public void AddLevelInitializationEventHandler(UnityAction handler)
+    {
+        initializeLevelEvent.AddListener(handler);
     }
 
     private void HandleStartOfLevelEvent()

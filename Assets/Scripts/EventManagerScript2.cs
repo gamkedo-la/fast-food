@@ -9,6 +9,15 @@ using UnityEngine.Events;
 public static class EventManagerScript2
 {
     #region Fields
+
+    #region Level Initialization Events
+
+    public static List<LevelStarterScript> listOfLevelInitializationEventInvokerFields = new List<LevelStarterScript>();
+    public static List<UnityAction> listOfLevelInitializationEventHandlerFields = new List<UnityAction>();
+
+    #endregion
+
+    #region Player Selects Food Item Events
     public static List<HamburgerBaseFoodScript> listOfPlayerPicksUpHamburgerEventInvokerFields = new List<HamburgerBaseFoodScript>();
     public static List<UnityAction> listOfPlayerPicksUpHamburgerEventHandlerFields = new List<UnityAction>();
 
@@ -24,9 +33,31 @@ public static class EventManagerScript2
     public static List<ChickenDonerBaseFoodScript> listOfPlayerPicksUpChickenDonerEventInvokerFields = new List<ChickenDonerBaseFoodScript>();
     public static List<UnityAction> listOfPlayerPicksUpChickenDonerEventHandlerFields = new List<UnityAction>();
     #endregion
+    #endregion
 
     #region Methods
 
+    #region Level Initialization Methods
+    public static void AddLevelInitializationEventInvoker(LevelStarterScript levelInitializationEventInvokerArgument)
+    {
+        listOfLevelInitializationEventInvokerFields.Add(levelInitializationEventInvokerArgument);
+        foreach (UnityAction handler in listOfLevelInitializationEventHandlerFields)
+        {
+            levelInitializationEventInvokerArgument.AddLevelInitializationEventHandler(handler);
+        }
+    }
+
+    public static void AddLevelInitialzationEventHandler(UnityAction eventHandlerArgument)
+    {
+        listOfLevelInitializationEventHandlerFields.Add(eventHandlerArgument);
+        foreach (LevelStarterScript invoker in listOfLevelInitializationEventInvokerFields)
+        {
+            invoker.AddLevelInitializationEventHandler(eventHandlerArgument);
+        }
+    }
+
+    #endregion
+    #region Player Selects Food Item Methods
     #region Pick up hamburger event
     public static void AddPlayerPicksUpHamburgerEventInvoker(HamburgerBaseFoodScript playerPicksUpHamburgerEventInvokerArgument)
     {
@@ -134,7 +165,9 @@ public static class EventManagerScript2
             invoker.AddPlayerPicksUpChickenDonerEventHandler(eventHandlerArgument);
         }
     }
+    #endregion
 
     #endregion
+
     #endregion
 }
