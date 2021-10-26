@@ -14,9 +14,6 @@ public static class EventManagerScript2
 
     public static List<FullHeadOfLettuceScript> listOfPlayerPicksUpLettuceEventInvokerFields = new List<FullHeadOfLettuceScript>();
     public static List<UnityAction> listOfPlayerPicksUpLettuceEventHandlerFields = new List<UnityAction>();
-
-    public static List<FullTomatoeScript> listOfPlayerPicksUpTomatoEventInvokerFields = new List<FullTomatoeScript>();
-    public static List<UnityAction> listOfPlayerPicksUpTomatoEventHandlerFields = new List<UnityAction>();
     #endregion
 
     #region Methods
@@ -62,27 +59,5 @@ public static class EventManagerScript2
     }
     #endregion
 
-    #region Pick up tomato event
-
-    public static void AddPlayerPicksUpTomatoEventInvoker(FullTomatoeScript playerPicksUpTomatoEventInvokerArgument)
-    {
-        listOfPlayerPicksUpTomatoEventInvokerFields.Add(playerPicksUpTomatoEventInvokerArgument);
-        foreach (UnityAction handler in listOfPlayerPicksUpTomatoEventHandlerFields)
-        {
-            playerPicksUpTomatoEventInvokerArgument.AddPlayerPicksUpTomatoEventHandler(handler);
-        }
-    }
-
-
-    public static void AddPlayerPicksUpTomatoEventHandler(UnityAction eventHandlerArgument)
-    {
-        listOfPlayerPicksUpTomatoEventHandlerFields.Add(eventHandlerArgument);
-        foreach (FullTomatoeScript invoker in listOfPlayerPicksUpTomatoEventInvokerFields)
-        {
-            invoker.AddPlayerPicksUpTomatoEventHandler(eventHandlerArgument);
-        }
-    }
-
-    #endregion
     #endregion
 }

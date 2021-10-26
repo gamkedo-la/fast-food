@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class FullTomatoeScript : ToppingOnCountertopScript
 {
@@ -13,24 +12,18 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     private SpriteRenderer tomatoeOnBurgerScriptableObjectSpriteRenderer;
     [SerializeField] SpriteRenderer tomatoOnDonerSpriteRenderer;
 
-    PlayerPicksUpTomatoEvent playerPicksUpTomatoEvent = new PlayerPicksUpTomatoEvent();
-
     public override void Start()
     {
         base.Start();
-        
+        //tomatoeOnBurgerGameObject = GameObject.FindGameObjectWithTag("TomatoeOnBurger");
+        //tomatoeOnBurgerSpriteRenderer = tomatoeOnBurgerGameObject.GetComponent<SpriteRenderer>();
         tomatoeOnBurgerScriptableObject = GameObject.FindGameObjectWithTag("TomatoeOnBurgerScriptablePrefab");
         tomatoeOnBurgerScriptableObjectSpriteRenderer = tomatoeOnBurgerScriptableObject.GetComponent<SpriteRenderer>();
 
-        //EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
-        EventManagerScript2.AddPlayerPicksUpTomatoEventInvoker(this);
-        EventManagerScript2.AddPlayerPicksUpTomatoEventHandler(ActualMethodHandlerOnPickupEvent);
+
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
     }
 
-    public void AddPlayerPicksUpTomatoEventHandler(UnityAction handler)
-    {
-        playerPicksUpTomatoEvent.AddListener(handler);
-    }
     private void Reappear()
     {
         fullTomatoeSpriteRenderer.enabled = true;
@@ -38,7 +31,7 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     public override void HandleChefPicksMeUpEvent()
     {
-        playerPicksUpTomatoEvent.Invoke();
+        EventManagerScript.chefPicksUpTomatoeEvent.Invoke();
     }
 
 
