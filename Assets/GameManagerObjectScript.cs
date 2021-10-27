@@ -19,6 +19,7 @@ public class GameManagerObjectScript : MonoBehaviour
     {
         Debug.Log("calling ProgressToNextLevel and GameManagerScript.currentLevel++");
         GameManagerScript.currentLevel++;
+        AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         
         if (GameManagerScript.currentProfile != null) {
             GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;

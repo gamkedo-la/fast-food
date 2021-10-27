@@ -30,6 +30,8 @@ public enum GameSoundEnum{
     English_Order_Chicken_Doner_Tomato_Onion,
     English_Order_Chicken_Doner_Lettuce_Tomato_Onion,
 
+    English_Thank_You,
+
     //VO Albanian Orders
     Albanian_Order_Hamburger,
     Albanian_Order_Hamburger_Lettuce,
@@ -48,6 +50,8 @@ public enum GameSoundEnum{
     Albanian_Order_Chicken_Doner_Lettuce_Onion,
     Albanian_Order_Chicken_Doner_Tomato_Onion,
     Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion,
+
+    Albanian_Thank_You,
 
     //VO Study Cards English
     
@@ -72,5 +76,6 @@ public enum GameSoundEnum{
     SFX_Customer_Enter,
     SFX_Correct_Order,
     SFX_Incorrect_Order,
+    
 }
 

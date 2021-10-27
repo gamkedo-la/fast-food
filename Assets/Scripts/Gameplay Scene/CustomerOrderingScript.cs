@@ -674,8 +674,19 @@ public class CustomerOrderingScript : MonoBehaviour
         }
 
         losingPatience = false;
-        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
+        //currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
+        //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
+
+        switch (GameManagerScript.currentLanguage)
+        {
+            case "English":
+            AudioController.instance.PlayAudio(GameSoundEnum.English_Thank_You);
+            break;
+
+            case "Albanian":
+            AudioController.instance.PlayAudio(GameSoundEnum.Albanian_Thank_You);
+            break;
+        }
         AudioController.instance.OneShot(GameSoundEnum.SFX_Correct_Order);
         if (!customerManagerObject.GetComponent<CustomerManagerScript>().AreAnyCustomersLosingPatience()){ //if no customers are losing patience when a correct order is delivered, the customer impatience sound should stop
             AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
