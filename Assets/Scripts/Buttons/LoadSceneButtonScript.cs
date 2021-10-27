@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public enum ScenesToLoadEnumerations
 {
-    MainMenu,
+    MainMenu1,
     NewPlayerPrepScene,
     ReturningPlayerPrepScene,
     Gameplay,
@@ -33,7 +33,7 @@ public class LoadSceneButtonScript : ButtonScript
         //Play the correct music based on scene
         switch (mySceneToLoadEnumeration)
         {
-            case ScenesToLoadEnumerations.MainMenu:
+            case ScenesToLoadEnumerations.MainMenu1:
                 AudioController.instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
                 break;
             case ScenesToLoadEnumerations.Gameplay:
