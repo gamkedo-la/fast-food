@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LanguageButtonScript : ButtonScript
 {
     [SerializeField] string language = "";
-    public Text currentLanguageTextbox;
+    [SerializeField] TextMeshProUGUI targetLanguageTextbox;
 
     public override void HandleButtonClick()
     {
         GameManagerScript.currentLanguage = language;
-        currentLanguageTextbox.text = "Current Language: " + GameManagerScript.currentLanguage;
+        targetLanguageTextbox.text = "Target Language: " + GameManagerScript.currentLanguage;
 
         GameManagerScript.currentProfile.targetLanguage = language;
         SaveSystem.SaveListOfProfilesData();
