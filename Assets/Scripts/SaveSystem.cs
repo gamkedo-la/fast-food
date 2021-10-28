@@ -14,7 +14,6 @@ public static class SaveSystem
         {
             if (ProfileManagerScript.listOfProfiles[i] == GameManagerScript.currentProfile)
             {
-                Debug.Log("inside match of GameManager.currentProfile and ProfileManagerScript.listOfProfiles[i]");
                 ProfileManagerScript.listOfProfiles[i].currentLevel = GameManagerScript.currentProfile.currentLevel;
             }
         }

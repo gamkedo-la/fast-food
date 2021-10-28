@@ -28,7 +28,6 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     {
         if (GameManagerScript.currentLevel >= 2)
         {
-            Debug.Log("inside reappear of full tomato");
             mySpriteRenderer.enabled = true;
         }
     }

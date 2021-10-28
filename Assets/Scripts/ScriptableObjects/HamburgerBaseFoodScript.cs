@@ -77,7 +77,6 @@ public class HamburgerBaseFoodScript : BaseFoodScript
 
         if (!GameManagerScript.chefHasBurger && baseFoodCircleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            Debug.Log("should be calling player selects burger event");
             EventManagerScript.playerSelectsBurgerEvent.Invoke();
         }
     }

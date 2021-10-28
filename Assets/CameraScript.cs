@@ -23,7 +23,6 @@ public class CameraScript : MonoBehaviour
     
     private void HandleSuggestReviewToStudentEvent()
     {
-        Debug.Log("should be invoking review event");
         suggestReviewCanvas.SetActive(true);
     }
 

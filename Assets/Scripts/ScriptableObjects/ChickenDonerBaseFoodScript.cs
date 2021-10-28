@@ -74,7 +74,6 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
 
         if (!GameManagerScript.chefHasChickenDoner && baseFoodCapsuleCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            Debug.Log("selected object: " + gameObject.name);
             EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
         }
     }

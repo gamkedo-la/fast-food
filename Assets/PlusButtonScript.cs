@@ -9,9 +9,9 @@ public class PlusButtonScript : MonoBehaviour
     public void IncreaseLevel()
     {
         GameManagerScript.currentLevel++;
-        if (GameManagerScript.currentLevel == 4)
+        if (GameManagerScript.currentLevel == 5)
         {
-            GameManagerScript.currentLevel = 3;
+            GameManagerScript.currentLevel = 4;
         }
         GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
         for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)

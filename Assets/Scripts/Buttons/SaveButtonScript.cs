@@ -11,7 +11,6 @@ public class SaveButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
-        Debug.Log("anything");
         if (newPlayerNameInputField.text == "")
         {
             newPlayerNameInputField.text = "You didn't enter a name";

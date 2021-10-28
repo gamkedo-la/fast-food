@@ -31,7 +31,6 @@ public class headOfLettuceScript : ToppingOnCountertopScript
 
     public override void Reappear()
     {
-        Debug.Log("inside reappear of full head of lettuce");
         mySpriteRenderer.enabled = true;
     }
 

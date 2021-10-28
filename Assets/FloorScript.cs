@@ -6,6 +6,5 @@ public class FloorScript : MonoBehaviour
 {
     private void OnMouseDrag()
     {
-        Debug.Log("anything");
     }
 }
