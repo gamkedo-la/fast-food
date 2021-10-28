@@ -20,7 +20,6 @@ public class GameplayDebugManagerScript : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            Debug.Log("c key recognized");
             for (int i = 0; i < customerManager.GetComponent<CustomerManagerScript>().listOfCustomers.Count; i++)
             {
                 if (customerManager.GetComponent<CustomerManagerScript>().listOfCustomers[i].GetComponent<CustomerOrderingScript>().myStateEnumeration == 

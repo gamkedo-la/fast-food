@@ -27,7 +27,6 @@ public class LoadSceneButtonScript : ButtonScript
         }
         if (gameObject.name == "MainMenuSceneLoadButton")
         {
-            Debug.Log("GameManagerScript.currentProfile.currentLevel: " + GameManagerScript.currentProfile.currentLevel);
             SaveSystem.SaveListOfProfilesData();
         }
         //Play the correct music based on scene

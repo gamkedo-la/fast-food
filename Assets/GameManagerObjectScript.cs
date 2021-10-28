@@ -17,13 +17,11 @@ public class GameManagerObjectScript : MonoBehaviour
 
     public static void ProgressToNextLevel()
     {
-        Debug.Log("calling ProgressToNextLevel and GameManagerScript.currentLevel++");
         GameManagerScript.currentLevel++;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         
         if (GameManagerScript.currentProfile != null) {
             GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
-            Debug.Log("GameManagerScript.currentProfile.currentLevel: " + GameManagerScript.currentProfile.currentLevel);
         } else {
             Debug.Log("ERROR - missing player profile");
         }

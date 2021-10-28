@@ -27,7 +27,6 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/profileData.listOfProfiles";
         if (File.Exists(path))
         {
-            Debug.Log("inside path existence check of LoadListOfProfilesData");
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
@@ -38,7 +37,6 @@ public static class SaveSystem
             }
             for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
             {
-                Debug.Log("ProfileManagerScript.listOfProfiles[i]: " + ProfileManagerScript.listOfProfiles[i]);
             }
             stream.Close();
         }

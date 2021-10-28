@@ -28,7 +28,6 @@ public class FullOnionScript : ToppingOnCountertopScript
     {
         if (GameManagerScript.currentLevel >= 4)
         {
-            Debug.Log("inside reappear of full onion");
             mySpriteRenderer.enabled = true;
         }
     }
@@ -45,7 +44,6 @@ public class FullOnionScript : ToppingOnCountertopScript
         }
         else
         {
-            Debug.Log("GameManagerScript.burgerHasOnion: " + GameManagerScript.burgerHasOnion);
             if (GameManagerScript.chefHasBurger)
             {
                 if (GameManagerScript.burgerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
@@ -59,7 +57,6 @@ public class FullOnionScript : ToppingOnCountertopScript
             }
             else
             {
-                Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
                 if (GameManagerScript.chickenDonerHasOnion)//preventing multiple calls, mainly for infinite audio one shots
                 {
                     return;
@@ -69,7 +66,6 @@ public class FullOnionScript : ToppingOnCountertopScript
                 onionOnDonerSpriteRenderer.enabled = true;
                 Disappear();
             }
-            Debug.Log("GameManagerScript.chickenDonerHasOnion: " + GameManagerScript.chickenDonerHasOnion);
 
             Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
         }

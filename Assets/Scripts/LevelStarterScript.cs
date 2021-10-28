@@ -88,7 +88,6 @@ public class LevelStarterScript : MonoBehaviour
 
     private void HandleTimerRanOutOfTimeEvent()
     {
-        Debug.Log("calling ran out of time event");
         statsCanvas.SetActive(true);
         statsCanvasLoadLevelButtonText.text = "Try Again";
         feedbackMessageTextbox.text = "You ran out of time! Please try again.";
@@ -96,7 +95,6 @@ public class LevelStarterScript : MonoBehaviour
 
     private void HandleLevelCompletedEvent()
     {
-        Debug.Log("calling level completed event");
         statsCanvas.SetActive(true);
         statsCanvasLoadLevelButtonText.text = "Next Level";
         feedbackMessageTextbox.text = "Congratulations! You're ready for the next level.";
