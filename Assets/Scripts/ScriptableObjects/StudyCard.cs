@@ -47,6 +47,17 @@ public class StudyCard : MonoBehaviour
     private void Start()
     {
         InitializeMyGameSoundEnum();
+        
+        if (GameManagerScript.currentLanguage == "English")
+        {
+            englishWord.gameObject.SetActive(true);
+            albanianWord.gameObject.SetActive(false);
+        }
+        else if (GameManagerScript.currentLanguage == "Albanian")
+        {
+            englishWord.gameObject.SetActive(false);
+            albanianWord.gameObject.SetActive(true);
+        }
     }
     public void PlayAudioClip()
     {
