@@ -90,7 +90,7 @@ public class HamburgerBaseFoodScript : BaseFoodScript
         base.HandlePlayerSelectsBaseFoodEvent();
         GameManagerScript.chefHasBurger = true;
     }
-
+    //whatever
     public override void ResetBaseFood()
     {
         base.ResetBaseFood();
