@@ -97,13 +97,21 @@ public abstract class BaseFoodScript : MonoBehaviour
     //Android
     public virtual void Update()
     {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
     }
 
     //Itch
-    //private void OnMouseUp()
-    //{
-    //    EventManagerScript.playerSelectsBurgerEvent.Invoke();
-    //}
+    private void OnMouseUp()
+    {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        EventManagerScript.playerSelectsBurgerEvent.Invoke();
+    }
 
     public virtual void HandlePlayerSelectsBaseFoodEvent()
     {

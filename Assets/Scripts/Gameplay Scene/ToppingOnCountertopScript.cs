@@ -24,6 +24,10 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
     //Android
     private void Update()
     {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
         if (Touchscreen.current == null) return; // avoid errors when testing with a mouse
         
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();

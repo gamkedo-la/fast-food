@@ -125,6 +125,11 @@ public class ChefMovement : MonoBehaviour
 #region Itch Build
 private void OnMouseDrag()
 {
+    if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+    {
+        return;
+    }
+
     Vector2 mousePositionInScreenPixels = Input.mousePosition;
     Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
 

@@ -65,6 +65,11 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
 
     public override void Update()
     {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
 
         currentTouchPositionVector3InWorldUnits = mainCamera.ScreenToWorldPoint(currentTouchPositionVector2InScreenPixels);

@@ -68,9 +68,14 @@ public class headOfLettuceScript : ToppingOnCountertopScript
         
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
     }
+    
     //Itch
-    //private void OnMouseUp()
-    //{
-    //    HandleChefPicksMeUpEvent();
-    //}
+    private void OnMouseUp()
+    {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        HandleChefPicksMeUpEvent();
+    }
 }

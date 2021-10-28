@@ -71,8 +71,12 @@ public class FullOnionScript : ToppingOnCountertopScript
         }
     }
     //Itch
-    //private void OnMouseUp()
-    //{
-    //    HandleChefPicksMeUpEvent();
-    //}
+    private void OnMouseUp()
+    {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        HandleChefPicksMeUpEvent();
+    }
 }

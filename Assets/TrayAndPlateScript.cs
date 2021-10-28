@@ -32,6 +32,11 @@ public class TrayAndPlateScript : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Android)
+        {
+            return;
+        }
+
         if (Touchscreen.current == null) return; // avoid errors when testing with a mouse
         
         currentTouchPositionVector2InScreenPixels = Touchscreen.current.primaryTouch.position.ReadValue();
@@ -64,24 +69,29 @@ public class TrayAndPlateScript : MonoBehaviour
         gameObject.transform.position = startingPositionVector2;
     }
     //Itch
-    //private void OnMouseDrag()
-    //{
-    //    Vector2 mousePositionInScreenPixels = Input.mousePosition;
-    //    Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
+    private void OnMouseDrag()
+    {
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
 
-    //    //if (GameManagerScript.playerIsTouchingChef)
-    //    //{
-    //    //if ( customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) )
-    //    //{
-    //    //    return;
-    //    //}
-    //    gameObject.transform.position = mousePositionConvertedToWorldUnits;
+        Vector2 mousePositionInScreenPixels = Input.mousePosition;
+        Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
 
-    //    if (GameManagerScript.chefHasBurger)
-    //    {
-    //        float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
-    //        //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-    //        burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-    //    }
-    //}
+        //if (GameManagerScript.playerIsTouchingChef)
+        //{
+        //if ( customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) )
+        //{
+        //    return;
+        //}
+        gameObject.transform.position = mousePositionConvertedToWorldUnits;
+
+        if (GameManagerScript.chefHasBurger)
+        {
+            float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
+            //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+            burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+        }
+    }
 }
