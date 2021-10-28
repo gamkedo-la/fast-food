@@ -12,6 +12,7 @@ public class LanguageButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         GameManagerScript.currentLanguage = language;
+        Debug.Log("GameManagerScript.currentLanguage: " + GameManagerScript.currentLanguage);
         targetLanguageTextbox.text = "Target Language: " + GameManagerScript.currentLanguage;
 
         GameManagerScript.currentProfile.targetLanguage = language;

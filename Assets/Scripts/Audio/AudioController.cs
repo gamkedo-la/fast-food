@@ -30,7 +30,7 @@ public class AudioController : MonoBehaviour
         public AudioAction action;
         public GameSoundEnum sound;
 
-        public AudioJob(AudioAction _action, GameSoundEnum _sound){
+        public AudioJob(AudioAction _action, GameSoundEnum _sound) {
             action = _action;
             sound = _sound;
         }
@@ -43,10 +43,10 @@ public class AudioController : MonoBehaviour
         ONESHOT
     }
 
-#region Unity Functions
+    #region Unity Functions
     private void Awake() {
         //instance
-        if (!instance){
+        if (!instance) {
             Configure();
         }
         DontDestroyOnLoad(this.gameObject);
@@ -54,7 +54,7 @@ public class AudioController : MonoBehaviour
 
     void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene ();
+        Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
         switch (sceneName)
@@ -76,11 +76,11 @@ public class AudioController : MonoBehaviour
     private void OnDisable() {
         Dispose();
     }
-#endregion
+    #endregion
 
-#region Public Functions
-//Three different jobs
-    public void OneShot(GameSoundEnum _sound){
+    #region Public Functions
+    //Three different jobs
+    public void OneShot(GameSoundEnum _sound) {
         AddJob(new AudioJob(AudioAction.ONESHOT, _sound));
     }
 
@@ -97,18 +97,18 @@ public class AudioController : MonoBehaviour
     }
 
 
-#endregion
+    #endregion
 
-#region Private Functions
+    #region Private Functions
 
-    private void Configure(){
+    private void Configure() {
         instance = this;
         m_AudioTable = new Hashtable();
         m_JobTable = new Hashtable();
         GenerateAudioTable();
     }
 
-    private void Dispose(){
+    private void Dispose() {
         foreach (DictionaryEntry _entry in m_JobTable) {
             IEnumerator _job = (IEnumerator)_entry.Value;
             StopCoroutine(_job);
@@ -116,11 +116,11 @@ public class AudioController : MonoBehaviour
     }
 
     private void GenerateAudioTable() {
-        foreach(AudioTrack _track in tracks) {
-            foreach(AudioObject _obj in _track.audio){
+        foreach (AudioTrack _track in tracks) {
+            foreach (AudioObject _obj in _track.audio) {
                 //do not duplicate keys
                 if (m_AudioTable.ContainsKey(_obj.sound)) {
-                    LogWarning("You are trying to register audio ["+_obj.sound+"] that has already been reigstered.");
+                    LogWarning("You are trying to register audio [" + _obj.sound + "] that has already been reigstered.");
                 } else {
                     m_AudioTable.Add(_obj.sound, _track);
                 }
@@ -130,88 +130,93 @@ public class AudioController : MonoBehaviour
 
     public GameSoundEnum ConvertCustomerOrderStringToGameSoundEnum(string customerOrderString)
     {
-        switch (customerOrderString)
+        if (GameManagerScript.currentLanguage == "English")
         {
-            //English
+
+            switch (customerOrderString)
+            {
 
                 //Order Hamburger
-            case "I would like a hamburger":
-                return GameSoundEnum.English_Order_Hamburger;
-            case "I would like a hamburger with lettuce.":
-                return GameSoundEnum.English_Order_Hamburger_Lettuce;
-            case "I would like a hamburger with tomato.":
-                return GameSoundEnum.English_Order_Hamburger_Tomato;
-            case "I would like a hamburger with onion.":
-                return GameSoundEnum.English_Order_Hamburger_Onion;
-            case "I would like a hamburger with lettuce and tomato.":
-                return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato;
-            case "I would like a hamburger with lettuce and onion.":
-                return GameSoundEnum.English_Order_Hamburger_Lettuce_Onion;
-            case "I would like a hamburger with tomato and onion.":
-                return GameSoundEnum.English_Order_Hamburger_Tomato_Onion;
-            case "I would like a hamburger with lettuce, tomato, and onion.":
-                return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato_Onion;
+                case "I would like a hamburger":
+                    return GameSoundEnum.English_Order_Hamburger;
+                case "I would like a hamburger with lettuce.":
+                    return GameSoundEnum.English_Order_Hamburger_Lettuce;
+                case "I would like a hamburger with tomato.":
+                    return GameSoundEnum.English_Order_Hamburger_Tomato;
+                case "I would like a hamburger with onion.":
+                    return GameSoundEnum.English_Order_Hamburger_Onion;
+                case "I would like a hamburger with lettuce and tomato.":
+                    return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato;
+                case "I would like a hamburger with lettuce and onion.":
+                    return GameSoundEnum.English_Order_Hamburger_Lettuce_Onion;
+                case "I would like a hamburger with tomato and onion.":
+                    return GameSoundEnum.English_Order_Hamburger_Tomato_Onion;
+                case "I would like a hamburger with lettuce, tomato, and onion.":
+                    return GameSoundEnum.English_Order_Hamburger_Lettuce_Tomato_Onion;
                 //Order Chicken Doner
-            case "I would like a chicken doner":
-                return GameSoundEnum.English_Order_Chicken_Doner;
-            case "I would like a chicken doner with lettuce.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce;
-            case "I would like a chicken doner with tomato.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Tomato;
-            case "I would like a chicken doner with onion.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Onion;
-            case "I would like a chicken doner with lettuce and tomato.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato;
-            case "I would like a chicken doner with lettuce and onion.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Onion;
-            case "I would like a chicken doner with tomato and onion.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Tomato_Onion;
-            case "I would like a chicken doner with lettuce, tomato, and onion.":
-                return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato_Onion;
-
-            //Albanian
-
-                //Order Hamburger
-            case "Un� dua nj� hamburger":
-                return GameSoundEnum.Albanian_Order_Hamburger;
-            case "Un� dua nj� hamburger me marule.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce;
-            case "Un� dua nj� hamburger me domate.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Tomato;
-            case "Un� dua nj� hamburger me qep�.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Onion;
-            case "Un� dua nj� hamburger me marule dhe domate.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato;
-            case "Un� dua nj� hamburger me marule dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Onion;
-            case "Un� dua nj� hamburger me domate dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Tomato_Onion;
-            case "Un� dua nj� hamburger me marule, tomato, dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato_Onion;
-
-                //Order Chicken Doner
-            case "Un� dua nj� doner pule":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner;
-            case "Un� dua nj� doner pule me marule.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce;
-            case "Un� dua nj� doner pule me domate.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato;
-            case "Un� dua nj� doner pule me qep�.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Onion;
-            case "Un� dua nj� doner pule me marule dhe domate.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato;
-            case "Un� dua nj� doner pule me marule dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Onion;
-            case "Un� dua nj� doner pule me domate dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato_Onion;
-            case "Un� dua nj� doner pule me marule, tomato, dhe qep�.":
-                return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
-
-            default:
-                return GameSoundEnum.English_Order_Hamburger;
-                
+                case "I would like a chicken doner":
+                    return GameSoundEnum.English_Order_Chicken_Doner;
+                case "I would like a chicken doner with lettuce.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Lettuce;
+                case "I would like a chicken doner with tomato.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Tomato;
+                case "I would like a chicken doner with onion.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Onion;
+                case "I would like a chicken doner with lettuce and tomato.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato;
+                case "I would like a chicken doner with lettuce and onion.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Onion;
+                case "I would like a chicken doner with tomato and onion.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Tomato_Onion;
+                case "I would like a chicken doner with lettuce, tomato, and onion.":
+                    return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+            }
         }
+        else if (GameManagerScript.currentLanguage == "Albanian")
+        {
+            switch (customerOrderString)
+            {
+                case "Unë dua një hamburger":
+                    return GameSoundEnum.Albanian_Order_Hamburger;
+                case "Unë dua një hamburger me marule.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Lettuce;
+                case "Unë dua një hamburger me domate.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Tomato;
+                case "Unë dua një hamburger me qepë.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Onion;
+                case "Unë dua një hamburger me marule dhe domate.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato;
+                case "Unë dua një hamburger me marule dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Onion;
+                case "Unë dua një hamburger me domate dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Tomato_Onion;
+                case "Unë dua një hamburger me marule, tomato, dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Hamburger_Lettuce_Tomato_Onion;
+
+                //Order Chicken Doner
+                case "Unë dua një doner pule":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner;
+                case "Unë dua një doner pule me marule.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce;
+                case "Unë dua një doner pule me domate.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato;
+                case "Unë dua një doner pule me qep�.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Onion;
+                case "Unë dua një doner pule me marule dhe domate.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato;
+                case "Unë dua një doner pule me marule dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Onion;
+                case "Unë dua një doner pule me domate dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato_Onion;
+                case "Unë dua një doner pule me marule, tomato, dhe qepë.":
+                    return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+                
+            }
+        }
+        Debug.Log("no valid order audio");
+        return GameSoundEnum.SFX_Incorrect_Order;
     }
+    
     private IEnumerator RunAudioJob(AudioJob _job) {
         AudioTrack _track = GetAudioTrack(_job.sound);
         _track.source.clip = GetAudioClipFromAudioTrack(_job.sound, _track);

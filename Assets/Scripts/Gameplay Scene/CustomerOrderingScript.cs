@@ -139,7 +139,6 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             return;
         }
-        Debug.Log("inside HandleAnyOrderSubmissionEvent");
         burgerScriptablePrefab.GetComponent<HamburgerBaseFoodScript>().ResetBaseFood();
         chickenDonerScriptablePrefab.GetComponent<ChickenDonerBaseFoodScript>().ResetBaseFood();
         isProcessingOrder = false;
@@ -407,6 +406,8 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
         }
+
+        Debug.Log("customersOrderString: " + customersOrderString);
         #endregion
 
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
