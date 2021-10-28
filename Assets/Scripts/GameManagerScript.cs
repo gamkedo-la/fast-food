@@ -9,6 +9,8 @@ public enum CustomerPromptTypeEnumerables
 }
 public static class GameManagerScript 
 {
+    public static CurrentPlatformEnum currentPlatformEnum;
+
     public static string currentLanguage = "";
 
     public static CustomerPromptTypeEnumerables currentCustomerPromptType = CustomerPromptTypeEnumerables.Text;

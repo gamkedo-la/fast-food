@@ -2,11 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CurrentPlatformEnum
+{
+    Android,
+    Itch
+}
+
 public class GameManagerObjectScript : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
+        }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
+        }
+
+        Debug.Log("GameManagerScript.currentPlatformEnum: " + GameManagerScript.currentPlatformEnum.ToString());
+
         if (!GameManagerScript.progressToNextLevelEventHasBeenAdded)
         {
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, ProgressToNextLevel);
