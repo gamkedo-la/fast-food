@@ -428,7 +428,7 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.name == "TrayAndPlate" && GameManagerScript.chefHasBaseFood)
+        if (collision.gameObject.name == "TrayAndPlate(Clone)" && GameManagerScript.chefHasBaseFood)
         {
             isProcessingOrder = true;
 
@@ -667,12 +667,14 @@ public class CustomerOrderingScript : MonoBehaviour
     
     private void HandleCorrectOrderSubmission()
     {
+
         //prevent duplicate event calls
         if (!isProcessingOrder)
         {
             return;
         }
 
+        Debug.Log("inside handle correct order submission");
         losingPatience = false;
         //currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
@@ -765,6 +767,7 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        Debug.Log("handle incorrect order submission");
         CheckForReviewNotification();
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
         Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);

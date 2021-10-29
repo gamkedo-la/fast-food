@@ -24,7 +24,7 @@ public abstract class BaseFoodScript : MonoBehaviour
     [SerializeField] protected Sprite topping3Image;
     protected SpriteRenderer topping3SpriteRenderer;
 
-    [SerializeField] protected GameObject trayAndPlateLocation;
+    //[SerializeField] protected GameObject trayAndPlateLocation;
 
     protected Camera mainCamera;
 
@@ -97,20 +97,20 @@ public abstract class BaseFoodScript : MonoBehaviour
     //Android
     public virtual void Update()
     {
-        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Android)
         {
             return;
         }
     }
 
     //Itch
-    private void OnMouseUp()
+    public virtual void OnMouseUp()
     {
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
         {
             return;
         }
-        EventManagerScript.playerSelectsBurgerEvent.Invoke();
+        //EventManagerScript.playerSelectsBurgerEvent.Invoke();
     }
 
     public virtual void HandlePlayerSelectsBaseFoodEvent()

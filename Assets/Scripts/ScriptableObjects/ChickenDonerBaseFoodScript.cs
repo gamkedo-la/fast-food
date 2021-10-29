@@ -65,7 +65,7 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
 
     public override void Update()
     {
-        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Android)
         {
             return;
         }
@@ -87,11 +87,14 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
     {
         base.HandlePlayerSelectsBaseFoodEvent();
         GameManagerScript.chefHasChickenDoner = true;
+        baseFoodCapsuleCollider.enabled = false;
     }
 
     public override void ResetBaseFood()
     {
         base.ResetBaseFood();
+
+        baseFoodCapsuleCollider.enabled = true;
 
         GameManagerScript.chefHasChickenDoner = false;
         GameManagerScript.chickenDonerHasLettuce = false;
@@ -103,6 +106,14 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
 
     public override void MoveToTray()
     {
-        gameObject.transform.position = trayAndPlateLocation.transform.position;
+        GameObject trayAndPlate = GameObject.FindGameObjectWithTag("TrayAndPlate");
+        gameObject.transform.position = trayAndPlate.transform.position;
+    }
+
+    public override void OnMouseUp()
+    {
+        base.OnMouseUp();
+        EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
+        GameManagerScript.chefHasChickenDoner = true;
     }
 }

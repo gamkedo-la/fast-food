@@ -89,6 +89,7 @@ public class HamburgerBaseFoodScript : BaseFoodScript
     {
         base.HandlePlayerSelectsBaseFoodEvent();
         GameManagerScript.chefHasBurger = true;
+        baseFoodCircleCollider.enabled = false;
     }
     //whatever
     public override void ResetBaseFood()
@@ -99,12 +100,22 @@ public class HamburgerBaseFoodScript : BaseFoodScript
         GameManagerScript.burgerHasLettuce = false;
         GameManagerScript.burgerHasTomatoe = false;
         GameManagerScript.burgerHasOnion = false;
+
+        baseFoodCircleCollider.enabled = true;
     }
 
     public override void MoveToTray()
     {
-        float burgerYPositionWithOffset = trayAndPlateLocation.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
+        GameObject trayAndPlate = GameObject.FindGameObjectWithTag("TrayAndPlate");
+        float burgerYPositionWithOffset = trayAndPlate.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
         //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-        gameObject.transform.position = new Vector3(trayAndPlateLocation.transform.position.x, burgerYPositionWithOffset, 0);     
+        gameObject.transform.position = new Vector3(trayAndPlate.transform.position.x, burgerYPositionWithOffset, 0);     
+    }
+
+    public override void OnMouseUp()
+    {
+        base.OnMouseUp();
+        EventManagerScript.playerSelectsBurgerEvent.Invoke();
+        GameManagerScript.chefHasBurger = true;
     }
 }

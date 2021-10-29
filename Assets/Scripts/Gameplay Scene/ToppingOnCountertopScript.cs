@@ -22,9 +22,9 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, Reappear);
     }
     //Android
-    private void Update()
+    public virtual void Update()
     {
-        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Android)
         {
             return;
         }
@@ -55,5 +55,10 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
 
     public virtual void HandleChefPicksMeUpEvent()
     {
+    }
+
+    public virtual void OnMouseUp()
+    {
+
     }
 }

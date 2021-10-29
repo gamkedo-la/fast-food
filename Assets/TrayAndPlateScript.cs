@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class TrayAndPlateScript : MonoBehaviour
 {
@@ -12,11 +13,14 @@ public class TrayAndPlateScript : MonoBehaviour
     private Vector2 currentTouchPositionVector2InScreenPixels;
     private Vector3 currentTouchPositionVector3InWorldUnits;
 
-    private Vector2 startingPositionVector2;
+    public Vector3 startingPositionVector3;
 
     [SerializeField] GameObject burgerScriptablePrefab;
     [SerializeField] GameObject chickenDonerScriptablePrefab;
-    
+
+    [SerializeField] GameObject trayAndPlateStartingLocationGameObject;
+
+    private bool justSubmitted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +28,11 @@ public class TrayAndPlateScript : MonoBehaviour
         mainCamera = Camera.main;
         trayAndPlateBoxCollider = gameObject.GetComponent<BoxCollider2D>();
 
-        startingPositionVector2 = gameObject.transform.position;
+        burgerScriptablePrefab = GameObject.FindGameObjectWithTag("BurgerPrefab");
+        chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerPrefab");
+
+        startingPositionVector3 = gameObject.transform.position;
+        Debug.Log("startingPositionVector3: " + startingPositionVector3);
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
     }
@@ -32,6 +40,7 @@ public class TrayAndPlateScript : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Android)
         {
             return;
@@ -66,7 +75,8 @@ public class TrayAndPlateScript : MonoBehaviour
 
     private void HandleAnyOrderSubmissionEvent()
     {
-        gameObject.transform.position = startingPositionVector2;
+        GameManagerScript.chefHasBaseFood = true;
+        Destroy(gameObject);
     }
     //Itch
     private void OnMouseDrag()
@@ -87,11 +97,12 @@ public class TrayAndPlateScript : MonoBehaviour
         //}
         gameObject.transform.position = mousePositionConvertedToWorldUnits;
 
+
         if (GameManagerScript.chefHasBurger)
         {
-            float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
+            float burgerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
             //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-            burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+            burgerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, 0);
         }
     }
 }

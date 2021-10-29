@@ -14,14 +14,18 @@ public class GameManagerObjectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
-        }
+        //Default for testing in the editor
+        GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
+
+        //***COMMENT OUT DEFAULT ABOVE HERE AND UNCOMMENT BELOW FOR BUILDS
+        //if (Application.platform == RuntimePlatform.WebGLPlayer)
+        //{
+        //    GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
+        //}
+        //else if (Application.platform == RuntimePlatform.Android)
+        //{
+        //    GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
+        //}
 
         Debug.Log("GameManagerScript.currentPlatformEnum: " + GameManagerScript.currentPlatformEnum.ToString());
 

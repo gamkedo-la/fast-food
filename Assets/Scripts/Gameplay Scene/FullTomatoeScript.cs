@@ -73,8 +73,14 @@ public class FullTomatoeScript : ToppingOnCountertopScript
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomato pickup"]);
     }
 
-    //private void OnMouseUp()
-    //{
-    //    HandleChefPicksMeUpEvent();
-    //}
+    //Itch
+    public override void OnMouseUp()
+    {
+        Debug.Log("anything from tomato mouseup");
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        HandleChefPicksMeUpEvent();
+    }
 }

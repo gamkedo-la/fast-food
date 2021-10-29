@@ -7,12 +7,16 @@ public class CameraScript : MonoBehaviour
     [SerializeField] GameObject statsCanvas;
     [SerializeField] GameObject suggestReviewCanvas;
     [SerializeField] GameObject newWordIntroductionCanvas;
+    [SerializeField] GameObject trayAndPlatePrefab;
 
     // Start is called before the first frame update
     void Start()
     {    
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.suggestReviewToPlayerEvent, HandleSuggestReviewToStudentEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
+
+        Instantiate(trayAndPlatePrefab);
 
         if (GameManagerScript.shouldIntroduceNewLevel)
         {
@@ -20,7 +24,10 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    
+    private void HandleAnyOrderSubmissionEvent()
+    {
+        Instantiate(trayAndPlatePrefab);
+    }
     private void HandleSuggestReviewToStudentEvent()
     {
         suggestReviewCanvas.SetActive(true);

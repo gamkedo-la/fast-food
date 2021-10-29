@@ -123,31 +123,31 @@ public class ChefMovement : MonoBehaviour
     //}//end of update
 
 #region Itch Build
-private void OnMouseDrag()
-{
-    if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
-    {
-        return;
-    }
+//private void OnMouseDrag()
+//{
+//    if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+//    {
+//        return;
+//    }
 
-    Vector2 mousePositionInScreenPixels = Input.mousePosition;
-    Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
+//    Vector2 mousePositionInScreenPixels = Input.mousePosition;
+//    Vector2 mousePositionConvertedToWorldUnits = mainCamera.ScreenToWorldPoint(mousePositionInScreenPixels);
 
-    //if (GameManagerScript.playerIsTouchingChef)
-    //{
-    //if ( customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) )
-    //{
-    //    return;
-    //}
-    gameObject.transform.position = mousePositionConvertedToWorldUnits;
+//    //if (GameManagerScript.playerIsTouchingChef)
+//    //{
+//    //if ( customerCounterTop.GetComponent<BoxCollider2D>().OverlapPoint(mousePositionConvertedToWorldUnits) )
+//    //{
+//    //    return;
+//    //}
+//    gameObject.transform.position = mousePositionConvertedToWorldUnits;
 
-    if (GameManagerScript.chefHasBurger)
-    {
-        float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
-        //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-        burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
-    }
-}
+//    if (GameManagerScript.chefHasBurger)
+//    {
+//        float burgerXPositionWithOffset = gameObject.transform.position.x + GameManagerScript.burgerBeingHeldXOffset;
+//        //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+//        burgerScriptablePrefab.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
+//    }
+//}
 
     #endregion //Itch build
     #endregion //Methods

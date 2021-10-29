@@ -71,7 +71,7 @@ public class FullOnionScript : ToppingOnCountertopScript
         }
     }
     //Itch
-    private void OnMouseUp()
+    public override void OnMouseUp()
     {
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
         {
