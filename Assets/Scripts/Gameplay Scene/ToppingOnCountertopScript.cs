@@ -59,6 +59,6 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
 
     public virtual void OnMouseUp()
     {
-
+        Debug.Log("anything from ToppingOnCounterTop parent class script");
     }
 }

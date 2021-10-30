@@ -72,6 +72,7 @@ public class headOfLettuceScript : ToppingOnCountertopScript
     //Itch
     public override void OnMouseUp()
     {
+        Debug.Log("anything from headOfLettuce.cs onMouseUp");
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
         {
             return;

@@ -29,7 +29,8 @@ public class TrayAndPlateScript : MonoBehaviour
         trayAndPlateBoxCollider = gameObject.GetComponent<BoxCollider2D>();
 
         burgerScriptablePrefab = GameObject.FindGameObjectWithTag("BurgerPrefab");
-        chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerPrefab");
+        chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerScriptablePrefab");
+        Debug.Log("chickenDonerScriptablePrefab: " + chickenDonerScriptablePrefab);
 
         startingPositionVector3 = gameObject.transform.position;
         Debug.Log("startingPositionVector3: " + startingPositionVector3);
@@ -103,6 +104,10 @@ public class TrayAndPlateScript : MonoBehaviour
             float burgerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.burgerBeingHeldYOffset;
             //burger.transform.position = new Vector3(burgerXPositionWithOffset, gameObject.transform.position.y, 0);
             burgerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1.0f, 0);
+        }
+        else if (GameManagerScript.chefHasChickenDoner)
+        {
+            chickenDonerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
         }
     }
 }
