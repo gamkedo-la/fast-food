@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ProfileManagerScript : MonoBehaviour
 {
     public static List<ProfileDataScript> listOfProfiles = new List<ProfileDataScript>();
 
-    [SerializeField] Text noExistingProfilesText;
+    [SerializeField] TextMeshProUGUI noExistingProfilesTextMeshPro;
 
     [SerializeField] GameObject profilePrefab1;
     [SerializeField] GameObject profilePrefab2;
@@ -61,7 +62,7 @@ public class ProfileManagerScript : MonoBehaviour
         
         if (listOfProfiles.Count != 0)
         {
-            noExistingProfilesText.gameObject.SetActive(false);
+            noExistingProfilesTextMeshPro.gameObject.SetActive(false);
             for (int i = 0; i < listOfProfiles.Count; i++)
             {
                 listOfProfilePrefabs[i].SetActive(true);
