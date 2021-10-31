@@ -14,18 +14,8 @@ public class GameManagerObjectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Default for testing in the editor
-        //GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
 
-        //***COMMENT OUT DEFAULT ABOVE HERE AND UNCOMMENT BELOW FOR BUILDS
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-        {
-            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
-        }
-        else if (Application.platform == RuntimePlatform.Android)
-        {
-            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
-        }
+        HandleCurrentPlatform();
 
         Debug.Log("GameManagerScript.currentPlatformEnum: " + GameManagerScript.currentPlatformEnum.ToString());
 
@@ -36,6 +26,23 @@ public class GameManagerObjectScript : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
+
+    /// <summary>
+    /// Use the first line to test in the editor, use the if/else if when building to Android/Itch
+    /// </summary>
+    private void HandleCurrentPlatform()
+    {
+        //GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
+
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Itch;
+        }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
+        }
+    }    
 
     public static void ProgressToNextLevel()
     {
