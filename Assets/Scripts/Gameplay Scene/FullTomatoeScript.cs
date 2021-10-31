@@ -29,13 +29,16 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     public override void Update()
     {
+        base.Update();
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (myCircleCollider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
                 HandleMouseUp();
-        }
-            
-        base.Update();
+        }            
     }
 
     public override void Reappear()
