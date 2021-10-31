@@ -30,10 +30,8 @@ public class TrayAndPlateScript : MonoBehaviour
 
         burgerScriptablePrefab = GameObject.FindGameObjectWithTag("BurgerPrefab");
         chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerScriptablePrefab");
-        Debug.Log("chickenDonerScriptablePrefab: " + chickenDonerScriptablePrefab);
 
         startingPositionVector3 = gameObject.transform.position;
-        Debug.Log("startingPositionVector3: " + startingPositionVector3);
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
     }

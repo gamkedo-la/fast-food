@@ -51,7 +51,6 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     public override void HandleChefPicksMeUpEvent()
     {
-        Debug.Log("inside HandleChefPicksMeUpEvent from tomato script");
         EventManagerScript.chefPicksUpTomatoeEvent.Invoke();
     }
 

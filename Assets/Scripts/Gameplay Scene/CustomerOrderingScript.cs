@@ -674,7 +674,6 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
-        Debug.Log("inside handle correct order submission");
         losingPatience = false;
         //currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
