@@ -130,7 +130,7 @@ public class AudioController : MonoBehaviour
 
     public GameSoundEnum ConvertCustomerOrderStringToGameSoundEnum(string customerOrderString)
     {
-        if (GameManagerScript.currentLanguage == "English")
+        if (GameManagerScript.currentLanguage == Language.English)
         {
 
             switch (customerOrderString)
@@ -172,7 +172,7 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato_Onion;
             }
         }
-        else if (GameManagerScript.currentLanguage == "Albanian")
+        else if (GameManagerScript.currentLanguage == Language.Albanian)
         {
             switch (customerOrderString)
             {

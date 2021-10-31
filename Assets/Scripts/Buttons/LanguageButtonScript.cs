@@ -6,13 +6,13 @@ using TMPro;
 
 public class LanguageButtonScript : ButtonScript
 {
-    [SerializeField] string language = "";
+    [SerializeField] Language language = Language.Undefined;
     [SerializeField] TextMeshProUGUI targetLanguageTextbox;
 
     public override void HandleButtonClick()
     {
         GameManagerScript.currentLanguage = language;
-        targetLanguageTextbox.text = "Target Language: " + GameManagerScript.currentLanguage;
+        targetLanguageTextbox.text = "Target Language: " + GameManagerScript.currentLanguage.ToString();
 
         GameManagerScript.currentProfile.targetLanguage = language;
         SaveSystem.SaveListOfProfilesData();

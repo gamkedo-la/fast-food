@@ -9,13 +9,13 @@ public class StudyCard : MonoBehaviour
     [SerializeField]
     WordObject wordObject;
 
-    private Dictionary<string, Text> dictionaryOfTextBoxObjects = new Dictionary<string, Text>();
+    private Dictionary<Language, Text> dictionaryOfTextBoxObjects = new Dictionary<Language, Text>();
     [SerializeField]
     Text englishWord;
     [SerializeField]
     Text albanianWord;
 
-    public Dictionary<string, AudioClip> dictionaryOfAudioClips = new Dictionary<string, AudioClip>();
+    public Dictionary<Language, AudioClip> dictionaryOfAudioClips = new Dictionary<Language, AudioClip>();
     AudioClip englishAudio;
     AudioClip albanianAudio;
 
@@ -30,14 +30,14 @@ public class StudyCard : MonoBehaviour
         if (wordObject != null)
         {
             englishWord.text = wordObject.englishWord;
-            dictionaryOfTextBoxObjects.Add("English", englishWord);
+            dictionaryOfTextBoxObjects.Add(Language.English, englishWord);
             albanianWord.text = wordObject.albanianWord;
-            dictionaryOfTextBoxObjects.Add("Albanian", albanianWord);
+            dictionaryOfTextBoxObjects.Add(Language.Albanian, albanianWord);
 
             englishAudio = wordObject.englishAudio;
-            dictionaryOfAudioClips.Add("English", englishAudio);
+            dictionaryOfAudioClips.Add(Language.English, englishAudio);
             albanianAudio = wordObject.albanianAudio;
-            dictionaryOfAudioClips.Add("Albanian", albanianAudio);
+            dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
             //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             wordImage.sprite = wordObject.icon;
@@ -48,12 +48,12 @@ public class StudyCard : MonoBehaviour
     {
         InitializeMyGameSoundEnum();
         
-        if (GameManagerScript.currentLanguage == "English")
+        if (GameManagerScript.currentLanguage == Language.English)
         {
             englishWord.gameObject.SetActive(true);
             albanianWord.gameObject.SetActive(false);
         }
-        else if (GameManagerScript.currentLanguage == "Albanian")
+        else if (GameManagerScript.currentLanguage == Language.Albanian)
         {
             englishWord.gameObject.SetActive(false);
             albanianWord.gameObject.SetActive(true);
@@ -69,11 +69,11 @@ public class StudyCard : MonoBehaviour
         
         switch (GameManagerScript.currentLanguage)
         {
-            case "English":
+            case Language.English:
                 currentTextString = englishWord.text;
                 break;
 
-            case "Albanian":
+            case Language.Albanian:
                 currentTextString = albanianWord.text;
                 break;
         }
@@ -81,11 +81,11 @@ public class StudyCard : MonoBehaviour
         switch (currentTextString)
         {
             case "Hamburger":
-                if (GameManagerScript.currentLanguage == "English")
+                if (GameManagerScript.currentLanguage == Language.English)
                 {
                     myGameSoundEnum = GameSoundEnum.English_Hamburger;
                 }
-                else if (GameManagerScript.currentLanguage == "Albanian")
+                else if (GameManagerScript.currentLanguage == Language.Albanian)
                 {
                     myGameSoundEnum = GameSoundEnum.Albanian_Hamburger;
                 }

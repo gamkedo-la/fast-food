@@ -5,9 +5,9 @@ using UnityEngine;
 public class LanguageDictionary : MonoBehaviour
 {
     #region Fields
-    public static Dictionary<string, Dictionary<string, string>> languageDictionary = new Dictionary<string, Dictionary<string, string>>();
+    public static Dictionary<Language, Dictionary<string, string>> languageDictionary = new Dictionary<Language, Dictionary<string, string>>();
 
-    public static Dictionary<string, Dictionary<string, AudioClip>> audioLanguageDictionary = new Dictionary<string, Dictionary<string, AudioClip>>();
+    public static Dictionary<Language, Dictionary<string, AudioClip>> audioLanguageDictionary = new Dictionary<Language, Dictionary<string, AudioClip>>();
 
     //for study cards and picking up food items during gameplay
     [SerializeField] AudioClip englishIWouldLikeAAudioClip;
@@ -81,119 +81,119 @@ public class LanguageDictionary : MonoBehaviour
     {
         #region Initialize text dictionary
         //gameplay
-        languageDictionary.Add("English", new Dictionary<string, string>());
-        languageDictionary["English"].Add("I want a hamburger", "I would like a hamburger");
-        languageDictionary["English"].Add("I want a chicken doner", "I would like a chicken doner");
-        languageDictionary["English"].Add("with", " with ");
-        languageDictionary["English"].Add("only lettuce", "lettuce.");
-        languageDictionary["English"].Add("only tomato", "tomato.");
-        languageDictionary["English"].Add("only onion", "onion.");
-        languageDictionary["English"].Add("lettuce and tomato", "lettuce and tomato.");
-        languageDictionary["English"].Add("lettuce and onion", "lettuce and onion.");
-        languageDictionary["English"].Add("tomato and onion", "tomato and onion.");
-        languageDictionary["English"].Add("lettuce, tomato, and onion", "lettuce, tomato, and onion.");
-        languageDictionary["English"].Add("Thank you!", "Thank you!");
-        languageDictionary["English"].Add("That's not what I want!", "That's not what I want!");
+        languageDictionary.Add(Language.English, new Dictionary<string, string>());
+        languageDictionary[Language.English].Add("I want a hamburger", "I would like a hamburger");
+        languageDictionary[Language.English].Add("I want a chicken doner", "I would like a chicken doner");
+        languageDictionary[Language.English].Add("with", " with ");
+        languageDictionary[Language.English].Add("only lettuce", "lettuce.");
+        languageDictionary[Language.English].Add("only tomato", "tomato.");
+        languageDictionary[Language.English].Add("only onion", "onion.");
+        languageDictionary[Language.English].Add("lettuce and tomato", "lettuce and tomato.");
+        languageDictionary[Language.English].Add("lettuce and onion", "lettuce and onion.");
+        languageDictionary[Language.English].Add("tomato and onion", "tomato and onion.");
+        languageDictionary[Language.English].Add("lettuce, tomato, and onion", "lettuce, tomato, and onion.");
+        languageDictionary[Language.English].Add("Thank you!", "Thank you!");
+        languageDictionary[Language.English].Add("That's not what I want!", "That's not what I want!");
 
-        languageDictionary.Add("Albanian", new Dictionary<string, string>());
-        languageDictionary["Albanian"].Add("I want a hamburger", "Unë dua një hamburger");
-        languageDictionary["Albanian"].Add("I want a chicken doner", "Unë dua një doner pule");
-        languageDictionary["Albanian"].Add("with", " me ");
-        languageDictionary["Albanian"].Add("only lettuce", "marule.");
-        languageDictionary["Albanian"].Add("only tomato", "domate.");
-        languageDictionary["Albanian"].Add("only onion", "qepë.");
-        languageDictionary["Albanian"].Add("lettuce and tomato", "marule dhe domate.");
-        languageDictionary["Albanian"].Add("lettuce and onion", "marule dhe qepë.");
-        languageDictionary["Albanian"].Add("tomato and onion", "domate dhe qepë.");
-        languageDictionary["Albanian"].Add("lettuce, tomato, and onion", "marule, domate, dhe qepë.");
-        languageDictionary["Albanian"].Add("Thank you!", "Faleminderit!");
-        languageDictionary["Albanian"].Add("That's not what I want!", "Kjo nuk është ajo që unë dua!");
+        languageDictionary.Add(Language.Albanian, new Dictionary<string, string>());
+        languageDictionary[Language.Albanian].Add("I want a hamburger", "Unë dua një hamburger");
+        languageDictionary[Language.Albanian].Add("I want a chicken doner", "Unë dua një doner pule");
+        languageDictionary[Language.Albanian].Add("with", " me ");
+        languageDictionary[Language.Albanian].Add("only lettuce", "marule.");
+        languageDictionary[Language.Albanian].Add("only tomato", "domate.");
+        languageDictionary[Language.Albanian].Add("only onion", "qepë.");
+        languageDictionary[Language.Albanian].Add("lettuce and tomato", "marule dhe domate.");
+        languageDictionary[Language.Albanian].Add("lettuce and onion", "marule dhe qepë.");
+        languageDictionary[Language.Albanian].Add("tomato and onion", "domate dhe qepë.");
+        languageDictionary[Language.Albanian].Add("lettuce, tomato, and onion", "marule, domate, dhe qepë.");
+        languageDictionary[Language.Albanian].Add("Thank you!", "Faleminderit!");
+        languageDictionary[Language.Albanian].Add("That's not what I want!", "Kjo nuk është ajo që unë dua!");
 
         //study screen
-        languageDictionary["English"].Add("I would like a", "I would like a");
-        languageDictionary["English"].Add("hamburger", "hamburger");
-        languageDictionary["English"].Add("lettuce", "lettuce");
-        languageDictionary["English"].Add("tomato", "tomato");
-        languageDictionary["English"].Add("onion", "onion");
+        languageDictionary[Language.English].Add("I would like a", "I would like a");
+        languageDictionary[Language.English].Add("hamburger", "hamburger");
+        languageDictionary[Language.English].Add("lettuce", "lettuce");
+        languageDictionary[Language.English].Add("tomato", "tomato");
+        languageDictionary[Language.English].Add("onion", "onion");
 
-        languageDictionary["Albanian"].Add("I would like a", "Unë dua një");
-        languageDictionary["Albanian"].Add("hamburger", "hamburger");
-        languageDictionary["Albanian"].Add("lettuce", "marule");
-        languageDictionary["Albanian"].Add("tomato", "domate");
-        languageDictionary["Albanian"].Add("onion", "qepë");
+        languageDictionary[Language.Albanian].Add("I would like a", "Unë dua një");
+        languageDictionary[Language.Albanian].Add("hamburger", "hamburger");
+        languageDictionary[Language.Albanian].Add("lettuce", "marule");
+        languageDictionary[Language.Albanian].Add("tomato", "domate");
+        languageDictionary[Language.Albanian].Add("onion", "qepë");
         #endregion
 
 
         #region Initialize audio dictionary
         //English
         //for study cards and food pickup
-        audioLanguageDictionary.Add("English", new Dictionary<string, AudioClip>());
-        audioLanguageDictionary["English"].Add("I would like a", englishIWouldLikeAAudioClip);
-        audioLanguageDictionary["English"].Add("hamburger", englishHamburgerAudioClip);
-        audioLanguageDictionary["English"].Add("chicken doner", englishHamburgerAudioClip);
-        audioLanguageDictionary["English"].Add("lettuce", englishLettuceAudioClip);
-        audioLanguageDictionary["English"].Add("tomato", englishTomatoAudioClip);
-        audioLanguageDictionary["English"].Add("onion", englishOnionAudioClip);
-        audioLanguageDictionary["English"].Add("Thank You", englishThankYouAudioClip);
-        audioLanguageDictionary["English"].Add("No", englishNoAudioClip);
+        audioLanguageDictionary.Add(Language.English, new Dictionary<string, AudioClip>());
+        audioLanguageDictionary[Language.English].Add("I would like a", englishIWouldLikeAAudioClip);
+        audioLanguageDictionary[Language.English].Add("hamburger", englishHamburgerAudioClip);
+        audioLanguageDictionary[Language.English].Add("chicken doner", englishHamburgerAudioClip);
+        audioLanguageDictionary[Language.English].Add("lettuce", englishLettuceAudioClip);
+        audioLanguageDictionary[Language.English].Add("tomato", englishTomatoAudioClip);
+        audioLanguageDictionary[Language.English].Add("onion", englishOnionAudioClip);
+        audioLanguageDictionary[Language.English].Add("Thank You", englishThankYouAudioClip);
+        audioLanguageDictionary[Language.English].Add("No", englishNoAudioClip);
 
-        audioLanguageDictionary["English"].Add("lettuce pickup", englishLettucePickupAudioClip);
-        audioLanguageDictionary["English"].Add("tomato pickup", englishTomatoPickupAudioClip);
-        audioLanguageDictionary["English"].Add("onion pickup", englishOnionPickupAudioClip);
+        audioLanguageDictionary[Language.English].Add("lettuce pickup", englishLettucePickupAudioClip);
+        audioLanguageDictionary[Language.English].Add("tomato pickup", englishTomatoPickupAudioClip);
+        audioLanguageDictionary[Language.English].Add("onion pickup", englishOnionPickupAudioClip);
 
         //for customer prompts
-        audioLanguageDictionary["English"].Add("I would like a hamburger", iWouldLikeAHamburgerEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with lettuce.", iWouldLikeAHamburgerWithLettuceEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with tomato.", iWouldLikeAHamburgerWithTomatoEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with onion.", iWouldLikeAHamburgerWithOnionEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with lettuce and tomato.", iWouldLikeAHamburgerWithLettuceAndTomatoEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with lettuce and onion.", iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with tomato and onion.", iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt);
-        audioLanguageDictionary["English"].Add("I would like a hamburger with lettuce, tomato, and onion.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger", iWouldLikeAHamburgerEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with lettuce.", iWouldLikeAHamburgerWithLettuceEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with tomato.", iWouldLikeAHamburgerWithTomatoEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with onion.", iWouldLikeAHamburgerWithOnionEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with lettuce and tomato.", iWouldLikeAHamburgerWithLettuceAndTomatoEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with lettuce and onion.", iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with tomato and onion.", iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a hamburger with lettuce, tomato, and onion.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt);
 
-        audioLanguageDictionary["English"].Add("I would like a chicken doner", englishIWouldLikeAChickenDonerPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce.", englishIWouldLikeAChickenDonerWithLettucePrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with tomato.", englishIWouldLikeAChickenDonerWithTomatoPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with onion.", englishIWouldLikeAChickenDonerWithOnionPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce and tomato.", englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce and onion.", englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with tomato and onion.", englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
-        audioLanguageDictionary["English"].Add("I would like a chicken doner with lettuce, tomato, and onion.", englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner", englishIWouldLikeAChickenDonerPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with lettuce.", englishIWouldLikeAChickenDonerWithLettucePrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with tomato.", englishIWouldLikeAChickenDonerWithTomatoPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with onion.", englishIWouldLikeAChickenDonerWithOnionPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with lettuce and tomato.", englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with lettuce and onion.", englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with tomato and onion.", englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.English].Add("I would like a chicken doner with lettuce, tomato, and onion.", englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
 
 
         //Albanian
         //for study cards and food pickups
-        audioLanguageDictionary.Add("Albanian", new Dictionary<string, AudioClip>());
-        audioLanguageDictionary["Albanian"].Add("I would like a", albanianIWouldLikeAAudioClip);
-        audioLanguageDictionary["Albanian"].Add("hamburger", albanianHamburgerAudioClip);
-        audioLanguageDictionary["Albanian"].Add("lettuce", albanianLettuceAudioClip);
-        audioLanguageDictionary["Albanian"].Add("tomato", albanianTomatoAudioClip);
-        audioLanguageDictionary["Albanian"].Add("onion", albanianOnionAudioClip);
-        audioLanguageDictionary["Albanian"].Add("Thank You", albanianThankYouAudioClip);
-        audioLanguageDictionary["Albanian"].Add("No", albanianNoAudioClip);
+        audioLanguageDictionary.Add(Language.Albanian, new Dictionary<string, AudioClip>());
+        audioLanguageDictionary[Language.Albanian].Add("I would like a", albanianIWouldLikeAAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("hamburger", albanianHamburgerAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("lettuce", albanianLettuceAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("tomato", albanianTomatoAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("onion", albanianOnionAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("Thank You", albanianThankYouAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("No", albanianNoAudioClip);
 
-        audioLanguageDictionary["Albanian"].Add("lettuce pickup", albanianLettucePickupAudioClip);
-        audioLanguageDictionary["Albanian"].Add("tomato pickup", albanianTomatoPickupAudioClip);
-        audioLanguageDictionary["Albanian"].Add("onion pickup", albanianOnionPickupAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("lettuce pickup", albanianLettucePickupAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("tomato pickup", albanianTomatoPickupAudioClip);
+        audioLanguageDictionary[Language.Albanian].Add("onion pickup", albanianOnionPickupAudioClip);
 
         //for customer prompts
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger", iWouldLikeAHamburgerAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule.", iWouldLikeAHamburgerWithLettuceAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me domate.", iWouldLikeAHamburgerWithTomatoAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me qepë.", iWouldLikeAHamburgerWithOnionAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule dhe domate.", iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule dhe qepë.", iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me domate dhe qepë.", iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një hamburger me marule, tomato, dhe qepë.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger", iWouldLikeAHamburgerAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule.", iWouldLikeAHamburgerWithLettuceAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me domate.", iWouldLikeAHamburgerWithTomatoAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me qepë.", iWouldLikeAHamburgerWithOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule dhe domate.", iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule dhe qepë.", iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me domate dhe qepë.", iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule, tomato, dhe qepë.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt);
 
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule", albanianIWouldLikeAChickenDonerPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule.", albanianIWouldLikeAChickenDonerWithLettucePrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me domate.", albanianIWouldLikeAChickenDonerWithTomatoPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me qepë.", albanianIWouldLikeAChickenDonerWithOnionPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule dhe domate.", albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule dhe qepë.", albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me domate dhe qepë.", albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
-        audioLanguageDictionary["Albanian"].Add("Unë dua një doner pule me marule, tomato, dhe qepë.", albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule", albanianIWouldLikeAChickenDonerPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule.", albanianIWouldLikeAChickenDonerWithLettucePrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me domate.", albanianIWouldLikeAChickenDonerWithTomatoPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me qepë.", albanianIWouldLikeAChickenDonerWithOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule dhe domate.", albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule dhe qepë.", albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me domate dhe qepë.", albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule, tomato, dhe qepë.", albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
         #endregion
     }
 

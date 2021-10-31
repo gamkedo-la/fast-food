@@ -10,11 +10,11 @@ public class PrepSceneAudioButtonScript : ButtonScript
     {
         switch (GameManagerScript.currentLanguage)
         {
-            case "English":
+            case Language.English:
                 AudioController.instance.PlayAudio(GameSoundEnum.English_I_Would_Like_A);
                 break;
 
-            case "Albanian":
+            case Language.Albanian:
                 AudioController.instance.PlayAudio(GameSoundEnum.Albanian_I_Would_Like_A);
                 break;
         }

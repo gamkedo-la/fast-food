@@ -681,11 +681,11 @@ public class CustomerOrderingScript : MonoBehaviour
 
         switch (GameManagerScript.currentLanguage)
         {
-            case "English":
+            case Language.English:
             AudioController.instance.PlayAudio(GameSoundEnum.English_Thank_You);
             break;
 
-            case "Albanian":
+            case Language.Albanian:
             AudioController.instance.PlayAudio(GameSoundEnum.Albanian_Thank_You);
             break;
         }

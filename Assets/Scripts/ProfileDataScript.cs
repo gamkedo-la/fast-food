@@ -7,7 +7,7 @@ public class ProfileDataScript
 {
     public string userName;
     public int currentLevel;
-    public string targetLanguage;
+    public Language targetLanguage;
 
     public ProfileDataScript (string newUserName)
     {
