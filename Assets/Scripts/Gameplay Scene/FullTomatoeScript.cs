@@ -12,6 +12,8 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     private SpriteRenderer tomatoeOnBurgerScriptableObjectSpriteRenderer;
     [SerializeField] SpriteRenderer tomatoOnDonerSpriteRenderer;
 
+    private CircleCollider2D myCircleCollider;
+
     public override void Start()
     {
         base.Start();
@@ -20,8 +22,23 @@ public class FullTomatoeScript : ToppingOnCountertopScript
         tomatoeOnBurgerScriptableObject = GameObject.FindGameObjectWithTag("TomatoeOnBurgerScriptablePrefab");
         tomatoeOnBurgerScriptableObjectSpriteRenderer = tomatoeOnBurgerScriptableObject.GetComponent<SpriteRenderer>();
 
+        myCircleCollider = gameObject.GetComponent<CircleCollider2D>();
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpTomatoeEvent, ActualMethodHandlerOnPickupEvent);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (myCircleCollider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+                HandleMouseUp();
+        }            
     }
 
     public override void Reappear()
@@ -34,6 +51,7 @@ public class FullTomatoeScript : ToppingOnCountertopScript
 
     public override void HandleChefPicksMeUpEvent()
     {
+        Debug.Log("inside HandleChefPicksMeUpEvent from tomato script");
         EventManagerScript.chefPicksUpTomatoeEvent.Invoke();
     }
 
@@ -74,7 +92,7 @@ public class FullTomatoeScript : ToppingOnCountertopScript
     }
 
     //Itch
-    public override void OnMouseUp()
+    private void HandleMouseUp()
     {
         Debug.Log("anything from tomato mouseup");
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)

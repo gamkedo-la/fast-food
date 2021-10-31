@@ -13,7 +13,12 @@ public class PlusButtonScript : MonoBehaviour
         {
             GameManagerScript.currentLevel = 4;
         }
-        GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
+
+        if (GameManagerScript.currentProfile != null)
+        {
+            GameManagerScript.currentProfile.currentLevel = GameManagerScript.currentLevel;
+        }
+
         for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
         {
             if (GameManagerScript.currentProfile.userName == ProfileManagerScript.listOfProfiles[i].userName)

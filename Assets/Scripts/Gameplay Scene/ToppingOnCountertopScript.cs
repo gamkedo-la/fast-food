@@ -56,9 +56,4 @@ public abstract class ToppingOnCountertopScript : MonoBehaviour
     public virtual void HandleChefPicksMeUpEvent()
     {
     }
-
-    public virtual void OnMouseUp()
-    {
-
-    }
 }

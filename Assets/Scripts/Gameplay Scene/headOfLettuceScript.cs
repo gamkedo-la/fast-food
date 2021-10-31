@@ -11,6 +11,7 @@ public class headOfLettuceScript : ToppingOnCountertopScript
     private SpriteRenderer lettuceOnBurgerScriptablePrefabSpriteRenderer;
 
     [SerializeField] SpriteRenderer chickenDonerLettuceSpriteRenderer;
+    private CircleCollider2D myCircleCollider;
 
     public override void Start()
     {
@@ -21,7 +22,23 @@ public class headOfLettuceScript : ToppingOnCountertopScript
         lettuceOnBurgerScriptablePrefab = GameObject.FindGameObjectWithTag("LettuceOnBurgerScriptablePrefab");
         lettuceOnBurgerScriptablePrefabSpriteRenderer = lettuceOnBurgerScriptablePrefab.GetComponent<SpriteRenderer>();
 
+        myCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpLettuceEvent, ActualMethodHandlerOnPickupEvent);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (myCircleCollider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+                HandleMouseUp();
+        }        
     }
 
     public override void HandleChefPicksMeUpEvent()
@@ -70,8 +87,9 @@ public class headOfLettuceScript : ToppingOnCountertopScript
     }
     
     //Itch
-    public override void OnMouseUp()
+    private void HandleMouseUp()
     {
+        Debug.Log("anything from headOfLettuce.cs onMouseUp");
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
         {
             return;

@@ -11,6 +11,7 @@ public class FullOnionScript : ToppingOnCountertopScript
     private SpriteRenderer onionOnBurgerScriptablePrefabSpriteRenderer;
 
     [SerializeField] SpriteRenderer onionOnDonerSpriteRenderer;
+    private CircleCollider2D myCircleCollider;
 
     public override void Start()
     {
@@ -20,8 +21,24 @@ public class FullOnionScript : ToppingOnCountertopScript
         onionOnBurgerScriptablePrefab = GameObject.FindGameObjectWithTag("OnionOnBurgerScriptablePrefab");
         onionOnBurgerScriptablePrefabSpriteRenderer = onionOnBurgerScriptablePrefab.GetComponent<SpriteRenderer>();
 
+        myCircleCollider = gameObject.GetComponent<CircleCollider2D>();
+
         base.Start();
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpOnionEvent, ActualMethodHandlerOnPickupEvent);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (myCircleCollider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
+                HandleMouseUp();
+        }        
     }
 
     public override void Reappear()
@@ -71,7 +88,7 @@ public class FullOnionScript : ToppingOnCountertopScript
         }
     }
     //Itch
-    public override void OnMouseUp()
+    private void HandleMouseUp()
     {
         if (GameManagerScript.currentPlatformEnum != CurrentPlatformEnum.Itch)
         {
