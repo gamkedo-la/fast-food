@@ -8,6 +8,7 @@ public class LoadProfile1Script : ButtonScript
     
     public override void HandleButtonClick()
     {
+        GameManagerScript.currentProfile = ProfileManagerScript.listOfProfiles[0];
         GameManagerScript.currentLevel = ProfileManagerScript.listOfProfiles[0].currentLevel;
         GameManagerScript.currentLanguage = ProfileManagerScript.listOfProfiles[0].targetLanguage;
         SceneManager.LoadScene("ReturningPlayerPrepScene");

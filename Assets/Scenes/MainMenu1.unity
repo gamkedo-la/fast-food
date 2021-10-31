@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f337781ba675641a5c3965cb80e715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickAudioClip: {fileID: 0}
+  buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
 --- !u!1 &58689248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f563f9ca11b3e4b8091b8f591da3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickAudioClip: {fileID: 0}
+  buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
 --- !u!1001 &279184600
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8653,7 +8653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd19a8b189d7694ab01f89095fcdf31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickAudioClip: {fileID: 0}
+  buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
 --- !u!1 &785548566
 GameObject:
   m_ObjectHideFlags: 0
@@ -11442,6 +11442,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: levelTextbox
+      value: 
+      objectReference: {fileID: 1386315468}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: userNameTextbox
+      value: 
+      objectReference: {fileID: 1386315469}
     - target: {fileID: 4403262248635329415, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -11688,6 +11696,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: levelTextbox
+      value: 
+      objectReference: {fileID: 1428228306}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: userNameTextbox
+      value: 
+      objectReference: {fileID: 1428228307}
     - target: {fileID: 4403262248635329415, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12056,6 +12072,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: levelTextbox
+      value: 
+      objectReference: {fileID: 1445761206}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: userNameTextbox
+      value: 
+      objectReference: {fileID: 1445761207}
     - target: {fileID: 4403262248635329415, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12378,6 +12402,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: levelTextbox
+      value: 
+      objectReference: {fileID: 1515261546}
+    - target: {fileID: 3456864643510769376, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
+      propertyPath: userNameTextbox
+      value: 
+      objectReference: {fileID: 1515261547}
     - target: {fileID: 4403262248635329415, guid: f985e5e73a22eb84b9e7ad5f010d6546, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
