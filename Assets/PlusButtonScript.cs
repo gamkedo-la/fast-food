@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlusButtonScript : MonoBehaviour
 {
     [SerializeField] Text currentLevelTextbox;
+    [SerializeField] TextMeshProUGUI currentLevelTextMeshPro;
+
     public void IncreaseLevel()
     {
         GameManagerScript.currentLevel++;
@@ -27,6 +30,6 @@ public class PlusButtonScript : MonoBehaviour
             }
         }
         SaveSystem.SaveListOfProfilesData();
-        currentLevelTextbox.text = GameManagerScript.currentLevel.ToString();
+        currentLevelTextMeshPro.text = GameManagerScript.currentLevel.ToString();
     }
 }
