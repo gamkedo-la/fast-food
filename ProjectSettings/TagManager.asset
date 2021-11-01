@@ -20,6 +20,9 @@ TagManager:
   - AudioController
   - BurgerPrefab
   - ChickenDonerPrefab
+  - TomatoIntroduction
+  - ChickenDonerIntroduction
+  - OnionIntroduction
   layers:
   - Default
   - TransparentFX

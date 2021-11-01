@@ -37,6 +37,21 @@ public class ToggleOnButtonScript : ButtonScript
         else if (gameObject.name == "OKToggleButton")
         {
             Time.timeScale = 1;
+            GameObject tomatoIntroduction = GameObject.FindGameObjectWithTag("TomatoIntroduction");
+            GameObject chickenDonerIntroduction = GameObject.FindGameObjectWithTag("ChickenDonerIntroduction");
+            GameObject onionIntroduction = GameObject.FindGameObjectWithTag("OnionIntroduction");
+            if (tomatoIntroduction != null)
+            {
+                tomatoIntroduction.SetActive(false);
+            }
+            if (chickenDonerIntroduction != null)
+            {
+                chickenDonerIntroduction.SetActive(false);
+            }
+            if (onionIntroduction != null)
+            {
+                onionIntroduction.SetActive(false);
+            }
         }
         ToggleOn();
         ToggleOff();
