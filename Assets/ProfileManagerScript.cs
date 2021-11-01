@@ -71,6 +71,20 @@ public class ProfileManagerScript : MonoBehaviour
                 listOfLanguageTextboxes[i].text = listOfProfiles[i].targetLanguage.ToString();
             }
         }
+        else
+        {
+            ProfileDataScript placeholderProfile = new ProfileDataScript("Placeholder Profile");
+            placeholderProfile.targetLanguage = Language.English;
+            GameManagerScript.currentProfile = placeholderProfile;
+            
+            listOfProfilePrefabs[0].SetActive(true);
+            listOfUsernameTextboxes[0].text = placeholderProfile.userName;
+            listOfLevelTextboxes[0].text = placeholderProfile.currentLevel.ToString();
+            listOfLanguageTextboxes[0].text = placeholderProfile.targetLanguage.ToString();
+
+            listOfProfiles.Add(placeholderProfile);
+            SaveSystem.SaveListOfProfilesData();
+        }
     }
 
     public void DeactivateProfiles()
