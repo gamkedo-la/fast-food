@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using TMPro;
 
 public enum CustomerStateEnumerations
 {
@@ -69,10 +70,12 @@ public class CustomerOrderingScript : MonoBehaviour
     private Vector3 customerOrderingCanvasImageStartingPosition;
     
     [SerializeField] Text customerOrderingTextBoxObject;
+    [SerializeField] TextMeshProUGUI orderTextBoxTextMeshPro;
     public string customersOrderString;
     [SerializeField] Button customerOrderingCanvasToggleButton;
 
     public string currentCustomerDialogueString;
+    public string currentCustomerOrderDisplayString;
     public AudioClip myCurrentOrdersAudioClip;
 
     public bool isProcessingOrder = false;
@@ -362,49 +365,59 @@ public class CustomerOrderingScript : MonoBehaviour
         if (iWantAHamburger)
         {
             customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+            currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
         }
         else
         {
             customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
+            currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
         }
 
         if (iWantLettuce || iWantTomatoe || iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+            currentCustomerOrderDisplayString += "\n with ";
         }
 
         //one topping
         if (iWantLettuce && !iWantTomatoe && !iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
         }
         else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
         }
         else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
         }
 
         //two toppings
         else if (iWantLettuce && iWantTomatoe && !iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
         }
         else if (iWantLettuce && !iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
         }
         else if (!iWantLettuce && iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
         }
 
         //all three toppings
         else if (iWantLettuce && iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
         }
 
         #endregion
@@ -416,7 +429,9 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
         myPatienceTimerSliderGameObject.SetActive(true);
         currentCustomerDialogueString = customersOrderString;
-        customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+        
+        //customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+        orderTextBoxTextMeshPro.text = currentCustomerOrderDisplayString;
         myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
     }
 
@@ -543,7 +558,8 @@ public class CustomerOrderingScript : MonoBehaviour
                     }
                 }
                 #endregion
-                customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+                //customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+                orderTextBoxTextMeshPro.text = currentCustomerDialogueString;
             }
 
             else if (iWantAChickenDoner)
@@ -655,7 +671,8 @@ public class CustomerOrderingScript : MonoBehaviour
                         EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                     }
                 }
-                customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+                //customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+                orderTextBoxTextMeshPro.text = currentCustomerDialogueString;
             }
         }
             
@@ -812,6 +829,7 @@ public class CustomerOrderingScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         currentCustomerDialogueString = customersOrderString;
-        customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+        //customerOrderingTextBoxObject.text = currentCustomerDialogueString;
+        orderTextBoxTextMeshPro.text = currentCustomerDialogueString;
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
 {
     #region Fields
 
     [SerializeField] GameObject myOrderingCanvasDialogBoxImage;
+    [SerializeField] TextMeshProUGUI orderTextboxTextMeshPro;
     [SerializeField] GameObject customer;
     #endregion    
 
@@ -34,6 +36,7 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
 
     public void HandleInvisibleCustomerOrderButtonClick()
     {
+        Debug.Log("customerName: " + customer.name);
         if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Text)
         {
             HandleToggleCustomerDialogBoxButtonClick();

@@ -10,20 +10,15 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/profileData.listOfProfiles";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        Debug.Log("GameManagerScript.currentProfile.userName: " + GameManagerScript.currentProfile.userName);
-        Debug.Log("ProfileManagerScript.listOfProfiles[0].userName: " + ProfileManagerScript.listOfProfiles[0].userName);
         for (int i = 0; i < ProfileManagerScript.listOfProfiles.Count; i++)
         {
             if (ProfileManagerScript.listOfProfiles[i] == GameManagerScript.currentProfile)
             {
-                
-                Debug.Log("found matching profile in SaveSystem");
                 ProfileManagerScript.listOfProfiles[i].currentLevel = GameManagerScript.currentProfile.currentLevel;
             }
         }
         formatter.Serialize(stream, ProfileManagerScript.listOfProfiles);
 
-        Debug.Log("ProfileManagerScript.listOfProfiles[i].currentLevel: " + ProfileManagerScript.listOfProfiles[0].currentLevel);
         stream.Close();
     }
 
