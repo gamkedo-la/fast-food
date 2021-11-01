@@ -375,8 +375,9 @@ public class CustomerOrderingScript : MonoBehaviour
 
         if (iWantLettuce || iWantTomatoe || iWantOnion)
         {
+            currentCustomerOrderDisplayString += "\n  " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+            Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
-            currentCustomerOrderDisplayString += "\n with ";
         }
 
         //one topping
