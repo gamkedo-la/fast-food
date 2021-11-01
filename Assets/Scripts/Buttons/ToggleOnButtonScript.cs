@@ -53,6 +53,7 @@ public class ToggleOnButtonScript : ButtonScript
                 onionIntroduction.SetActive(false);
             }
         }
+        Debug.Log("anything from toggle button");
         ToggleOn();
         ToggleOff();
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
