@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [ExecuteInEditMode]
 public class StudyCard : MonoBehaviour
@@ -14,6 +15,10 @@ public class StudyCard : MonoBehaviour
     Text englishWord;
     [SerializeField]
     Text albanianWord;
+
+    private Dictionary<Language, TextMeshProUGUI> dictionaryOfTextMeshProObjects = new Dictionary<Language, TextMeshProUGUI>();
+    [SerializeField] TextMeshProUGUI englishWordTextMeshPro;
+    [SerializeField] TextMeshProUGUI albanianWordTextMeshPro;
 
     public Dictionary<Language, AudioClip> dictionaryOfAudioClips = new Dictionary<Language, AudioClip>();
     AudioClip englishAudio;
