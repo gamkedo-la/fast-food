@@ -77,6 +77,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
     public string currentCustomerDialogueString;
     public string currentCustomerOrderDisplayString;
+    public string currentCustomerOrderStringInEnglish; //for debugging
     public AudioClip myCurrentOrdersAudioClip;
 
     public bool isProcessingOrder = false;
@@ -229,8 +230,9 @@ public class CustomerOrderingScript : MonoBehaviour
 
                 customerOrderingCanvasToggleButton.transform.position = newCustomerPosition;
 
-                float patienceTimerSliderYCoordinateWithOffset = newCustomerPosition.y - 1.0f;
-                Vector2 patienceTimerSliderVectorWithYOffset = new Vector2(newCustomerPosition.x, patienceTimerSliderYCoordinateWithOffset);
+                float patienceTimerSliderYCoordinateWithOffset = newCustomerPosition.y - 0.5f;
+                float patienceTimerSliderXCoordinateWithOffset = newCustomerPosition.x + 2.25f;
+                Vector2 patienceTimerSliderVectorWithYOffset = new Vector2(patienceTimerSliderXCoordinateWithOffset, patienceTimerSliderYCoordinateWithOffset);
                 myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
             }
         }
@@ -367,18 +369,22 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
             currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+            currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a hamburger"];
         }
         else
         {
             customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
             currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
+            currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a chicken doner"];
+
         }
 
         if (iWantLettuce || iWantTomatoe || iWantOnion)
         {
             currentCustomerOrderDisplayString += "\n  " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
-            Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
+            //Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["with"];
         }
 
         //one topping
@@ -386,16 +392,19 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only lettuce"];
         }
         else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only tomato"];
         }
         else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only onion"];
         }
 
         //two toppings
@@ -403,16 +412,19 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and tomato"];
         }
         else if (iWantLettuce && !iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and onion"];
         }
         else if (!iWantLettuce && iWantTomatoe && iWantOnion)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["tomato and onion"];
         }
 
         //all three toppings
@@ -420,17 +432,20 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce, tomato, and onion"];
         }
 
         if (GameManagerScript.currentLanguage == Language.Georgian)
         {
-            currentCustomerOrderDisplayString += "თუ შეიძლება";
+            currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
         }
+        //Debug.Log("currentCustomerOrderDisplayString: " + currentCustomerOrderDisplayString);
+        //Debug.Log("currentCustomerOrderStringInEnglish: " + currentCustomerOrderStringInEnglish);
         #endregion
 
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
         myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().InitializeTimer();
-        float patienceTimerSliderYCoordinateWithOffset = gameObject.transform.position.y - 1.0f;
+        float patienceTimerSliderYCoordinateWithOffset = gameObject.transform.position.y;
         Vector2 patienceTimerSliderVectorWithYOffset = new Vector2(gameObject.transform.position.x, patienceTimerSliderYCoordinateWithOffset);
         myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
         myPatienceTimerSliderGameObject.SetActive(true);

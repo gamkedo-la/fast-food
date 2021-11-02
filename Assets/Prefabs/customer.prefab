@@ -11545,7 +11545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.96, y: 2.15}
+  m_AnchoredPosition: {x: -10.67, y: 2.84}
   m_SizeDelta: {x: 5.7, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4517263753470677207
@@ -11704,7 +11704,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
@@ -12076,6 +12076,7 @@ MonoBehaviour:
   myPatienceTimerSlider: {fileID: 4517263753470677207}
   myPatienceTimerSliderGameObject: {fileID: 4517263753470677200}
   speedBonusPointsTextbox: {fileID: 0}
+  speedBonusPointsTextMeshPro: {fileID: 0}
   customerOrderingLocationManager: {fileID: 2877060928571110762, guid: 5054362c1df797143944e1ba85d490e3, type: 3}
   myStateEnumeration: 0
   exitLocation: {fileID: 0}
@@ -12094,6 +12095,8 @@ MonoBehaviour:
   customersOrderString: 
   customerOrderingCanvasToggleButton: {fileID: 4517263752320679870}
   currentCustomerDialogueString: 
+  currentCustomerOrderDisplayString: 
+  currentCustomerOrderStringInEnglish: 
   myCurrentOrdersAudioClip: {fileID: 0}
   isProcessingOrder: 0
   losingPatience: 0
@@ -12935,12 +12938,12 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 39.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

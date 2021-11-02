@@ -36,7 +36,6 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
 
     public void HandleInvisibleCustomerOrderButtonClick()
     {
-        Debug.Log("customerName: " + customer.name);
         if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Text)
         {
             HandleToggleCustomerDialogBoxButtonClick();

@@ -112,15 +112,15 @@ public class LanguageDictionary : MonoBehaviour
         //თუ შეიძლება, 'may I'... added at the end of the sentence
         languageDictionary.Add(Language.Georgian, new Dictionary<string, string>());
         languageDictionary[Language.Georgian].Add("I want a hamburger", "ერთი ჰამბურგერი");
-        languageDictionary[Language.Georgian].Add("I want a chicken doner", "ქათმის შაურმა");
+        languageDictionary[Language.Georgian].Add("I want a chicken doner", "ერთი ქათმის შაურმა");
         languageDictionary[Language.Georgian].Add("with", "");
-        languageDictionary[Language.Georgian].Add("only lettuce", "სალათის ფურწლით.");
-        languageDictionary[Language.Georgian].Add("only tomato", "პამიდორით.");
-        languageDictionary[Language.Georgian].Add("only onion", "ხახვით.");
-        languageDictionary[Language.Georgian].Add("lettuce and tomato", "სალათის ფურწლით და პამიდორით.");
-        languageDictionary[Language.Georgian].Add("lettuce and onion", "სალათის ფურწლით და ხახვით.");
-        languageDictionary[Language.Georgian].Add("tomato and onion", "პამიდორით და ხახვით.");
-        languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათის ფურწლით, პამიდორით, და ხახვით.");
+        languageDictionary[Language.Georgian].Add("only lettuce", "სალათის ფურწლით");
+        languageDictionary[Language.Georgian].Add("only tomato", "პამიდორით");
+        languageDictionary[Language.Georgian].Add("only onion", "ხახვით");
+        languageDictionary[Language.Georgian].Add("lettuce and tomato", "სალათის ფურწლით და პამიდორით");
+        languageDictionary[Language.Georgian].Add("lettuce and onion", "სალათის ფურწლით და ხახვით");
+        languageDictionary[Language.Georgian].Add("tomato and onion", "პამიდორით და ხახვით");
+        languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათით, პამიდორით, და ხახვით");
         languageDictionary[Language.Georgian].Add("Thank you!", "მადლობა!");
         languageDictionary[Language.Georgian].Add("That's not what I want!", "არა!");
 
