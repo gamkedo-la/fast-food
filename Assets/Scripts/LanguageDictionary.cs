@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -96,18 +96,33 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.English].Add("That's not what I want!", "That's not what I want!");
 
         languageDictionary.Add(Language.Albanian, new Dictionary<string, string>());
-        languageDictionary[Language.Albanian].Add("I want a hamburger", "Un� dua nj� hamburger");
-        languageDictionary[Language.Albanian].Add("I want a chicken doner", "Un� dua nj� doner pule");
+        languageDictionary[Language.Albanian].Add("I want a hamburger", "Unë dua një hamburger");
+        languageDictionary[Language.Albanian].Add("I want a chicken doner", "Unë dua një doner pule");
         languageDictionary[Language.Albanian].Add("with", " me ");
         languageDictionary[Language.Albanian].Add("only lettuce", "marule.");
         languageDictionary[Language.Albanian].Add("only tomato", "domate.");
-        languageDictionary[Language.Albanian].Add("only onion", "qep�.");
+        languageDictionary[Language.Albanian].Add("only onion", "qepë.");
         languageDictionary[Language.Albanian].Add("lettuce and tomato", "marule dhe domate.");
-        languageDictionary[Language.Albanian].Add("lettuce and onion", "marule dhe qep�.");
-        languageDictionary[Language.Albanian].Add("tomato and onion", "domate dhe qep�.");
-        languageDictionary[Language.Albanian].Add("lettuce, tomato, and onion", "marule, domate, dhe qep�.");
+        languageDictionary[Language.Albanian].Add("lettuce and onion", "marule dhe qepë.");
+        languageDictionary[Language.Albanian].Add("tomato and onion", "domate dhe qepë.");
+        languageDictionary[Language.Albanian].Add("lettuce, tomato, and onion", "marule, domate, dhe qepë.");
         languageDictionary[Language.Albanian].Add("Thank you!", "Faleminderit!");
-        languageDictionary[Language.Albanian].Add("That's not what I want!", "Kjo nuk �sht� ajo q� un� dua!");
+        languageDictionary[Language.Albanian].Add("That's not what I want!", "Kjo nuk është ajo që unë dua!");
+
+        //თუ შეიძლება, 'may I'... added at the end of the sentence
+        languageDictionary.Add(Language.Georgian, new Dictionary<string, string>());
+        languageDictionary[Language.Georgian].Add("I want a hamburger", "ერთი ჰამბურგერი");
+        languageDictionary[Language.Georgian].Add("I want a chicken doner", "ქათმის შაურმა");
+        languageDictionary[Language.Georgian].Add("with", "");
+        languageDictionary[Language.Georgian].Add("only lettuce", "სალათის ფურწლით.");
+        languageDictionary[Language.Georgian].Add("only tomato", "პამიდორით.");
+        languageDictionary[Language.Georgian].Add("only onion", "ხახვით.");
+        languageDictionary[Language.Georgian].Add("lettuce and tomato", "სალათის ფურწლით და პამიდორით.");
+        languageDictionary[Language.Georgian].Add("lettuce and onion", "სალათის ფურწლით და ხახვით.");
+        languageDictionary[Language.Georgian].Add("tomato and onion", "პამიდორით და ხახვით.");
+        languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათის ფურწლით, პამიდორით, და ხახვით.");
+        languageDictionary[Language.Georgian].Add("Thank you!", "მადლობა!");
+        languageDictionary[Language.Georgian].Add("That's not what I want!", "არა!");
 
         //study screen
         languageDictionary[Language.English].Add("I would like a", "I would like a");
@@ -116,11 +131,17 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.English].Add("tomato", "tomato");
         languageDictionary[Language.English].Add("onion", "onion");
 
-        languageDictionary[Language.Albanian].Add("I would like a", "Un� dua nj�");
+        languageDictionary[Language.Albanian].Add("I would like a", "Unë dua një");
         languageDictionary[Language.Albanian].Add("hamburger", "hamburger");
         languageDictionary[Language.Albanian].Add("lettuce", "marule");
         languageDictionary[Language.Albanian].Add("tomato", "domate");
-        languageDictionary[Language.Albanian].Add("onion", "qep�");
+        languageDictionary[Language.Albanian].Add("onion", "qepë");
+
+        languageDictionary[Language.Georgian].Add("I would like a", "თუ შეიძლება");
+        languageDictionary[Language.Georgian].Add("hamburger", "ჰამბურგერი");
+        languageDictionary[Language.Georgian].Add("lettuce", "სალათის ფურწლი");
+        languageDictionary[Language.Georgian].Add("tomato", "პამიდორი");
+        languageDictionary[Language.Georgian].Add("onion", "ხახვი");
         #endregion
 
 
@@ -177,23 +198,23 @@ public class LanguageDictionary : MonoBehaviour
         audioLanguageDictionary[Language.Albanian].Add("onion pickup", albanianOnionPickupAudioClip);
 
         //for customer prompts
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger", iWouldLikeAHamburgerAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me marule.", iWouldLikeAHamburgerWithLettuceAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me domate.", iWouldLikeAHamburgerWithTomatoAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me qep�.", iWouldLikeAHamburgerWithOnionAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me marule dhe domate.", iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me marule dhe qep�.", iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me domate dhe qep�.", iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� hamburger me marule, tomato, dhe qep�.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger", iWouldLikeAHamburgerAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule.", iWouldLikeAHamburgerWithLettuceAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me domate.", iWouldLikeAHamburgerWithTomatoAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me qepë.", iWouldLikeAHamburgerWithOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule dhe domate.", iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule dhe qepë.", iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me domate dhe qepë.", iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një hamburger me marule, tomato, dhe qepë.", iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt);
 
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule", albanianIWouldLikeAChickenDonerPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me marule.", albanianIWouldLikeAChickenDonerWithLettucePrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me domate.", albanianIWouldLikeAChickenDonerWithTomatoPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me qep�.", albanianIWouldLikeAChickenDonerWithOnionPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me marule dhe domate.", albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me marule dhe qep�.", albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me domate dhe qep�.", albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
-        audioLanguageDictionary[Language.Albanian].Add("Un� dua nj� doner pule me marule, tomato, dhe qep�.", albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule", albanianIWouldLikeAChickenDonerPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule.", albanianIWouldLikeAChickenDonerWithLettucePrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me domate.", albanianIWouldLikeAChickenDonerWithTomatoPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me qepë.", albanianIWouldLikeAChickenDonerWithOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule dhe domate.", albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule dhe qepë.", albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me domate dhe qepë.", albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt);
+        audioLanguageDictionary[Language.Albanian].Add("Unë dua një doner pule me marule, tomato, dhe qepë.", albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt);
         #endregion
     }
 

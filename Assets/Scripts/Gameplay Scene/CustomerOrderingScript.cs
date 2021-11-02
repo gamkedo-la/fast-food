@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -422,6 +422,10 @@ public class CustomerOrderingScript : MonoBehaviour
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
         }
 
+        if (GameManagerScript.currentLanguage == Language.Georgian)
+        {
+            currentCustomerOrderDisplayString += "თუ შეიძლება";
+        }
         #endregion
 
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
@@ -434,7 +438,12 @@ public class CustomerOrderingScript : MonoBehaviour
         
         //customerOrderingTextBoxObject.text = currentCustomerDialogueString;
         orderTextBoxTextMeshPro.text = currentCustomerOrderDisplayString;
-        myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
+
+        //Remove if statement when Georgian audio clips are implemented
+        if (GameManagerScript.currentLanguage != Language.Georgian)
+        {
+            myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -788,7 +797,13 @@ public class CustomerOrderingScript : MonoBehaviour
         Debug.Log("handle incorrect order submission");
         CheckForReviewNotification();
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
+        
+        //remove 'if' after georgian audio clips are implemented
+        if (GameManagerScript.currentLanguage != Language.Georgian)
+        {
+            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
+        }
+        
         AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);
         StartCoroutine(RedisplayCustomersOrderAfterIncorrectDelivery());
         ShowThumbsDown();

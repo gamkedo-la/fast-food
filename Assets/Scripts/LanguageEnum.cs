@@ -6,5 +6,6 @@ public enum Language
 {
     Undefined,
     English,
-    Albanian
+    Albanian,
+    Georgian
 }
