@@ -11,6 +11,12 @@ public class LevelStarterScript : MonoBehaviour
     [SerializeField] Text accuracyTextbox;
     [SerializeField] Text speedBonusTextbox;
 
+    [SerializeField] TextMeshProUGUI numberOfCorrectOrdersTextMeshPro;
+    [SerializeField] TextMeshProUGUI numberOfIncorrectOrdersTextMeshPro;
+    [SerializeField] TextMeshProUGUI accuracyTextMeshPro;
+    [SerializeField] TextMeshProUGUI speedBonusTextMeshPro;
+
+
     [SerializeField] GameObject fullTomatoe;
     [SerializeField] GameObject fullOnion;
     [SerializeField] GameObject chickenDoner;
@@ -40,10 +46,15 @@ public class LevelStarterScript : MonoBehaviour
         GameManagerScript.accuracy = 0;
         GameManagerScript.speedBonus = 0;
 
-        numberOfCorrectOrdersTextbox.text = "Correct Orders: ";
-        numberOfIncorrectOrdersTextbox.text = "Incorrect Orders: ";
-        accuracyTextbox.text = "Accuracy: ";
-        speedBonusTextbox.text = "Speed Bonus Points: ";
+        //numberOfCorrectOrdersTextbox.text = "Correct Orders: ";
+        //numberOfIncorrectOrdersTextbox.text = "Incorrect Orders: ";
+        //accuracyTextbox.text = "Accuracy: ";
+        //speedBonusTextbox.text = "Speed Bonus Points: ";
+
+        numberOfCorrectOrdersTextMeshPro.text = "Correct Orders: ";
+        numberOfIncorrectOrdersTextMeshPro.text = "Incorrect Orders: ";
+        accuracyTextMeshPro.text = "Accuracy: ";
+        speedBonusTextMeshPro.text = "Speed Bonus Points: ";
 
         switch (GameManagerScript.currentLevel)
         {

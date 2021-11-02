@@ -29,6 +29,7 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Slider myPatienceTimerSlider;
     [SerializeField] GameObject myPatienceTimerSliderGameObject;
     [SerializeField] Text speedBonusPointsTextbox;
+    [SerializeField] TextMeshProUGUI speedBonusPointsTextMeshPro;
     [SerializeField] private GameObject customerOrderingLocationManager;
 
     public CustomerStateEnumerations myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
@@ -716,7 +717,7 @@ public class CustomerOrderingScript : MonoBehaviour
         myOrderingLocation = null;
         StartCoroutine(DelayedToggleOffDialogBox());
         GameManagerScript.speedBonus = myPatienceTimerSlider.GetComponent<PatienceTimerSliderScript>().PercentageOfTimerLeft() * 10;
-        speedBonusPointsTextbox.text = "Speed Bonus Points: " + GameManagerScript.speedBonus.ToString();
+        speedBonusPointsTextMeshPro.text = "Speed Points: " + GameManagerScript.speedBonus.ToString();
         myPatienceTimerSliderGameObject.SetActive(false);
         
         CheckForLevelCompletion();

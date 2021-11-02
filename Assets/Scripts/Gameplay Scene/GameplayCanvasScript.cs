@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameplayCanvasScript : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class GameplayCanvasScript : MonoBehaviour
     [SerializeField] Text correctOrdersTextbox;
     [SerializeField] Text incorrectOrdersTextbox;
     [SerializeField] Text accuracyTextbox;
+
+    [SerializeField] TextMeshProUGUI correctOrdersTextMeshPro;
+    [SerializeField] TextMeshProUGUI incorrectOrdersTextMeshPro;
+    [SerializeField] TextMeshProUGUI accuracyTextMeshPro;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +40,12 @@ public class GameplayCanvasScript : MonoBehaviour
     
     private void UpdateCorrectOrdersTextBox()
     {
-        correctOrdersTextbox.text = "Correct Orders: " + GameManagerScript.numberOfCorrectOrders.ToString();
+        correctOrdersTextMeshPro.text = "Correct Orders: " + GameManagerScript.numberOfCorrectOrders.ToString();
     }
 
     private void UpdateIncorrectOrdersTextBox()
     {
-        incorrectOrdersTextbox.text = "Incorrect Orders: " + GameManagerScript.numberOfIncorrectOrders.ToString();
+        incorrectOrdersTextMeshPro.text = "Incorrect Orders: " + GameManagerScript.numberOfIncorrectOrders.ToString();
     }
 
     private void CalculateAccuracy()
@@ -51,7 +56,7 @@ public class GameplayCanvasScript : MonoBehaviour
 
     private void UpdateAccuracyTextBox()
     {
-        accuracyTextbox.text = "Accuracy: " + GameManagerScript.accuracy.ToString() + "%";
+        accuracyTextMeshPro.text = "Accuracy: " + GameManagerScript.accuracy.ToString() + "%";
     }
     private void HandleCorrectOrderSubmission()
     {
