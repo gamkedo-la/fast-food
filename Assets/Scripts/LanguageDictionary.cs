@@ -113,7 +113,7 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary.Add(Language.Georgian, new Dictionary<string, string>());
         languageDictionary[Language.Georgian].Add("I want a hamburger", "ერთი ჰამბურგერი");
         languageDictionary[Language.Georgian].Add("I want a chicken doner", "ერთი ქათმის შაურმა");
-        languageDictionary[Language.Georgian].Add("with", "");
+        languageDictionary[Language.Georgian].Add("with", " ");
         languageDictionary[Language.Georgian].Add("only lettuce", "სალათის ფურწლით");
         languageDictionary[Language.Georgian].Add("only tomato", "პამიდორით");
         languageDictionary[Language.Georgian].Add("only onion", "ხახვით");

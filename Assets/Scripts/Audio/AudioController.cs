@@ -213,6 +213,49 @@ public class AudioController : MonoBehaviour
                 
             }
         }
+        else if (GameManagerScript.currentLanguage == Language.Georgian)
+        {
+            Debug.Log("customerOrderString: " + customerOrderString);
+            switch (customerOrderString)
+            {
+                //თუ შეიძლება... 'i would like a' goes at the end of the sentence
+                case "ერთი ჰამბურგერი":
+                    return GameSoundEnum.Georgian_Order_Hamburger;
+                case "ერთი ჰამბურგერი სალათის ფურწლით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Lettuce;
+                case "ერთი ჰამბურგერი პამიდორით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Tomato;
+                case "ერთი ჰამბურგერი ხახვით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Onion;
+                case "ერთი ჰამბურგერი სალათის ფურწლით და პამიდორით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Lettuce_Tomato;
+                case "ერთი ჰამბურგერი სალათის ფურწლით და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Lettuce_Onion;
+                case "ერთი ჰამბურგერი პამიდორით და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Tomato_Onion;
+                case "ერთი ჰამბურგერი სალათის ფურწლით, პამიდორით, და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Hamburger_Lettuce_Tomato_Onion;
+
+                //Order Chicken Doner
+                case "ერთი ქათმის შაურმა":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner;
+                case "ერთი ქათმის შაურმა სალათის ფურწლით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce;
+                case "ერთი ქათმის შაურმა პამიდორით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Tomato;
+                case "ერთი ქათმის შაურმა ხახვით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Onion;
+                case "ერთი ქათმის შაურმა სალათის ფურწლით და პამიდორით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce_Tomato;
+                case "ერთი ქათმის შაურმა სალათის ფურწლით და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce_Onion;
+                case "ერთი ქათმის შაურმა პამიდორით და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Tomato_Onion;
+                case "ერთი ქათმის შაურმა სალათის ფურწლით, პამიდორით, და ხახვით":
+                    return GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+
+            }
+        }
         Debug.Log("no valid order audio");
         return GameSoundEnum.SFX_Incorrect_Order;
     }

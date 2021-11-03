@@ -53,8 +53,10 @@ public enum GameSoundEnum{
 
     Albanian_Thank_You,
 
-    //VO Study Cards English
     
+
+    //VO Study Cards English
+
     English_Hamburger,
     English_Chicken_Doner,
     English_Lettuce,
@@ -76,6 +78,36 @@ public enum GameSoundEnum{
     SFX_Customer_Enter,
     SFX_Correct_Order,
     SFX_Incorrect_Order,
-    
+
+
+    //VO Georgian Orders
+    Georgian_Order_Hamburger,
+    Georgian_Order_Hamburger_Lettuce,
+    Georgian_Order_Hamburger_Tomato,
+    Georgian_Order_Hamburger_Onion,
+    Georgian_Order_Hamburger_Lettuce_Tomato,
+    Georgian_Order_Hamburger_Lettuce_Onion,
+    Georgian_Order_Hamburger_Tomato_Onion,
+    Georgian_Order_Hamburger_Lettuce_Tomato_Onion,
+
+    Georgian_Order_Chicken_Doner,
+    Georgian_Order_Chicken_Doner_Lettuce,
+    Georgian_Order_Chicken_Doner_Tomato,
+    Georgian_Order_Chicken_Doner_Onion,
+    Georgian_Order_Chicken_Doner_Lettuce_Tomato,
+    Georgian_Order_Chicken_Doner_Lettuce_Onion,
+    Georgian_Order_Chicken_Doner_Tomato_Onion,
+    Georgian_Order_Chicken_Doner_Lettuce_Tomato_Onion,
+
+    Georgian_Thank_You,
+
+    //VO Study Cards Georgian
+
+    Georgian_Hamburger,
+    Georgian_Chicken_Doner,
+    Georgian_Lettuce,
+    Georgian_Tomato,
+    Georgian_Onion,
+    Georgian_I_Would_Like_A
 }
 
