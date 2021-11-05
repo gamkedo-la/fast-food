@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,19 +10,15 @@ public class StudyCard : MonoBehaviour
     [SerializeField]
     WordObject wordObject;
 
-    private Dictionary<Language, Text> dictionaryOfTextBoxObjects = new Dictionary<Language, Text>();
-    [SerializeField]
-    Text englishWord;
-    [SerializeField]
-    Text albanianWord;
-
     private Dictionary<Language, TextMeshProUGUI> dictionaryOfTextMeshProObjects = new Dictionary<Language, TextMeshProUGUI>();
     [SerializeField] TextMeshProUGUI englishWordTextMeshPro;
     [SerializeField] TextMeshProUGUI albanianWordTextMeshPro;
+    [SerializeField] TextMeshProUGUI georgianWordTextMeshPro;
 
     public Dictionary<Language, AudioClip> dictionaryOfAudioClips = new Dictionary<Language, AudioClip>();
     AudioClip englishAudio;
     AudioClip albanianAudio;
+    AudioClip georgianAudio;
 
     [SerializeField]
     Image wordImage;
@@ -34,15 +30,20 @@ public class StudyCard : MonoBehaviour
     {
         if (wordObject != null)
         {
-            englishWord.text = wordObject.englishWord;
-            dictionaryOfTextBoxObjects.Add(Language.English, englishWord);
-            albanianWord.text = wordObject.albanianWord;
-            dictionaryOfTextBoxObjects.Add(Language.Albanian, albanianWord);
+            englishWordTextMeshPro.text = wordObject.englishWord;
+            dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
+            albanianWordTextMeshPro.text = wordObject.albanianWord;
+            dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
+            georgianWordTextMeshPro.text = wordObject.georgianWord;
+            dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
+            dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             englishAudio = wordObject.englishAudio;
             dictionaryOfAudioClips.Add(Language.English, englishAudio);
             albanianAudio = wordObject.albanianAudio;
             dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
+            georgianAudio = wordObject.georgianAudio;
+            dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
             //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             wordImage.sprite = wordObject.icon;
@@ -55,13 +56,21 @@ public class StudyCard : MonoBehaviour
         
         if (GameManagerScript.currentLanguage == Language.English)
         {
-            englishWord.gameObject.SetActive(true);
-            albanianWord.gameObject.SetActive(false);
+            englishWordTextMeshPro.gameObject.SetActive(true);
+            albanianWordTextMeshPro.gameObject.SetActive(false);
+            georgianWordTextMeshPro.gameObject.SetActive(false);
         }
         else if (GameManagerScript.currentLanguage == Language.Albanian)
         {
-            englishWord.gameObject.SetActive(false);
-            albanianWord.gameObject.SetActive(true);
+            englishWordTextMeshPro.gameObject.SetActive(false);
+            albanianWordTextMeshPro.gameObject.SetActive(true);
+            georgianWordTextMeshPro.gameObject.SetActive(false);
+        }
+        else if (GameManagerScript.currentLanguage == Language.Georgian)
+        {
+            englishWordTextMeshPro.gameObject.SetActive(false);
+            albanianWordTextMeshPro.gameObject.SetActive(false);
+            georgianWordTextMeshPro.gameObject.SetActive(true);
         }
     }
     public void PlayAudioClip()
@@ -75,11 +84,14 @@ public class StudyCard : MonoBehaviour
         switch (GameManagerScript.currentLanguage)
         {
             case Language.English:
-                currentTextString = englishWord.text;
+                currentTextString = englishWordTextMeshPro.text;
                 break;
 
             case Language.Albanian:
-                currentTextString = albanianWord.text;
+                currentTextString = albanianWordTextMeshPro.text;
+                break;
+            case Language.Georgian:
+                currentTextString = georgianWordTextMeshPro.text;
                 break;
         }
 
@@ -95,11 +107,17 @@ public class StudyCard : MonoBehaviour
                     myGameSoundEnum = GameSoundEnum.Albanian_Hamburger;
                 }
                 break;
+            case "ჰამბურგერი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Hamburger;                
+                break;
             case "Chicken Doner":
                 myGameSoundEnum = GameSoundEnum.English_Chicken_Doner;
                 break;
             case "Doner Pule":
                 myGameSoundEnum = GameSoundEnum.Albanian_Chicken_Doner;
+                break;
+            case "ქათმის შაურმა":
+                myGameSoundEnum = GameSoundEnum.Georgian_Chicken_Doner;
                 break;
             case "Lettuce":
                 myGameSoundEnum = GameSoundEnum.English_Lettuce;
@@ -107,17 +125,26 @@ public class StudyCard : MonoBehaviour
             case "Marule":
                 myGameSoundEnum = GameSoundEnum.Albanian_Lettuce;
                 break;
+            case "სალათის ფურწლი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Lettuce;
+                break;
             case "Tomato":
                 myGameSoundEnum = GameSoundEnum.English_Tomato;
                 break;
             case "Domate":
                 myGameSoundEnum = GameSoundEnum.Albanian_Tomato;
                 break;
+            case "პამიდორი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Tomato;
+                break;
             case "Onion":
                 myGameSoundEnum = GameSoundEnum.English_Onion;
                 break;
             case "Qepe":
                 myGameSoundEnum = GameSoundEnum.Albanian_Onion;
+                break;
+            case "ხახვი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Onion;
                 break;
         }
 

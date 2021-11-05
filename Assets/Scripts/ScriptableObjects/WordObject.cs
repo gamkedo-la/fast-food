@@ -9,6 +9,7 @@ public class WordObject : ScriptableObject
     [Header("Typed Words")]
     public string englishWord;
     public string albanianWord;
+    public string georgianWord;
 
     [Header("Image File")]
     public Sprite icon;
@@ -16,4 +17,5 @@ public class WordObject : ScriptableObject
     [Header("Audio")]
     public AudioClip englishAudio;
     public AudioClip albanianAudio;
+    public AudioClip georgianAudio;
 }

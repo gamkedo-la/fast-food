@@ -137,8 +137,9 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Albanian].Add("tomato", "domate");
         languageDictionary[Language.Albanian].Add("onion", "qepë");
 
-        languageDictionary[Language.Georgian].Add("I would like a", "თუ შეიძლება");
+        languageDictionary[Language.Georgian].Add("I would like a", "ერთი ______ თუ შეიძლება");
         languageDictionary[Language.Georgian].Add("hamburger", "ჰამბურგერი");
+        languageDictionary[Language.Georgian].Add("chicken doner", "ქათმის შაურმა");
         languageDictionary[Language.Georgian].Add("lettuce", "სალათის ფურწლი");
         languageDictionary[Language.Georgian].Add("tomato", "პამიდორი");
         languageDictionary[Language.Georgian].Add("onion", "ხახვი");
