@@ -1319,6 +1319,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1386315469}
     - target: {fileID: 6584833674526440491, guid: 0a52d8fbf63716c48bdd4f95d6abada8, type: 3}
+      propertyPath: returningStudentButton
+      value: 
+      objectReference: {fileID: 810375702}
+    - target: {fileID: 6584833674526440491, guid: 0a52d8fbf63716c48bdd4f95d6abada8, type: 3}
       propertyPath: noExistingProfilesTextMeshPro
       value: 
       objectReference: {fileID: 1176135759}
@@ -7780,6 +7784,11 @@ CanvasRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5529033243084772110, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
   m_PrefabInstance: {fileID: 5529033242482970409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &810375702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8323901214761752473, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
+  m_PrefabInstance: {fileID: 8794712495552481033}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &818920639
 GameObject:
@@ -17102,29 +17111,33 @@ PrefabInstance:
       propertyPath: profileManager
       value: 
       objectReference: {fileID: 279184601}
+    - target: {fileID: 8323901214761752473, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 300.59
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 66.666664
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 150.295
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752474, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 8323901214761752475, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: objectToToggleOn

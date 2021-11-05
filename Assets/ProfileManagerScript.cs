@@ -34,6 +34,7 @@ public class ProfileManagerScript : MonoBehaviour
     [SerializeField] Text languageTextbox4;
     private List<Text> listOfLanguageTextboxes = new List<Text>();
 
+    [SerializeField] GameObject returningStudentButton;
 
     // Start is called before the first frame update
     void Start()
@@ -59,9 +60,11 @@ public class ProfileManagerScript : MonoBehaviour
         listOfLanguageTextboxes.Add(languageTextbox4);
 
         SaveSystem.LoadListOfProfilesData();
+
         
         if (listOfProfiles.Count != 0)
         {
+            returningStudentButton.SetActive(true);
             noExistingProfilesTextMeshPro.gameObject.SetActive(false);
             for (int i = 0; i < listOfProfiles.Count; i++)
             {

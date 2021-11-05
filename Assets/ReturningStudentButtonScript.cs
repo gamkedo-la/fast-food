@@ -5,11 +5,12 @@ using UnityEngine;
 public class ReturningStudentButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        if (ProfileManagerScript.listOfProfiles.Count == 0)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    //void Start()
+    //{
+    //    Debug.Log("ProfileManagerScript.listOfProfiles.Count: " + ProfileManagerScript.listOfProfiles.Count);
+    //    if (ProfileManagerScript.listOfProfiles.Count == 0)
+    //    {
+    //        gameObject.SetActive(false);
+    //    }
+    //}
 }
