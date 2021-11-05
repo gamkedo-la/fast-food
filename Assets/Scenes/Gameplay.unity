@@ -2586,6 +2586,14 @@ PrefabInstance:
       value: TogglePromptModeButton Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8474275185436046948, guid: fec524ff6905a8e4181ee94874b77690, type: 3}
+      propertyPath: m_Color.g
+      value: 0.08692294
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474275185436046948, guid: fec524ff6905a8e4181ee94874b77690, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8474275185436046948, guid: fec524ff6905a8e4181ee94874b77690, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
