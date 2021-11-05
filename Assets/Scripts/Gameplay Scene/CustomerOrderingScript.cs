@@ -85,6 +85,7 @@ public class CustomerOrderingScript : MonoBehaviour
     public bool losingPatience = false;
     [SerializeField] private ParticleSystem particleSystem1;
     [SerializeField] private ParticleSystem particleSystem2;
+    [SerializeField] private ParticleSystem lostCustomerParticleSystem;
 
     [SerializeField] GameObject customerManagerObject;
 
@@ -271,6 +272,7 @@ public class CustomerOrderingScript : MonoBehaviour
         myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
         myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
         StartCoroutine(DelayedNewOrder());
+        lostCustomerParticleSystem.gameObject.SetActive(false);
     }
 
     IEnumerator DelayedToggleOffDialogBox()
@@ -844,12 +846,16 @@ public class CustomerOrderingScript : MonoBehaviour
 
         ParticleSystem.MainModule psMain1 = particleSystem1.main;
         ParticleSystem.MainModule psMain2 = particleSystem2.main;
+
         psMain1.startSpeed = 1.0f;
         psMain2.startSpeed = 1.0f;
         psMain1.startLifetime = 0.75f;
         psMain2.startLifetime = 0.75f;
         particleSystem1.gameObject.SetActive(false);
         particleSystem2.gameObject.SetActive(false);
+
+        
+        lostCustomerParticleSystem.gameObject.SetActive(true);
     }
     IEnumerator DelayedNewOrder()
     {
