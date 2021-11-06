@@ -26,29 +26,29 @@ public class StudyCard : MonoBehaviour
     private string currentTextString;
     private GameSoundEnum myGameSoundEnum;
 
-    private void OnValidate()
-    {
-        if (wordObject != null)
-        {
-            englishWordTextMeshPro.text = wordObject.englishWord;
-            dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
-            albanianWordTextMeshPro.text = wordObject.albanianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
-            georgianWordTextMeshPro.text = wordObject.georgianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
-            dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+    //private void OnValidate()
+    //{
+    //    if (wordObject != null)
+    //    {
+    //        englishWordTextMeshPro.text = wordObject.englishWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
+    //        albanianWordTextMeshPro.text = wordObject.albanianWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
+    //        georgianWordTextMeshPro.text = wordObject.georgianWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
+    //        dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            englishAudio = wordObject.englishAudio;
-            dictionaryOfAudioClips.Add(Language.English, englishAudio);
-            albanianAudio = wordObject.albanianAudio;
-            dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
-            georgianAudio = wordObject.georgianAudio;
-            dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
-            //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+    //        englishAudio = wordObject.englishAudio;
+    //        dictionaryOfAudioClips.Add(Language.English, englishAudio);
+    //        albanianAudio = wordObject.albanianAudio;
+    //        dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
+    //        georgianAudio = wordObject.georgianAudio;
+    //        dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
+    //        //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            wordImage.sprite = wordObject.icon;
-        }   
-    }
+    //        wordImage.sprite = wordObject.icon;
+    //    }   
+    //}
 
     private void Start()
     {
