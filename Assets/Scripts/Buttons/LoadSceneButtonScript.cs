@@ -37,7 +37,15 @@ public class LoadSceneButtonScript : ButtonScript
                 AudioController.instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
                 break;
             case ScenesToLoadEnumerations.Gameplay:
-                AudioController.instance.PlayAudio(GameSoundEnum.Music_Level);
+                switch (GameManagerScript.currentLanguage)
+                {
+                    case Language.Georgian:
+                        AudioController.instance.PlayAudio(GameSoundEnum.Music_Level_Georgian);
+                        break;
+                    default:
+                        AudioController.instance.PlayAudio(GameSoundEnum.Music_Level);
+                        break;
+                }        
                 break;
             default:
                 break;    

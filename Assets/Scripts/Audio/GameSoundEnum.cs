@@ -7,6 +7,7 @@ public enum GameSoundEnum{
     //Music
     Music_Main_Menu,
     Music_Level,
+    Music_Level_Georgian,
 
     //UI
     UI_Button,

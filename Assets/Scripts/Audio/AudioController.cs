@@ -66,7 +66,10 @@ public class AudioController : MonoBehaviour
                 instance.PlayAudio(GameSoundEnum.Music_Main_Menu);
                 break;
             case "Gameplay":
-                instance.PlayAudio(GameSoundEnum.Music_Level);
+                if (GameManagerScript.currentLanguage == Language.Georgian){
+                    AudioController.instance.PlayAudio(GameSoundEnum.Music_Level_Georgian);
+                    break;
+                } else AudioController.instance.PlayAudio(GameSoundEnum.Music_Level);
                 break;
             default:
                 break;
