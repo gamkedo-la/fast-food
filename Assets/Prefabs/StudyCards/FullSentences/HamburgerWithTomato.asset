@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1645327bf7c5eb349aac418e90429566, type: 3}
+  m_Name: HamburgerWithTomato
+  m_EditorClassIdentifier: 
+  englishWord: I would like a hamburger with tomato
+  albanianWord: "Un\xEB dua hamburger me domate"
+  georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10F0\u10D0\u10DB\u10D1\u10E3\u10E0\u10D2\u10D4\u10E0\u10D8
+    \u10DE\u10D0\u10DB\u10D8\u10D3\u10DD\u10E0\u10D8\u10D7 \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"
+  icon: {fileID: 21300000, guid: f1d9f0a08bf3a5a449b320e62044673e, type: 3}
+  englishAudio: {fileID: 8300000, guid: 46a667971b25c8a46ba5db783d6dbbc0, type: 3}
+  albanianAudio: {fileID: 8300000, guid: 36c5d178975f2e34eace24a3c6437e7f, type: 3}
+  georgianAudio: {fileID: 8300000, guid: 177d7f61bc99cc943b159fdcdd88759d, type: 3}

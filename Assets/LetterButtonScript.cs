@@ -22,5 +22,9 @@ public class LetterButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         spellingInputField.text += myCharacter;
+        if (gameObject.transform.parent.name == "WordButtonsHorizontalLayoutGroup")
+        {
+            spellingInputField.text += " ";
+        }
     }
 }

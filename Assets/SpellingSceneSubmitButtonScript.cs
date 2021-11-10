@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class SpellingSceneSubmitButtonScript : ButtonScript
 {
@@ -21,6 +22,7 @@ public class SpellingSceneSubmitButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         studentSubmission = spellingInputField.text;
+        
         if (studentSubmission == spellingWordManager.GetComponent<SpellingWordsManagerScript>().currentWordToSpellString)
         {
             spellingWordManager.GetComponent<SpellingWordsManagerScript>().ResetDisplay();

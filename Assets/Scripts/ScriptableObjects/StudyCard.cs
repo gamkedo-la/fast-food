@@ -58,6 +58,8 @@ public class StudyCard : MonoBehaviour
             dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
             //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
+            InitializeMyGameSoundEnum();
+
             wordImage.sprite = wordObject.icon;
         }
     }
@@ -101,6 +103,7 @@ public class StudyCard : MonoBehaviour
     }
     public void PlayAudioClip()
     {
+        Debug.Log("myGameSoundEnum: " + myGameSoundEnum.ToString());
         AudioController.instance.PlayAudio(myGameSoundEnum);
     }
 
@@ -121,6 +124,7 @@ public class StudyCard : MonoBehaviour
                 break;
         }
 
+        Debug.Log("currentTextString: " + currentTextString);
         switch (currentTextString)
         {
             case "Hamburger":
@@ -171,6 +175,76 @@ public class StudyCard : MonoBehaviour
                 break;
             case "ხახვი":
                 myGameSoundEnum = GameSoundEnum.Georgian_Onion;
+                break;
+
+            case "I would like a chicken doner with lettuce":
+                myGameSoundEnum = GameSoundEnum.English_Order_Chicken_Doner_Lettuce;
+                break;
+            case "Unë dua një doner pule me marule":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce;
+                break;
+            case "ერთი ქათმის შაურმა სალათის ფურწლით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce;
+                break;
+
+            case "I would like a chicken doner with onion":
+                myGameSoundEnum = GameSoundEnum.English_Order_Chicken_Doner_Onion;
+                break;
+            case "Unë dua një doner pule me qepë":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Chicken_Doner_Onion;
+                break;
+            case "ერთი ქათმის შაურმა ხახვით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Onion;
+                break;
+
+            case "I would like a chicken doner with tomato":
+                myGameSoundEnum = GameSoundEnum.English_Order_Chicken_Doner_Tomato;
+                break;
+            case "Unë dua një doner pule me domate":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato;
+                break;
+            case "ერთი ქათმის შაურმა პამიდორით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Tomato;
+                break;
+
+            case "I would like a hamburger":
+                myGameSoundEnum = GameSoundEnum.English_Order_Hamburger;
+                break;
+            case "Unë dua një hamburger":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Hamburger;
+                break;
+            case "ერთი ჰამბურგერი თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger;
+                break;
+
+            case "I would like a hamburger with lettuce":
+                myGameSoundEnum = GameSoundEnum.English_Order_Hamburger_Lettuce;
+                break;
+            case "Unë dua një hamburger me marule":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Hamburger_Lettuce;
+                break;
+            case "ერთი ჰამბურგერი სალათის ფურწლით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Lettuce;
+                break;
+
+            case "I would like a hamburger with onion":
+                myGameSoundEnum = GameSoundEnum.English_Order_Hamburger_Onion;
+                break;
+            case "Unë dua një hamburger me qepë":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Hamburger_Onion;
+                break;
+            case "ერთი ჰამბურგერი ხახვით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Onion;
+                break;
+
+            case "I would like a hamburger with tomato":
+                myGameSoundEnum = GameSoundEnum.English_Order_Hamburger_Tomato;
+                break;
+            case "Unë dua një hamburger me domate":
+                myGameSoundEnum = GameSoundEnum.Albanian_Order_Hamburger_Tomato;
+                break;
+            case "ერთი ჰამბურგერი  პამიდორით თუ შეიძლება":
+                myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Tomato;
                 break;
         }
 

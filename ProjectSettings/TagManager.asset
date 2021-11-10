@@ -25,6 +25,7 @@ TagManager:
   - OnionIntroduction
   - SpellingInputField
   - SpellingInputTextMeshPro
+  - SentencesInputField
   layers:
   - Default
   - TransparentFX

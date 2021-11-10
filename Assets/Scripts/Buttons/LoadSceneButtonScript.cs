@@ -11,6 +11,7 @@ public enum ScenesToLoadEnumerations
     ReturningPlayerPrepScene,
     Gameplay,
     Spelling,
+    Sentences,
 }
 public class LoadSceneButtonScript : ButtonScript
 {
