@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
+    path: 
     guid: 5109c5a30db7f1742868a35a3c661145
   - enabled: 1
     path: Assets/Scenes/MainMenu1.unity
@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReturningPlayerPrepScene.unity
     guid: 4637cd6eb9a894b4895eaa2469e47014
+  - enabled: 1
+    path: Assets/Scenes/Spelling.unity
+    guid: 8c12e1fda4491544c805c73dda674983
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5908387e10c601f4f87003ae3a79b4d5, type: 2}
