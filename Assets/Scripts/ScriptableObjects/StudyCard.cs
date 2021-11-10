@@ -36,7 +36,19 @@ public class StudyCard : MonoBehaviour
             dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
             georgianWordTextMeshPro.text = wordObject.georgianWord;
             dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
-            dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+
+            foreach (Language key in dictionaryOfTextMeshProObjects.Keys)
+            {
+                if (key != GameManagerScript.currentLanguage)
+                {
+                    dictionaryOfTextMeshProObjects[key].gameObject.SetActive(false);
+                }
+                else
+                {
+                    dictionaryOfTextMeshProObjects[key].gameObject.SetActive(true);
+                }
+            }
+            //dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             englishAudio = wordObject.englishAudio;
             dictionaryOfAudioClips.Add(Language.English, englishAudio);
@@ -74,24 +86,17 @@ public class StudyCard : MonoBehaviour
         }
 
         InitializeMyGameSoundEnum();
-        
-        if (GameManagerScript.currentLanguage == Language.English)
+
+        foreach (Language key in dictionaryOfTextMeshProObjects.Keys)
         {
-            englishWordTextMeshPro.gameObject.SetActive(true);
-            albanianWordTextMeshPro.gameObject.SetActive(false);
-            georgianWordTextMeshPro.gameObject.SetActive(false);
-        }
-        else if (GameManagerScript.currentLanguage == Language.Albanian)
-        {
-            englishWordTextMeshPro.gameObject.SetActive(false);
-            albanianWordTextMeshPro.gameObject.SetActive(true);
-            georgianWordTextMeshPro.gameObject.SetActive(false);
-        }
-        else if (GameManagerScript.currentLanguage == Language.Georgian)
-        {
-            englishWordTextMeshPro.gameObject.SetActive(false);
-            albanianWordTextMeshPro.gameObject.SetActive(false);
-            georgianWordTextMeshPro.gameObject.SetActive(true);
+            if (key != GameManagerScript.currentLanguage)
+            {
+                dictionaryOfTextMeshProObjects[key].gameObject.SetActive(false);
+            }
+            else
+            {
+                dictionaryOfTextMeshProObjects[key].gameObject.SetActive(true);
+            }
         }
     }
     public void PlayAudioClip()

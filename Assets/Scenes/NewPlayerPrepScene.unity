@@ -412,6 +412,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StudyCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1892161421289338954, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1892161421289338957, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -496,7 +500,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6085835295370708380, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1892161421289338953, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
 --- !u!1 &1901191730453610339
 GameObject:
