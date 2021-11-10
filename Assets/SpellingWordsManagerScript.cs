@@ -25,14 +25,6 @@ public class SpellingWordsManagerScript : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        //if (letterButtonsHorizontalLayoutGroup.transform.childCount != 0)
-        //{
-        //    for (int i = letterButtonsHorizontalLayoutGroup.transform.childCount - 1; i < letterButtonsHorizontalLayoutGroup.transform.childCount; i--)
-        //    {
-        //        Destroy(letterButtonsHorizontalLayoutGroup.transform.GetChild(i));
-        //    }
-        //}
-
 
         if (targetStudyCard != null)
         {
@@ -42,7 +34,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
         targetStudyCard.gameObject.SetActive(true);
 
 
-        GameManagerScript.currentLanguage = Language.English;
+        //GameManagerScript.currentLanguage = Language.English;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
