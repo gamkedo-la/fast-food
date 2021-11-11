@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HamburgerWithLettuce
   m_EditorClassIdentifier: 
   englishWord: I would like a hamburger with lettuce
-  albanianWord: "Un\xEB dua hamburger me marule"
+  albanianWord: "Un\xEB dua nj\xEB hamburger me marule"
   georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10F0\u10D0\u10DB\u10D1\u10E3\u10E0\u10D2\u10D4\u10E0\u10D8
     \u10E1\u10D0\u10DA\u10D0\u10D7\u10D8\u10E1 \u10E4\u10E3\u10E0\u10EC\u10DA\u10D8\u10D7
     \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"

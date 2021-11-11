@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChickenDonerWithLettuce
   m_EditorClassIdentifier: 
   englishWord: I would like a chicken doner with lettuce
-  albanianWord: "Un\xEB dua doner pule me marule"
+  albanianWord: "Un\xEB dua nj\xEB doner pule me marule"
   georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10E5\u10D0\u10D7\u10DB\u10D8\u10E1 \u10E8\u10D0\u10E3\u10E0\u10DB\u10D0
     \u10E1\u10D0\u10DA\u10D0\u10D7\u10D8\u10E1 \u10E4\u10E3\u10E0\u10EC\u10DA\u10D8\u10D7
     \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"
