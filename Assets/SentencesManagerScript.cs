@@ -48,8 +48,8 @@ public class SentencesManagerScript : MonoBehaviour
 
         Debug.Log("currentSentenceToFormString: " + currentSentenceToFormString);
         string[] arrayOfIndividualWords = currentSentenceToFormString.Split();
-        
 
+        //shuffle the array
         for (int i = 0; i < arrayOfIndividualWords.Length - 1; i++)
         {
             int rnd = UnityEngine.Random.Range(i, arrayOfIndividualWords.Length);

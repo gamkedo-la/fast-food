@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [ExecuteInEditMode]
 public class StudyCard : MonoBehaviour
@@ -109,7 +110,11 @@ public class StudyCard : MonoBehaviour
 
     private void InitializeMyGameSoundEnum()
     {
-        
+        if (SceneManager.GetActiveScene().name == "Numbers")
+        {
+            return;
+        }
+
         switch (GameManagerScript.currentLanguage)
         {
             case Language.English:

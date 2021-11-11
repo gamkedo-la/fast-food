@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sentences.unity
     guid: e7893c7d66f9fff4baf998feb5089fd1
+  - enabled: 1
+    path: Assets/Scenes/Numbers.unity
+    guid: 31286563562a7ad438195cea1fe50a69
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5908387e10c601f4f87003ae3a79b4d5, type: 2}
