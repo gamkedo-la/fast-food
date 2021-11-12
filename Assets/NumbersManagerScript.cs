@@ -73,11 +73,19 @@ public class NumbersManagerScript : MonoBehaviour
             arrayOfIndividualNumbers[i] = tempNumber;
         }
 
-        for (int i = 0; i < arrayOfIndividualNumbers.Length - 1; i++)
+        for (int i = 0; i < arrayOfIndividualNumbers.Length ; i++)
         {
             var numberButton = Instantiate(numberButtonPrefab);
             numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfIndividualNumbers[i].ToString();
-            numberButton.transform.parent = numberButtonsHorizontalLayoutGroup.transform;
+            Debug.Log("numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
+            if (numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text != "")
+            {
+                numberButton.transform.parent = numberButtonsHorizontalLayoutGroup.transform;
+            }
+            else
+            {
+                Destroy(numberButton);
+            }
         }
 
         concatenatedNumbersString = "";
