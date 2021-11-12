@@ -27,6 +27,7 @@ TagManager:
   - SpellingInputTextMeshPro
   - SentencesInputField
   - NumbersInputField
+  - ColorsInputField
   layers:
   - Default
   - TransparentFX

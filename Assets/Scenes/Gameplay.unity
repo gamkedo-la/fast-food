@@ -7789,7 +7789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
-  mySceneToLoadEnumeration: 4
+  mySceneToLoadEnumeration: 7
 --- !u!114 &878480739
 MonoBehaviour:
   m_ObjectHideFlags: 0
