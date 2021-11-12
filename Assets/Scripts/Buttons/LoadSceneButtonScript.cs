@@ -12,6 +12,7 @@ public enum ScenesToLoadEnumerations
     Gameplay,
     Spelling,
     Sentences,
+    Numbers,
 }
 public class LoadSceneButtonScript : ButtonScript
 {

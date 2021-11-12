@@ -35,7 +35,7 @@ public class NumbersManagerScript : MonoBehaviour
         targetStudyCard.gameObject.SetActive(true);
 
 
-        GameManagerScript.currentLanguage = Language.English;
+        //GameManagerScript.currentLanguage = Language.English;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
