@@ -32,5 +32,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Numbers.unity
     guid: 31286563562a7ad438195cea1fe50a69
+  - enabled: 1
+    path: Assets/Scenes/Colors.unity
+    guid: 1a7124bdde830c54b9ceb122f1221212
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5908387e10c601f4f87003ae3a79b4d5, type: 2}

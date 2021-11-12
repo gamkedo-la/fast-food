@@ -110,7 +110,7 @@ public class StudyCard : MonoBehaviour
 
     private void InitializeMyGameSoundEnum()
     {
-        if (SceneManager.GetActiveScene().name == "Numbers")
+        if (SceneManager.GetActiveScene().name == "Numbers" || SceneManager.GetActiveScene().name == "Colors")
         {
             return;
         }

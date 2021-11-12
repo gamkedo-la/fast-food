@@ -50,6 +50,10 @@ public static class GameManagerScript
     public static ProfileDataScript currentProfile;
 
     public static int currentLevel = 1;
+    public static int currentSpellingLevel = 1;
+    public static int currentSentencesLevel = 1;
+    public static int currentNumbersLevel = 1;
+    public static int currentColorsLevel = 1;
 
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
     public static int minimumSubmittedOrdersToCompleteLevel2 = 10;

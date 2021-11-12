@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedScriptableObject
   m_EditorClassIdentifier: 
   englishWord: red
-  albanianWord: e kuqe
+  albanianWord: kuqe
   georgianWord: "\u10EC\u10D8\u10D7\u10D4\u10DA\u10D8"
   icon: {fileID: 21300000, guid: e698ea0159e5ca74f96b5c09a9a362dc, type: 3}
   englishAudio: {fileID: 0}

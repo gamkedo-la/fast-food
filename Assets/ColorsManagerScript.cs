@@ -7,7 +7,8 @@ using TMPro;
 
 public class ColorsManagerScript : MonoBehaviour
 {
-    [SerializeField] private StudyCard[] arrayOfStudyCards;
+    [SerializeField] private StudyCard[] arrayOfAllStudyCards;
+    private List<StudyCard> listOfCurrentLevelStudyCards = new List<StudyCard>();
     private StudyCard targetStudyCard;
     public string currentTargetColorString;
     [SerializeField] GameObject colorButtonPrefab;
@@ -17,6 +18,7 @@ public class ColorsManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetListOfCurrentLevelStudyCards();
         ResetDisplay();
     }
 
@@ -35,7 +37,7 @@ public class ColorsManagerScript : MonoBehaviour
         targetStudyCard.gameObject.SetActive(true);
 
 
-        //GameManagerScript.currentLanguage = Language.English;
+        GameManagerScript.currentLanguage = Language.English;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
@@ -50,7 +52,7 @@ public class ColorsManagerScript : MonoBehaviour
         Debug.Log("currentWordToSpellString: " + currentTargetColorString);
 
 
-        foreach (StudyCard studyCard in arrayOfStudyCards)
+        foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
         {
             concatenatedColorsString += studyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text.ToString();
             concatenatedColorsString += " ";
@@ -91,11 +93,24 @@ public class ColorsManagerScript : MonoBehaviour
         concatenatedColorsString = "";
     }
 
+    public List<StudyCard> ResetListOfCurrentLevelStudyCards()
+    {
+        listOfCurrentLevelStudyCards.Clear();
+        Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        for (int i = 0; i < GameManagerScript.currentColorsLevel; i++)
+        {
+            listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
+        }
+
+        return listOfCurrentLevelStudyCards;
+    }
     private StudyCard SelectAStudyCard()
     {
         StudyCard targetColorWord;
-        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, arrayOfStudyCards.Length);
-        targetColorWord = arrayOfStudyCards[randomStudyCardDictionaryIndex];
+        
+        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count - 1);
+        targetColorWord = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
         return targetColorWord;
     }
 }
