@@ -7,7 +7,8 @@ using TMPro;
 
 public class NumbersManagerScript : MonoBehaviour
 {
-    [SerializeField] private StudyCard[] arrayOfStudyCards;
+    [SerializeField] private StudyCard[] arrayOfAllStudyCards;
+    private List<StudyCard> listOfCurrentLevelStudyCards = new List<StudyCard>();
     private StudyCard targetStudyCard;
     public string currentTargetNumberString;
     [SerializeField] GameObject numberButtonPrefab;
@@ -17,6 +18,7 @@ public class NumbersManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetListOfCurrentLevelStudyCards();
         ResetDisplay();
     }
 
@@ -47,10 +49,10 @@ public class NumbersManagerScript : MonoBehaviour
             currentTargetNumberString = currentTargetNumberString.ToLower();
         }
 
-        Debug.Log("currentWordToSpellString: " + currentTargetNumberString);
+        Debug.Log("currentTargetNumberString: " + currentTargetNumberString);
 
         
-        foreach (StudyCard studyCard in arrayOfStudyCards)
+        foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
         {
             concatenatedNumbersString += studyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text.ToString();
             concatenatedNumbersString += " ";
@@ -91,11 +93,24 @@ public class NumbersManagerScript : MonoBehaviour
         concatenatedNumbersString = "";
     }
 
+    public List<StudyCard> ResetListOfCurrentLevelStudyCards()
+    {
+        listOfCurrentLevelStudyCards.Clear();
+        Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        for (int i = 0; i < GameManagerScript.currentNumbersLevel; i++)
+        {
+            listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
+        }
+
+        return listOfCurrentLevelStudyCards;
+    }
+
     private StudyCard SelectAStudyCard()
     {
         StudyCard targetNumberWord;
-        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, arrayOfStudyCards.Length);
-        targetNumberWord = arrayOfStudyCards[randomStudyCardDictionaryIndex];
+        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count);
+        targetNumberWord = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
         return targetNumberWord;
     }
 }

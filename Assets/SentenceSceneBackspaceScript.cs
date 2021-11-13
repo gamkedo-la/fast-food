@@ -12,7 +12,7 @@ public class SentenceSceneBackspaceScript : ButtonScript
     // Start is called before the first frame update
     void Start()
     {
-        sentenceInputFieldGameObject = GameObject.FindGameObjectWithTag("SentenceInputField");
+        sentenceInputFieldGameObject = GameObject.FindGameObjectWithTag("SentencesInputField");
         sentenceInputField = sentenceInputFieldGameObject.GetComponent<TMPro.TMP_InputField>();
         sentenceInputTextMeshPro = GameObject.FindGameObjectWithTag("SentenceInputTextMeshPro");
     }

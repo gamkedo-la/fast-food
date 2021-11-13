@@ -37,7 +37,7 @@ public class ColorsManagerScript : MonoBehaviour
         targetStudyCard.gameObject.SetActive(true);
 
 
-        GameManagerScript.currentLanguage = Language.English;
+        GameManagerScript.currentLanguage = Language.Georgian;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
@@ -90,6 +90,10 @@ public class ColorsManagerScript : MonoBehaviour
             }
         }
 
+        if (arrayOfIndividualColors.Length == 1)
+        {
+            colorButtonsHorizontalLayoutGroup.GetComponent<RectTransform>().localPosition = new Vector3(75, 50, 0.0f);
+        }
         concatenatedColorsString = "";
     }
 
@@ -109,7 +113,7 @@ public class ColorsManagerScript : MonoBehaviour
     {
         StudyCard targetColorWord;
         
-        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count - 1);
+        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count);
         targetColorWord = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
         return targetColorWord;
     }

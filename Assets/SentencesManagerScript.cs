@@ -7,7 +7,8 @@ using TMPro;
 
 public class SentencesManagerScript : MonoBehaviour
 {
-    [SerializeField] private StudyCard[] arrayOfStudyCards;
+    [SerializeField] private StudyCard[] arrayOfAllStudyCards;
+    private List<StudyCard> listOfCurrentLevelStudyCards = new List<StudyCard>();
     private StudyCard targetStudyCard;
     public string currentSentenceToFormString;
     [SerializeField] GameObject wordButtonPrefab;
@@ -16,6 +17,7 @@ public class SentencesManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetListOfCurrentLevelStudyCards();
         ResetDisplay();
     }
 
@@ -66,11 +68,25 @@ public class SentencesManagerScript : MonoBehaviour
         }
     }
 
+    public List<StudyCard> ResetListOfCurrentLevelStudyCards()
+    {
+        listOfCurrentLevelStudyCards.Clear();
+        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        for (int i = 0; i < GameManagerScript.currentSentencesLevel; i++)
+        {
+            listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
+        }
+        Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyCards.Count);
+        return listOfCurrentLevelStudyCards;
+    }
+
     private StudyCard SelectAStudyCard()
     {
         StudyCard targetSentenceStudyCard;
-        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, arrayOfStudyCards.Length);
-        targetSentenceStudyCard = arrayOfStudyCards[randomStudyCardDictionaryIndex];
+        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count);
+        targetSentenceStudyCard = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
+        Debug.Log("targetSentenceStudyCard: " + targetSentenceStudyCard);
         return targetSentenceStudyCard;
     }
 }

@@ -7,7 +7,8 @@ using TMPro;
 
 public class SpellingWordsManagerScript : MonoBehaviour
 {
-    [SerializeField] private StudyCard[] arrayOfStudyCards;
+    [SerializeField] private StudyCard[] arrayOfAllStudyCards;
+    private List<StudyCard> listOfCurrentLevelStudyCards = new List<StudyCard>();
     private StudyCard targetStudyCard;
     public string currentWordToSpellString;
     [SerializeField] GameObject letterButtonPrefab;
@@ -16,6 +17,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ResetListOfCurrentLevelStudyCards();
         ResetDisplay();
     }
 
@@ -58,11 +60,24 @@ public class SpellingWordsManagerScript : MonoBehaviour
         }
     }
 
+    public List<StudyCard> ResetListOfCurrentLevelStudyCards()
+    {
+        listOfCurrentLevelStudyCards.Clear();
+        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        for (int i = 0; i < GameManagerScript.currentSpellingLevel; i++)
+        {
+            listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
+        }
+        Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyCards.Count);
+        return listOfCurrentLevelStudyCards;
+    }
+
     private StudyCard SelectAStudyCard()
     {
         StudyCard targetSpellingWord;
-        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, arrayOfStudyCards.Length);
-        targetSpellingWord = arrayOfStudyCards[randomStudyCardDictionaryIndex];
+        int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count);
+        targetSpellingWord = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
         return targetSpellingWord;
     }
 }

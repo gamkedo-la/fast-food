@@ -4,57 +4,56 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class LevelUpButtonScript : ButtonScript
+public class LevelDownButtonScript : ButtonScript
 {
     [SerializeField] private GameObject miniGameSpecificManager;
     [SerializeField] private TextMeshProUGUI currentLevelTextMeshPro;
     private Scene currentScene;
-    
+
     public override void HandleButtonClick()
     {
         currentScene = SceneManager.GetActiveScene();
         switch (currentScene.name)
         {
             case "Colors":
-                if (GameManagerScript.currentColorsLevel == GameManagerScript.maxColorsLevel)
+                if (GameManagerScript.currentColorsLevel == 1)
                 {
                     return;
                 }
-                GameManagerScript.currentColorsLevel++;
+                GameManagerScript.currentColorsLevel--;
                 currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentColorsLevel;
                 miniGameSpecificManager.GetComponent<ColorsManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<ColorsManagerScript>().ResetDisplay();
                 break;
 
             case "Numbers":
-                if (GameManagerScript.currentNumbersLevel == GameManagerScript.maxNumbersLevel)
+                if (GameManagerScript.currentNumbersLevel == 1)
                 {
                     return;
                 }
-                GameManagerScript.currentNumbersLevel++;
+                GameManagerScript.currentNumbersLevel--;
                 currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentNumbersLevel;
                 miniGameSpecificManager.GetComponent<NumbersManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<NumbersManagerScript>().ResetDisplay();
                 break;
 
             case "Sentences":
-                Debug.Log("inside level up handler");
-                if (GameManagerScript.currentSentencesLevel == GameManagerScript.maxSentencesLevel)
+                if (GameManagerScript.currentSentencesLevel == 1)
                 {
                     return;
                 }
-                GameManagerScript.currentSentencesLevel++;
+                GameManagerScript.currentSentencesLevel--;
                 currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentSentencesLevel;
                 miniGameSpecificManager.GetComponent<SentencesManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<SentencesManagerScript>().ResetDisplay();
                 break;
 
             case "Spelling":
-                if (GameManagerScript.currentSpellingLevel == GameManagerScript.maxSpellingLevel)
+                if (GameManagerScript.currentSpellingLevel == 1)
                 {
                     return;
                 }
-                GameManagerScript.currentSpellingLevel++;
+                GameManagerScript.currentSpellingLevel--;
                 currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentSpellingLevel;
                 miniGameSpecificManager.GetComponent<SpellingWordsManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<SpellingWordsManagerScript>().ResetDisplay();
@@ -62,3 +61,4 @@ public class LevelUpButtonScript : ButtonScript
         }
     }
 }
+

@@ -55,6 +55,11 @@ public static class GameManagerScript
     public static int currentNumbersLevel = 1;
     public static int currentColorsLevel = 1;
 
+    public static int maxSpellingLevel = 5;
+    public static int maxSentencesLevel = 8;
+    public static int maxNumbersLevel = 5;
+    public static int maxColorsLevel = 8;
+
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
     public static int minimumSubmittedOrdersToCompleteLevel2 = 10;
     public static int minimumSubmittedOrdersToCompleteLevel3 = 15;
