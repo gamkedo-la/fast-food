@@ -466,7 +466,7 @@ public class CustomerOrderingScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab" || 
-            collision.gameObject.name == "ChickenDonerScriptablePrefab")
+            collision.gameObject.name == "ChickenDonerScriptablePrefab" || collision.gameObject.name == "Beer")
         {
             return;
         }

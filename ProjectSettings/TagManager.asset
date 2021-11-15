@@ -28,6 +28,8 @@ TagManager:
   - SentencesInputField
   - NumbersInputField
   - ColorsInputField
+  - DrinkLocation
+  - Beer
   layers:
   - Default
   - TransparentFX

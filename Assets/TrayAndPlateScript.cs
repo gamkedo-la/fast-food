@@ -17,6 +17,9 @@ public class TrayAndPlateScript : MonoBehaviour
 
     [SerializeField] GameObject burgerScriptablePrefab;
     [SerializeField] GameObject chickenDonerScriptablePrefab;
+    [SerializeField] GameObject beer;
+
+    [SerializeField] GameObject drinkLocation;
 
     [SerializeField] GameObject trayAndPlateStartingLocationGameObject;
 
@@ -28,6 +31,7 @@ public class TrayAndPlateScript : MonoBehaviour
 
         burgerScriptablePrefab = GameObject.FindGameObjectWithTag("BurgerPrefab");
         chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerScriptablePrefab");
+        beer = GameObject.FindGameObjectWithTag("Beer");
 
         startingPositionVector3 = gameObject.transform.position;
 
@@ -66,6 +70,10 @@ public class TrayAndPlateScript : MonoBehaviour
             {
                 float chickenDonerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.chickenDonerBeingHeldYOffset;
                 chickenDonerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, chickenDonerYPositionWithOffset, 0);
+            }
+            if (GameManagerScript.chefHasBeer)
+            {
+                beer.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
             }
         }
     }
