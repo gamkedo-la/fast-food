@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Colors.unity
     guid: 1a7124bdde830c54b9ceb122f1221212
+  - enabled: 1
+    path: Assets/Scenes/Phonics.unity
+    guid: c0f0f1ab973426d499b2ed4c744bec60
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5908387e10c601f4f87003ae3a79b4d5, type: 2}

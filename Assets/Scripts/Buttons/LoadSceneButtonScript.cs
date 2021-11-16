@@ -14,6 +14,7 @@ public enum ScenesToLoadEnumerations
     Sentences,
     Numbers,
     Colors,
+    Phonics,
 }
 public class LoadSceneButtonScript : ButtonScript
 {

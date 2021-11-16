@@ -58,6 +58,17 @@ public class LevelDownButtonScript : ButtonScript
                 miniGameSpecificManager.GetComponent<SpellingWordsManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<SpellingWordsManagerScript>().ResetDisplay();
                 break;
+
+            case "Phonics":
+                if (GameManagerScript.currentPhonicsLevel == 1)
+                {
+                    return;
+                }
+                GameManagerScript.currentPhonicsLevel--;
+                currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentPhonicsLevel;
+                miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetListOfCurrentLevelStudyCards();
+                miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetDisplay();
+                break;
         }
     }
 }

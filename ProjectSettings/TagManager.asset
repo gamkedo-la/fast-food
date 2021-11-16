@@ -33,6 +33,7 @@ TagManager:
   - RedWine
   - WhiteWine
   - Water
+  - PhonicsInputField
   layers:
   - Default
   - TransparentFX

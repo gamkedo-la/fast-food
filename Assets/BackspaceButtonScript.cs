@@ -2,25 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BackspaceButtonScript : ButtonScript
 {
-    private GameObject spellingInputFieldGameObject;
-    private TMP_InputField spellingInputField;
-    private GameObject spellingInputTextMeshPro;
+    private GameObject inputFieldGameObject;
+    private TMP_InputField inputField;
 
     // Start is called before the first frame update
     void Start()
     {
-        spellingInputFieldGameObject = GameObject.FindGameObjectWithTag("SpellingInputField");
-        spellingInputField = spellingInputFieldGameObject.GetComponent<TMPro.TMP_InputField>();
-        spellingInputTextMeshPro = GameObject.FindGameObjectWithTag("SpellingInputTextMeshPro");
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "Phonics":
+                inputFieldGameObject = GameObject.FindGameObjectWithTag("PhonicsInputField");
+                inputField = inputFieldGameObject.GetComponent<TMPro.TMP_InputField>();
+                break;
+
+            case "Spelling":
+                inputFieldGameObject = GameObject.FindGameObjectWithTag("SpellingInputField");
+                inputField = inputFieldGameObject.GetComponent<TMPro.TMP_InputField>();
+                break;
+        }
+        
     }
 
     public override void HandleButtonClick()
     {
-        string currentStudentInputString = spellingInputField.text;
+        string currentStudentInputString = inputField.text;
         string editedString = currentStudentInputString.Substring(0, currentStudentInputString.Length - 1);
-        spellingInputField.text = editedString;
+        inputField.text = editedString;
     }
 }
