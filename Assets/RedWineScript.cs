@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BeerScript : MonoBehaviour
+public class RedWineScript : MonoBehaviour
 {
     private BoxCollider2D myBoxCollider;
     private Camera mainCamera;
@@ -20,10 +20,10 @@ public class BeerScript : MonoBehaviour
         myBoxCollider = GetComponent<BoxCollider2D>();
         startingPositionVector2 = gameObject.transform.position;
 
-        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpBeerEvent, HandleChefPicksMeUpEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.chefPicksUpRedWineEvent, HandleChefPicksMeUpEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, ResetMeAfterSubmission);
 
-        if (GameManagerScript.currentLevel < 5)
+        if (GameManagerScript.currentLevel < 6)
         {
             gameObject.SetActive(false);
         }
@@ -59,7 +59,7 @@ public class BeerScript : MonoBehaviour
 
         if (myBoxCollider.OverlapPoint(currentTouchPositionVector3InWorldUnits))
         {
-            EventManagerScript.chefPicksUpBeerEvent.Invoke();
+            EventManagerScript.chefPicksUpRedWineEvent.Invoke();
         }
     }
     private void HandleItchInput()
@@ -72,13 +72,13 @@ public class BeerScript : MonoBehaviour
         {
             if (myBoxCollider.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition)))
             {
-                EventManagerScript.chefPicksUpBeerEvent.Invoke();
+                EventManagerScript.chefPicksUpRedWineEvent.Invoke();
             }
         }
     }
     private void HandleChefPicksMeUpEvent()
     {
-        GameManagerScript.chefHasBeer = true;
+        GameManagerScript.chefHasRedWine = true;
         GameObject drinkLocation = GameObject.FindGameObjectWithTag("DrinkLocation");
         gameObject.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
     }
@@ -86,6 +86,6 @@ public class BeerScript : MonoBehaviour
     private void ResetMeAfterSubmission()
     {
         gameObject.transform.position = startingPositionVector2;
-        GameManagerScript.chefHasBeer = false;
+        GameManagerScript.chefHasRedWine = false;
     }
 }

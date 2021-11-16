@@ -64,6 +64,11 @@ public class CustomerOrderingScript : MonoBehaviour
     private bool iWantTomatoe = false;
     private bool iWantOnion = false;
 
+    private bool iWantWater = false;
+    private bool iWantBeer = false;
+    private bool iWantRedWine = false;
+    private bool iWantWhiteWine = false;
+
     [SerializeField] GameObject customerOrderingCanvas;
     [SerializeField] Image customerOrderingCanvasImage;
     [SerializeField] GameObject customerOrderingCanvasImageGameObject;
@@ -323,6 +328,11 @@ public class CustomerOrderingScript : MonoBehaviour
         iWantLettuce = false;
         iWantTomatoe = false;
         iWantOnion = false;
+        iWantWater = false;
+        iWantBeer = false;
+        iWantRedWine = false;
+        iWantWhiteWine = false;
+
         #region HandleCoinFlipDesireForEachTopping
         if (GameManagerScript.currentLevel < 3)
         {
@@ -362,6 +372,57 @@ public class CustomerOrderingScript : MonoBehaviour
             if (randomFloatForCoinFlip < 0.5f)
             {
                 iWantOnion = true;
+            }
+        }
+
+        if (GameManagerScript.currentLevel == 5)
+        {
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip < 0.5f)
+            {
+                iWantWater = true;
+            }
+            else
+            {
+                iWantBeer = true;
+            }
+        }
+
+        if (GameManagerScript.currentLevel == 6)
+        {
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip < 0.33f)
+            {
+                iWantWater = true;
+            }
+            else if (randomFloatForCoinFlip > 0.66f)
+            {
+                iWantBeer = true;
+            }
+            else
+            {
+                iWantRedWine = true;
+            }
+        }
+
+        if (GameManagerScript.currentLevel == 7)
+        {
+            randomFloatForCoinFlip = Random.Range(0.0f, 1.0f);
+            if (randomFloatForCoinFlip > 0.75f)
+            {
+                iWantWater = true;
+            }
+            else if (randomFloatForCoinFlip < 0.25f)
+            {
+                iWantBeer = true;
+            }
+            else if (randomFloatForCoinFlip >= 0.25f && randomFloatForCoinFlip < 0.5f)
+            {
+                iWantRedWine = true;
+            }
+            else if (randomFloatForCoinFlip >= 0.5f && randomFloatForCoinFlip <= 0.75f)
+            {
+                iWantWhiteWine = true;
             }
         }
         #endregion
@@ -437,6 +498,31 @@ public class CustomerOrderingScript : MonoBehaviour
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce, tomato, and onion"];
         }
 
+        if (iWantWater)
+        {
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["water"];
+        }
+        else if (iWantBeer)
+        {
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["beer"];
+        }
+        else if (iWantRedWine)
+        {
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["red wine"];
+        }
+        else if (iWantWhiteWine)
+        {
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["white wine"];
+        }
+
         if (GameManagerScript.currentLanguage == Language.Georgian)
         {
             currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
@@ -457,16 +543,44 @@ public class CustomerOrderingScript : MonoBehaviour
         orderTextBoxTextMeshPro.text = currentCustomerOrderDisplayString;
 
         //Remove if statement when Georgian audio clips are implemented
-        if (GameManagerScript.currentLanguage != Language.Georgian)
-        {
-            myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
-        }
+        //if (GameManagerScript.currentLanguage != Language.Georgian)
+        //{
+        //    myCurrentOrdersAudioClip = LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][currentCustomerDialogueString];
+        //}
     }
 
+    private void ProcessDrinkSubmission()
+    {
+        if (iWantWater && !GameManagerScript.chefHasWater)
+        {
+            EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+            isProcessingOrder = false;
+            return;
+        }
+        else if (iWantBeer && !GameManagerScript.chefHasBeer)
+        {
+            EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+            isProcessingOrder = false;
+            return;
+        }
+        else if (iWantRedWine && !GameManagerScript.chefHasRedWine)
+        {
+            EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+            isProcessingOrder = false;
+            return;
+        }
+        else if (iWantWhiteWine && !GameManagerScript.chefHasWhiteWine)
+        {
+            EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
+            isProcessingOrder = false;
+            return;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab" || 
-            collision.gameObject.name == "ChickenDonerScriptablePrefab" || collision.gameObject.name == "Beer")
+            collision.gameObject.name == "ChickenDonerScriptablePrefab" || collision.gameObject.name == "Beer" || 
+            collision.gameObject.name == "RedWine" || collision.gameObject.name == "WhiteWine" || collision.gameObject.name == "Water")
         {
             return;
         }
@@ -476,12 +590,15 @@ public class CustomerOrderingScript : MonoBehaviour
             isProcessingOrder = true;
 
             #region Handle Player Submission 
+            ProcessDrinkSubmission();
+
             if (iWantAHamburger)
             {
                 if (GameManagerScript.chefHasChickenDoner)
                 {
                     EventManagerScript.incorrectOrderSubmissionEvent.Invoke();
                 }
+
                 //customer wants all the toppings
                 else if (iWantLettuce && iWantOnion && iWantTomatoe)
                 {
@@ -818,7 +935,7 @@ public class CustomerOrderingScript : MonoBehaviour
         //remove 'if' after georgian audio clips are implemented
         if (GameManagerScript.currentLanguage != Language.Georgian)
         {
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
+            //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["No"]);
         }
         
         AudioController.instance.OneShot(GameSoundEnum.SFX_Incorrect_Order);

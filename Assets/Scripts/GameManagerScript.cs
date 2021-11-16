@@ -35,6 +35,9 @@ public static class GameManagerScript
     public static bool burgerHasOnion = false;
 
     public static bool chefHasBeer = false;
+    public static bool chefHasRedWine = false;
+    public static bool chefHasWhiteWine = false;
+    public static bool chefHasWater = false;
 
     public static float chickenDonerBeingHeldXOffset = 1.0f;
     public static float chickenDonerBeingHeldYOffset = 0.0f;

@@ -18,6 +18,9 @@ public class TrayAndPlateScript : MonoBehaviour
     [SerializeField] GameObject burgerScriptablePrefab;
     [SerializeField] GameObject chickenDonerScriptablePrefab;
     [SerializeField] GameObject beer;
+    [SerializeField] GameObject redWine;
+    [SerializeField] GameObject whiteWine;
+    [SerializeField] GameObject water;
 
     [SerializeField] GameObject drinkLocation;
 
@@ -32,6 +35,9 @@ public class TrayAndPlateScript : MonoBehaviour
         burgerScriptablePrefab = GameObject.FindGameObjectWithTag("BurgerPrefab");
         chickenDonerScriptablePrefab = GameObject.FindGameObjectWithTag("ChickenDonerScriptablePrefab");
         beer = GameObject.FindGameObjectWithTag("Beer");
+        redWine = GameObject.FindGameObjectWithTag("RedWine");
+        whiteWine = GameObject.FindGameObjectWithTag("WhiteWine");
+        water = GameObject.FindGameObjectWithTag("Water");
 
         startingPositionVector3 = gameObject.transform.position;
 
@@ -71,9 +77,22 @@ public class TrayAndPlateScript : MonoBehaviour
                 float chickenDonerYPositionWithOffset = gameObject.transform.position.y + GameManagerScript.chickenDonerBeingHeldYOffset;
                 chickenDonerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, chickenDonerYPositionWithOffset, 0);
             }
+
             if (GameManagerScript.chefHasBeer)
             {
                 beer.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+            }
+            else if (GameManagerScript.chefHasRedWine)
+            {
+                redWine.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+            }
+            else if (GameManagerScript.chefHasWhiteWine)
+            {
+                whiteWine.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+            }
+            else if (GameManagerScript.chefHasWater)
+            {
+                water.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
             }
         }
     }
@@ -112,6 +131,23 @@ public class TrayAndPlateScript : MonoBehaviour
         else if (GameManagerScript.chefHasChickenDoner)
         {
             chickenDonerScriptablePrefab.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
+        }
+
+        if (GameManagerScript.chefHasBeer)
+        {
+            beer.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+        }
+        else if (GameManagerScript.chefHasRedWine)
+        {
+            redWine.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+        }
+        else if (GameManagerScript.chefHasWhiteWine)
+        {
+            whiteWine.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
+        }
+        else if (GameManagerScript.chefHasWater)
+        {
+            water.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
         }
     }
 }

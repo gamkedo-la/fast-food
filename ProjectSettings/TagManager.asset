@@ -30,6 +30,9 @@ TagManager:
   - ColorsInputField
   - DrinkLocation
   - Beer
+  - RedWine
+  - WhiteWine
+  - Water
   layers:
   - Default
   - TransparentFX

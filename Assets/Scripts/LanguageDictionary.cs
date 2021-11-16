@@ -95,6 +95,11 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.English].Add("Thank you!", "Thank you!");
         languageDictionary[Language.English].Add("That's not what I want!", "That's not what I want!");
 
+        languageDictionary[Language.English].Add("beer", " And a beer.");
+        languageDictionary[Language.English].Add("water", " And a water.");
+        languageDictionary[Language.English].Add("red wine", " And a red wine.");
+        languageDictionary[Language.English].Add("white wine", " And a white wine.");
+
         languageDictionary.Add(Language.Albanian, new Dictionary<string, string>());
         languageDictionary[Language.Albanian].Add("I want a hamburger", "Unë dua një hamburger");
         languageDictionary[Language.Albanian].Add("I want a chicken doner", "Unë dua një doner pule");
@@ -109,6 +114,11 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Albanian].Add("Thank you!", "Faleminderit!");
         languageDictionary[Language.Albanian].Add("That's not what I want!", "Kjo nuk është ajo që unë dua!");
 
+        languageDictionary[Language.Albanian].Add("beer", " Dhe një birrë.");
+        languageDictionary[Language.Albanian].Add("water", " Dhe një ujë.");
+        languageDictionary[Language.Albanian].Add("red wine", " Dhe një verë e kuqe.");
+        languageDictionary[Language.Albanian].Add("white wine", " Dhe një verë të bardhë.");
+            
         //თუ შეიძლება, 'may I'... added at the end of the sentence
         languageDictionary.Add(Language.Georgian, new Dictionary<string, string>());
         languageDictionary[Language.Georgian].Add("I want a hamburger", "ერთი ჰამბურგერი");
@@ -123,6 +133,11 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათით, პამიდორით, და ხახვით");
         languageDictionary[Language.Georgian].Add("Thank you!", "მადლობა!");
         languageDictionary[Language.Georgian].Add("That's not what I want!", "არა!");
+
+        languageDictionary[Language.Georgian].Add("beer", " და ერთი ლუდი.");
+        languageDictionary[Language.Georgian].Add("water", " და ერთი წყალი.");
+        languageDictionary[Language.Georgian].Add("red wine", " და ერთი წითელი ღვინო.");
+        languageDictionary[Language.Georgian].Add("white wine", " და ერთი თეთრი ღვინო.");
 
         //study screen
         languageDictionary[Language.English].Add("I would like a", "I would like a");

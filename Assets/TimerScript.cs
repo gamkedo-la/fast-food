@@ -53,6 +53,15 @@ public class TimerScript : MonoBehaviour
             case 4:
                 duration = 135.0f;
                 break;
+            case 5:
+                duration = 165.0f;
+                break;
+            case 6:
+                duration = 195.0f;
+                break;
+            case 7:
+                duration = 225.0f;
+                break;
         }
 
         if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Audio)
