@@ -7,7 +7,10 @@ using TMPro;
 
 public class PhonicsManagerScript : MonoBehaviour
 {
-    [SerializeField] private StudyPhonicScript[] arrayOfStudyPhonicsCards;
+    [SerializeField] private StudyPhonicScript[] arrayOfEnglishStudyPhonicsCards;
+    [SerializeField] private StudyPhonicScript[] arrayOfAlbanianStudyPhonicsCards;
+    [SerializeField] private StudyPhonicScript[] arrayOfGeorgianStudyPhonicsCards;
+
     private List<StudyPhonicScript> listOfCurrentLevelStudyPhonics = new List<StudyPhonicScript>();
     private StudyPhonicScript targetPhonic;
     public string currentPhonicString;
@@ -17,6 +20,7 @@ public class PhonicsManagerScript : MonoBehaviour
     [SerializeField] GameObject phonicButtonPrefab;
     [SerializeField] GameObject phonicButtonsHorizontalLayoutGroup;
     [SerializeField] GameObject phonicButtonsHorizontalLayoutGroup2;
+    [SerializeField] GameObject phonicButtonsHorizontalLayoutGroup3;
 
 
     // Start is called before the first frame update
@@ -75,13 +79,17 @@ public class PhonicsManagerScript : MonoBehaviour
             {
                 var phonicButton = Instantiate(phonicButtonPrefab);
                 phonicButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfShuffledCharacters[i].ToString();
-                if (i < 28)
+                if (i < 22)
                 {
                     phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup.transform;
                 }
-                else
+                else if (i >= 22 && i < 44)
                 {
                     phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup2.transform;
+                }
+                else
+                {
+                    phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup3.transform;
                 }
             }  
         }
@@ -90,14 +98,34 @@ public class PhonicsManagerScript : MonoBehaviour
     public List<StudyPhonicScript> ResetListOfCurrentLevelStudyCards()
     {
         listOfCurrentLevelStudyPhonics.Clear();
-        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
-        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
-        for (int i = 0; i < GameManagerScript.currentPhonicsLevel; i++)
+
+        if (GameManagerScript.currentLanguage == Language.English)
         {
-            listOfCurrentLevelStudyPhonics.Add(arrayOfStudyPhonicsCards[i]);
+            for (int i = 0; i < GameManagerScript.currentEnglishPhonicsLevel; i++)
+            {
+                listOfCurrentLevelStudyPhonics.Add(arrayOfEnglishStudyPhonicsCards[i]);
+            }
+            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            return listOfCurrentLevelStudyPhonics;
         }
-        Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
-        return listOfCurrentLevelStudyPhonics;
+        else if (GameManagerScript.currentLanguage == Language.Albanian)
+        {
+            for (int i = 0; i < GameManagerScript.currentAlbanianPhonicsLevel; i++)
+            {
+                listOfCurrentLevelStudyPhonics.Add(arrayOfAlbanianStudyPhonicsCards[i]);
+            }
+            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            return listOfCurrentLevelStudyPhonics;
+        }
+        else
+        {
+            for (int i = 0; i < GameManagerScript.currentGeorgianPhonicsLevel; i++)
+            {
+                listOfCurrentLevelStudyPhonics.Add(arrayOfGeorgianStudyPhonicsCards[i]);
+            }
+            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            return listOfCurrentLevelStudyPhonics;
+        }
     }
 
     private StudyPhonicScript SelectAPhonic()

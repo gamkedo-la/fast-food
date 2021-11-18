@@ -59,13 +59,18 @@ public static class GameManagerScript
     public static int currentSentencesLevel = 1;
     public static int currentNumbersLevel = 1;
     public static int currentColorsLevel = 1;
-    public static int currentPhonicsLevel = 1;
+    public static int currentEnglishPhonicsLevel = 1;
+    public static int currentAlbanianPhonicsLevel = 1;
+    public static int currentGeorgianPhonicsLevel = 1;
+
 
     public static int maxSpellingLevel = 5;
     public static int maxSentencesLevel = 8;
     public static int maxNumbersLevel = 5;
     public static int maxColorsLevel = 8;
-    public static int maxPhonicsLevel = 26;
+    public static int maxEnglishPhonicsLevel = 26;
+    public static int maxAlbanianPhonicsLevel = 34;
+    public static int maxGeorgianPhonicsLevel = 33;
 
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
     public static int minimumSubmittedOrdersToCompleteLevel2 = 10;

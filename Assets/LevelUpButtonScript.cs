@@ -61,12 +61,34 @@ public class LevelUpButtonScript : ButtonScript
                 break;
 
             case "Phonics":
-                if (GameManagerScript.currentPhonicsLevel == GameManagerScript.maxPhonicsLevel)
+                if (GameManagerScript.currentLanguage == Language.English)
                 {
-                    return;
+                    if (GameManagerScript.currentEnglishPhonicsLevel == GameManagerScript.maxEnglishPhonicsLevel)
+                    {
+                        return;
+                    }
+                    GameManagerScript.currentEnglishPhonicsLevel++;
+                    currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentEnglishPhonicsLevel;
                 }
-                GameManagerScript.currentPhonicsLevel++;
-                currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentPhonicsLevel;
+                else if (GameManagerScript.currentLanguage == Language.Albanian)
+                {
+                    if (GameManagerScript.currentAlbanianPhonicsLevel == GameManagerScript.maxAlbanianPhonicsLevel)
+                    {
+                        return;
+                    }
+                    GameManagerScript.currentAlbanianPhonicsLevel++;
+                    currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentAlbanianPhonicsLevel;
+                }
+                else if (GameManagerScript.currentLanguage == Language.Georgian)
+                {
+                    if (GameManagerScript.currentGeorgianPhonicsLevel == GameManagerScript.maxGeorgianPhonicsLevel)
+                    {
+                        return;
+                    }
+                    GameManagerScript.currentGeorgianPhonicsLevel++;
+                    currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentGeorgianPhonicsLevel;
+                }
+
                 miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetDisplay();
                 break;
