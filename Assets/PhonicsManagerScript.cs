@@ -117,11 +117,20 @@ public class PhonicsManagerScript : MonoBehaviour
             Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
         }
-        else
+        else if (GameManagerScript.currentLanguage == Language.Georgian)
         {
             for (int i = 0; i < GameManagerScript.currentGeorgianPhonicsLevel; i++)
             {
                 listOfCurrentLevelStudyPhonics.Add(arrayOfGeorgianStudyPhonicsCards[i]);
+            }
+            Debug.Log("listOfCurrentLevelStudyCards.Count Georgian: " + listOfCurrentLevelStudyPhonics.Count);
+            return listOfCurrentLevelStudyPhonics;
+        }
+        else //default to english
+        {
+            for (int i = 0; i < GameManagerScript.currentEnglishPhonicsLevel; i++)
+            {
+                listOfCurrentLevelStudyPhonics.Add(arrayOfEnglishStudyPhonicsCards[i]);
             }
             Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
