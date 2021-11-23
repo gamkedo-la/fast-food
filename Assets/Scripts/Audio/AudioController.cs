@@ -99,6 +99,15 @@ public class AudioController : MonoBehaviour
         AddJob(new AudioJob(AudioAction.RESTART, _sound));
     }
 
+    public void PlayAudioInSequence(GameSoundEnum _sound1, GameSoundEnum _sound2) {
+        AddJob(new AudioJob(AudioAction.START, _sound1));
+        StartCoroutine(WaitForClipToEnd(_sound1, _sound2));
+    }
+
+    private IEnumerator WaitForClipToEnd(GameSoundEnum _sound1, GameSoundEnum _sound2) {
+        yield return new WaitWhile(() => m_JobTable.ContainsKey(_sound1));
+        AddJob(new AudioJob(AudioAction.START, _sound2));
+    }
 
     #endregion
 
