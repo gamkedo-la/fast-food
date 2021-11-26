@@ -40,7 +40,8 @@ public class AudioController : MonoBehaviour
         START,
         STOP,
         RESTART,
-        ONESHOT
+        ONESHOT,
+        START_SEQUENCE
     }
 
     #region Unity Functions
@@ -100,12 +101,18 @@ public class AudioController : MonoBehaviour
     }
 
     public void PlayAudioInSequence(GameSoundEnum _sound1, GameSoundEnum _sound2) {
-        AddJob(new AudioJob(AudioAction.START, _sound1));
-        StartCoroutine(WaitForClipToEnd(_sound1, _sound2));
+        AudioJob job1 = new AudioJob(AudioAction.START, _sound1);
+        AddJob(job1);
+        StartCoroutine(WaitForClipToEnd(job1,_sound1, _sound2));
     }
 
-    private IEnumerator WaitForClipToEnd(GameSoundEnum _sound1, GameSoundEnum _sound2) {
-        yield return new WaitWhile(() => m_JobTable.ContainsKey(_sound1));
+    private IEnumerator WaitForClipToEnd(AudioJob job1, GameSoundEnum _sound1, GameSoundEnum _sound2) {
+
+        AudioTrack _track = GetAudioTrack(job1.sound);
+        _track.source.clip = GetAudioClipFromAudioTrack(job1.sound, _track);
+        float job1ClipLength = _track.source.clip.length;
+        yield return new WaitForSeconds(job1ClipLength);
+        //yield return new WaitWhile(() => m_JobTable.ContainsKey(_sound1));
         AddJob(new AudioJob(AudioAction.START, _sound2));
     }
 
@@ -291,8 +298,14 @@ public class AudioController : MonoBehaviour
                 _track.source.Stop();
                 _track.source.Play();
             break;
-        }
 
+            case AudioAction.START_SEQUENCE:
+                _track.source.Play();
+                float clipLength = _track.source.clip.length;
+                yield return new WaitForSeconds(clipLength);
+                break;
+        }
+        Debug.Log("should be removing audio job");
         m_JobTable.Remove(_job.sound);
 
         yield return null;
