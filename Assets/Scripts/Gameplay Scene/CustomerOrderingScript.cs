@@ -81,6 +81,8 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] Button customerOrderingCanvasToggleButton;
 
     public string currentCustomerDialogueString;
+    public string currentCustomerFoodOrderString;
+    public string currentCustomerDrinkOrderString;
     public string currentCustomerOrderDisplayString;
     public string currentCustomerOrderStringInEnglish; //for debugging
     public AudioClip myCurrentOrdersAudioClip;
@@ -497,31 +499,37 @@ public class CustomerOrderingScript : MonoBehaviour
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce, tomato, and onion"];
         }
+        currentCustomerFoodOrderString = customersOrderString;
 
         if (iWantWater)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["water"];
         }
         else if (iWantBeer)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["beer"];
         }
         else if (iWantRedWine)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["red wine"];
         }
         else if (iWantWhiteWine)
         {
             customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
             currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
             currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["white wine"];
         }
+         
 
         if (GameManagerScript.currentLanguage == Language.Georgian)
         {

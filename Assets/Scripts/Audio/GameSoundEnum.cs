@@ -207,5 +207,21 @@ public enum GameSoundEnum{
     Georgian_Phonic_ხ,
     Georgian_Phonic_ჯ,
     Georgian_Phonic_ჰ,
+
+    //Drink orders
+    English_And_A_Water,
+    English_And_A_Beer,
+    English_And_A_Red_Wine,
+    English_And_A_White_Wine,
+
+    Albanian_And_A_Water,
+    Albanian_And_A_Beer,
+    Albanian_And_A_Red_Wine,
+    Albanian_And_A_White_Wine,
+
+    Georgian_And_A_Water,
+    Georgian_And_A_Beer,
+    Georgian_And_A_Red_Wine,
+    Georgian_And_A_White_Wine,
 }
 

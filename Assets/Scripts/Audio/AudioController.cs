@@ -189,6 +189,14 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.English_Order_Chicken_Doner_Tomato_Onion;
                 case "I would like a chicken doner with lettuce, tomato, and onion.":
                     return GameSoundEnum.English_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+                case " And a water.":
+                    return GameSoundEnum.English_And_A_Water;
+                case " And a beer.":
+                    return GameSoundEnum.English_And_A_Beer;
+                case " And a red wine.":
+                    return GameSoundEnum.English_And_A_Red_Wine;
+                case " And a white wine.":
+                    return GameSoundEnum.English_And_A_White_Wine;
             }
         }
         else if (GameManagerScript.currentLanguage == Language.Albanian)
@@ -229,7 +237,16 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.Albanian_Order_Chicken_Doner_Tomato_Onion;
                 case "Unë dua një doner pule me marule, tomato, dhe qepë.":
                     return GameSoundEnum.Albanian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
-                
+
+                //Drink orders
+                case " Dhe një ujë.":
+                    return GameSoundEnum.Albanian_And_A_Water;
+                case " Dhe një birrë.":
+                    return GameSoundEnum.Albanian_And_A_Beer;
+                case " Dhe një verë e kuqe.":
+                    return GameSoundEnum.Albanian_And_A_Red_Wine;
+                case " Dhe një verë e bardhë.":
+                    return GameSoundEnum.Albanian_And_A_White_Wine;
             }
         }
         else if (GameManagerScript.currentLanguage == Language.Georgian)
@@ -273,6 +290,15 @@ public class AudioController : MonoBehaviour
                 case "ერთი ქათმის შაურმა სალათის ფურწლით, პამიდორით, და ხახვით":
                     return GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce_Tomato_Onion;
 
+                //Drink orders
+                case " და ერთი წყალი.":
+                    return GameSoundEnum.Georgian_And_A_Water;
+                case " და ერთი ლუდი.":
+                    return GameSoundEnum.Georgian_And_A_Beer;
+                case " და ერთი წითელი ღვინო.":
+                    return GameSoundEnum.Georgian_And_A_Red_Wine;
+                case " და ერთი verë თეთრი ღვინო.":
+                    return GameSoundEnum.Georgian_And_A_White_Wine;
             }
         }
         Debug.Log("no valid order audio");
