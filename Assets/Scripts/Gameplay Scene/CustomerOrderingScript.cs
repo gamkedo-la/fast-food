@@ -243,6 +243,10 @@ public class CustomerOrderingScript : MonoBehaviour
                 Vector2 patienceTimerSliderVectorWithYOffset = new Vector2(patienceTimerSliderXCoordinateWithOffset, patienceTimerSliderYCoordinateWithOffset);
                 myPatienceTimerSlider.transform.position = patienceTimerSliderVectorWithYOffset;
             }
+            else
+            {
+                myStateEnumeration = CustomerStateEnumerations.WaitingForMyOrder;
+            }
         }
     }
 

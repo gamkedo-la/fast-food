@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 7163505417638025671}
   - component: {fileID: 7163505417638025669}
   - component: {fileID: 7163505417638025668}
-  - component: {fileID: 2273697784658570205}
+  - component: {fileID: -8915092439142672624}
   m_Layer: 5
   m_Name: StudyImage 1
   m_TagString: Untagged
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2273697784658570205
+--- !u!114 &-8915092439142672624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -761,10 +761,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7163505417638025670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98062a25ab7ce6044bcb162b3fef176a, type: 3}
+  m_Script: {fileID: 11500000, guid: 78427eab48181e24788b9d5776098829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phonicObject: {fileID: 0}
+  wordObject: {fileID: 0}
+  englishWordTextMeshPro: {fileID: 0}
+  albanianWordTextMeshPro: {fileID: 0}
+  georgianWordTextMeshPro: {fileID: 0}
+  wordImage: {fileID: 0}
 --- !u!1 &8396675156478624582
 GameObject:
   m_ObjectHideFlags: 0

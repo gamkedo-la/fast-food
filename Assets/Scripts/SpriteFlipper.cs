@@ -14,6 +14,9 @@ public class SpriteFlipper : MonoBehaviour
     [Header("When waiting too long")]
     public Sprite[] impatientSprites;
 
+    [Header("When walking")]
+    public Sprite[] walkingSprites;
+
     private SpriteRenderer flipMe;
     private int spriteIndex = 0;
     private bool wasImpatientLastFrame = false;
@@ -32,23 +35,37 @@ public class SpriteFlipper : MonoBehaviour
     IEnumerator flippingSprite() {
         while(true) { // forever
 
-            float sec = Random.Range(minFrametime,maxFrametime);
-            
-            // odd frames are FAST BLINKS!
-            if (oddFramesBlinkFast && (spriteIndex%2==1)) sec = 0.1f;
+            float sec;
+
+            if (myOrderingScript.myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+            {
+                sec = 0.2f;
+            }
+            else
+            {
+                sec = Random.Range(minFrametime, maxFrametime);
+
+                // odd frames are FAST BLINKS!
+                if (oddFramesBlinkFast && (spriteIndex % 2 == 1)) sec = 0.1f;
+            }
 
             yield return new WaitForSeconds(sec);
             
             spriteIndex++;
             //Debug.Log("Flipping sprite index: "+spriteIndex);
 
-            if (myOrderingScript.losingPatience) {
+            if (myOrderingScript.myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+            {
+                if (spriteIndex > walkingSprites.Length - 1) spriteIndex = 0;
+                flipMe.sprite = walkingSprites[spriteIndex];
+            }
+            else if (myOrderingScript.losingPatience) {
                 // IMPATIENT SPRITES
                 if (!wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
                 if (spriteIndex>impatientSprites.Length-1) spriteIndex = 0;
                 flipMe.sprite = impatientSprites[spriteIndex];
                 wasImpatientLastFrame = true;
-            } else {
+            } else if (myOrderingScript.myStateEnumeration == CustomerStateEnumerations.WaitingForMyOrder){
                 // NORMAL HAPPY SPRITES
                 if (wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
                 if (spriteIndex>mySprites.Length-1) spriteIndex = 0;

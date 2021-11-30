@@ -11,7 +11,9 @@ public class CustomerAccessories : MonoBehaviour
     [Range(0, 10)]
     public int maxAccessories = 2;
 
-    public SpriteRenderer RainbowShirt; 
+    public SpriteRenderer RainbowShirt;
+
+    [SerializeField] GameObject parentCustomerGameObject;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,20 @@ public class CustomerAccessories : MonoBehaviour
         {
 
             Transform child = transform.GetChild(i);
+
+            if (parentCustomerGameObject.GetComponent<CustomerOrderingScript>().myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+            {
+                Debug.Log("inside check for rotation");
+                child.transform.eulerAngles = new Vector3(0,0,90);
+
+                float newXWhileRotated = child.GetComponent<AccessorieScript>().myXPositionWhenRotated;
+                float newYWhileRotated = child.GetComponent<AccessorieScript>().myYPositionWhenRotated;
+                child.transform.position = new Vector3(newXWhileRotated, newYWhileRotated, 0);
+            }
+            else
+            {
+                child.transform.eulerAngles = new Vector3(0, 0, 0);
+            }
 
             if (accessorize && count < maxAccessories)
             {
