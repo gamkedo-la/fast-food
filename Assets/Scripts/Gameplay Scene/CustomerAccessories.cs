@@ -11,8 +11,8 @@ public class CustomerAccessories : MonoBehaviour
     [Range(0, 10)]
     public int maxAccessories = 2;
 
-    public SpriteRenderer RainbowShirt;
-
+    public SpriteRenderer RainbowShirtSpriteRenderer;
+    
     [SerializeField] GameObject parentCustomerGameObject;
     
     // Start is called before the first frame update
@@ -26,9 +26,9 @@ public class CustomerAccessories : MonoBehaviour
         //Debug.Log("Randomizing customer accessories!");
 
         // tint the rainbow shirt a random colour!
-        if (RainbowShirt) {
-            //Debug.Log("Randomizing shirt color!");
-            RainbowShirt.color = Random.ColorHSV();
+        if (RainbowShirtSpriteRenderer) {
+            Debug.Log("Randomizing shirt color!");
+            RainbowShirtSpriteRenderer.color = Random.ColorHSV();
         }
 
         bool accessorize = (Random.Range(0, 100) <= percentAny);

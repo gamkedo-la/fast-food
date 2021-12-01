@@ -17,23 +17,33 @@ public class SpriteFlipper : MonoBehaviour
     [Header("When walking")]
     public Sprite[] walkingSprites;
 
-    private SpriteRenderer flipMe;
+    [Header("Rotated Rainbow Shirt Sprites")]
+    public Sprite[] rotatedRainbowShirtSprites;
+
+    private SpriteRenderer baseCustomerSpriteRenderer;
     private int spriteIndex = 0;
     private bool wasImpatientLastFrame = false;
 
     private CustomerOrderingScript myOrderingScript;
+
+    [SerializeField] GameObject rainbowShirt;
+    private SpriteRenderer rainbowShirtSpriteRenderer;
+    [SerializeField] Sprite nonWalkingRainbowShirtSprite;
     
     // Start is called before the first frame update
     void Start()
     {
-        flipMe = gameObject.GetComponent<SpriteRenderer>();
+        baseCustomerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        rainbowShirtSpriteRenderer = rainbowShirt.GetComponent<SpriteRenderer>();
         myOrderingScript = gameObject.GetComponent<CustomerOrderingScript>();   
         spriteIndex = Random.Range(0,mySprites.Length-1);
         StartCoroutine(flippingSprite());  
     }
 
-    IEnumerator flippingSprite() {
-        while(true) { // forever
+    IEnumerator flippingSprite() 
+    {
+        while(true) 
+        { // forever
 
             float sec;
 
@@ -57,24 +67,27 @@ public class SpriteFlipper : MonoBehaviour
             if (myOrderingScript.myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
             {
                 if (spriteIndex > walkingSprites.Length - 1) spriteIndex = 0;
-                flipMe.sprite = walkingSprites[spriteIndex];
+                baseCustomerSpriteRenderer.sprite = walkingSprites[spriteIndex];
+                rainbowShirtSpriteRenderer.sprite = rotatedRainbowShirtSprites[spriteIndex];
             }
-            else if (myOrderingScript.losingPatience) {
+            else if (myOrderingScript.losingPatience) 
+            {
                 // IMPATIENT SPRITES
                 if (!wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
                 if (spriteIndex>impatientSprites.Length-1) spriteIndex = 0;
-                flipMe.sprite = impatientSprites[spriteIndex];
+                baseCustomerSpriteRenderer.sprite = impatientSprites[spriteIndex];
                 wasImpatientLastFrame = true;
-            } else if (myOrderingScript.myStateEnumeration == CustomerStateEnumerations.WaitingForMyOrder){
+                rainbowShirtSpriteRenderer.sprite = nonWalkingRainbowShirtSprite;            
+            }
+            else if (myOrderingScript.myStateEnumeration == CustomerStateEnumerations.WaitingForMyOrder)
+            {
                 // NORMAL HAPPY SPRITES
                 if (wasImpatientLastFrame) spriteIndex = 0; // start at frame 1
                 if (spriteIndex>mySprites.Length-1) spriteIndex = 0;
-                flipMe.sprite = mySprites[spriteIndex];
+                baseCustomerSpriteRenderer.sprite = mySprites[spriteIndex];
                 wasImpatientLastFrame = false;
-            }
-
-            
-        }
-    }
-
-}
+                rainbowShirtSpriteRenderer.sprite = nonWalkingRainbowShirtSprite;
+            }//end of WaitingForMyOrder enum check
+        }//end of while loop
+    }//end of sprite flip Ienumerator
+}//ebd of class
