@@ -331,7 +331,6 @@ public class AudioController : MonoBehaviour
                 yield return new WaitForSeconds(clipLength);
                 break;
         }
-        Debug.Log("should be removing audio job");
         m_JobTable.Remove(_job.sound);
 
         yield return null;

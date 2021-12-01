@@ -13,6 +13,7 @@ public static class EventManagerScript
     //customers
     public static UnityEvent customerEntersRestaurantEvent = new UnityEvent();
     public static UnityEvent customerExitsRestaurantEvent = new UnityEvent();
+    public static UnityEvent customerReachedOrderingLocationEvent = new UnityEvent();
     //chef
     public static UnityEvent chefPicksUpHamburgerEvent = new UnityEvent();
     public static UnityEvent chefPicksUpLettuceEvent = new UnityEvent();

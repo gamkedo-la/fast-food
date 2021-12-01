@@ -95,8 +95,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.6172
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &721808533174373022
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721808533174373022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0.0002, y: -0.19, z: 0}
   m_LocalScale: {x: 0.44761357, y: 0.44761357, z: 0.44761357}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -192,8 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0.42
+  myXPositionWhenRotated: 0.34
   myYPositionWhenRotated: 0.01
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.19
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &722187499021151188
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,10 +330,10 @@ Transform:
   - {fileID: 1522210131839767691}
   - {fileID: 3770482644969196134}
   - {fileID: 4508234189470900522}
+  - {fileID: 3055991673781571908}
   - {fileID: 3714946202903216529}
   - {fileID: 1056810342572584294}
   - {fileID: 5013718691246284504}
-  - {fileID: 3055991673781571908}
   - {fileID: 8766394513733225695}
   - {fileID: 2704575952920149533}
   - {fileID: 8703457206834756714}
@@ -448,8 +454,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: 0.45
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.36
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &1241608729980703214
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +485,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241608729980703214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0.0002, y: -0.19, z: 0}
   m_LocalScale: {x: 0.44761357, y: 0.44761357, z: 0.44761357}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -545,8 +554,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0.42
+  myXPositionWhenRotated: 0.34
   myYPositionWhenRotated: 0.01
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.19
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &1483920098107584226
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +656,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: -0.18
   myYPositionWhenRotated: 0.16
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.34
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &2751504502184108923
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +756,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: -0.18
   myYPositionWhenRotated: 0.16
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.34
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &3022832917807172025
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,8 +854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
-  myYPositionWhenRotated: 0
+  myXPositionWhenRotated: 0.18
+  myYPositionWhenRotated: 0.06
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.06
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &3145703853440171373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,7 +1025,7 @@ Transform:
   m_LocalScale: {x: 0.5329482, y: 0.5329482, z: 0.5329482}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
-  m_RootOrder: 23
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5831070699224706234
 SpriteRenderer:
@@ -1071,6 +1092,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: 0.51
   myYPositionWhenRotated: 0.06
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.42
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &3546215867040427783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,8 +1272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
-  myYPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.25
+  myYPositionWhenRotated: 0.05
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.3338
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &4282193358068426508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: -0.18
   myYPositionWhenRotated: 0.16
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.34
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &4677362017289477520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,6 +1474,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: -0.18
   myYPositionWhenRotated: 0.16
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.34
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5039761860943330499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039761860943330499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0.0002, y: -0.19, z: 0}
   m_LocalScale: {x: 0.44761357, y: 0.44761357, z: 0.44761357}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -1539,8 +1572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0.42
+  myXPositionWhenRotated: 0.34
   myYPositionWhenRotated: 0.01
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.19
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5052571722653310900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1636,8 +1672,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.5
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.48
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5328074838090550300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1733,8 +1772,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: 0.45
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.36
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5542323796559844828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,8 +1872,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.12
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.07
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5606040531947486184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,7 +6711,7 @@ Transform:
   m_LocalScale: {x: 0.5329482, y: 0.5329482, z: 0.5329482}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7189593777431705893
 SpriteRenderer:
@@ -6733,6 +6778,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: 0.51
   myYPositionWhenRotated: 0.06
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.42
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &5894125639958493086
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,8 +6876,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
-  myYPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.61
+  myYPositionWhenRotated: 0.04
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.7493
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &6448541727822392265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6856,7 +6907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6448541727822392265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.76, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -6925,8 +6976,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.76
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &6651501341287671839
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,8 +7076,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.6172
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &6773294001295589035
 GameObject:
   m_ObjectHideFlags: 0
@@ -7119,8 +7176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.25
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.3338
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &6859212984035870811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,7 +7293,7 @@ Transform:
   m_LocalScale: {x: 0.5329482, y: 0.5329482, z: 0.5329482}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2565311543132342854
 SpriteRenderer:
@@ -7300,6 +7360,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: 0.51
   myYPositionWhenRotated: 0.06
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.42
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &7321626870108560374
 GameObject:
   m_ObjectHideFlags: 0
@@ -7326,7 +7389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7321626870108560374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0002, y: -0.42, z: 0}
+  m_LocalPosition: {x: 0.0002, y: -0.19, z: 0}
   m_LocalScale: {x: 0.44761357, y: 0.44761357, z: 0.44761357}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -7395,8 +7458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0.42
+  myXPositionWhenRotated: 0.34
   myYPositionWhenRotated: 0.01
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.19
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &7379678497782603162
 GameObject:
   m_ObjectHideFlags: 0
@@ -12297,8 +12363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: 0.45
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.36
+  startingPosition: {x: 0, y: 0}
 --- !u!114 &3874535072970197357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12313,6 +12382,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: 0
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &7535646427437344503
 GameObject:
   m_ObjectHideFlags: 0
@@ -12408,8 +12480,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.6172
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &8246490363747708617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12436,7 +12511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8246490363747708617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.88, z: 0}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -12505,8 +12580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.8
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &8290764552073804827
 GameObject:
   m_ObjectHideFlags: 0
@@ -12533,7 +12611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8290764552073804827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.79, z: 0}
   m_LocalScale: {x: 0.65672904, y: 0.65672904, z: 0.65672904}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
@@ -12602,8 +12680,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: -0.6
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.79
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &8488208713372356617
 GameObject:
   m_ObjectHideFlags: 0
@@ -12701,6 +12782,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: -0.18
   myYPositionWhenRotated: 0.16
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: 0.34
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &8626581493069635939
 GameObject:
   m_ObjectHideFlags: 0
@@ -12731,7 +12815,7 @@ Transform:
   m_LocalScale: {x: 0.5329482, y: 0.5329482, z: 0.5329482}
   m_Children: []
   m_Father: {fileID: 9105864867872198168}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &831368700100297031
 SpriteRenderer:
@@ -12798,6 +12882,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myXPositionWhenRotated: 0.51
   myYPositionWhenRotated: 0.06
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.42
+  startingPosition: {x: 0, y: 0}
 --- !u!1 &9036181196574819783
 GameObject:
   m_ObjectHideFlags: 0
@@ -17967,7 +18054,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4ca7f321891f3b84da8f9a15f4ac9af8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 515fe7a4e059a1e4e8fdaad1360ffe8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -18105,6 +18192,7 @@ MonoBehaviour:
   myThumbsDownImage: {fileID: 6859212984035870811}
   burgerScriptablePrefab: {fileID: 0}
   chickenDonerScriptablePrefab: {fileID: 0}
+  parentAccessoriesGameObject: {fileID: 727694870459720390}
 --- !u!114 &9036181197136516296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18640,5 +18728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe0000eddc434847b2936614ab2e0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myXPositionWhenRotated: 0
+  myXPositionWhenRotated: 0.45
   myYPositionWhenRotated: 0
+  myXPositionWhenWaiting: 0
+  myYPositionWhenWaiting: -0.36
+  startingPosition: {x: 0, y: 0}

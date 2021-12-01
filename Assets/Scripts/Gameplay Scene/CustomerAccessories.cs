@@ -23,11 +23,8 @@ public class CustomerAccessories : MonoBehaviour
 
     public void RandomizeAccesories()
     {
-        //Debug.Log("Randomizing customer accessories!");
-
         // tint the rainbow shirt a random colour!
         if (RainbowShirtSpriteRenderer) {
-            Debug.Log("Randomizing shirt color!");
             RainbowShirtSpriteRenderer.color = Random.ColorHSV();
         }
 
@@ -40,26 +37,22 @@ public class CustomerAccessories : MonoBehaviour
 
             Transform child = transform.GetChild(i);
 
-            if (parentCustomerGameObject.GetComponent<CustomerOrderingScript>().myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
-            {
-                Debug.Log("inside check for rotation");
-                child.transform.eulerAngles = new Vector3(0,0,90);
-
-                float newXWhileRotated = child.GetComponent<AccessorieScript>().myXPositionWhenRotated;
-                float newYWhileRotated = child.GetComponent<AccessorieScript>().myYPositionWhenRotated;
-                child.transform.position = new Vector3(newXWhileRotated, newYWhileRotated, 0);
-            }
-            else
-            {
-                child.transform.eulerAngles = new Vector3(0, 0, 0);
-            }
-
             if (accessorize && count < maxAccessories)
             {
                 if (Random.Range(0, 100) <= percentEach)
                 {
                     //Debug.Log("WEARING: " + child.name);
                     child.gameObject.SetActive(true);
+                    
+                    if (parentCustomerGameObject.GetComponent<CustomerOrderingScript>().myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+                    {
+                        child.transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+                    }
+                    else
+                    {
+                        child.transform.rotation = Quaternion.Euler(Vector3.forward * 0);
+                    }
+
                     count++;
                 }
                 else
@@ -76,4 +69,18 @@ public class CustomerAccessories : MonoBehaviour
         }
     }
 
+    public List<Transform> ReturnAListOfActiveAccessoryTransforms()
+    {
+        List<Transform> listOfActiveAccessoryTransforms = new List<Transform>();
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf)
+            {
+                listOfActiveAccessoryTransforms.Add(transform.GetChild(i));
+            }
+        }
+
+        return listOfActiveAccessoryTransforms;
+    }
 }

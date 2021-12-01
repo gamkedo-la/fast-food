@@ -102,11 +102,14 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject burgerScriptablePrefab;
     [SerializeField] GameObject chickenDonerScriptablePrefab;
 
+    [SerializeField] GameObject parentAccessoriesGameObject;
+    private CustomerAccessories customerAccessoriesScript;
     #endregion
     // Start is called before the first frame update
     void Start()
     {
         audioController = GameObject.FindGameObjectWithTag("AudioController");
+        customerAccessoriesScript = parentAccessoriesGameObject.GetComponent<CustomerAccessories>();
 
         Time.timeScale = 1;
         myStateEnumeration = CustomerStateEnumerations.WaitingOutsideEntrance;
@@ -141,6 +144,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerEntersRestaurantEvent, HandleCustomerEntersRestaurantEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerExitsRestaurantEvent, HandleCustomerExitedRestaurantEvent);
+        EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerReachedOrderingLocationEvent, HandleCustomerReachedOrderingLocationEvent);
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.customerLosingPatienceEvent, HandleLosingPatienceEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.lostCustomerEvent, HandleLostCustomerEvent);
@@ -246,7 +250,27 @@ public class CustomerOrderingScript : MonoBehaviour
             else
             {
                 myStateEnumeration = CustomerStateEnumerations.WaitingForMyOrder;
+                EventManagerScript.customerReachedOrderingLocationEvent.Invoke();
             }
+        }
+    }
+
+    private void HandleCustomerReachedOrderingLocationEvent()
+    {
+        if (myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+        {
+            return;
+        }
+
+        List<Transform> listOfActiveAccessories = customerAccessoriesScript.ReturnAListOfActiveAccessoryTransforms();
+        for (int i = 0; i < listOfActiveAccessories.Count; i++)
+        {
+            listOfActiveAccessories[i].GetComponent<AccessorieScript>().transform.rotation = Quaternion.Euler(Vector3.forward * 0);
+
+            float newX = gameObject.transform.position.x + listOfActiveAccessories[i].GetComponent<AccessorieScript>().myXPositionWhenWaiting;
+            float newY = gameObject.transform.position.y + listOfActiveAccessories[i].GetComponent<AccessorieScript>().myYPositionWhenWaiting;
+
+            listOfActiveAccessories[i].GetComponent<AccessorieScript>().transform.position = new Vector2(newX, newY);
         }
     }
 
@@ -890,6 +914,15 @@ public class CustomerOrderingScript : MonoBehaviour
 
         ShowThumbsUp();
         isProcessingOrder = false;
+
+        List<Transform> listOfCurrentActiveAccesories = customerAccessoriesScript.ReturnAListOfActiveAccessoryTransforms();
+        for (int i = 0; i < listOfCurrentActiveAccesories.Count; i++)
+        {
+            float xOffset = gameObject.transform.position.x + listOfCurrentActiveAccesories[i].GetComponent<AccessorieScript>().myXPositionWhenRotated;
+            float yOffset = gameObject.transform.position.y + listOfCurrentActiveAccesories[i].GetComponent<AccessorieScript>().myYPositionWhenRotated; ;
+            listOfCurrentActiveAccesories[i].transform.position = new Vector2(xOffset, yOffset);
+            listOfCurrentActiveAccesories[i].transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+        }
     }
 
     private void ShowThumbsUp()
@@ -985,6 +1018,16 @@ public class CustomerOrderingScript : MonoBehaviour
 
         
         lostCustomerParticleSystem.gameObject.SetActive(true);
+
+        List<Transform> listOfCurrentActiveAccesories = customerAccessoriesScript.ReturnAListOfActiveAccessoryTransforms();
+        for (int i = 0; i < listOfCurrentActiveAccesories.Count; i++)
+        {
+            float xOffset = gameObject.transform.position.x + listOfCurrentActiveAccesories[i].GetComponent<AccessorieScript>().myXPositionWhenRotated;
+            float yOffset = gameObject.transform.position.y + listOfCurrentActiveAccesories[i].GetComponent<AccessorieScript>().myYPositionWhenRotated; ;
+            listOfCurrentActiveAccesories[i].transform.position = new Vector2(xOffset, yOffset);
+
+            listOfCurrentActiveAccesories[i].transform.rotation = Quaternion.Euler(Vector3.forward * 90);
+        }
     }
     IEnumerator DelayedNewOrder()
     {
