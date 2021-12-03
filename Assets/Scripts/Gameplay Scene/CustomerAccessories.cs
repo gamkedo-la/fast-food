@@ -34,19 +34,10 @@ public class CustomerAccessories : MonoBehaviour
         }
 
         // tint the base sprite for skin tone variations
-        // FIXME only choose "normal" values? and make the sprite pure FFFFFF to blend them properly?
-        if (ParentSpriteRenderer) {
-            
-            if (Random.value > 0.25f) {
-                // random tint of bright colors
-                // params: float hueMin, float hueMax, float saturationMin, float saturationMax, float valueMin, float valueMax);
-                ParentSpriteRenderer.color = Random.ColorHSV(0.1f,1.0f,0.3f,1.0f,0.5f,1.0f); // brightened
-            } else {
-                // no tint - original sprite
-                ParentSpriteRenderer.color = Color.white; 
-            }
+        if (ParentSpriteRenderer) 
+        {  
+                ParentSpriteRenderer.color = Random.ColorHSV(0.1f,0.175f,0.1f,1f,0.3f,1f); // brightened
         }
-
 
         bool accessorize = (Random.Range(0, 100) <= percentAny);
         int count = 0;
