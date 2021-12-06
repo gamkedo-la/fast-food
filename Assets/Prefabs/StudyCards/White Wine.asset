@@ -15,7 +15,7 @@ MonoBehaviour:
   englishWord: white wine
   albanianWord: "ver\xEB e bardh\xEB"
   georgianWord: "\u10D7\u10D4\u10D7\u10E0\u10D8 \u10E6\u10D5\u10D8\u10DC\u10DD"
-  icon: {fileID: 21300000, guid: 2f57cc54a2545494093ebe31c0e1961f, type: 3}
+  sprite: {fileID: 21300000, guid: 2f57cc54a2545494093ebe31c0e1961f, type: 3}
   englishAudio: {fileID: 0}
   albanianAudio: {fileID: 0}
   georgianAudio: {fileID: 0}

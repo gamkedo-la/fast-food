@@ -12,7 +12,7 @@ public class WordObject : ScriptableObject
     public string georgianWord;
 
     [Header("Image File")]
-    public Sprite icon;
+    public Sprite sprite;
 
     [Header("Audio")]
     public AudioClip englishAudio;

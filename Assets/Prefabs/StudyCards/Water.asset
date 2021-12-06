@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1645327bf7c5eb349aac418e90429566, type: 3}
-  m_Name: RedWine
+  m_Name: Water
   m_EditorClassIdentifier: 
-  englishWord: red wine
-  albanianWord: "ver\xEB e kuqe"
-  georgianWord: "\u10EC\u10D8\u10D7\u10D4\u10DA\u10D8 \u10E6\u10D5\u10D8\u10DC\u10DD"
-  sprite: {fileID: 21300000, guid: 2e67ffd9bbc6cf940868e0a5f279348c, type: 3}
+  englishWord: Water
+  albanianWord: "uj\xEB"
+  georgianWord: "\u10EC\u10E7\u10D0\u10DA\u10D8"
+  sprite: {fileID: 21300000, guid: bde2eda1769690e4e99091781804d623, type: 3}
   englishAudio: {fileID: 0}
   albanianAudio: {fileID: 0}
   georgianAudio: {fileID: 0}

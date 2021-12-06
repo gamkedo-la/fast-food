@@ -287,7 +287,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -8915092439142672624}
         m_TargetAssemblyTypeName: StudyCard, Assembly-CSharp
         m_MethodName: PlayAudioClip
         m_Mode: 1
@@ -765,10 +765,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordObject: {fileID: 0}
-  englishWordTextMeshPro: {fileID: 0}
-  albanianWordTextMeshPro: {fileID: 0}
-  georgianWordTextMeshPro: {fileID: 0}
-  wordImage: {fileID: 0}
+  englishWordTextMeshPro: {fileID: 346621379424399119}
+  albanianWordTextMeshPro: {fileID: 6917491277289192666}
+  georgianWordTextMeshPro: {fileID: 4898132255480842836}
+  wordImage: {fileID: 7163505417638025668}
 --- !u!1 &8396675156478624582
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +843,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

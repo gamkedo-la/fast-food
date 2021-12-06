@@ -17,8 +17,6 @@ public class GameManagerObjectScript : MonoBehaviour
 
         HandleCurrentPlatform();
 
-        Debug.Log("GameManagerScript.currentPlatformEnum: " + GameManagerScript.currentPlatformEnum.ToString());
-
         if (!GameManagerScript.progressToNextLevelEventHasBeenAdded)
         {
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, ProgressToNextLevel);

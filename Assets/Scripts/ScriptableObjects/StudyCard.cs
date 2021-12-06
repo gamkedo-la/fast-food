@@ -22,7 +22,7 @@ public class StudyCard : MonoBehaviour
     AudioClip georgianAudio;
 
     [SerializeField]
-    Image wordImage;
+    private Image wordImage;
 
     private string currentTextString;
     private GameSoundEnum myGameSoundEnum;
@@ -61,7 +61,7 @@ public class StudyCard : MonoBehaviour
 
             InitializeMyGameSoundEnum();
 
-            wordImage.sprite = wordObject.icon;
+            wordImage.sprite = wordObject.sprite;
         }
     }
 
@@ -85,7 +85,7 @@ public class StudyCard : MonoBehaviour
             dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
             //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            wordImage.sprite = wordObject.icon;
+            wordImage.sprite = wordObject.sprite;
         }
 
         InitializeMyGameSoundEnum();
@@ -129,7 +129,6 @@ public class StudyCard : MonoBehaviour
                 break;
         }
 
-        Debug.Log("currentTextString: " + currentTextString);
         switch (currentTextString)
         {
             case "Hamburger":
