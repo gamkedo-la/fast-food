@@ -15,7 +15,7 @@ MonoBehaviour:
   englishWord: four
   albanianWord: "kat\xEBr"
   georgianWord: "\u10DD\u10D7\u10EE\u10D8"
-  icon: {fileID: 21300000, guid: 699a715178cdb2b4f86d0dee660c4344, type: 3}
+  sprite: {fileID: 21300000, guid: 699a715178cdb2b4f86d0dee660c4344, type: 3}
   englishAudio: {fileID: 0}
   albanianAudio: {fileID: 0}
   georgianAudio: {fileID: 0}
