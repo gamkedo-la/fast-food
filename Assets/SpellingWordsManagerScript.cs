@@ -23,6 +23,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
 
     public void ResetDisplay()
     {
+        
         foreach (Transform child in letterButtonsHorizontalLayoutGroup.transform)
         {
             GameObject.Destroy(child.gameObject);
@@ -38,17 +39,11 @@ public class SpellingWordsManagerScript : MonoBehaviour
 
         //GameManagerScript.currentLanguage = Language.English;
 
-        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
-
         currentWordToSpellString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
         {
             currentWordToSpellString = currentWordToSpellString.ToLower();
         }
-
-        Debug.Log("currentWordToSpellString: " + currentWordToSpellString);
 
         var shuffledCurrentWordToSpellString = new string(currentWordToSpellString.OrderBy(x => Guid.NewGuid()).ToArray());
         char[] arrayOfShuffledCharacters = shuffledCurrentWordToSpellString.ToCharArray();
@@ -63,13 +58,11 @@ public class SpellingWordsManagerScript : MonoBehaviour
     public List<StudyCard> ResetListOfCurrentLevelStudyCards()
     {
         listOfCurrentLevelStudyCards.Clear();
-        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
-        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        
         for (int i = 0; i < GameManagerScript.currentSpellingLevel; i++)
         {
             listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
         }
-        Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyCards.Count);
         return listOfCurrentLevelStudyCards;
     }
 
