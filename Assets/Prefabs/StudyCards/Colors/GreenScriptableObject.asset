@@ -15,7 +15,7 @@ MonoBehaviour:
   englishWord: green
   albanianWord: jeshile
   georgianWord: "\u10DB\u10EC\u10D5\u10D0\u10DC\u10D4"
-  icon: {fileID: 21300000, guid: 7b73582df71b2ac43b9318d9b507b80b, type: 3}
+  sprite: {fileID: 21300000, guid: 7b73582df71b2ac43b9318d9b507b80b, type: 3}
   englishAudio: {fileID: 0}
   albanianAudio: {fileID: 0}
   georgianAudio: {fileID: 0}

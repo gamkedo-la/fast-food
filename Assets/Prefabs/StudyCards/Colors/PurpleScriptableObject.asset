@@ -15,7 +15,7 @@ MonoBehaviour:
   englishWord: purple
   albanianWord: "vjollc\xEB"
   georgianWord: "\u10D8\u10D0\u10E1\u10D0\u10DB\u10DC\u10D8\u10E1\u10E4\u10D4\u10E0\u10D8"
-  icon: {fileID: 21300000, guid: 2b55ff86fb773bf488069207c9ad94a9, type: 3}
+  sprite: {fileID: 21300000, guid: 2b55ff86fb773bf488069207c9ad94a9, type: 3}
   englishAudio: {fileID: 0}
   albanianAudio: {fileID: 0}
   georgianAudio: {fileID: 0}

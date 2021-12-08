@@ -37,7 +37,7 @@ public class ColorsManagerScript : MonoBehaviour
         targetStudyCard.gameObject.SetActive(true);
 
 
-        GameManagerScript.currentLanguage = Language.Georgian;
+        //GameManagerScript.currentLanguage = Language.Georgian;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
