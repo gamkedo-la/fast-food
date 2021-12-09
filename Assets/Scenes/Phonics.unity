@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 62d2ba2ade1fe534687bf0c9c7a19b6d, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectY
@@ -275,6 +279,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 55cbd119e6400014eb3b5c3f3b756b18, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectS
@@ -412,6 +420,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 6685685cf79e8fc449eb9f011e33d44a, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectTh
@@ -549,6 +561,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f184ebaf31d321e4cb11db235d8357a6, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectLl
@@ -686,6 +702,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f81258b8b88414146b9adb058836e5c6, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectN
@@ -823,6 +843,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: b7096dfdc5930a141a6ee80b14cc1a11, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectT
@@ -960,6 +984,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: b86a3ba682bb8934b948c3285155a587, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectH
@@ -1097,6 +1125,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 8deaa439436cb0442a04a24ec52e0bd8, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectI
@@ -1564,6 +1596,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 303ee10e5adaedf4e95af7dbf727caf8, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectR
@@ -1701,6 +1737,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 8b0b6af527d332048be3d79e887a5743, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D2"
@@ -1838,6 +1878,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: b1b3bc2fef324d14da92f5b335d19025, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectF
@@ -1975,6 +2019,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 333d4e6dc18adb34897354fd79092c94, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectB
@@ -2112,6 +2160,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 7a94370609f030a47a5ee7a27d640033, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectG
@@ -2249,6 +2301,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: bb0339d6216099d4d9d52ecef167ab33, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectB
@@ -2386,6 +2442,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 09baea87879f64d4d81e0581919405c7, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectE
@@ -2523,6 +2583,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 8523b91b37f53b141a618489b1ab3bf3, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectC
@@ -2660,6 +2724,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: ced986cba012e2043b5d98376835ebfd, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectC
@@ -2797,6 +2865,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 004671ab4a9a18142bd316c25d4f3292, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10F0"
@@ -2934,6 +3006,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 9c809f50385ab0e4d914f83408a51506, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10EB"
@@ -3071,6 +3147,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 58db671f5191b52479418c05563d9342, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E7"
@@ -3208,6 +3288,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 979c9007ac5ab004ebc82c917c6df514, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10EE"
@@ -3345,6 +3429,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: a1c185c17877e7f45aa6b698dbdf908e, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D1"
@@ -3630,6 +3718,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 32f881391f37ec747ac6bc1ea3b6cca4, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10EA"
@@ -3767,6 +3859,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: e2d214dee554b814eafc607674f0b165, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DA"
@@ -3948,6 +4044,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 682687a04104cdb439615f092480f785, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectF
@@ -4085,6 +4185,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: fb214b96daf6b1e4fbe483898d71c893, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D4"
@@ -4222,6 +4326,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c82768b3932338146a7c1d8bcb986f15, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DF"
@@ -4359,6 +4467,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 05b5de9c0db3d6e4693b47d4c443148b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectD
@@ -4496,6 +4608,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 309c91832721d7d4e88daa62692fa733, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DD"
@@ -4786,6 +4902,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 583e5138501c8da49bf347b87b0b950e, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D9"
@@ -4923,6 +5043,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 5f803d7e883f81c4ea1eff96f377cc76, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectDh
@@ -5060,6 +5184,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 05768ebfa92d7334fa461002a4c338a6, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectP
@@ -5197,6 +5325,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: ee63f642aad049842b5ad68f7e0e8c94, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectD
@@ -5334,6 +5466,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: fc1b431133078784eb40e02a50b44619, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectI
@@ -5471,6 +5607,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: d0ab98e4055b6cc4ba7e0f943372210b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E5"
@@ -5608,6 +5748,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: ffe96720c1e99c54fb80cd8eef5007b6, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10EC"
@@ -5745,6 +5889,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 419b6ce170ea7a544a7ee06e803f9a17, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D8"
@@ -5882,6 +6030,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 1fc61e5fa8996fa44b3ec678eada9612, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectA
@@ -6014,6 +6166,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 095c13c10476b94448c707b646409059, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectY
@@ -6266,6 +6422,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: af063500ab16c784abcf292839abfd10, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectS
@@ -6403,6 +6563,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 1a5f435a53b91614db598b3832847251, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectO
@@ -6540,6 +6704,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 73c9b7182e3cee64c8b7b0c2becd647a, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E1"
@@ -6677,6 +6845,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 43067bb9f3920994db0030ab90ca5418, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectZ
@@ -6814,6 +6986,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c20c4cca329952f419bbb4c169a4a4b7, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectK
@@ -6951,6 +7127,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 6cd62f21bf36956489d31f3512337bca, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectP
@@ -7088,6 +7268,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 96a26c675f56fb8468f79a16e4cc038b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D7"
@@ -7359,6 +7543,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 4ccf5d581c86ffd4fb4128466d65a4fb, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectRr
@@ -7548,6 +7736,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 0fdbf0a49094b124da86e5d408643a2e, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D3"
@@ -7827,6 +8019,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 09e42d137accf024d9351c719b6bc9ef, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D0"
@@ -7964,6 +8160,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: e168f66602fccc742a3fc92443f64a31, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E9"
@@ -8101,6 +8301,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 2592f41b193ca7c4ab3239373c13a022, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectZ
@@ -8521,6 +8725,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: dd14f35659cb84344aa4325d8bb8136a, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DE"
@@ -8658,6 +8866,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: d11297c94d612384d9c87ebdd09ab6a5, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectXh
@@ -8795,6 +9007,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: cc373e9d54bb6b2478850b27ea3e26db, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectV
@@ -8932,6 +9148,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f18280ddf6da86847828eaec7fe0f73f, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectM
@@ -9069,6 +9289,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 393deed097c1ab54d867231d21bb9683, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E0"
@@ -9555,6 +9779,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 23c0daba3e3e1ae458db3129c36e572f, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectZh
@@ -9744,6 +9972,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 70ead1bc08036d847b7d9ba35a75683f, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E8"
@@ -9881,6 +10113,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: d4a2ec16b7391644b9bba7aa0851e688, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D5"
@@ -10080,6 +10316,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 1fd2dffd0921ca8439f99114caeedc9d, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E3"
@@ -10217,6 +10457,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: e073e1c527df72a408d8a6e067233a0c, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectR
@@ -10354,6 +10598,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 925e6e714867c42408ccf96db870e188, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\xC7"
@@ -10491,6 +10739,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 0f16db732bffd4246b4f01946205aba5, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectU
@@ -10628,6 +10880,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 477e4b1fdd2475941a3e8b0b52f45bae, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\xCB"
@@ -10765,6 +11021,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: e5268af31e24ea945a19e6608dfe4d5b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectJ
@@ -10902,6 +11162,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c741463a17ba2cb49b86ff6245039b39, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DC"
@@ -11039,6 +11303,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: bc32ab1ba41893e4c949d1d833cf43af, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectT
@@ -11232,6 +11500,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f0bf50620487f9c4387166543c06a13d, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectK
@@ -11369,6 +11641,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 7d0248b5220d82d4cb20b6b0382a375b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10ED"
@@ -11506,6 +11782,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c9c03d3efe7d20147800e2484421e061, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectA
@@ -11643,6 +11923,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f73e04471cf2c9941a6841924360caf8, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectX
@@ -11780,6 +12064,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 736e8fb61f8158e468cc68d42409be2b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E6"
@@ -11917,6 +12205,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: cf6c75e3e97669d4c983dbb8ba0e4db7, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E4"
@@ -12054,6 +12346,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 2f7c692257c28c54da4c16323f810be5, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectNj
@@ -12407,6 +12703,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 1771381fb78a5f0439f2030a54b9759b, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectW
@@ -12544,6 +12844,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 9f41d77cd0f105945b5b98782fa972ca, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectQ
@@ -12681,6 +12985,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: f5eff270cb0bfda4489a0677b9f74e41, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectO
@@ -12818,6 +13126,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c9c31249701673b4a922b3404281864e, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectL
@@ -12955,6 +13267,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 069e633ffe55d7244be2ac971e9d8549, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectJ
@@ -13092,6 +13408,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 25ee42c65aba6284a826a27f49b34fd7, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectL
@@ -13229,6 +13549,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 6aa1a725bc527b3478db23068040af76, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectM
@@ -13366,6 +13690,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 4802de2f55b500745a996a8223f1ae33, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectQ
@@ -13503,6 +13831,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 8fc51f6d0d5390e42b6985ed627b9cbc, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10EF"
@@ -13640,6 +13972,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: d35eb722b45b5b346a297d481259b5be, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10D6"
@@ -13777,6 +14113,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 3f824313a5c5f0c43af79f54c69c509c, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10E2"
@@ -13914,6 +14254,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 12bf4eddde996a449bcde3c4445eeb74, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectV
@@ -14051,6 +14395,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 957f0edb95cd1ae4d9673b0406deb9c0, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectN
@@ -14188,6 +14536,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 7ec228e2781fc3e45b6efce857d767f8, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectU
@@ -14325,6 +14677,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: d8cfd4e861c4e584b9b062a523146984, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectE
@@ -14462,6 +14818,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 493cd8a2352c5a248833a09589a6b2f2, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1340014722}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectG
@@ -14599,6 +14959,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 14877e1cdbd89284e825ad460ede3120, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectH
@@ -14736,6 +15100,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: 8ea22861e45d6ef42b1dbc36300a2dbe, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1112841913}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: "StudyPhonicObject\u10DB"
@@ -14873,6 +15241,10 @@ PrefabInstance:
       propertyPath: phonicObject
       value: 
       objectReference: {fileID: 11400000, guid: c5b635161f8f32c4ba1f6dee36835221, type: 2}
+    - target: {fileID: 2382015384672999505, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
+      propertyPath: myParentPhonicsContainerGameObject
+      value: 
+      objectReference: {fileID: 1520655394}
     - target: {fileID: 7163505417638025670, guid: 88fe6e58bc3ee5c4483e0e589d92e829, type: 3}
       propertyPath: m_Name
       value: StudyPhonicObjectX
