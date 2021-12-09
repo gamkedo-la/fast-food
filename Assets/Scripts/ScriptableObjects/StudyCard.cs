@@ -27,43 +27,43 @@ public class StudyCard : MonoBehaviour
     private string currentTextString;
     private GameSoundEnum myGameSoundEnum;
 
-    private void OnValidate()
-    {
-        if (wordObject != null)
-        {
-            englishWordTextMeshPro.text = wordObject.englishWord;
-            dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
-            albanianWordTextMeshPro.text = wordObject.albanianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
-            georgianWordTextMeshPro.text = wordObject.georgianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
+    //private void OnValidate()
+    //{
+    //    if (wordObject != null)
+    //    {
+    //        englishWordTextMeshPro.text = wordObject.englishWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
+    //        albanianWordTextMeshPro.text = wordObject.albanianWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
+    //        georgianWordTextMeshPro.text = wordObject.georgianWord;
+    //        dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
 
-            foreach (Language key in dictionaryOfTextMeshProObjects.Keys)
-            {
-                if (key != GameManagerScript.currentLanguage)
-                {
-                    dictionaryOfTextMeshProObjects[key].gameObject.SetActive(false);
-                }
-                else
-                {
-                    dictionaryOfTextMeshProObjects[key].gameObject.SetActive(true);
-                }
-            }
-            //dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+    //        foreach (Language key in dictionaryOfTextMeshProObjects.Keys)
+    //        {
+    //            if (key != GameManagerScript.currentLanguage)
+    //            {
+    //                dictionaryOfTextMeshProObjects[key].gameObject.SetActive(false);
+    //            }
+    //            else
+    //            {
+    //                dictionaryOfTextMeshProObjects[key].gameObject.SetActive(true);
+    //            }
+    //        }
+    //        //dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            englishAudio = wordObject.englishAudio;
-            dictionaryOfAudioClips.Add(Language.English, englishAudio);
-            albanianAudio = wordObject.albanianAudio;
-            dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
-            georgianAudio = wordObject.georgianAudio;
-            dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
-            //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
+    //        englishAudio = wordObject.englishAudio;
+    //        dictionaryOfAudioClips.Add(Language.English, englishAudio);
+    //        albanianAudio = wordObject.albanianAudio;
+    //        dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
+    //        georgianAudio = wordObject.georgianAudio;
+    //        dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
+    //        //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            InitializeMyGameSoundEnum();
+    //        InitializeMyGameSoundEnum();
 
-            wordImage.sprite = wordObject.sprite;
-        }
-    }
+    //        wordImage.sprite = wordObject.sprite;
+    //    }
+    //}
 
     private void Start()
     {
