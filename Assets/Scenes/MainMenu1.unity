@@ -7089,7 +7089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
-  language: 3
+  language: 2
   targetLanguageTextbox: {fileID: 645155874}
 --- !u!1 &453987007
 GameObject:
@@ -7990,7 +7990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
-  language: 1
+  language: 0
   targetLanguageTextbox: {fileID: 645155874}
 --- !u!1 &775749656 stripped
 GameObject:
@@ -11540,7 +11540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
-  language: 2
+  language: 1
   targetLanguageTextbox: {fileID: 645155874}
 --- !u!1 &1884210763
 GameObject:
