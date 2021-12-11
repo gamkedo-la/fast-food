@@ -309,9 +309,21 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: 259e04b228c944c49a02d045f17e0a67, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: orange
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: portokalli
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10E4\u10DD\u10E0\u10D7\u10DD\u10EE\u10D0\u10DA\u10D8"
       objectReference: {fileID: 0}
     - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Sprite
@@ -446,10 +458,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: 5c2495f2c4c405a4c8cea1ec846038c6, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: green
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10DB\u10EC\u10D5\u10D0\u10DC\u10D4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: jeshile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b73582df71b2ac43b9318d9b507b80b, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: GreenStudyImage
@@ -734,10 +762,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: 3201f2d2c2a505b439196453ab86b53f, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: black
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10E8\u10D0\u10D5\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "zez\xEB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9acf83fe80e124a46a1202fc05dbb2af, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: BlackStudyImage
@@ -867,10 +911,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: af0a40ff455b93243ba78e6f0278a5f2, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: purple
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10D8\u10D0\u10E1\u10D0\u10DB\u10DC\u10D8\u10E1\u10E4\u10D4\u10E0\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "vjollc\xEB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b55ff86fb773bf488069207c9ad94a9, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: PurpleStudyImage
@@ -1205,9 +1265,21 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: 24f07cd181074f54897ac04d2c7272ec, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: yellow
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10E7\u10D5\u10D8\u10D7\u10D4\u10DA\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: verdhe
       objectReference: {fileID: 0}
     - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Sprite
@@ -1347,10 +1419,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: a21dbf484a2fe0e4a9236f09ee8fc711, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: blue
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10DA\u10E3\u10E0\u10EF\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: blu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a0fac019eaedf64fb5a54554131c9aa, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: BlueStudyImage
@@ -2004,10 +2092,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: c7ccc5bb7d6448e4eb029291573801d3, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: white
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10D7\u10D4\u10D7\u10E0\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "bardh\xEB"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4146542e878d0f74897e391ecf941030, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: WhiteStudyImage
@@ -2385,10 +2489,26 @@ PrefabInstance:
       propertyPath: wordObject
       value: 
       objectReference: {fileID: 11400000, guid: 3fe7bfe069294734aa5d0884c1c2bcf9, type: 2}
+    - target: {fileID: 346621379424399119, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: red
+      objectReference: {fileID: 0}
     - target: {fileID: 2921627623054049579, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4898132255480842836, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: "\u10EC\u10D8\u10D7\u10D4\u10DA\u10D8"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917491277289192666, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_text
+      value: kuqe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163505417638025668, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e698ea0159e5ca74f96b5c09a9a362dc, type: 3}
     - target: {fileID: 7163505417638025670, guid: 67801d17defdbe64bb8cba73ca2dd09a, type: 3}
       propertyPath: m_Name
       value: RedStudyImage

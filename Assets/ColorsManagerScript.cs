@@ -36,35 +36,21 @@ public class ColorsManagerScript : MonoBehaviour
         targetStudyCard = SelectAStudyCard();
         targetStudyCard.gameObject.SetActive(true);
 
-
-        //GameManagerScript.currentLanguage = Language.Georgian;
-
-        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
-        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
-        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
-
-        currentTargetColorString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
+        concatenatedColorsString = "";
+        
+        currentTargetColorString = targetStudyCard.arrayOfTextMeshProUGUI[(int)GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
         {
             currentTargetColorString = currentTargetColorString.ToLower();
         }
 
-        //Debug.Log("currentWordToSpellString: " + currentTargetColorString);
-
-
         foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
         {
-            concatenatedColorsString += studyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text.ToString();
+            concatenatedColorsString += studyCard.arrayOfTextMeshProUGUI[(int)GameManagerScript.currentLanguage].text.ToString();
             concatenatedColorsString += " ";
         }
 
-        //Debug.Log("concatenatedNumbersString: " + concatenatedColorsString);
         string[] arrayOfIndividualColors = concatenatedColorsString.Split();
-
-        for (int i = 0; i < arrayOfIndividualColors.Length - 1; i++)
-        {
-            //Debug.Log("arrayOfIndividualColors[i]: " + arrayOfIndividualColors[i]);
-        }
 
         //shuffle the array
         for (int i = 0; i < arrayOfIndividualColors.Length - 1; i++)
@@ -79,7 +65,6 @@ public class ColorsManagerScript : MonoBehaviour
         {
             var colorButton = Instantiate(colorButtonPrefab);
             colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfIndividualColors[i].ToString();
-            //Debug.Log("colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
             if (colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text != "")
             {
                 colorButton.transform.SetParent(colorButtonsHorizontalLayoutGroup.transform, false);
@@ -100,8 +85,7 @@ public class ColorsManagerScript : MonoBehaviour
     public List<StudyCard> ResetListOfCurrentLevelStudyCards()
     {
         listOfCurrentLevelStudyCards.Clear();
-        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
-        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        
         for (int i = 0; i < GameManagerScript.currentColorsLevel; i++)
         {
             listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);

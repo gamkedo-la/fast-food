@@ -6,7 +6,7 @@ using TMPro;
 
 public class LanguageButtonScript : ButtonScript
 {
-    [SerializeField] Language language = Language.Undefined;
+    [SerializeField] Language language;
     [SerializeField] TextMeshProUGUI targetLanguageTextbox;
 
     public override void HandleButtonClick()

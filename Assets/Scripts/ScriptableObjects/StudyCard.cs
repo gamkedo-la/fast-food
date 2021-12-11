@@ -12,9 +12,9 @@ public class StudyCard : MonoBehaviour
     WordObject wordObject;
 
     public Dictionary<Language, TextMeshProUGUI> dictionaryOfTextMeshProObjects = new Dictionary<Language, TextMeshProUGUI>();
-    [SerializeField] TextMeshProUGUI englishWordTextMeshPro;
-    [SerializeField] TextMeshProUGUI albanianWordTextMeshPro;
-    [SerializeField] TextMeshProUGUI georgianWordTextMeshPro;
+    public TextMeshProUGUI englishWordTextMeshPro;
+    public TextMeshProUGUI albanianWordTextMeshPro;
+    public TextMeshProUGUI georgianWordTextMeshPro;
 
     public Dictionary<Language, AudioClip> dictionaryOfAudioClips = new Dictionary<Language, AudioClip>();
     AudioClip englishAudio;
@@ -26,6 +26,9 @@ public class StudyCard : MonoBehaviour
 
     private string currentTextString;
     private GameSoundEnum myGameSoundEnum;
+
+    public TextMeshProUGUI[] arrayOfTextMeshProUGUI;
+    //public Dictionary<Language, TextMeshProUGUI> testDictionaryOfTextMeshProObjects = new Dictionary<Language, TextMeshProUGUI>();
 
     //private void OnValidate()
     //{
@@ -106,20 +109,51 @@ public class StudyCard : MonoBehaviour
     {
         if (wordObject != null)
         {
-            englishWordTextMeshPro.text = wordObject.englishWord;
-            dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
-            albanianWordTextMeshPro.text = wordObject.albanianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
-            georgianWordTextMeshPro.text = wordObject.georgianWord;
-            dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
+            if (englishWordTextMeshPro.text == null)
+            {
+                englishWordTextMeshPro.text = wordObject.englishWord;
+                dictionaryOfTextMeshProObjects.Add(Language.English, englishWordTextMeshPro);
+            }
+            if (albanianWordTextMeshPro.text == null)
+            {
+                albanianWordTextMeshPro.text = wordObject.albanianWord;
+                dictionaryOfTextMeshProObjects.Add(Language.Albanian, albanianWordTextMeshPro);
+            }
+            if (georgianWordTextMeshPro.text == null)
+            {
+                georgianWordTextMeshPro.text = wordObject.georgianWord;
+                dictionaryOfTextMeshProObjects.Add(Language.Georgian, georgianWordTextMeshPro);
+            }
+            
             dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
-            englishAudio = wordObject.englishAudio;
-            dictionaryOfAudioClips.Add(Language.English, englishAudio);
-            albanianAudio = wordObject.albanianAudio;
-            dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
-            georgianAudio = wordObject.georgianAudio;
-            dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
+            if (englishAudio == null)
+            {
+                englishAudio = wordObject.englishAudio;
+                if (dictionaryOfAudioClips[Language.English] == null)
+                {
+                    dictionaryOfAudioClips.Add(Language.English, englishAudio);
+                }       
+            }
+            
+            if (albanianAudio == null)
+            {
+                albanianAudio = wordObject.albanianAudio;
+                if (dictionaryOfAudioClips[Language.Albanian] == null)
+                {
+                    dictionaryOfAudioClips.Add(Language.Albanian, albanianAudio);
+                }  
+            }
+            
+            if (georgianAudio == null)
+            {
+                georgianAudio = wordObject.georgianAudio;
+                if (dictionaryOfAudioClips[Language.Georgian] == null)
+                {
+                    dictionaryOfAudioClips.Add(Language.Georgian, georgianAudio);
+                }
+            }
+            
             //dictionaryOfTextBoxObjects[GameManagerScript.currentLanguage].gameObject.SetActive(true);
 
             wordImage.sprite = wordObject.sprite;

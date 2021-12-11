@@ -27,10 +27,6 @@ public class LoadSceneButtonScript : ButtonScript
         //Play UI button sound
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
 
-        if (gameObject.name == "SkipToRestaurantButton" && GameManagerScript.currentLanguage == Language.Undefined)
-        {
-            GameManagerScript.currentLanguage = Language.English;
-        }
         if (gameObject.name == "MainMenuSceneLoadButton")
         {
             SaveSystem.SaveListOfProfilesData();

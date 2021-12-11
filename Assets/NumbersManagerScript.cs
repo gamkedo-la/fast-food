@@ -54,7 +54,7 @@ public class NumbersManagerScript : MonoBehaviour
         
         foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
         {
-            concatenatedNumbersString += studyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text.ToString();
+            concatenatedNumbersString += studyCard.arrayOfTextMeshProUGUI[(int)GameManagerScript.currentLanguage].text.ToString();
             concatenatedNumbersString += " ";
         }
         

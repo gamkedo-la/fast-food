@@ -769,6 +769,10 @@ MonoBehaviour:
   albanianWordTextMeshPro: {fileID: 6917491277289192666}
   georgianWordTextMeshPro: {fileID: 4898132255480842836}
   wordImage: {fileID: 7163505417638025668}
+  arrayOfTextMeshProUGUI:
+  - {fileID: 346621379424399119}
+  - {fileID: 6917491277289192666}
+  - {fileID: 4898132255480842836}
 --- !u!1 &8396675156478624582
 GameObject:
   m_ObjectHideFlags: 0
