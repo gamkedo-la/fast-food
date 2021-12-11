@@ -38,6 +38,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
 
 
         //GameManagerScript.currentLanguage = Language.English;
+        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects: " + targetStudyCard.dictionaryOfTextMeshProObjects);
         Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage]: " + targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage]);
 
         currentWordToSpellString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;

@@ -11,7 +11,7 @@ public static class GameManagerScript
 {
     public static CurrentPlatformEnum currentPlatformEnum;
 
-    public static Language currentLanguage = Language.Undefined;
+    public static Language currentLanguage = Language.English;//default for working around bugs
 
     public static CustomerPromptTypeEnumerables currentCustomerPromptType = CustomerPromptTypeEnumerables.Text;
 
