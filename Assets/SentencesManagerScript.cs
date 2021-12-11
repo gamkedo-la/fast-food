@@ -39,8 +39,8 @@ public class SentencesManagerScript : MonoBehaviour
         //GameManagerScript.currentLanguage = Language.English;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
 
         currentSentenceToFormString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
@@ -48,7 +48,7 @@ public class SentencesManagerScript : MonoBehaviour
             currentSentenceToFormString = currentSentenceToFormString.ToLower();
         }
 
-        Debug.Log("currentSentenceToFormString: " + currentSentenceToFormString);
+        //Debug.Log("currentSentenceToFormString: " + currentSentenceToFormString);
         string[] arrayOfIndividualWords = currentSentenceToFormString.Split();
 
         //shuffle the array
@@ -64,7 +64,7 @@ public class SentencesManagerScript : MonoBehaviour
         {
             var wordButton = Instantiate(wordButtonPrefab);
             wordButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfIndividualWords[i].ToString();
-            wordButton.transform.parent = wordButtonsHorizontalLayoutGroup.transform;
+            wordButton.transform.SetParent(wordButtonsHorizontalLayoutGroup.transform, false);
         }
     }
 
@@ -77,7 +77,7 @@ public class SentencesManagerScript : MonoBehaviour
         {
             listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);
         }
-        Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyCards.Count);
+        //Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyCards.Count);
         return listOfCurrentLevelStudyCards;
     }
 
@@ -86,7 +86,7 @@ public class SentencesManagerScript : MonoBehaviour
         StudyCard targetSentenceStudyCard;
         int randomStudyCardDictionaryIndex = UnityEngine.Random.Range(0, listOfCurrentLevelStudyCards.Count);
         targetSentenceStudyCard = listOfCurrentLevelStudyCards[randomStudyCardDictionaryIndex];
-        Debug.Log("targetSentenceStudyCard: " + targetSentenceStudyCard);
+        //Debug.Log("targetSentenceStudyCard: " + targetSentenceStudyCard);
         return targetSentenceStudyCard;
     }
 }

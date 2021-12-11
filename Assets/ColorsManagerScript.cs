@@ -40,8 +40,8 @@ public class ColorsManagerScript : MonoBehaviour
         //GameManagerScript.currentLanguage = Language.Georgian;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
 
         currentTargetColorString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
@@ -49,7 +49,7 @@ public class ColorsManagerScript : MonoBehaviour
             currentTargetColorString = currentTargetColorString.ToLower();
         }
 
-        Debug.Log("currentWordToSpellString: " + currentTargetColorString);
+        //Debug.Log("currentWordToSpellString: " + currentTargetColorString);
 
 
         foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
@@ -58,12 +58,12 @@ public class ColorsManagerScript : MonoBehaviour
             concatenatedColorsString += " ";
         }
 
-        Debug.Log("concatenatedNumbersString: " + concatenatedColorsString);
+        //Debug.Log("concatenatedNumbersString: " + concatenatedColorsString);
         string[] arrayOfIndividualColors = concatenatedColorsString.Split();
 
         for (int i = 0; i < arrayOfIndividualColors.Length - 1; i++)
         {
-            Debug.Log("arrayOfIndividualColors[i]: " + arrayOfIndividualColors[i]);
+            //Debug.Log("arrayOfIndividualColors[i]: " + arrayOfIndividualColors[i]);
         }
 
         //shuffle the array
@@ -79,10 +79,10 @@ public class ColorsManagerScript : MonoBehaviour
         {
             var colorButton = Instantiate(colorButtonPrefab);
             colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfIndividualColors[i].ToString();
-            Debug.Log("colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
+            //Debug.Log("colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
             if (colorButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text != "")
             {
-                colorButton.transform.parent = colorButtonsHorizontalLayoutGroup.transform;
+                colorButton.transform.SetParent(colorButtonsHorizontalLayoutGroup.transform, false);
             }
             else
             {
@@ -100,8 +100,8 @@ public class ColorsManagerScript : MonoBehaviour
     public List<StudyCard> ResetListOfCurrentLevelStudyCards()
     {
         listOfCurrentLevelStudyCards.Clear();
-        Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
-        Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
+        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
         for (int i = 0; i < GameManagerScript.currentColorsLevel; i++)
         {
             listOfCurrentLevelStudyCards.Add(arrayOfAllStudyCards[i]);

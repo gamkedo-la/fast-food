@@ -38,6 +38,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
 
 
         //GameManagerScript.currentLanguage = Language.English;
+        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage]: " + targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage]);
 
         currentWordToSpellString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
@@ -51,7 +52,7 @@ public class SpellingWordsManagerScript : MonoBehaviour
         {
             var letterButton = Instantiate(letterButtonPrefab);
             letterButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfShuffledCharacters[i].ToString();
-            letterButton.transform.parent = letterButtonsHorizontalLayoutGroup.transform;
+            letterButton.transform.SetParent(letterButtonsHorizontalLayoutGroup.transform, false);
         }
     }
 

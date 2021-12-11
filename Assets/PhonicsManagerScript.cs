@@ -69,7 +69,7 @@ public class PhonicsManagerScript : MonoBehaviour
             concatenatedPhonicsString += " ";
         }
 
-        Debug.Log("currentPhonicString: " + currentPhonicString);
+        //Debug.Log("currentPhonicString: " + currentPhonicString);
 
         var shuffledCurrentPhonicString = new string(concatenatedPhonicsString.OrderBy(x => Guid.NewGuid()).ToArray());
         char[] arrayOfShuffledCharacters = shuffledCurrentPhonicString.ToCharArray();
@@ -81,15 +81,15 @@ public class PhonicsManagerScript : MonoBehaviour
                 phonicButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfShuffledCharacters[i].ToString();
                 if (i < 22)
                 {
-                    phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup.transform;
+                    phonicButton.transform.SetParent(phonicButtonsHorizontalLayoutGroup.transform, false);
                 }
                 else if (i >= 22 && i < 44)
                 {
-                    phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup2.transform;
+                    phonicButton.transform.SetParent(phonicButtonsHorizontalLayoutGroup2.transform, false);
                 }
                 else
                 {
-                    phonicButton.transform.parent = phonicButtonsHorizontalLayoutGroup3.transform;
+                    phonicButton.transform.SetParent(phonicButtonsHorizontalLayoutGroup3.transform, false);
                 }
             }  
         }
@@ -105,7 +105,7 @@ public class PhonicsManagerScript : MonoBehaviour
             {
                 listOfCurrentLevelStudyPhonics.Add(arrayOfEnglishStudyPhonicsCards[i]);
             }
-            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            //Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
         }
         else if (GameManagerScript.currentLanguage == Language.Albanian)
@@ -114,7 +114,7 @@ public class PhonicsManagerScript : MonoBehaviour
             {
                 listOfCurrentLevelStudyPhonics.Add(arrayOfAlbanianStudyPhonicsCards[i]);
             }
-            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            //Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
         }
         else if (GameManagerScript.currentLanguage == Language.Georgian)
@@ -123,7 +123,7 @@ public class PhonicsManagerScript : MonoBehaviour
             {
                 listOfCurrentLevelStudyPhonics.Add(arrayOfGeorgianStudyPhonicsCards[i]);
             }
-            Debug.Log("listOfCurrentLevelStudyCards.Count Georgian: " + listOfCurrentLevelStudyPhonics.Count);
+            //Debug.Log("listOfCurrentLevelStudyCards.Count Georgian: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
         }
         else //default to english
@@ -132,7 +132,7 @@ public class PhonicsManagerScript : MonoBehaviour
             {
                 listOfCurrentLevelStudyPhonics.Add(arrayOfEnglishStudyPhonicsCards[i]);
             }
-            Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
+            //Debug.Log("listOfCurrentLevelStudyCards.Count: " + listOfCurrentLevelStudyPhonics.Count);
             return listOfCurrentLevelStudyPhonics;
         }
     }

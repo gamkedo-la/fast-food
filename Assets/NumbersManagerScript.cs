@@ -40,8 +40,8 @@ public class NumbersManagerScript : MonoBehaviour
         //GameManagerScript.currentLanguage = Language.English;
 
         //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.English]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
-        Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Albanian]);
+        //Debug.Log("targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]: " + targetStudyCard.dictionaryOfTextMeshProObjects[Language.Georgian]);
 
         currentTargetNumberString = targetStudyCard.dictionaryOfTextMeshProObjects[GameManagerScript.currentLanguage].text;
         if (GameManagerScript.currentLanguage != Language.Georgian)
@@ -49,7 +49,7 @@ public class NumbersManagerScript : MonoBehaviour
             currentTargetNumberString = currentTargetNumberString.ToLower();
         }
 
-        Debug.Log("currentTargetNumberString: " + currentTargetNumberString);
+        //Debug.Log("currentTargetNumberString: " + currentTargetNumberString);
 
         
         foreach (StudyCard studyCard in listOfCurrentLevelStudyCards)
@@ -58,12 +58,12 @@ public class NumbersManagerScript : MonoBehaviour
             concatenatedNumbersString += " ";
         }
         
-        Debug.Log("concatenatedNumbersString: " + concatenatedNumbersString);
+        //Debug.Log("concatenatedNumbersString: " + concatenatedNumbersString);
         string[] arrayOfIndividualNumbers = concatenatedNumbersString.Split();
         
         for (int i = 0; i < arrayOfIndividualNumbers.Length - 1; i++)
         {
-            Debug.Log("arrayOfIndividualNumbers[i]: " + arrayOfIndividualNumbers[i]);
+            //Debug.Log("arrayOfIndividualNumbers[i]: " + arrayOfIndividualNumbers[i]);
         }
 
         //shuffle the array
@@ -79,10 +79,10 @@ public class NumbersManagerScript : MonoBehaviour
         {
             var numberButton = Instantiate(numberButtonPrefab);
             numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = arrayOfIndividualNumbers[i].ToString();
-            Debug.Log("numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
+            //Debug.Log("numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text: " + numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text);
             if (numberButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text != "")
             {
-                numberButton.transform.parent = numberButtonsHorizontalLayoutGroup.transform;
+                numberButton.transform.SetParent(numberButtonsHorizontalLayoutGroup.transform, false);
             }
             else
             {
@@ -96,7 +96,7 @@ public class NumbersManagerScript : MonoBehaviour
     public List<StudyCard> ResetListOfCurrentLevelStudyCards()
     {
         listOfCurrentLevelStudyCards.Clear();
-        Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
+        //Debug.Log("listOfCurrentLevelStudyCards: " + listOfCurrentLevelStudyCards);
         //Debug.Log("arrayOfAllStudyCards: " + arrayOfAllStudyCards[0]);
         for (int i = 0; i < GameManagerScript.currentNumbersLevel; i++)
         {
