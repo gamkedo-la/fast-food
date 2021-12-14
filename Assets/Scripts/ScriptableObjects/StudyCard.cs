@@ -251,6 +251,42 @@ public class StudyCard : MonoBehaviour
             case "ხახვი":
                 myGameSoundEnum = GameSoundEnum.Georgian_Onion;
                 break;
+            case "Beer":
+                myGameSoundEnum = GameSoundEnum.English_Beer;
+                break;
+            case "Birrë":
+                myGameSoundEnum = GameSoundEnum.Albanian_Beer;
+                break;
+            case "ლუდი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Beer;
+                break;
+            case "Water":
+                myGameSoundEnum = GameSoundEnum.English_Water;
+                break;
+            case "Ujë":
+                myGameSoundEnum = GameSoundEnum.Albanian_Water;
+                break;
+            case "წყალი":
+                myGameSoundEnum = GameSoundEnum.Georgian_Water;
+                break;
+            case "Red Wine":
+                myGameSoundEnum = GameSoundEnum.English_Red_Wine;
+                break;
+            case "Verë e Kuqe":
+                myGameSoundEnum = GameSoundEnum.Albanian_Red_Wine;
+                break;
+            case "წითელი ღვინო":
+                myGameSoundEnum = GameSoundEnum.Georgian_Red_Wine;
+                break;
+            case "White Wine":
+                myGameSoundEnum = GameSoundEnum.English_White_Wine;
+                break;
+            case "Verë e Bardhë":
+                myGameSoundEnum = GameSoundEnum.Albanian_White_Wine;
+                break;
+            case "თეთრი ღვინო":
+                myGameSoundEnum = GameSoundEnum.Georgian_White_Wine;
+                break;
 
             case "I would like a chicken doner with lettuce":
                 myGameSoundEnum = GameSoundEnum.English_Order_Chicken_Doner_Lettuce;

@@ -223,5 +223,22 @@ public enum GameSoundEnum{
     Georgian_And_A_Beer,
     Georgian_And_A_Red_Wine,
     Georgian_And_A_White_Wine,
+
+    //more study cards
+    English_Beer,
+    Albanian_Beer,
+    Georgian_Beer,
+
+    English_Water,
+    Albanian_Water,
+    Georgian_Water,
+
+    English_Red_Wine,
+    Albanian_Red_Wine,
+    Georgian_Red_Wine,
+
+    English_White_Wine,
+    Albanian_White_Wine,
+    Georgian_White_Wine
 }
 
