@@ -222,6 +222,7 @@ public class CustomerOrderingScript : MonoBehaviour
         }
 
         myStateEnumeration = CustomerStateEnumerations.EnteringRestaurant;
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Customer_Enter);
     }
 
     private void MoveTowardsSelectedOrderingLocation()
