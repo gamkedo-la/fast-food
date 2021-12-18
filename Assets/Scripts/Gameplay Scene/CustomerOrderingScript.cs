@@ -150,6 +150,10 @@ public class CustomerOrderingScript : MonoBehaviour
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.lostCustomerEvent, HandleLostCustomerEvent);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("anything");
+    }
     private void HandleAnyOrderSubmissionEvent()
     {
         if (!isProcessingOrder)
