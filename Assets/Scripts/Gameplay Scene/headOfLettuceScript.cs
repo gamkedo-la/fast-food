@@ -82,8 +82,9 @@ public class headOfLettuceScript : ToppingOnCountertopScript
                 Disappear();
             }
         }
-        
-        Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
+
+        //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["lettuce pickup"]);
+        AudioController.instance.PlayAudio(GameSoundEnum.Lettuce_Chop);
     }
     
     //Itch

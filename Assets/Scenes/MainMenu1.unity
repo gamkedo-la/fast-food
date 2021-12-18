@@ -8908,6 +8908,34 @@ PrefabInstance:
       value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b18c2aa0f6f5e144e86b47d0390a56e0, type: 3}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f48eda7fa5f80248b7cd32fc361887e, type: 3}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5caf7bd0d4ec6c846a7b891ec4ad375a, type: 3}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[3].sound
+      value: 195
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[4].sound
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
+      propertyPath: tracks.Array.data[3].audio.Array.data[5].sound
+      value: 197
+      objectReference: {fileID: 0}
+    - target: {fileID: 7467504209452812439, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
       propertyPath: tracks.Array.data[2].audio.Array.data[164].clip
       value: 
       objectReference: {fileID: 8300000, guid: a9e7c2ec280543548968fda59df3bbd5, type: 3}
@@ -17767,6 +17795,10 @@ PrefabInstance:
     - target: {fileID: 8794712496161401363, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794712496528013532, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 346.28003
       objectReference: {fileID: 0}
     - target: {fileID: 8794712496770700935, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_AnchorMax.y

@@ -86,8 +86,9 @@ public class FullTomatoeScript : ToppingOnCountertopScript
                 Disappear();
             }
         }
-        
+
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["tomato pickup"]);
+        AudioController.instance.PlayAudio(GameSoundEnum.Tomato_Slice);
     }
 
     //Itch

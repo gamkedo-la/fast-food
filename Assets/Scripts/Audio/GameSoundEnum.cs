@@ -239,6 +239,11 @@ public enum GameSoundEnum{
 
     English_White_Wine,
     Albanian_White_Wine,
-    Georgian_White_Wine
+    Georgian_White_Wine,
+
+    //Countertop sfx
+    Lettuce_Chop,
+    Tomato_Slice,
+    Onion_Slice,
 }
 

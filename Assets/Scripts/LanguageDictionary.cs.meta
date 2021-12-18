@@ -3,7 +3,61 @@ guid: e0b1fd40bbcef354ab0228345ba80777
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - englishIWouldLikeAAudioClip: {instanceID: 0}
+  - englishHamburgerAudioClip: {instanceID: 0}
+  - englishChickenDonerAudioClip: {instanceID: 0}
+  - englishLettuceAudioClip: {instanceID: 0}
+  - englishTomatoAudioClip: {instanceID: 0}
+  - englishOnionAudioClip: {instanceID: 0}
+  - englishThankYouAudioClip: {instanceID: 0}
+  - englishNoAudioClip: {instanceID: 0}
+  - englishLettucePickupAudioClip: {fileID: 8300000, guid: b18c2aa0f6f5e144e86b47d0390a56e0, type: 3}
+  - englishTomatoPickupAudioClip: {fileID: 8300000, guid: 4f48eda7fa5f80248b7cd32fc361887e, type: 3}
+  - englishOnionPickupAudioClip: {fileID: 8300000, guid: 5caf7bd0d4ec6c846a7b891ec4ad375a, type: 3}
+  - iWouldLikeAHamburgerEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithTomatoEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithOnionEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceAndTomatoEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceAndOnionEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithTomatoAndOnionEnglishPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceTomatoAndOnionEnglishPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithLettucePrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithTomatoPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithOnionPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithLettuceAndOnionPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithTomatoAndOnionPrompt: {instanceID: 0}
+  - englishIWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt: {instanceID: 0}
+  - albanianIWouldLikeAAudioClip: {instanceID: 0}
+  - albanianHamburgerAudioClip: {instanceID: 0}
+  - albanianChickenDonerAudioClip: {instanceID: 0}
+  - albanianLettuceAudioClip: {instanceID: 0}
+  - albanianTomatoAudioClip: {instanceID: 0}
+  - albanianOnionAudioClip: {instanceID: 0}
+  - albanianThankYouAudioClip: {instanceID: 0}
+  - albanianNoAudioClip: {instanceID: 0}
+  - albanianLettucePickupAudioClip: {fileID: 8300000, guid: b18c2aa0f6f5e144e86b47d0390a56e0, type: 3}
+  - albanianTomatoPickupAudioClip: {fileID: 8300000, guid: 4f48eda7fa5f80248b7cd32fc361887e, type: 3}
+  - albanianOnionPickupAudioClip: {fileID: 8300000, guid: 5caf7bd0d4ec6c846a7b891ec4ad375a, type: 3}
+  - iWouldLikeAHamburgerAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithTomatoAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithOnionAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceAndTomatoAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceAndOnionAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithTomatoAndOnionAlbanianPrompt: {instanceID: 0}
+  - iWouldLikeAHamburgerWithLettuceTomatoAndOnionAlbanianPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithLettucePrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithTomatoPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithOnionPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithLettuceAndTomatoPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithLettuceAndOnionPrompt: {instanceID: 0}
+  - albanianIWouldLikeAChickenDonerWithTomatoAndOnionPrompt: {instanceID: 0}
+  - albanianWouldLikeAChickenDonerWithLettuceTomatoAndOnionPrompt: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

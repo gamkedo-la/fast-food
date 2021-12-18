@@ -84,7 +84,8 @@ public class FullOnionScript : ToppingOnCountertopScript
                 Disappear();
             }
 
-            Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
+            //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["onion pickup"]);
+            AudioController.instance.PlayAudio(GameSoundEnum.Onion_Slice);
         }
     }
     //Itch
