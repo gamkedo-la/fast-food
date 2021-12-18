@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1645327bf7c5eb349aac418e90429566, type: 3}
   m_Name: ChickenDoner
   m_EditorClassIdentifier: 
-  englishWord: Chicken Doner
-  albanianWord: Doner Pule
-  georgianWord: "\u10E5\u10D0\u10D7\u10DB\u10D8\u10E1 \u10E8\u10D0\u10E3\u10E0\u10DB\u10D0"
-  icon: {fileID: 21300000, guid: f47f5b6fd892c3a4d8634acbfa70ef45, type: 3}
+  englishWord: I would like a chicken doner
+  albanianWord: "Un\xEB dua nj\xEB doner pule"
+  georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10E5\u10D0\u10D7\u10DB\u10D8\u10E1 \u10E8\u10D0\u10E3\u10E0\u10DB\u10D0
+    \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"
+  sprite: {fileID: 21300000, guid: f47f5b6fd892c3a4d8634acbfa70ef45, type: 3}
   englishAudio: {fileID: 8300000, guid: bb1f43e4269879f4cbdc07cae70a2e95, type: 3}
   albanianAudio: {fileID: 8300000, guid: ab3364b50a192684fb8b73dcb9195bec, type: 3}
   georgianAudio: {fileID: 8300000, guid: 35f472b119da03442ab7de8d3ac1fc8a, type: 3}
