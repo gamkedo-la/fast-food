@@ -22,5 +22,6 @@ public class ColorButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         colorInputField.text += myColorString;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

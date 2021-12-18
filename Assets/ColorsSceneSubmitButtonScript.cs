@@ -26,11 +26,11 @@ public class ColorsSceneSubmitButtonScript : ButtonScript
         if (studentSubmission == colorsWordManager.GetComponent<ColorsManagerScript>().currentTargetColorString)
         {
             colorsWordManager.GetComponent<ColorsManagerScript>().ResetDisplay();
-            Debug.Log("you rule");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
         }
         else
         {
-            Debug.Log("nope");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
         }
         colorsInputField.text = "";
     }
