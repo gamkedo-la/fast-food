@@ -16,7 +16,7 @@ MonoBehaviour:
   albanianWord: "Un\xEB dua nj\xEB hamburger me qep\xEB"
   georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10F0\u10D0\u10DB\u10D1\u10E3\u10E0\u10D2\u10D4\u10E0\u10D8
     \u10EE\u10D0\u10EE\u10D5\u10D8\u10D7 \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"
-  icon: {fileID: 21300000, guid: 6bf6e0b93bd42874b8b29f5d08e067cd, type: 3}
+  sprite: {fileID: 21300000, guid: 6bf6e0b93bd42874b8b29f5d08e067cd, type: 3}
   englishAudio: {fileID: 8300000, guid: dbc5ebdabd52c3c40b046ad22f3b6e1b, type: 3}
   albanianAudio: {fileID: 8300000, guid: 57cb1e2bb31fcfd4498cfb511a2a9a6c, type: 3}
   georgianAudio: {fileID: 8300000, guid: c54a0c40717da10429a586a224a46224, type: 3}
