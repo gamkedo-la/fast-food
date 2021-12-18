@@ -20,5 +20,6 @@ public class PhonicsButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         phonicsInputField.text += myCharacter;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

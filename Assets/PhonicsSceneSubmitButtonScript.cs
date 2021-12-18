@@ -28,11 +28,11 @@ public class PhonicsSceneSubmitButtonScript : ButtonScript
             phonicsWordManager.GetComponent<PhonicsManagerScript>().ResetListOfCurrentLevelStudyCards();
 
             phonicsWordManager.GetComponent<PhonicsManagerScript>().ResetDisplay();
-            Debug.Log("you rule");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
         }
         else
         {
-            Debug.Log("nope");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
         }
         phonicsInputField.text = "";
     }
