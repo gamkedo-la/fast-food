@@ -25,16 +25,15 @@ public class SentencesSceneSubmitButtonScript : ButtonScript
         
         string editedTargetSentenceString = sentencesManager.GetComponent<SentencesManagerScript>().currentSentenceToFormString;
         editedTargetSentenceString += " ";
-        Debug.Log("studentSubmission: " + studentSubmission);
-        Debug.Log("editedTargetSentenceString: " + editedTargetSentenceString);
+        
         if (studentSubmission == editedTargetSentenceString)
         {
             sentencesManager.GetComponent<SentencesManagerScript>().ResetDisplay();
-            Debug.Log("you rule");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
         }
         else
         {
-            Debug.Log("nope");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
         }
         sentenceInputField.text = "";
     }

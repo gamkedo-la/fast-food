@@ -26,5 +26,6 @@ public class WordButtonScript : ButtonScript
         {
             sentenceInputField.text += " ";
         }
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

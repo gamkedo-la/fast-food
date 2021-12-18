@@ -22,5 +22,6 @@ public class SentenceSceneBackspaceScript : ButtonScript
         string currentStudentInputString = sentenceInputField.text;
         string editedString = currentStudentInputString.Substring(0, currentStudentInputString.Length - 1);
         sentenceInputField.text = editedString;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }
