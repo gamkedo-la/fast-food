@@ -11,6 +11,8 @@ public class SpellingSceneSubmitButtonScript : ButtonScript
     private GameObject spellingInputFieldGameObject;
     private TMP_InputField spellingInputField;
     [SerializeField] private GameObject spellingWordManager;
+    [SerializeField] private Image thumbsUpImage;
+    [SerializeField] private Image thumbsDownImage;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +30,27 @@ public class SpellingSceneSubmitButtonScript : ButtonScript
             spellingWordManager.GetComponent<SpellingWordsManagerScript>().ResetDisplay();
             
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
+            thumbsUpImage.gameObject.SetActive(true);
+            StartCoroutine(TurnOffThumbsUp());
         }
         else
         {
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
+            thumbsDownImage.gameObject.SetActive(true);
+            StartCoroutine(TurnOffThumbsDown());
         }
         spellingInputField.text = "";
+    }
+
+    IEnumerator TurnOffThumbsUp()
+    {
+        yield return new WaitForSeconds(1);
+        thumbsUpImage.gameObject.SetActive(false);
+    }
+
+    IEnumerator TurnOffThumbsDown()
+    {
+        yield return new WaitForSeconds(1);
+        thumbsDownImage.gameObject.SetActive(false);
     }
 }

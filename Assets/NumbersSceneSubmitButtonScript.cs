@@ -11,6 +11,8 @@ public class NumbersSceneSubmitButtonScript : ButtonScript
     private GameObject numbersInputFieldGameObject;
     private TMP_InputField numbersInputField;
     [SerializeField] private GameObject numbersWordManager;
+    [SerializeField] private Image thumbsUpImage;
+    [SerializeField] private Image thumbsDownImage;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +29,26 @@ public class NumbersSceneSubmitButtonScript : ButtonScript
         {
             numbersWordManager.GetComponent<NumbersManagerScript>().ResetDisplay();
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
+            thumbsUpImage.gameObject.SetActive(true);
+            StartCoroutine(TurnOffThumbsUp());
         }
         else
         {
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
+            thumbsDownImage.gameObject.SetActive(true);
+            StartCoroutine(TurnOffThumbsDown());
         }
         numbersInputField.text = "";
+    }
+    IEnumerator TurnOffThumbsUp()
+    {
+        yield return new WaitForSeconds(1);
+        thumbsUpImage.gameObject.SetActive(false);
+    }
+
+    IEnumerator TurnOffThumbsDown()
+    {
+        yield return new WaitForSeconds(1);
+        thumbsDownImage.gameObject.SetActive(false);
     }
 }
