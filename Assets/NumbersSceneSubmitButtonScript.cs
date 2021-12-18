@@ -26,11 +26,11 @@ public class NumbersSceneSubmitButtonScript : ButtonScript
         if (studentSubmission == numbersWordManager.GetComponent<NumbersManagerScript>().currentTargetNumberString)
         {
             numbersWordManager.GetComponent<NumbersManagerScript>().ResetDisplay();
-            Debug.Log("you rule");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
         }
         else
         {
-            Debug.Log("nope");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
         }
         numbersInputField.text = "";
     }

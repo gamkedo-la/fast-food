@@ -22,5 +22,6 @@ public class NumberButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         numberInputField.text += myNumberString;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }
