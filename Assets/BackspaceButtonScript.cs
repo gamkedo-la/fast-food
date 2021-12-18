@@ -32,5 +32,6 @@ public class BackspaceButtonScript : ButtonScript
         string currentStudentInputString = inputField.text;
         string editedString = currentStudentInputString.Substring(0, currentStudentInputString.Length - 1);
         inputField.text = editedString;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

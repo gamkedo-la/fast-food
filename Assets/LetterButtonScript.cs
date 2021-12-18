@@ -26,5 +26,6 @@ public class LetterButtonScript : ButtonScript
         {
             spellingInputField.text += " ";
         }
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }

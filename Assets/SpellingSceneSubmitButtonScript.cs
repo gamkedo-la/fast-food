@@ -26,11 +26,12 @@ public class SpellingSceneSubmitButtonScript : ButtonScript
         if (studentSubmission == spellingWordManager.GetComponent<SpellingWordsManagerScript>().currentWordToSpellString)
         {
             spellingWordManager.GetComponent<SpellingWordsManagerScript>().ResetDisplay();
-            Debug.Log("you rule");
+            
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Correct_Order);
         }
         else
         {
-            Debug.Log("nope");
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order);
         }
         spellingInputField.text = "";
     }

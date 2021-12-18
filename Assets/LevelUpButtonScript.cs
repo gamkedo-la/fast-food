@@ -93,5 +93,6 @@ public class LevelUpButtonScript : ButtonScript
                 miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetDisplay();
                 break;
         }
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }
