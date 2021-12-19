@@ -62,6 +62,7 @@ public static class GameManagerScript
     public static int currentEnglishPhonicsLevel = 1;
     public static int currentAlbanianPhonicsLevel = 1;
     public static int currentGeorgianPhonicsLevel = 1;
+    public static int currentTurkishPhonicsLevel = 1;
 
 
     public static int maxSpellingLevel = 5;
@@ -71,6 +72,7 @@ public static class GameManagerScript
     public static int maxEnglishPhonicsLevel = 26;
     public static int maxAlbanianPhonicsLevel = 34;
     public static int maxGeorgianPhonicsLevel = 33;
+    public static int maxTurkishPhonicsLevel = 29;
 
     public static int minimumSubmittedOrdersToCompleteLevel1 = 5;
     public static int minimumSubmittedOrdersToCompleteLevel2 = 10;

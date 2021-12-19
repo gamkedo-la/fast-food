@@ -88,6 +88,15 @@ public class LevelUpButtonScript : ButtonScript
                     GameManagerScript.currentGeorgianPhonicsLevel++;
                     currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentGeorgianPhonicsLevel;
                 }
+                else if (GameManagerScript.currentLanguage == Language.Turkish)
+                {
+                    if (GameManagerScript.currentTurkishPhonicsLevel == GameManagerScript.maxTurkishPhonicsLevel)
+                    {
+                        return;
+                    }
+                    GameManagerScript.currentTurkishPhonicsLevel++;
+                    currentLevelTextMeshPro.text = "Current Level: " + GameManagerScript.currentTurkishPhonicsLevel;
+                }
 
                 miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetListOfCurrentLevelStudyCards();
                 miniGameSpecificManager.GetComponent<PhonicsManagerScript>().ResetDisplay();

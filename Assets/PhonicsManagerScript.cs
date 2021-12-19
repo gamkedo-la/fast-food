@@ -10,6 +10,7 @@ public class PhonicsManagerScript : MonoBehaviour
     [SerializeField] private StudyPhonicScript[] arrayOfEnglishStudyPhonicsCards;
     [SerializeField] private StudyPhonicScript[] arrayOfAlbanianStudyPhonicsCards;
     [SerializeField] private StudyPhonicScript[] arrayOfGeorgianStudyPhonicsCards;
+    [SerializeField] private StudyPhonicScript[] arrayOfTurkishStudyPhonicsCards;
 
     private List<StudyPhonicScript> listOfCurrentLevelStudyPhonics = new List<StudyPhonicScript>();
     private StudyPhonicScript targetPhonic;
@@ -124,6 +125,14 @@ public class PhonicsManagerScript : MonoBehaviour
                 listOfCurrentLevelStudyPhonics.Add(arrayOfGeorgianStudyPhonicsCards[i]);
             }
             //Debug.Log("listOfCurrentLevelStudyCards.Count Georgian: " + listOfCurrentLevelStudyPhonics.Count);
+            return listOfCurrentLevelStudyPhonics;
+        }
+        else if (GameManagerScript.currentLanguage == Language.Turkish)
+        {
+            for (int i = 0; i < GameManagerScript.currentTurkishPhonicsLevel; i++)
+            {
+                listOfCurrentLevelStudyPhonics.Add(arrayOfTurkishStudyPhonicsCards[i]);
+            }
             return listOfCurrentLevelStudyPhonics;
         }
         else //default to english

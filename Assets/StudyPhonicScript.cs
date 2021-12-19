@@ -67,6 +67,10 @@ public class StudyPhonicScript : MonoBehaviour
         {
             growingString += "Georgian";
         }
+        else if (myParentPhonicsContainerGameObject.name == "TurkishPhonics")
+        {
+            growingString += "Turkish";
+        }
 
         growingString += "_Phonic_";
 
