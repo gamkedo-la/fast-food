@@ -61,6 +61,7 @@ public class PhonicsManagerScript : MonoBehaviour
         currentPhonicString = targetPhonic.GetComponent<StudyPhonicScript>().myCharacter;
         if (GameManagerScript.currentLanguage != Language.Georgian)
         {
+            Debug.Log("lowering characters");
             currentPhonicString = currentPhonicString.ToLower();
         }
 

@@ -104,6 +104,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
     [SerializeField] GameObject parentAccessoriesGameObject;
     private CustomerAccessories customerAccessoriesScript;
+
+    [SerializeField] GameObject separateGameObjectForDoorCollider;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -237,6 +239,7 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 Vector2 newCustomerPosition = new Vector2(myX + myRandomSpeed * 2, gameObject.transform.position.y);
                 gameObject.transform.position = newCustomerPosition;
+                separateGameObjectForDoorCollider.transform.position = newCustomerPosition;
                 
                 float orderingImageYOffSet = 2.0f;
                 Vector2 newOrderingImageVectorWithOffsets = new Vector2(newCustomerPosition.x, newCustomerPosition.y - orderingImageYOffSet);
@@ -281,6 +284,8 @@ public class CustomerOrderingScript : MonoBehaviour
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
             gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
+            separateGameObjectForDoorCollider.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
+
             customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
                     customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
             customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(customerOrderingCanvasToggleButton.transform.localPosition.x + myRandomSpeed * 51,
@@ -304,6 +309,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         myAccessoriesPrefab.GetComponent<CustomerAccessories>().RandomizeAccesories();
         gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
+        separateGameObjectForDoorCollider.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
         customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
         customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
@@ -618,7 +624,8 @@ public class CustomerOrderingScript : MonoBehaviour
     {
         if (collision.gameObject.name == "customerCounterTop" || collision.gameObject.name == "BurgerScriptablePrefab" || 
             collision.gameObject.name == "ChickenDonerScriptablePrefab" || collision.gameObject.name == "Beer" || 
-            collision.gameObject.name == "RedWine" || collision.gameObject.name == "WhiteWine" || collision.gameObject.name == "Water")
+            collision.gameObject.name == "RedWine" || collision.gameObject.name == "WhiteWine" || collision.gameObject.name == "Water" ||
+            collision.gameObject.name == "EntranceDoor" || collision.gameObject.name == "ExitDoor")
         {
             return;
         }

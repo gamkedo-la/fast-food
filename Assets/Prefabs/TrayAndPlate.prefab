@@ -159,6 +159,9 @@ MonoBehaviour:
   burgerScriptablePrefab: {fileID: 0}
   chickenDonerScriptablePrefab: {fileID: 0}
   beer: {fileID: 0}
+  redWine: {fileID: 0}
+  whiteWine: {fileID: 0}
+  water: {fileID: 0}
   drinkLocation: {fileID: 9114031925350736244}
   trayAndPlateStartingLocationGameObject: {fileID: 0}
 --- !u!50 &128410782686868922
