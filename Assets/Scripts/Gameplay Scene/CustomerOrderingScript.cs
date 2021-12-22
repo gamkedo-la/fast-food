@@ -107,7 +107,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
     [SerializeField] GameObject separateGameObjectForDoorCollider;
     private float doorForColliderXOffset = -1.1f;
-    private float doorForColliderYOffset = 1.0f;
+    private float doorForColliderYOffset = 0f;
     #endregion
     // Start is called before the first frame update
     void Start()

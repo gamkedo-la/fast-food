@@ -2180,12 +2180,16 @@ PrefabInstance:
       value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37279886
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.63
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6242,12 +6246,16 @@ PrefabInstance:
       value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37279886
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.68
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6331,7 +6339,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0, y: 0.5}
-  m_ConnectedAnchor: {x: 10.52, y: 5.15765}
+  m_ConnectedAnchor: {x: 9.368, y: 5.15765}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 3
@@ -6446,7 +6454,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480752826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.52, y: 4.02, z: 0}
+  m_LocalPosition: {x: 9.368, y: 4.02, z: 0}
   m_LocalScale: {x: 0.65, y: 2.2753, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7137,7 +7145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636165251}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.46, y: 4.02, z: 0}
+  m_LocalPosition: {x: -9.41, y: 4.02, z: 0}
   m_LocalScale: {x: 0.65, y: 2.2753, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7158,7 +7166,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0, y: 0.5}
-  m_ConnectedAnchor: {x: -10.46, y: 5.15765}
+  m_ConnectedAnchor: {x: -9.41, y: 5.15765}
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 3
@@ -9199,12 +9207,16 @@ PrefabInstance:
       value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.37279886
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.63
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.54
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 3496336661624184425, guid: 5e6842755c3280d46882a8d6e147d9cc, type: 3}
       propertyPath: m_LocalPosition.z
