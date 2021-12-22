@@ -34,6 +34,7 @@ TagManager:
   - WhiteWine
   - Water
   - PhonicsInputField
+  - ColliderForDoor
   layers:
   - Default
   - TransparentFX

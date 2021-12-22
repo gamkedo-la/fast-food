@@ -106,6 +106,8 @@ public class CustomerOrderingScript : MonoBehaviour
     private CustomerAccessories customerAccessoriesScript;
 
     [SerializeField] GameObject separateGameObjectForDoorCollider;
+    private float doorForColliderXOffset = -1.1f;
+    private float doorForColliderYOffset = 1.0f;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -239,7 +241,10 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 Vector2 newCustomerPosition = new Vector2(myX + myRandomSpeed * 2, gameObject.transform.position.y);
                 gameObject.transform.position = newCustomerPosition;
-                separateGameObjectForDoorCollider.transform.position = newCustomerPosition;
+
+                float newDoorForColliderXPosition = newCustomerPosition.x - doorForColliderXOffset;
+                float newDoorForColliderYPosition = newCustomerPosition.y + doorForColliderYOffset;
+                separateGameObjectForDoorCollider.transform.position = new Vector2(newDoorForColliderXPosition, newDoorForColliderYPosition);
                 
                 float orderingImageYOffSet = 2.0f;
                 Vector2 newOrderingImageVectorWithOffsets = new Vector2(newCustomerPosition.x, newCustomerPosition.y - orderingImageYOffSet);
@@ -284,7 +289,10 @@ public class CustomerOrderingScript : MonoBehaviour
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
             gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
-            separateGameObjectForDoorCollider.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
+            
+            separateGameObjectForDoorCollider.transform.position = new Vector2(
+                gameObject.transform.position.x - doorForColliderXOffset + myRandomSpeed * 2, 
+                gameObject.transform.position.y + doorForColliderYOffset);
 
             customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
                     customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
@@ -308,8 +316,12 @@ public class CustomerOrderingScript : MonoBehaviour
         }
 
         myAccessoriesPrefab.GetComponent<CustomerAccessories>().RandomizeAccesories();
+
         gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
-        separateGameObjectForDoorCollider.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
+        separateGameObjectForDoorCollider.transform.position = new Vector2(
+            myStartingX - doorForColliderXOffset, 
+            gameObject.transform.position.y + doorForColliderYOffset);
+
         customerOrderingCanvasImage.transform.localPosition = new Vector3(myOrderingImageStartingX, customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
         customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(myOrderingImageToggleButtonsStartingX, customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         myPatienceTimerSlider.transform.localPosition = new Vector3(myPatienceSliderTimerStartingX, myPatienceTimerSlider.transform.localPosition.y, 0.0f);
