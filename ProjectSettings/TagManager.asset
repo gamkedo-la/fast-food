@@ -75,3 +75,12 @@ TagManager:
   - name: ImpatienceParticles
     uniqueID: 1494390269
     locked: 0
+  - name: CustomerOrderCanvas1
+    uniqueID: 3396247865
+    locked: 0
+  - name: CustomerOrderCanvas2
+    uniqueID: 3730241851
+    locked: 0
+  - name: CustomerOrderCanvas3
+    uniqueID: 1747839339
+    locked: 0
