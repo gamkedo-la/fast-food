@@ -893,7 +893,7 @@ public class CustomerOrderingScript : MonoBehaviour
         }
 
         losingPatience = false;
-        //currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
+        currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
 
         switch (GameManagerScript.currentLanguage)
