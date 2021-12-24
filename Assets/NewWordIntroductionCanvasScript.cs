@@ -16,6 +16,8 @@ public class NewWordIntroductionCanvasScript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
+        GameManagerScript.impatienceSoundIsPlaying = false;        
 
         switch (GameManagerScript.currentLevel)
         {

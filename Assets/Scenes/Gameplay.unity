@@ -6485,6 +6485,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1947016986}
     m_Modifications:
     - target: {fileID: -296908064807976685, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
+      propertyPath: customer1
+      value: 
+      objectReference: {fileID: 944642847}
+    - target: {fileID: -296908064807976685, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
+      propertyPath: customer2
+      value: 
+      objectReference: {fileID: 699634379}
+    - target: {fileID: -296908064807976685, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
+      propertyPath: customer3
+      value: 
+      objectReference: {fileID: 2092546005}
+    - target: {fileID: -296908064807976685, guid: 854afaa17473e4b4eaa2e3bff0380c17, type: 3}
       propertyPath: buttonClickAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
@@ -8560,6 +8572,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071143705120e6f448b5a8b9a790e218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  customer1: {fileID: 944642847}
+  customer2: {fileID: 699634379}
+  customer3: {fileID: 2092546005}
 --- !u!1001 &1994962685
 PrefabInstance:
   m_ObjectHideFlags: 0

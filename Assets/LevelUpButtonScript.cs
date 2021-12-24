@@ -9,7 +9,13 @@ public class LevelUpButtonScript : ButtonScript
     [SerializeField] private GameObject miniGameSpecificManager;
     [SerializeField] private TextMeshProUGUI currentLevelTextMeshPro;
     private Scene currentScene;
-    
+
+    private void Start()
+    {
+        AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
+        GameManagerScript.impatienceSoundIsPlaying = false;
+    }
+
     public override void HandleButtonClick()
     {
         currentScene = SceneManager.GetActiveScene();

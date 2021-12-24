@@ -6,6 +6,6 @@ public class ColliderForDoorScript : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collider for door collided");
+        //Debug.Log("collider for door collided");
     }
 }

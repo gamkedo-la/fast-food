@@ -21,7 +21,19 @@ public class LoadSceneButtonScript : ButtonScript
     [SerializeField] ScenesToLoadEnumerations mySceneToLoadEnumeration;
 
     public override void HandleButtonClick()
-    {  
+    {
+        Time.timeScale = 0;
+        AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
+        GameManagerScript.impatienceSoundIsPlaying = false;
+
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            GameObject[] arrayOfCustomers = GameObject.FindGameObjectsWithTag("Customer");
+            for (int i = arrayOfCustomers.Length - 1; i > -1; i--)
+            {
+                Destroy(arrayOfCustomers[i]);
+            }
+        }
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         //Play UI button sound
