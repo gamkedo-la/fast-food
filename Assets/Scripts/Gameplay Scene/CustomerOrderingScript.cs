@@ -288,16 +288,16 @@ public class CustomerOrderingScript : MonoBehaviour
     {
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
-            gameObject.transform.position = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
-            
+            Vector2 newCustomerPosition = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);
+            gameObject.transform.position = newCustomerPosition;
+
+            float orderingImageYOffSet = 2.0f;
+            Vector2 newOrderingImageVectorWithOffsets = new Vector2(newCustomerPosition.x, newCustomerPosition.y - orderingImageYOffSet);
+            customerOrderingCanvasImage.transform.position = newOrderingImageVectorWithOffsets;
+
             separateGameObjectForDoorCollider.transform.position = new Vector2(
                 gameObject.transform.position.x - doorForColliderXOffset + myRandomSpeed * 2, 
                 gameObject.transform.position.y + doorForColliderYOffset);
-
-            customerOrderingCanvasImage.transform.localPosition = new Vector3(customerOrderingCanvasImage.transform.localPosition.x + myRandomSpeed * 50,
-                    customerOrderingCanvasImage.transform.localPosition.y, 0.0f);
-            customerOrderingCanvasToggleButton.transform.localPosition = new Vector3(customerOrderingCanvasToggleButton.transform.localPosition.x + myRandomSpeed * 51,
-                customerOrderingCanvasToggleButton.transform.localPosition.y, 0.0f);
         }
 
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x > exitLocation.transform.position.x)
