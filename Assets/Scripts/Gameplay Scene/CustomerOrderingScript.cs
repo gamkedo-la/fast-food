@@ -337,6 +337,7 @@ public class CustomerOrderingScript : MonoBehaviour
     }
     private void ToggleOffDialogBox()
     {
+        Debug.Log("inside toggle off dialog box for: " + gameObject.name + "from CustomerOrderingScript");
         customerOrderingCanvasImageGameObject.SetActive(false);
     }
 
@@ -885,7 +886,7 @@ public class CustomerOrderingScript : MonoBehaviour
     
     private void HandleCorrectOrderSubmission()
     {
-
+        Debug.Log("isProcessingOrder: " + isProcessingOrder);
         //prevent duplicate event calls
         if (!isProcessingOrder)
         {
@@ -1025,6 +1026,8 @@ public class CustomerOrderingScript : MonoBehaviour
         myOrderingLocation.GetComponent<CustomerOrderingLocationScript>().isSelected = false;
         myOrderingLocation = null;
         myPatienceTimerSliderGameObject.SetActive(false);
+
+        ToggleOffDialogBox();
 
         ParticleSystem.MainModule psMain1 = particleSystem1.main;
         ParticleSystem.MainModule psMain2 = particleSystem2.main;

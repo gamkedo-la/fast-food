@@ -18,10 +18,12 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
     {
         if (myOrderingCanvasDialogBoxImage.activeSelf == false)
         {
+            Debug.Log("toggling on customer dialog box from toggle button script");
             myOrderingCanvasDialogBoxImage.SetActive(true);
         }
         else
         {
+            Debug.Log("toggling off customer dialog box from toggle button script");
             myOrderingCanvasDialogBoxImage.SetActive(false);
         }
     }
