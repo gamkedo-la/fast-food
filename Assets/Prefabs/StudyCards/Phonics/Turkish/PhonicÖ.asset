@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72a16fab026cdf4ca2fcaee71ff6198, type: 3}
   m_Name: "Phonic\xD6"
   m_EditorClassIdentifier: 
-  character: "\xD6"
+  character: "\xF6"
   audio: {fileID: 8300000, guid: 2bd39a533011afa4bab8e8abf9a17606, type: 3}

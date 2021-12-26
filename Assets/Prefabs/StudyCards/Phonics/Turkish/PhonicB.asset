@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72a16fab026cdf4ca2fcaee71ff6198, type: 3}
   m_Name: PhonicB
   m_EditorClassIdentifier: 
-  character: B
+  character: b
   audio: {fileID: 8300000, guid: d67b0c11122911b48bdd8524364ceb1f, type: 3}
