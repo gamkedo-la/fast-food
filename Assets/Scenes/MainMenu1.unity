@@ -1698,9 +1698,9 @@ MonoBehaviour:
   m_text: "You are a student studying abroad in a foreign \ncountry  and you need
     extra money, so you decide \nto get a part time job. \nThe restaurant owner can
     clearly tell you don't \nknow the language, but they think you can pick it up,
-    \nso they decide to hire you on a probationary period. \nAcquire a strong enough
-    repertoire to manage \ncustomer orders in the 3 sections of the \nrestaurant
-    (basic orders, condiments, bar) \nwell enough and you get to keep your job.\r\n"
+    \nso they decide to hire you on a probationary period. \nEach shift your responsibility
+    will increase\nwhen you are given a new food item\n to learn and serve to customers.
+    \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ddfb4f0cc18034747bb27148b89de50f, type: 2}
   m_sharedMaterial: {fileID: 3357441462394119690, guid: ddfb4f0cc18034747bb27148b89de50f, type: 2}
@@ -17515,10 +17515,9 @@ PrefabInstance:
       value: "You are a student studying abroad in a foreign \ncountry  and you need
         extra money, so you decide \nto get a part time job. \nThe restaurant owner
         can clearly tell you don't \nknow the language, but they think you can pick
-        it up, \nso they decide to hire you on a probationary period. \nAcquire a
-        strong enough repertoire to manage \ncustomer orders in the 3 sections of
-        the \nrestaurant (basic orders, condiments, bar) \nwell enough and you get
-        to keep your job.\r\n"
+        it up, \nso they decide to hire you on a probationary period. \nEach shift
+        your responsibility will increase by given a new food item to learn and serve
+        to customers. \n"
       objectReference: {fileID: 0}
     - target: {fileID: 5529033241967348745, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Color.b
