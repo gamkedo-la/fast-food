@@ -96,4 +96,7 @@ public static class GameManagerScript
     public static bool hasIntroducedLevel7 = false;
 
     public static bool progressToNextLevelEventHasBeenAdded = false;
+
+    public static bool NewPlayerHasntPlayedMainGameYet = false;
+    public static bool NewPlayerHasSeenIntroductorySentence = false;
 }

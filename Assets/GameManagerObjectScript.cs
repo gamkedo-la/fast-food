@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public enum CurrentPlatformEnum
 {
@@ -10,7 +12,24 @@ public enum CurrentPlatformEnum
 
 public class GameManagerObjectScript : MonoBehaviour
 {
-    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += CheckForNewPlayerTogglingMinigames;
+    }
+
+    void CheckForNewPlayerTogglingMinigames(Scene scene, LoadSceneMode mode)
+    {
+        if (SceneManager.GetActiveScene().name == "NewPlayerPrepScene" && GameManagerScript.NewPlayerHasSeenIntroductorySentence)
+        {
+            GameObject.FindGameObjectWithTag("StudyCanvas").SetActive(false);
+            GameObject.FindGameObjectWithTag("PrepSceneCanvas2").SetActive(true);
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("StudyCanvas").SetActive(true);
+            GameObject.FindGameObjectWithTag("PrepSceneCanvas2").SetActive(false);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

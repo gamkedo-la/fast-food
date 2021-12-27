@@ -34,7 +34,18 @@ public class LoadSceneButtonScript : ButtonScript
                 Destroy(arrayOfCustomers[i]);
             }
         }
-        SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
+
+        if (SceneManager.GetActiveScene().name == "Colors" ||
+            SceneManager.GetActiveScene().name == "Numbers" ||
+            SceneManager.GetActiveScene().name == "Phonics" ||
+            SceneManager.GetActiveScene().name == "Sentences" ||
+            SceneManager.GetActiveScene().name == "Spelling" && GameManagerScript.NewPlayerHasntPlayedMainGameYet)
+        {
+            SceneManager.LoadScene("NewPlayerPrepScene");
+            return;
+        }
+
+            SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         //Play UI button sound
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);

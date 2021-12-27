@@ -49,6 +49,10 @@ public class ToggleOnButtonScript : ButtonScript
                 onionIntroduction.SetActive(false);
             }
         }
+        else if (gameObject.name == "NextToggleButton")
+        {
+            GameManagerScript.NewPlayerHasSeenIntroductorySentence = true;
+        }
         ToggleOn();
         ToggleOff();
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
