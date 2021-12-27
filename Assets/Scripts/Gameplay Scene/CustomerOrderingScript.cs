@@ -337,7 +337,6 @@ public class CustomerOrderingScript : MonoBehaviour
     }
     private void ToggleOffDialogBox()
     {
-        Debug.Log("inside toggle off dialog box for: " + gameObject.name + "from CustomerOrderingScript");
         customerOrderingCanvasImageGameObject.SetActive(false);
     }
 
@@ -886,7 +885,6 @@ public class CustomerOrderingScript : MonoBehaviour
     
     private void HandleCorrectOrderSubmission()
     {
-        Debug.Log("isProcessingOrder: " + isProcessingOrder);
         //prevent duplicate event calls
         if (!isProcessingOrder)
         {
@@ -994,7 +992,6 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
-        Debug.Log("handle incorrect order submission");
         CheckForReviewNotification();
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["That's not what I want!"];
         

@@ -63,6 +63,7 @@ public class GameManagerObjectScript : MonoBehaviour
 
     public static void ProgressToNextLevel()
     {
+        Debug.Log("progressToNextLevel called");
         GameManagerScript.currentLevel++;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [SerializeField] GameObject statsCanvas;
+    [SerializeField] GameObject rewardsCanvas;
     [SerializeField] GameObject suggestReviewCanvas;
     [SerializeField] GameObject newWordIntroductionCanvas;
     [SerializeField] GameObject trayAndPlatePrefab;
@@ -55,7 +55,11 @@ public class CameraScript : MonoBehaviour
 
     private void HandleLevelCompletedEvent()
     {
-        statsCanvas.GetComponent<StatsCanvasScript>().Appear();
+        rewardsCanvas.SetActive(true);
+        
+        Time.timeScale = 0;
+        AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
+        GameManagerScript.impatienceSoundIsPlaying = false;
 
         if (CheckIfLevelIntroductionIsAppropriate())
         {
