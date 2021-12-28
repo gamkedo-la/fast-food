@@ -15,7 +15,9 @@ MonoBehaviour:
   englishWord: Onion
   albanianWord: Qepe
   georgianWord: "\u10EE\u10D0\u10EE\u10D5\u10D8"
+  turkishWord: "So\u011Fan"
   sprite: {fileID: 21300000, guid: 82d7f0bfca059674897f03985fe56af8, type: 3}
   englishAudio: {fileID: 8300000, guid: cda6992c3c207bf478c8c53f61a55df0, type: 3}
   albanianAudio: {fileID: 8300000, guid: d6b10b80e0538b24d8b10f463cbc2edb, type: 3}
   georgianAudio: {fileID: 8300000, guid: 75878d6b6512a634ba78e46c88cac6d0, type: 3}
+  turkishAudio: {fileID: 8300000, guid: 809e1ecc4a249c94e847cbe095cc737b, type: 3}

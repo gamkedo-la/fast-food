@@ -276,5 +276,12 @@ public enum GameSoundEnum{
     Turkish_Phonic_V,
     Turkish_Phonic_Y,
     Turkish_Phonic_Z,
+
+    Turkish_Red_Wine,
+    Turkish_Hamburger,
+    Turkish_Onion,
+    Turkish_Lettuce,
+    Turkish_Tomatoe,
+    Turkish_Chicken_Doner
 }
 

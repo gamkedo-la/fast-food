@@ -15,7 +15,9 @@ MonoBehaviour:
   englishWord: Lettuce
   albanianWord: Marule
   georgianWord: "\u10E1\u10D0\u10DA\u10D0\u10D7\u10D8\u10E1 \u10E4\u10E3\u10E0\u10EC\u10DA\u10D8"
+  turkishWord: Marul
   sprite: {fileID: 21300000, guid: fae598d2d26e9af45bc1ba7887c577cf, type: 3}
   englishAudio: {fileID: 8300000, guid: d1d46124150e3fd4c990fbc8f085b294, type: 3}
   albanianAudio: {fileID: 8300000, guid: 6d6fa5f529f878b4295435b5a5f46696, type: 3}
   georgianAudio: {fileID: 8300000, guid: 2b7c6beda59a86248b10bc7027eff775, type: 3}
+  turkishAudio: {fileID: 8300000, guid: c5563284c61eac249b04bcb492615055, type: 3}

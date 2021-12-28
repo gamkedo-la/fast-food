@@ -472,6 +472,18 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 94d3db2d115a4064eacbde200c8bbe24, type: 3}
     - sound: 226
       clip: {fileID: 8300000, guid: 588e8d976a8cf3a4aa731ec856834f51, type: 3}
+    - sound: 227
+      clip: {fileID: 8300000, guid: 2bbd25c161392ff49b44b085967e7f9b, type: 3}
+    - sound: 228
+      clip: {fileID: 8300000, guid: 2c9f5bfe190684f4a90a40fcc42602c0, type: 3}
+    - sound: 229
+      clip: {fileID: 8300000, guid: 809e1ecc4a249c94e847cbe095cc737b, type: 3}
+    - sound: 230
+      clip: {fileID: 8300000, guid: c5563284c61eac249b04bcb492615055, type: 3}
+    - sound: 231
+      clip: {fileID: 8300000, guid: c1ba402ea5c52794f92c9eccf3e8ce47, type: 3}
+    - sound: 232
+      clip: {fileID: 8300000, guid: a087fc7d7e7967c44ac1ce0aa483dafd, type: 3}
   - source: {fileID: 7467504210736191742}
     audio:
     - sound: 54

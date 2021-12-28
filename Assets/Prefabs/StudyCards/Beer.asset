@@ -15,7 +15,9 @@ MonoBehaviour:
   englishWord: beer
   albanianWord: "birr\xEB"
   georgianWord: "\u10DA\u10E3\u10D3\u10D8"
+  turkishWord: bira
   sprite: {fileID: 21300000, guid: 162882bf50a1668429cf96389ffc125f, type: 3}
   englishAudio: {fileID: 8300000, guid: bf0550568916ca8489c97867bbd38b59, type: 3}
   albanianAudio: {fileID: 8300000, guid: e58a124df5395944bb623b661422f115, type: 3}
   georgianAudio: {fileID: 8300000, guid: 61a4e1b8cbfc02246a9e39c5eecac463, type: 3}
+  turkishAudio: {fileID: 0}

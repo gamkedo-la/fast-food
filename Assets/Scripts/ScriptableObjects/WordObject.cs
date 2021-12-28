@@ -10,6 +10,7 @@ public class WordObject : ScriptableObject
     public string englishWord;
     public string albanianWord;
     public string georgianWord;
+    public string turkishWord;
 
     [Header("Image File")]
     public Sprite sprite;
@@ -18,4 +19,5 @@ public class WordObject : ScriptableObject
     public AudioClip englishAudio;
     public AudioClip albanianAudio;
     public AudioClip georgianAudio;
+    public AudioClip turkishAudio;
 }

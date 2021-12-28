@@ -15,7 +15,9 @@ MonoBehaviour:
   englishWord: Chicken doner
   albanianWord: "Doner pul\xEB"
   georgianWord: "\u10E5\u10D0\u10D7\u10DB\u10D8\u10E1 \u10E8\u10D0\u10E3\u10E0\u10DB\u10D0"
+  turkishWord: "Tavuk D\xF6ner"
   sprite: {fileID: 21300000, guid: f47f5b6fd892c3a4d8634acbfa70ef45, type: 3}
   englishAudio: {fileID: 8300000, guid: 3e69d28525b7b664d830138535d67653, type: 3}
   albanianAudio: {fileID: 8300000, guid: a0e753e8704aa374c842f85c4ad7cd52, type: 3}
   georgianAudio: {fileID: 8300000, guid: 0fcc563a5de9de84980ee10517917b79, type: 3}
+  turkishAudio: {fileID: 8300000, guid: a087fc7d7e7967c44ac1ce0aa483dafd, type: 3}
