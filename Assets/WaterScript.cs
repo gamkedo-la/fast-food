@@ -83,7 +83,7 @@ public class WaterScript : MonoBehaviour
         gameObject.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
     }
 
-    private void ResetMeAfterSubmission()
+    public void ResetMeAfterSubmission()
     {
         gameObject.transform.position = startingPositionVector2;
         GameManagerScript.chefHasWater = false;

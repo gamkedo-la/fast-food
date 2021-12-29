@@ -94,7 +94,10 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
     {
         base.ResetBaseFood();
 
-        baseFoodCapsuleCollider.enabled = true;
+        if (baseFoodCapsuleCollider)
+        {
+            baseFoodCapsuleCollider.enabled = true;
+        }
 
         GameManagerScript.chefHasChickenDoner = false;
         GameManagerScript.chickenDonerHasLettuce = false;
