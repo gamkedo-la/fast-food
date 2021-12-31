@@ -30,12 +30,13 @@ public class GameManagerObjectScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("PrepSceneCanvas2").SetActive(false);
         }
     }
+    private void Awake()
+    {
+        HandleCurrentPlatform(); // goes in Awake to ensure it's done before any Start() functions need it
+    }
     // Start is called before the first frame update
     void Start()
     {
-
-        HandleCurrentPlatform();
-
         if (!GameManagerScript.progressToNextLevelEventHasBeenAdded)
         {
             EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, ProgressToNextLevel);
