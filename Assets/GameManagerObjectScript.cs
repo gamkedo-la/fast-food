@@ -60,6 +60,7 @@ public class GameManagerObjectScript : MonoBehaviour
         {
             GameManagerScript.currentPlatformEnum = CurrentPlatformEnum.Android;
         }
+        Debug.Log("Platform: " + GameManagerScript.currentPlatformEnum);
     }    
 
     public static void ProgressToNextLevel()
