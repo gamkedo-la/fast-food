@@ -139,6 +139,24 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("red wine", " და ერთი წითელი ღვინო.");
         languageDictionary[Language.Georgian].Add("white wine", " და ერთი თეთრი ღვინო.");
 
+        languageDictionary.Add(Language.Turkish, new Dictionary<string, string>());
+        languageDictionary[Language.Turkish].Add("a", "Bir adet");
+        languageDictionary[Language.Turkish].Add("with only lettuce", "marullu");
+        languageDictionary[Language.Turkish].Add("with only tomato", "domatesli");
+        languageDictionary[Language.Turkish].Add("with wonly onion", "soğanlı");
+        languageDictionary[Language.Turkish].Add("with lettuce and tomato", "marullu ve domatesli");
+        languageDictionary[Language.Turkish].Add("with lettuce and onion", "marullu ve soğanlı.");
+        languageDictionary[Language.Turkish].Add("with tomato and onion", "domatesli ve soğanlı");
+        languageDictionary[Language.Turkish].Add("with lettuce, tomato, and onion", "marullu, domatesli, ve soğanlı");
+        languageDictionary[Language.Turkish].Add("Thank you!", "Teşekkür ederim!");
+        languageDictionary[Language.Turkish].Add("That's not what I want!", "İstediğim bu değil!");
+        languageDictionary[Language.Turkish].Add("I want", "istiyorum.");
+
+        languageDictionary[Language.Turkish].Add("beer", " bira");
+        languageDictionary[Language.Turkish].Add("water", " su");
+        languageDictionary[Language.Turkish].Add("red wine", " kırmızı şarap");
+        languageDictionary[Language.Turkish].Add("white wine", " beyaz şarap");
+
         //study screen
         languageDictionary[Language.English].Add("I would like a", "I would like a");
         languageDictionary[Language.English].Add("hamburger", "hamburger");
@@ -158,6 +176,13 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("lettuce", "სალათის ფურწლი");
         languageDictionary[Language.Georgian].Add("tomato", "პამიდორი");
         languageDictionary[Language.Georgian].Add("onion", "ხახვი");
+
+        languageDictionary[Language.Turkish].Add("I would like a", "Bir adet ______ istiyorum");
+        languageDictionary[Language.Turkish].Add("hamburger", "hamburger");
+        languageDictionary[Language.Turkish].Add("chicken doner", "tavuk döner");
+        languageDictionary[Language.Turkish].Add("lettuce", "marul");
+        languageDictionary[Language.Turkish].Add("tomato", "domates");
+        languageDictionary[Language.Turkish].Add("onion", "soğan");
         #endregion
 
 

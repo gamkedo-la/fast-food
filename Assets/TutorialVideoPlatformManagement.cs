@@ -28,15 +28,4 @@ public class TutorialVideoPlatformManagement : MonoBehaviour
             vPlayer.Play();
         }
     }
-
-    private void Update()
-    {
-        if (GameManagerScript.currentPlatformEnum == CurrentPlatformEnum.Itch)
-        {
-            if (!vPlayer.isPlaying)
-            {
-                vPlayer.Play();
-            }
-        }
-    }
 }
