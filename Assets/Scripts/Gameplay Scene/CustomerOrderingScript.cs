@@ -108,6 +108,8 @@ public class CustomerOrderingScript : MonoBehaviour
     [SerializeField] GameObject separateGameObjectForDoorCollider;
     private float doorForColliderXOffset = -0.55f;
     private float doorForColliderYOffset = 0.75f;
+
+    private SpriteFlipper mySpriteFlipperScript;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -142,6 +144,8 @@ public class CustomerOrderingScript : MonoBehaviour
         customerOrderingCanvasImageTransform = customerOrderingCanvasImage.transform;
         customerOrderingCanvasImageStartingPosition = customerOrderingCanvasImageTransform.position;
 
+        mySpriteFlipperScript = gameObject.GetComponent<SpriteFlipper>();
+
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.correctOrderSubmissionEvent, HandleCorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.incorrectOrderSubmissionEvent, HandleIncorrectOrderSubmission);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
@@ -174,6 +178,11 @@ public class CustomerOrderingScript : MonoBehaviour
         if (!GameManagerScript.impatienceSoundIsPlaying){
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Customer_Impatience);
         }
+
+        mySpriteFlipperScript.spriteIndex = 0;
+        mySpriteFlipperScript.currentArrayOfSprites = mySpriteFlipperScript.impatientSprites;
+        mySpriteFlipperScript.longDurationOfSpriteFlip = Random.Range(mySpriteFlipperScript.minFrametime, mySpriteFlipperScript.maxFrametime);
+
         GameManagerScript.impatienceSoundIsPlaying = true;
         particleSystem1.gameObject.SetActive(true);
         particleSystem2.gameObject.SetActive(true);
@@ -271,6 +280,10 @@ public class CustomerOrderingScript : MonoBehaviour
         {
             return;
         }
+
+        mySpriteFlipperScript.spriteIndex = 0;
+        mySpriteFlipperScript.currentArrayOfSprites = mySpriteFlipperScript.mySprites;
+        mySpriteFlipperScript.longDurationOfSpriteFlip = Random.Range(mySpriteFlipperScript.minFrametime, mySpriteFlipperScript.maxFrametime);
 
         List<Transform> listOfActiveAccessories = customerAccessoriesScript.ReturnAListOfActiveAccessoryTransforms();
         for (int i = 0; i < listOfActiveAccessories.Count; i++)
@@ -981,6 +994,11 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        mySpriteFlipperScript.spriteIndex = 0;
+        mySpriteFlipperScript.currentArrayOfSprites = mySpriteFlipperScript.walkingSprites;
+        mySpriteFlipperScript.longDurationOfSpriteFlip = mySpriteFlipperScript.walkingTimeFrame;
+        mySpriteFlipperScript.iAmBlinking = false;
+
         losingPatience = false;
         currentCustomerDialogueString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["Thank you!"];
         //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage]["Thank You"]);
@@ -1104,6 +1122,13 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
         losingPatience = false;
+
+        mySpriteFlipperScript.spriteIndex = 0;
+        mySpriteFlipperScript.currentArrayOfSprites = mySpriteFlipperScript.walkingSprites;
+        mySpriteFlipperScript.longDurationOfSpriteFlip = mySpriteFlipperScript.walkingTimeFrame;
+        mySpriteFlipperScript.timeRemainingUntilNextSpriteFlip = mySpriteFlipperScript.longDurationOfSpriteFlip;
+        mySpriteFlipperScript.iAmBlinking = false;
+
         myStateEnumeration = CustomerStateEnumerations.LeavingRestaurant;
         if (!customerManagerObject.GetComponent<CustomerManagerScript>().AreAnyCustomersLosingPatience())
         { //if no customers are losing patience when a correct order is delivered, the customer impatience sound should stop

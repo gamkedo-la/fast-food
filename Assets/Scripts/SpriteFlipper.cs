@@ -7,7 +7,12 @@ public class SpriteFlipper : MonoBehaviour
     public float minFrametime = 0.25f;
     public float maxFrametime = 1.5f;
     public bool oddFramesBlinkFast = true;
-    
+    public bool iAmBlinking = false;
+    public float walkingTimeFrame = 0.2f;
+
+    public float timeRemainingUntilNextSpriteFlip;
+    public float longDurationOfSpriteFlip;//starts by walking
+
     [Header("When customer is happy")]
     public Sprite[] mySprites;
 
@@ -20,8 +25,10 @@ public class SpriteFlipper : MonoBehaviour
     [Header("Rotated Rainbow Shirt Sprites")]
     public Sprite[] rotatedRainbowShirtSprites;
 
+    public Sprite[] currentArrayOfSprites;
+
     private SpriteRenderer baseCustomerSpriteRenderer;
-    private int spriteIndex = 0;
+    public int spriteIndex = 0;
     private bool wasImpatientLastFrame = false;
 
     private CustomerOrderingScript myOrderingScript;
@@ -33,11 +40,59 @@ public class SpriteFlipper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spriteIndex = 0;
+        longDurationOfSpriteFlip = walkingTimeFrame;
+        currentArrayOfSprites = walkingSprites;
+
         baseCustomerSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         rainbowShirtSpriteRenderer = rainbowShirt.GetComponent<SpriteRenderer>();
         myOrderingScript = gameObject.GetComponent<CustomerOrderingScript>();   
-        spriteIndex = Random.Range(0,mySprites.Length-1);
-        StartCoroutine(flippingSprite());  
+        
+        //StartCoroutine(flippingSprite());  
+    }
+
+    private void Update()
+    {
+        timeRemainingUntilNextSpriteFlip -= Time.deltaTime;
+
+        if (timeRemainingUntilNextSpriteFlip <= 0)
+        {
+            spriteIndex++;
+
+            timeRemainingUntilNextSpriteFlip = longDurationOfSpriteFlip;
+
+            if (iAmBlinking)
+            {
+                iAmBlinking = false;
+            }
+
+
+            else if (myOrderingScript.myStateEnumeration == CustomerStateEnumerations.WaitingForMyOrder &&
+                     spriteIndex % 2 == 1 &&
+                     !iAmBlinking)
+            {
+                //blink fast
+                timeRemainingUntilNextSpriteFlip = 0.1f;
+                iAmBlinking = true;
+            }
+
+        }
+
+        if (spriteIndex >= currentArrayOfSprites.Length)
+        {
+            spriteIndex = 0;
+        }
+
+        baseCustomerSpriteRenderer.sprite = currentArrayOfSprites[spriteIndex];
+
+        if (myOrderingScript.myStateEnumeration != CustomerStateEnumerations.WaitingForMyOrder)
+        {
+            rainbowShirtSpriteRenderer.sprite = rotatedRainbowShirtSprites[spriteIndex];
+        }
+        else
+        {
+            rainbowShirtSpriteRenderer.sprite = nonWalkingRainbowShirtSprite;
+        }  
     }
 
     IEnumerator flippingSprite() 
