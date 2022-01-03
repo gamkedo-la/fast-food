@@ -19,10 +19,15 @@ public enum ScenesToLoadEnumerations
 public class LoadSceneButtonScript : ButtonScript
 {
     [SerializeField] ScenesToLoadEnumerations mySceneToLoadEnumeration;
+    public GameObject fadeTransitioner;
 
+    private void Start()
+    {
+        fadeTransitioner = GameObject.FindGameObjectWithTag("FadeTransitioner");
+    }
     public override void HandleButtonClick()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         GameManagerScript.impatienceSoundIsPlaying = false;
 
@@ -35,6 +40,10 @@ public class LoadSceneButtonScript : ButtonScript
             }
         }
 
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isTransitioningAScene = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().currentLoadSceneButtonScript = this;
+
         if (SceneManager.GetActiveScene().name == "Colors" ||
             SceneManager.GetActiveScene().name == "Numbers" ||
             SceneManager.GetActiveScene().name == "Phonics" ||
@@ -44,8 +53,12 @@ public class LoadSceneButtonScript : ButtonScript
             SceneManager.LoadScene("NewPlayerPrepScene");
             return;
         }
+    }
 
-            SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
+    public void LoadScene()
+    {
+        Debug.Log("mySceneToLoadEnumeration: " + mySceneToLoadEnumeration.ToString());
+        SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         //Play UI button sound
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
@@ -69,10 +82,10 @@ public class LoadSceneButtonScript : ButtonScript
                     default:
                         AudioController.instance.PlayAudio(GameSoundEnum.Music_Level);
                         break;
-                }        
+                }
                 break;
             default:
-                break;    
+                break;
         }
     }
 }

@@ -37,6 +37,7 @@ TagManager:
   - ColliderForDoor
   - StudyCanvas
   - PrepSceneCanvas2
+  - FadeTransitioner
   layers:
   - Default
   - TransparentFX

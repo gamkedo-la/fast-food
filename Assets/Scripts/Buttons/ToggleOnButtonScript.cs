@@ -7,7 +7,14 @@ public class ToggleOnButtonScript : ButtonScript
 {
     [SerializeField] GameObject objectToToggleOn;
     [SerializeField] GameObject objectToToggleOff;
-    private void ToggleOn()
+
+    private GameObject fadeTransitioner;
+
+    private void Start()
+    {
+        fadeTransitioner = GameObject.FindGameObjectWithTag("FadeTransitioner");
+    }
+    public void ToggleOn()
     {
         if (objectToToggleOn != null)
         {
@@ -15,7 +22,7 @@ public class ToggleOnButtonScript : ButtonScript
         }
     }
 
-    private void ToggleOff()
+    public void ToggleOff()
     {
         if (objectToToggleOff != null)
         {
@@ -53,8 +60,11 @@ public class ToggleOnButtonScript : ButtonScript
         {
             GameManagerScript.NewPlayerHasSeenIntroductorySentence = true;
         }
-        ToggleOn();
-        ToggleOff();
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isTransitioningACanvas = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().currentToggleOnButtonScript = this;
+        //ToggleOn();
+        //ToggleOff();
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
     }
 }
