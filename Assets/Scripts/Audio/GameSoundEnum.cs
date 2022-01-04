@@ -282,6 +282,31 @@ public enum GameSoundEnum{
     Turkish_Onion,
     Turkish_Lettuce,
     Turkish_Tomatoe,
-    Turkish_Chicken_Doner
+    Turkish_Chicken_Doner,
+
+    Turkish_Order_Chicken_Doner,
+    Turkish_Order_Chicken_Doner_Lettuce,
+    Turkish_Order_Chicken_Doner_Tomato,
+    Turkish_Order_Chicken_Doner_Onion,
+    Turkish_Order_Chicken_Doner_Lettuce_Tomato,
+    Turkish_Order_Chicken_Doner_Lettuce_Onion,
+    Turkish_Order_Chicken_Doner_Tomato_Onion,
+    Turkish_Order_Chicken_Doner_Lettuce_Tomato_Onion,
+
+    Turkish_Order_Hamburger,
+    Turkish_Order_Hamburger_Lettuce,
+    Turkish_Order_Hamburger_Tomato,
+    Turkish_Order_Hamburger_Onion,
+    Turkish_Order_Hamburger_Lettuce_Tomato,
+    Turkish_Order_Hamburger_Lettuce_Onion,
+    Turkish_Order_Hamburger_Tomato_Onion,
+    Turkish_Order_Hamburger_Lettuce_Tomato_Onion,
+
+    Turkish_Thank_You,
+
+    Turkish_And_A_Water,
+    Turkish_And_A_Beer,
+    Turkish_And_A_Red_Wine,
+    Turkish_And_A_White_Wine,
 }
 

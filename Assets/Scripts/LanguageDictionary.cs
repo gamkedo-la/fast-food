@@ -140,22 +140,22 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("white wine", " და ერთი თეთრი ღვინო.");
 
         languageDictionary.Add(Language.Turkish, new Dictionary<string, string>());
-        languageDictionary[Language.Turkish].Add("a", "Bir adet");
-        languageDictionary[Language.Turkish].Add("with only lettuce", "marullu");
-        languageDictionary[Language.Turkish].Add("with only tomato", "domatesli");
-        languageDictionary[Language.Turkish].Add("with wonly onion", "soğanlı");
-        languageDictionary[Language.Turkish].Add("with lettuce and tomato", "marullu ve domatesli");
-        languageDictionary[Language.Turkish].Add("with lettuce and onion", "marullu ve soğanlı.");
-        languageDictionary[Language.Turkish].Add("with tomato and onion", "domatesli ve soğanlı");
-        languageDictionary[Language.Turkish].Add("with lettuce, tomato, and onion", "marullu, domatesli, ve soğanlı");
+        languageDictionary[Language.Turkish].Add("a", "Bir adet ");
+        languageDictionary[Language.Turkish].Add("with only lettuce", "marullu ");
+        languageDictionary[Language.Turkish].Add("with only tomato", "domatesli ");
+        languageDictionary[Language.Turkish].Add("with only onion", "soğanlı ");
+        languageDictionary[Language.Turkish].Add("with lettuce and tomato", "marullu ve domatesli ");
+        languageDictionary[Language.Turkish].Add("with lettuce and onion", "marullu ve soğanlı ");
+        languageDictionary[Language.Turkish].Add("with tomato and onion", "domatesli ve soğanlı ");
+        languageDictionary[Language.Turkish].Add("with lettuce, tomato, and onion", "marullu, domatesli, ve soğanlı ");
         languageDictionary[Language.Turkish].Add("Thank you!", "Teşekkür ederim!");
         languageDictionary[Language.Turkish].Add("That's not what I want!", "İstediğim bu değil!");
-        languageDictionary[Language.Turkish].Add("I want", "istiyorum.");
+        languageDictionary[Language.Turkish].Add("I want", " istiyorum.");
 
-        languageDictionary[Language.Turkish].Add("beer", " bira");
-        languageDictionary[Language.Turkish].Add("water", " su");
-        languageDictionary[Language.Turkish].Add("red wine", " kırmızı şarap");
-        languageDictionary[Language.Turkish].Add("white wine", " beyaz şarap");
+        languageDictionary[Language.Turkish].Add("beer", " Ve bira");
+        languageDictionary[Language.Turkish].Add("water", " Ve su");
+        languageDictionary[Language.Turkish].Add("red wine", " Ve kırmızı şarap");
+        languageDictionary[Language.Turkish].Add("white wine", " Ve beyaz şarap");
 
         //study screen
         languageDictionary[Language.English].Add("I would like a", "I would like a");

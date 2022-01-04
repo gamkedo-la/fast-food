@@ -301,6 +301,56 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.Georgian_And_A_White_Wine;
             }
         }
+        else if (GameManagerScript.currentLanguage == Language.Turkish)
+        {
+
+            switch (customerOrderString)
+            {
+
+                //Order Hamburger
+                case "Bir adet hamgurber istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger;
+                case "Bir adet marullu hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Lettuce;
+                case "Bir adet domatesli hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Tomato;
+                case "Bir adet soğanlı hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Onion;
+                case "Bir adet marullu ve domatesli hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Lettuce_Tomato;
+                case "Bir adet marullu ve soğanlı hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Lettuce_Onion;
+                case "Bir adet domatesli ve soğanlı hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Tomato_Onion;
+                case "Bir adet marullu, domatesli, ve soğanlı hamburger istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Hamburger_Lettuce_Tomato_Onion;
+                //Order Chicken Doner
+                case "Bir adet tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner;
+                case "Bir adet marullu tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce;
+                case "Bir adet domatesli tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Tomato;
+                case "Bir adet soğanlı tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Onion;
+                case "Bir adet marullu ve domatesli tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce_Tomato;
+                case "Bir adet marullu ve soğanlı tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce_Onion;
+                case "Bir adet domatesli ve soğanlı tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Tomato_Onion;
+                case "Bir adet marullu, domatesli, ve soğanlı tavuk döner istiyorum.":
+                    return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce_Tomato_Onion;
+                case " Ve su istiyorum.":
+                    return GameSoundEnum.Turkish_And_A_Water;
+                case " Ve bira istiyorum.":
+                    return GameSoundEnum.Turkish_And_A_Beer;
+                case " Ve kırmızı şarap istiyorum.":
+                    return GameSoundEnum.Turkish_And_A_Red_Wine;
+                case " Ve beyaz şarap istiyorum":
+                    return GameSoundEnum.Turkish_And_A_White_Wine;
+            }
+        }
         Debug.Log("no valid order audio");
         return GameSoundEnum.SFX_Incorrect_Order;
     }

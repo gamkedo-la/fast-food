@@ -491,116 +491,7 @@ public class CustomerOrderingScript : MonoBehaviour
         #endregion
 
         #region HandleCustomerDialogBoxString
-        if (iWantAHamburger)
-        {
-            customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
-            currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
-            currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a hamburger"];
-        }
-        else
-        {
-            customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
-            currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
-            currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a chicken doner"];
 
-        }
-
-        if (iWantLettuce || iWantTomatoe || iWantOnion)
-        {
-            currentCustomerOrderDisplayString += "\n  " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
-            //Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["with"];
-        }
-
-        //one topping
-        if (iWantLettuce && !iWantTomatoe && !iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only lettuce"];
-        }
-        else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only tomato"];
-        }
-        else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only onion"];
-        }
-
-        //two toppings
-        else if (iWantLettuce && iWantTomatoe && !iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and tomato"];
-        }
-        else if (iWantLettuce && !iWantTomatoe && iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and onion"];
-        }
-        else if (!iWantLettuce && iWantTomatoe && iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["tomato and onion"];
-        }
-
-        //all three toppings
-        else if (iWantLettuce && iWantTomatoe && iWantOnion)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce, tomato, and onion"];
-        }
-        currentCustomerFoodOrderString = customersOrderString;
-
-        if (iWantWater)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
-            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["water"];
-        }
-        else if (iWantBeer)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
-            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["beer"];
-        }
-        else if (iWantRedWine)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
-            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["red wine"];
-        }
-        else if (iWantWhiteWine)
-        {
-            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
-            currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
-            currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["white wine"];
-        }
-         
-
-        if (GameManagerScript.currentLanguage == Language.Georgian)
-        {
-            currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
-        }
-        //Debug.Log("currentCustomerOrderDisplayString: " + currentCustomerOrderDisplayString);
-        //Debug.Log("currentCustomerOrderStringInEnglish: " + currentCustomerOrderStringInEnglish);
-
-        //if it is turkish, we would still have to do the english way in order to make currentCustomerOrderStringInEnglish variable correctly.
-        //So we first do the english stuff and if it is turkish we overwrite it with turkish for other variables.
         if (GameManagerScript.currentLanguage == Language.Turkish)
         {
             customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["a"];
@@ -609,42 +500,54 @@ public class CustomerOrderingScript : MonoBehaviour
             //one topping
             if (iWantLettuce && !iWantTomatoe && !iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only lettuce"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only lettuce"];
             }
             else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only tomato"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only tomato"];
             }
             else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with only onion"];
             }
 
             //two toppings
             else if (iWantLettuce && iWantTomatoe && !iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce and tomato"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce and tomato"];
             }
             else if (iWantLettuce && !iWantTomatoe && iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce and onion"];
             }
             else if (!iWantLettuce && iWantTomatoe && iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with tomato and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with tomato and onion"];
             }
 
             //all three toppings
             else if (iWantLettuce && iWantTomatoe && iWantOnion)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce, tomato, and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce, tomato, and onion"];
+            }
+            
+            if (iWantAHamburger)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
+            }
+            else
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["chicken doner"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["chicken doner"];
+
             }
             currentCustomerFoodOrderString = customersOrderString;
 
@@ -673,21 +576,127 @@ public class CustomerOrderingScript : MonoBehaviour
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
             }
 
+
+            currentCustomerFoodOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want"];
+            currentCustomerDrinkOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want"];
+            customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want"];
+            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want"];
+        }
+        else
+        {
+
             if (iWantAHamburger)
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
+                customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+                currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a hamburger"];
+                currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a hamburger"];
             }
             else
             {
-                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["chicken doner"];
-                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["chicken doner"];
+                customersOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
+                currentCustomerOrderDisplayString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want a chicken doner"];
+                currentCustomerOrderStringInEnglish = LanguageDictionary.languageDictionary[Language.English]["I want a chicken doner"];
 
             }
 
+            if (iWantLettuce || iWantTomatoe || iWantOnion)
+            {
+                currentCustomerOrderDisplayString += "\n  " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+                //Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["with"];
+            }
 
-            currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["I want"];
+            //one topping
+            if (iWantLettuce && !iWantTomatoe && !iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only lettuce"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only lettuce"];
+            }
+            else if (!iWantLettuce && iWantTomatoe && !iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only tomato"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only tomato"];
+            }
+            else if (!iWantLettuce && !iWantTomatoe && iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["only onion"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["only onion"];
+            }
+
+            //two toppings
+            else if (iWantLettuce && iWantTomatoe && !iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and tomato"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and tomato"];
+            }
+            else if (iWantLettuce && !iWantTomatoe && iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce and onion"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce and onion"];
+            }
+            else if (!iWantLettuce && iWantTomatoe && iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["tomato and onion"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["tomato and onion"];
+            }
+
+            //all three toppings
+            else if (iWantLettuce && iWantTomatoe && iWantOnion)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["lettuce, tomato, and onion"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["lettuce, tomato, and onion"];
+            }
+            currentCustomerFoodOrderString = customersOrderString;
+
+            if (iWantWater)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+                currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["water"];
+            }
+            else if (iWantBeer)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+                currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["beer"];
+            }
+            else if (iWantRedWine)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+                currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["red wine"];
+            }
+            else if (iWantWhiteWine)
+            {
+                customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+                currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+                currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+                currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["white wine"];
+            }
+
+        
+            if (GameManagerScript.currentLanguage == Language.Georgian)
+            {
+                currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
+            }
         }
+        //Debug.Log("currentCustomerOrderDisplayString: " + currentCustomerOrderDisplayString);
+        //Debug.Log("currentCustomerOrderStringInEnglish: " + currentCustomerOrderStringInEnglish);
+
+        //if it is turkish, we would still have to do the english way in order to make currentCustomerOrderStringInEnglish variable correctly.
+        //So we first do the english stuff and if it is turkish we overwrite it with turkish for other variables.
+
         #endregion
 
         StartCoroutine(SelectRandomOrderingLocationAfterARandomAmountOfTime());
