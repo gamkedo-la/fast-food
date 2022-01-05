@@ -355,7 +355,8 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void Update()
     {
-        if (GameManagerScript.gameIsPaused)
+        //gameIsPaused stops Time.deltaTime, extraPauseForTransitions does not stop Time.deltaTime
+        if (GameManagerScript.gameIsPaused || GameManagerScript.extraPauseForTransitions)
         {
             return;
         }

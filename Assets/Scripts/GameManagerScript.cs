@@ -99,4 +99,7 @@ public static class GameManagerScript
 
     public static bool NewPlayerHasntPlayedMainGameYet = false;
     public static bool NewPlayerHasSeenIntroductorySentence = false;
+
+    //block movement and sound calls for a 'pause' while leaving Time.deltaTime running for fadeOut transitions
+    public static bool extraPauseForTransitions = false;
 }

@@ -111,7 +111,7 @@ public class LevelStarterScript : MonoBehaviour
 
     private void HandleLevelCompletedEvent()
     {
-        statsCanvas.SetActive(true);
+        //statsCanvas.SetActive(true);
         statsCanvasLoadLevelButtonText.text = "Next Level";
         feedbackMessageTextbox.text = "Congratulations! You're ready for the next level.";
     }

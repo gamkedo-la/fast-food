@@ -57,7 +57,13 @@ public class LoadSceneButtonScript : ButtonScript
 
     public void LoadScene()
     {
-        Debug.Log("mySceneToLoadEnumeration: " + mySceneToLoadEnumeration.ToString());
+        //Debug.Log("mySceneToLoadEnumeration: " + mySceneToLoadEnumeration.ToString());
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            //block movement and sound calls for a 'pause' while leaving Time.deltaTime running for fadeOut transitions
+            GameManagerScript.extraPauseForTransitions = true;
+        }
+
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         //Play UI button sound

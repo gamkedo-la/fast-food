@@ -17,7 +17,8 @@ public class RewardsCanvasScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("GameManagerScript.currentLevel: " + GameManagerScript.currentLevel);
+        GameManagerScript.extraPauseForTransitions = true;
+        //Debug.Log("GameManagerScript.currentLevel: " + GameManagerScript.currentLevel);
         switch (GameManagerScript.currentLevel)
         {
             case 2:

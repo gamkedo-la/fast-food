@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FadeTransitionerScript : MonoBehaviour
 {
@@ -27,8 +28,16 @@ public class FadeTransitionerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (SceneManager.GetActiveScene().name == "Gameplay")
+        //{
+        //    Debug.Log("inside Update() of fadeTransitioner in Gameplay scene");
+        //}
         if (isFadingOut)
         {
+            if (SceneManager.GetActiveScene().name == "Gameplay")
+            {
+                Debug.Log("inside Update() of fadeTransitioner in Gameplay scene and isFadingOut");
+            }
             FadeOutAndToggleAndTriggerFadeIn();
         }
 
@@ -40,6 +49,8 @@ public class FadeTransitionerScript : MonoBehaviour
 
     public void FadeOutAndToggleAndTriggerFadeIn()
     {
+        
+        Time.timeScale = 1;
         blackFadeImageTemporaryColor = blackFadeImage.color;
         blackFadeImageTemporaryColor.a += Time.deltaTime * 2;
         blackFadeImage.color = blackFadeImageTemporaryColor;
@@ -51,6 +62,10 @@ public class FadeTransitionerScript : MonoBehaviour
 
         if (blackFadeImage.color.a >= 1)
         {
+            //if (SceneManager.GetActiveScene().name == "Gameplay")
+            //{
+            //    Debug.Log("inside FadeOutAndToggleAndTriggerFadeIn()");
+            //}
             isFadingOut = false;
             if (isTransitioningACanvas)
             {
@@ -59,7 +74,7 @@ public class FadeTransitionerScript : MonoBehaviour
             }
             else if (isTransitioningAScene)
             {
-                Debug.Log("should be loading scene");
+               // Debug.Log("should be loading scene");
                 currentLoadSceneButtonScript.LoadScene();
             }
             isFadingIn = true;
@@ -68,6 +83,7 @@ public class FadeTransitionerScript : MonoBehaviour
 
     public void FadeIn()
     {
+        Time.timeScale = 1;
         blackFadeImageTemporaryColor = blackFadeImage.color;
         blackFadeImageTemporaryColor.a -= Time.deltaTime * 2;
         blackFadeImage.color = blackFadeImageTemporaryColor;
