@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour
 {
@@ -9,9 +10,15 @@ public class CameraScript : MonoBehaviour
     [SerializeField] GameObject newWordIntroductionCanvas;
     [SerializeField] GameObject trayAndPlatePrefab;
 
+    public GameObject fadeTransitioner;
+    public Color tempColor;
+
     // Start is called before the first frame update
     void Start()
-    {    
+    {
+        fadeTransitioner = GameObject.FindGameObjectWithTag("FadeTransitioner");
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
+
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.suggestReviewToPlayerEvent, HandleSuggestReviewToStudentEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.anyOrderSubmissionEvent, HandleAnyOrderSubmissionEvent);
@@ -21,6 +28,11 @@ public class CameraScript : MonoBehaviour
         if (GameManagerScript.shouldIntroduceNewLevel)
         {
             newWordIntroductionCanvas.SetActive(true);
+        }
+
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn = true;
         }
     }
 

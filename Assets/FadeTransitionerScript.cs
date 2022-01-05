@@ -19,9 +19,16 @@ public class FadeTransitionerScript : MonoBehaviour
     public ToggleOnButtonScript currentToggleOnButtonScript;
     public LoadSceneButtonScript currentLoadSceneButtonScript;
 
+    public bool firstFrameAfterSceneLoadHasPassed = false;
+    public bool hasEnteredGameplayScene = false;
+    private void Awake()
+    {
+        //SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -71,18 +78,27 @@ public class FadeTransitionerScript : MonoBehaviour
             {
                 currentToggleOnButtonScript.ToggleOff();
                 currentToggleOnButtonScript.ToggleOn();
+                isFadingIn = true;
             }
             else if (isTransitioningAScene)
             {
                // Debug.Log("should be loading scene");
                 currentLoadSceneButtonScript.LoadScene();
             }
-            isFadingIn = true;
+            
         }
     }
 
     public void FadeIn()
     {
+        if (isTransitioningAScene && !firstFrameAfterSceneLoadHasPassed)
+        {
+            Debug.Log("inside first frame check");
+            firstFrameAfterSceneLoadHasPassed = true;
+            return;
+        }
+        
+        
         Time.timeScale = 1;
         blackFadeImageTemporaryColor = blackFadeImage.color;
         blackFadeImageTemporaryColor.a -= Time.deltaTime * 2;
@@ -91,9 +107,24 @@ public class FadeTransitionerScript : MonoBehaviour
         if (blackFadeImage.color.a <= 0)
         {
             isFadingIn = false;
+            isTransitioningACanvas = false;
+            isTransitioningAScene = false;
         }
 
-        isTransitioningACanvas = false;
-        isTransitioningAScene = false;
+        
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("blackFadeImage.color :" + blackFadeImage.color);
+        isFadingIn = true;
+        firstFrameAfterSceneLoadHasPassed = false;
+        
+        //GameManagerScript.extraPauseForTransitions = false;
+        //blackFadeImageTemporaryColor = blackFadeImage.color;
+        //blackFadeImageTemporaryColor.a = 1.0f;
+        //blackFadeImage.color = blackFadeImageTemporaryColor;
+        //isFadingIn = true;
+        //isTransitioningAScene = true;
     }
 }

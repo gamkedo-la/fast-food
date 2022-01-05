@@ -42,6 +42,7 @@ public class LoadSceneButtonScript : ButtonScript
 
         fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut = true;
         fadeTransitioner.GetComponent<FadeTransitionerScript>().isTransitioningAScene = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
         fadeTransitioner.GetComponent<FadeTransitionerScript>().currentLoadSceneButtonScript = this;
 
         if (SceneManager.GetActiveScene().name == "Colors" ||
@@ -62,6 +63,7 @@ public class LoadSceneButtonScript : ButtonScript
         {
             //block movement and sound calls for a 'pause' while leaving Time.deltaTime running for fadeOut transitions
             GameManagerScript.extraPauseForTransitions = true;
+            fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
         }
 
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
