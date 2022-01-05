@@ -30,6 +30,7 @@ public class LoadSceneButtonScript : ButtonScript
         //Time.timeScale = 0;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         GameManagerScript.impatienceSoundIsPlaying = false;
+        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
 
         if (SceneManager.GetActiveScene().name == "Gameplay")
         {
@@ -51,7 +52,16 @@ public class LoadSceneButtonScript : ButtonScript
             SceneManager.GetActiveScene().name == "Sentences" ||
             SceneManager.GetActiveScene().name == "Spelling" && GameManagerScript.NewPlayerHasntPlayedMainGameYet)
         {
-            SceneManager.LoadScene("NewPlayerPrepScene");
+            mySceneToLoadEnumeration = ScenesToLoadEnumerations.NewPlayerPrepScene;
+            return;
+        }
+        else if (SceneManager.GetActiveScene().name == "Colors" ||
+            SceneManager.GetActiveScene().name == "Numbers" ||
+            SceneManager.GetActiveScene().name == "Phonics" ||
+            SceneManager.GetActiveScene().name == "Sentences" ||
+            SceneManager.GetActiveScene().name == "Spelling" && !GameManagerScript.NewPlayerHasntPlayedMainGameYet)
+        {
+            mySceneToLoadEnumeration = ScenesToLoadEnumerations.Gameplay;
             return;
         }
     }
@@ -59,17 +69,16 @@ public class LoadSceneButtonScript : ButtonScript
     public void LoadScene()
     {
         //Debug.Log("mySceneToLoadEnumeration: " + mySceneToLoadEnumeration.ToString());
-        if (SceneManager.GetActiveScene().name == "Gameplay")
-        {
+        
             //block movement and sound calls for a 'pause' while leaving Time.deltaTime running for fadeOut transitions
-            GameManagerScript.extraPauseForTransitions = true;
+            //GameManagerScript.extraPauseForTransitions = true;
             fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
-        }
 
+        //AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
         //Play UI button sound
-        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+        
 
         if (gameObject.name == "MainMenuSceneLoadButton")
         {

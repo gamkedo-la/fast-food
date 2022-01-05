@@ -15,7 +15,9 @@ public class NewWordIntroductionCanvasScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManagerScript.introducingANewWord = true;
         Time.timeScale = 0;
+        GameManagerScript.extraPauseForTransitions = true;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         GameManagerScript.impatienceSoundIsPlaying = false;        
 

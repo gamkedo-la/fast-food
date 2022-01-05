@@ -11,10 +11,4 @@ public class TestCameraScript : MonoBehaviour
         fadeTransitioner = GameObject.FindGameObjectWithTag("FadeTransitioner");
         fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

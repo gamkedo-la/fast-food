@@ -38,6 +38,7 @@ TagManager:
   - StudyCanvas
   - PrepSceneCanvas2
   - FadeTransitioner
+  - InvisibleRewardsButton
   layers:
   - Default
   - TransparentFX

@@ -82,7 +82,7 @@ public class FadeTransitionerScript : MonoBehaviour
             }
             else if (isTransitioningAScene)
             {
-               // Debug.Log("should be loading scene");
+                Debug.Log("inside is transitioning a scene after fadeOut");
                 currentLoadSceneButtonScript.LoadScene();
             }
             
@@ -98,7 +98,10 @@ public class FadeTransitionerScript : MonoBehaviour
             return;
         }
         
-        
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            Debug.Log("blackFadeImageTemporaryColor.a: " + blackFadeImageTemporaryColor.a);
+        }
         Time.timeScale = 1;
         blackFadeImageTemporaryColor = blackFadeImage.color;
         blackFadeImageTemporaryColor.a -= Time.deltaTime * 2;
@@ -109,6 +112,11 @@ public class FadeTransitionerScript : MonoBehaviour
             isFadingIn = false;
             isTransitioningACanvas = false;
             isTransitioningAScene = false;
+            firstFrameAfterSceneLoadHasPassed = false;
+            if (!GameManagerScript.introducingANewWord)
+            {
+                GameManagerScript.extraPauseForTransitions = false;
+            }
         }
 
         
@@ -118,6 +126,7 @@ public class FadeTransitionerScript : MonoBehaviour
     {
         Debug.Log("blackFadeImage.color :" + blackFadeImage.color);
         isFadingIn = true;
+        isTransitioningAScene = true;
         firstFrameAfterSceneLoadHasPassed = false;
         
         //GameManagerScript.extraPauseForTransitions = false;

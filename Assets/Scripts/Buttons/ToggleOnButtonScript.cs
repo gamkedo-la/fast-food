@@ -39,7 +39,9 @@ public class ToggleOnButtonScript : ButtonScript
         } 
         else if (gameObject.name == "OKToggleButton")
         {
+            GameManagerScript.introducingANewWord = false;
             Time.timeScale = 1;
+            GameManagerScript.extraPauseForTransitions = false;
             GameObject tomatoIntroduction = GameObject.FindGameObjectWithTag("TomatoIntroduction");
             GameObject chickenDonerIntroduction = GameObject.FindGameObjectWithTag("ChickenDonerIntroduction");
             GameObject onionIntroduction = GameObject.FindGameObjectWithTag("OnionIntroduction");

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CameraScript : MonoBehaviour
 {
@@ -12,12 +13,14 @@ public class CameraScript : MonoBehaviour
 
     public GameObject fadeTransitioner;
     public Color tempColor;
+    public GameObject invisibleRewardsButton;
 
     // Start is called before the first frame update
     void Start()
     {
         fadeTransitioner = GameObject.FindGameObjectWithTag("FadeTransitioner");
         fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
+        invisibleRewardsButton = GameObject.FindGameObjectWithTag("InvisibleRewardsButton");
 
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.levelCompletedEvent, HandleLevelCompletedEvent);
         EventManagerScript.AddEventHandlerToTargetEvent(EventManagerScript.suggestReviewToPlayerEvent, HandleSuggestReviewToStudentEvent);
@@ -67,7 +70,9 @@ public class CameraScript : MonoBehaviour
 
     private void HandleLevelCompletedEvent()
     {
-        rewardsCanvas.SetActive(true);
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut = true;
+        fadeTransitioner.GetComponent<FadeTransitionerScript>().isTransitioningACanvas = true;
+        invisibleRewardsButton.GetComponent<ToggleOnButtonScript>().HandleButtonClick();
         
         Time.timeScale = 0;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
