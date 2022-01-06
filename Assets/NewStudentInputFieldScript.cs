@@ -11,10 +11,15 @@ public class NewStudentInputFieldScript : MonoBehaviour
 
     public void HandleOnValueEdit()
     {
-        PlayUIButtonSound();
+        PlayUITypingSound();
     }
     private void PlayUIButtonSound()
     {
         AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+    }
+
+    private void PlayUITypingSound()
+    {
+        AudioController.instance.PlayAudio(GameSoundEnum.Typing_UI_SFX);
     }
 }

@@ -316,5 +316,6 @@ public enum GameSoundEnum{
     Reset_Tray,
     Level_Clear_SFX,
     Back_Button_UI,
+    Typing_UI_SFX,
 }
 
