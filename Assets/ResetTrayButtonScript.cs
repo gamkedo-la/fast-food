@@ -18,6 +18,8 @@ public class ResetTrayButtonScript : ButtonScript
 
     public override void HandleButtonClick()
     {
+        AudioController.instance.PlayAudio(GameSoundEnum.Reset_Tray);
+
         if (GameManagerScript.burgerHasLettuce || GameManagerScript.chickenDonerHasLettuce)
         {
             fullHeadOfLettuce.GetComponent<SpriteRenderer>().enabled = true;

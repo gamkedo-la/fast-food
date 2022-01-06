@@ -313,5 +313,6 @@ public enum GameSoundEnum{
     SFX_Drink_Pickup,
     SFX_Lose_Customer,
     SFX_Meat_Pickup,
+    Reset_Tray,
 }
 
