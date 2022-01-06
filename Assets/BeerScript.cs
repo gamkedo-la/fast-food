@@ -78,6 +78,7 @@ public class BeerScript : MonoBehaviour
     }
     private void HandleChefPicksMeUpEvent()
     {
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Drink_Pickup);
         GameManagerScript.chefHasBeer = true;
         GameObject drinkLocation = GameObject.FindGameObjectWithTag("DrinkLocation");
         gameObject.transform.position = new Vector3(drinkLocation.transform.position.x, drinkLocation.transform.position.y, 0);
