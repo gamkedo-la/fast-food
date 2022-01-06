@@ -86,6 +86,7 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
     public override void HandlePlayerSelectsBaseFoodEvent()
     {
         base.HandlePlayerSelectsBaseFoodEvent();
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Meat_Pickup);
         GameManagerScript.chefHasChickenDoner = true;
         baseFoodCapsuleCollider.enabled = false;
     }
@@ -116,6 +117,7 @@ public class ChickenDonerBaseFoodScript : BaseFoodScript
     public override void OnMouseUp()
     {
         base.OnMouseUp();
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Meat_Pickup);
         EventManagerScript.playerSelectsChickenDonerEvent.Invoke();
         GameManagerScript.chefHasChickenDoner = true;
     }

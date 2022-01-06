@@ -118,6 +118,7 @@ public abstract class BaseFoodScript : MonoBehaviour
         MoveToTray();
         if (!GameManagerScript.chefHasBaseFood)
         {
+            AudioController.instance.PlayAudio(GameSoundEnum.SFX_Meat_Pickup);
             GameManagerScript.chefHasBaseFood = true;
             //Camera.main.GetComponent<AudioSource>().PlayOneShot(LanguageDictionary.audioLanguageDictionary[GameManagerScript.currentLanguage][englishWord]);
         }
