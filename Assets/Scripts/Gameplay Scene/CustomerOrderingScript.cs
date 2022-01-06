@@ -241,6 +241,10 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void MoveTowardsSelectedOrderingLocation()
     {
+        if (GameManagerScript.extraPauseForTransitions)
+        {
+            return;
+        }
         if (myOrderingLocation != null && myStateEnumeration == CustomerStateEnumerations.EnteringRestaurant)
         {
             float myX = gameObject.transform.position.x;
@@ -299,6 +303,10 @@ public class CustomerOrderingScript : MonoBehaviour
 
     private void MoveTowardsExit()
     {
+        if (GameManagerScript.extraPauseForTransitions)
+        {
+            return;
+        }
         if (myStateEnumeration == CustomerStateEnumerations.LeavingRestaurant && gameObject.transform.position.x < exitLocation.transform.position.x)
         {
             Vector2 newCustomerPosition = new Vector2(gameObject.transform.position.x + myRandomSpeed * 2, gameObject.transform.position.y);

@@ -17,6 +17,8 @@ public class RewardsCanvasScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioController.instance.PlayAudio(GameSoundEnum.Level_Clear_SFX);
+
         GameManagerScript.extraPauseForTransitions = true;
         //Debug.Log("GameManagerScript.currentLevel: " + GameManagerScript.currentLevel);
         switch (GameManagerScript.currentLevel)

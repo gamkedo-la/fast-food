@@ -87,6 +87,7 @@ public class HamburgerBaseFoodScript : BaseFoodScript
 
     public override void HandlePlayerSelectsBaseFoodEvent()
     {
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Meat_Pickup);
         base.HandlePlayerSelectsBaseFoodEvent();
         GameManagerScript.chefHasBurger = true;
         baseFoodCircleCollider.enabled = false;

@@ -41,6 +41,10 @@ public class PatienceTimerSliderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManagerScript.extraPauseForTransitions)
+        {
+            return;
+        }
         if (isActive)
         {
             if (gameObject.GetComponent<Slider>().value > 0)

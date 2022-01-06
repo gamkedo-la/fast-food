@@ -93,15 +93,15 @@ public class FadeTransitionerScript : MonoBehaviour
     {
         if (isTransitioningAScene && !firstFrameAfterSceneLoadHasPassed)
         {
-            Debug.Log("inside first frame check");
+            //Debug.Log("inside first frame check");
             firstFrameAfterSceneLoadHasPassed = true;
             return;
         }
         
-        if (SceneManager.GetActiveScene().name == "Gameplay")
-        {
-            Debug.Log("blackFadeImageTemporaryColor.a: " + blackFadeImageTemporaryColor.a);
-        }
+        //if (SceneManager.GetActiveScene().name == "Gameplay")
+        //{
+        //    Debug.Log("blackFadeImageTemporaryColor.a: " + blackFadeImageTemporaryColor.a);
+        //}
         Time.timeScale = 1;
         blackFadeImageTemporaryColor = blackFadeImage.color;
         blackFadeImageTemporaryColor.a -= Time.deltaTime * 2;
@@ -113,7 +113,8 @@ public class FadeTransitionerScript : MonoBehaviour
             isTransitioningACanvas = false;
             isTransitioningAScene = false;
             firstFrameAfterSceneLoadHasPassed = false;
-            if (!GameManagerScript.introducingANewWord)
+            if (!GameManagerScript.introducingANewWord && GameObject.Find("RewardCanvas") == null &&
+                GameObject.Find("StatsCanvas") == null)
             {
                 GameManagerScript.extraPauseForTransitions = false;
             }

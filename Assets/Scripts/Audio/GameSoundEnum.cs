@@ -314,5 +314,6 @@ public enum GameSoundEnum{
     SFX_Lose_Customer,
     SFX_Meat_Pickup,
     Reset_Tray,
+    Level_Clear_SFX,
 }
 
