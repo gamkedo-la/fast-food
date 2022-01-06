@@ -1165,6 +1165,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
         
         lostCustomerParticleSystem.gameObject.SetActive(true);
+        AudioController.instance.PlayAudio(GameSoundEnum.SFX_Lose_Customer);
 
         List<Transform> listOfCurrentActiveAccesories = customerAccessoriesScript.ReturnAListOfActiveAccessoryTransforms();
         for (int i = 0; i < listOfCurrentActiveAccesories.Count; i++)

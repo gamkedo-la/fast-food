@@ -311,5 +311,6 @@ public enum GameSoundEnum{
 
     SFX_Customer_Leave,
     SFX_Drink_Pickup,
+    SFX_Lose_Customer,
 }
 
