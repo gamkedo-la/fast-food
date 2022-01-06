@@ -308,5 +308,7 @@ public enum GameSoundEnum{
     Turkish_And_A_Beer,
     Turkish_And_A_Red_Wine,
     Turkish_And_A_White_Wine,
+
+    SFX_Customer_Leave,
 }
 

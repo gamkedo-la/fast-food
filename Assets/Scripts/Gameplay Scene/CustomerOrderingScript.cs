@@ -328,6 +328,8 @@ public class CustomerOrderingScript : MonoBehaviour
             return;
         }
 
+        //AudioController.instance.PlayAudio(GameSoundEnum.SFX_Customer_Leave);
+
         myAccessoriesPrefab.GetComponent<CustomerAccessories>().RandomizeAccesories();
 
         gameObject.transform.position = new Vector2(myStartingX, gameObject.transform.position.y);
