@@ -67,8 +67,8 @@ public class ToggleOnButtonScript : ButtonScript
         fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut = true;
         if (SceneManager.GetActiveScene().name == "Gameplay")
         {
-            Debug.Log("fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut: " + fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut);
-            Debug.Log("fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn: " + fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn);
+            //Debug.Log("fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut: " + fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingOut);
+            //Debug.Log("fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn: " + fadeTransitioner.GetComponent<FadeTransitionerScript>().isFadingIn);
         }
         fadeTransitioner.GetComponent<FadeTransitionerScript>().isTransitioningACanvas = true;
         fadeTransitioner.GetComponent<FadeTransitionerScript>().currentToggleOnButtonScript = this;
@@ -78,6 +78,14 @@ public class ToggleOnButtonScript : ButtonScript
         }
         //ToggleOn();
         //ToggleOff();
-        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+        if (buttonClickAudioClip.name == "UI_Button_Back")
+        {
+            Debug.Log("back button audio clip found");
+            AudioController.instance.PlayAudio(GameSoundEnum.Back_Button_UI);
+        }
+        else
+        {
+            AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+        }
     }
 }

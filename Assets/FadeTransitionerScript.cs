@@ -43,7 +43,7 @@ public class FadeTransitionerScript : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name == "Gameplay")
             {
-                Debug.Log("inside Update() of fadeTransitioner in Gameplay scene and isFadingOut");
+                //Debug.Log("inside Update() of fadeTransitioner in Gameplay scene and isFadingOut");
             }
             FadeOutAndToggleAndTriggerFadeIn();
         }
@@ -82,7 +82,7 @@ public class FadeTransitionerScript : MonoBehaviour
             }
             else if (isTransitioningAScene)
             {
-                Debug.Log("inside is transitioning a scene after fadeOut");
+                //Debug.Log("inside is transitioning a scene after fadeOut");
                 currentLoadSceneButtonScript.LoadScene();
             }
             
@@ -125,7 +125,7 @@ public class FadeTransitionerScript : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("blackFadeImage.color :" + blackFadeImage.color);
+        //Debug.Log("blackFadeImage.color :" + blackFadeImage.color);
         isFadingIn = true;
         isTransitioningAScene = true;
         firstFrameAfterSceneLoadHasPassed = false;

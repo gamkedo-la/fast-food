@@ -6137,6 +6137,10 @@ PrefabInstance:
       propertyPath: objectToToggleOff
       value: 
       objectReference: {fileID: 6131792355084187245}
+    - target: {fileID: 687195208049381825, guid: d70614a6e35b4024b8b8a32ac72b6ad2, type: 3}
+      propertyPath: buttonClickAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f47dbb82c3e834e258c55b168d4512fd, type: 3}
     - target: {fileID: 687195208049381827, guid: d70614a6e35b4024b8b8a32ac72b6ad2, type: 3}
       propertyPath: m_Name
       value: BackToggleButton
@@ -11096,6 +11100,10 @@ PrefabInstance:
       propertyPath: objectToToggleOff
       value: 
       objectReference: {fileID: 2134906074}
+    - target: {fileID: 371161178903117232, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
+      propertyPath: buttonClickAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f47dbb82c3e834e258c55b168d4512fd, type: 3}
     - target: {fileID: 371161178903117234, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_Name
       value: ControlsCanvasBackButton

@@ -12,7 +12,7 @@ public class SaveButtonScript : ButtonScript
     public override void HandleButtonClick()
     {
         GameManagerScript.NewPlayerHasntPlayedMainGameYet = true;
-        Debug.Log("new student");
+        //Debug.Log("new student");
         if (newPlayerNameInputField.text == "")
         {
             AudioController.instance.PlayAudio(GameSoundEnum.SFX_Incorrect_Order); 

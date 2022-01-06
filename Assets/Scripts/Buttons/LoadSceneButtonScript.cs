@@ -30,7 +30,15 @@ public class LoadSceneButtonScript : ButtonScript
         //Time.timeScale = 0;
         AudioController.instance.StopAudio(GameSoundEnum.SFX_Customer_Impatience);
         GameManagerScript.impatienceSoundIsPlaying = false;
-        AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+        if (buttonClickAudioClip.name == "UI_Button_Back")
+        {
+            Debug.Log("back button audio clip found");
+            AudioController.instance.PlayAudio(GameSoundEnum.Back_Button_UI);
+        }
+        else
+        {
+            AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
+        }
 
         if (SceneManager.GetActiveScene().name == "Gameplay")
         {
