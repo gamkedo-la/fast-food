@@ -612,7 +612,7 @@ public class CustomerOrderingScript : MonoBehaviour
 
             if (iWantLettuce || iWantTomatoe || iWantOnion)
             {
-                currentCustomerOrderDisplayString += "\n  " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
+                currentCustomerOrderDisplayString += "\n" + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
                 //Debug.Log("LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]['with']: " + LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"]);
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with"];
                 currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["with"];
@@ -667,10 +667,12 @@ public class CustomerOrderingScript : MonoBehaviour
             }
             currentCustomerFoodOrderString = customersOrderString;
 
+
             if (iWantWater)
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
                 currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["water"];
             }
@@ -678,6 +680,7 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
                 currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["beer"];
             }
@@ -685,6 +688,7 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
                 currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["red wine"];
             }
@@ -692,15 +696,24 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
                 currentCustomerOrderStringInEnglish += LanguageDictionary.languageDictionary[Language.English]["white wine"];
             }
 
-        
+            
             if (GameManagerScript.currentLanguage == Language.Georgian)
             {
-                currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
+                if (GameManagerScript.currentLevel >= 5)
+                {
+                    currentCustomerOrderDisplayString += " თუ შეიძლება.";
+                }
+                else
+                {
+                    currentCustomerOrderDisplayString += "\nთუ შეიძლება.";
+                }
             }
+
         }
         //Debug.Log("currentCustomerOrderDisplayString: " + currentCustomerOrderDisplayString);
         //Debug.Log("currentCustomerOrderStringInEnglish: " + currentCustomerOrderStringInEnglish);

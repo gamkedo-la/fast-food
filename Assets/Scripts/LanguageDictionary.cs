@@ -130,7 +130,7 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("lettuce and tomato", "სალათის ფურწლით და პამიდორით");
         languageDictionary[Language.Georgian].Add("lettuce and onion", "სალათის ფურწლით და ხახვით");
         languageDictionary[Language.Georgian].Add("tomato and onion", "პამიდორით და ხახვით");
-        languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათით, პამიდორით, და ხახვით");
+        languageDictionary[Language.Georgian].Add("lettuce, tomato, and onion", "სალათით, პამიდორით,\nდა ხახვით");
         languageDictionary[Language.Georgian].Add("Thank you!", "მადლობა!");
         languageDictionary[Language.Georgian].Add("That's not what I want!", "არა!");
 
