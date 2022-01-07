@@ -317,5 +317,8 @@ public enum GameSoundEnum{
     Level_Clear_SFX,
     Back_Button_UI,
     Typing_UI_SFX,
+
+    Turkish_I_Would_Like_A,
+    Turkish_With,
 }
 

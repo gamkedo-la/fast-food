@@ -21,6 +21,10 @@ public class PrepSceneAudioButtonScript : ButtonScript
             case Language.Georgian:
                 AudioController.instance.PlayAudio(GameSoundEnum.Georgian_I_Would_Like_A);
                     break;
+
+            case Language.Turkish:
+                //AudioController.instance.PlayAudio(GameSoundEnum.Turkish_I_Would_Like_A);
+                break;
         }
     }
 
