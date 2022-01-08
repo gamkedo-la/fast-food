@@ -196,6 +196,7 @@ public class StudyCard : MonoBehaviour
     public void PlayAudioClip()
     {
         Debug.Log("myGameSoundEnum: " + myGameSoundEnum.ToString());
+        
         AudioController.instance.PlayAudio(myGameSoundEnum);
     }
 
@@ -242,10 +243,10 @@ public class StudyCard : MonoBehaviour
             case "ჰამბურგერი":
                 myGameSoundEnum = GameSoundEnum.Georgian_Hamburger;                
                 break;
-            case "Chicken Doner":
+            case "Chicken doner":
                 myGameSoundEnum = GameSoundEnum.English_Chicken_Doner;
                 break;
-            case "Doner Pule":
+            case "Doner pulë":
                 myGameSoundEnum = GameSoundEnum.Albanian_Chicken_Doner;
                 break;
             case "ქათმის შაურმა":
@@ -290,28 +291,34 @@ public class StudyCard : MonoBehaviour
             case "Soğan":
                 myGameSoundEnum = GameSoundEnum.Turkish_Onion;
                 break;
-            case "Beer":
+            case "beer":
                 myGameSoundEnum = GameSoundEnum.English_Beer;
                 break;
-            case "Birrë":
+            case "birrë":
                 myGameSoundEnum = GameSoundEnum.Albanian_Beer;
                 break;
             case "ლუდი":
                 myGameSoundEnum = GameSoundEnum.Georgian_Beer;
                 break;
+            case "bira":
+                myGameSoundEnum = GameSoundEnum.Turkish_Beer;
+                break;
             case "Water":
                 myGameSoundEnum = GameSoundEnum.English_Water;
                 break;
-            case "Ujë":
+            case "ujë":
                 myGameSoundEnum = GameSoundEnum.Albanian_Water;
                 break;
             case "წყალი":
                 myGameSoundEnum = GameSoundEnum.Georgian_Water;
                 break;
-            case "Red Wine":
+            case "Su":
+                myGameSoundEnum = GameSoundEnum.Turkish_Water;
+                break;
+            case "red wine":
                 myGameSoundEnum = GameSoundEnum.English_Red_Wine;
                 break;
-            case "Verë e Kuqe":
+            case "verë e kuqe":
                 myGameSoundEnum = GameSoundEnum.Albanian_Red_Wine;
                 break;
             case "წითელი ღვინო":
@@ -320,14 +327,17 @@ public class StudyCard : MonoBehaviour
             case "Kırmızı Şarap":
                 myGameSoundEnum = GameSoundEnum.Turkish_Red_Wine;
                 break;
-            case "White Wine":
+            case "white wine":
                 myGameSoundEnum = GameSoundEnum.English_White_Wine;
                 break;
-            case "Verë e Bardhë":
+            case "verë e bardhë":
                 myGameSoundEnum = GameSoundEnum.Albanian_White_Wine;
                 break;
             case "თეთრი ღვინო":
                 myGameSoundEnum = GameSoundEnum.Georgian_White_Wine;
+                break;
+            case "Beyaz şarap":
+                myGameSoundEnum = GameSoundEnum.Turkish_White_Wine;
                 break;
 
             case "I would like a chicken doner with lettuce":

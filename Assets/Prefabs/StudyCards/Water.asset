@@ -15,7 +15,9 @@ MonoBehaviour:
   englishWord: Water
   albanianWord: "uj\xEB"
   georgianWord: "\u10EC\u10E7\u10D0\u10DA\u10D8"
+  turkishWord: Su
   sprite: {fileID: 21300000, guid: bde2eda1769690e4e99091781804d623, type: 3}
   englishAudio: {fileID: 8300000, guid: b2ee654b90f295a4a864d890492dfd66, type: 3}
   albanianAudio: {fileID: 8300000, guid: 15c83127c55581548a9f5d13df34ddf8, type: 3}
   georgianAudio: {fileID: 8300000, guid: 168d39b57c9eaad4fbe046a905e19b5e, type: 3}
+  turkishAudio: {fileID: 8300000, guid: 978dac67b2e5a57488fefcd6588d7b48, type: 3}

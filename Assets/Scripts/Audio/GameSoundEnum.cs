@@ -324,6 +324,11 @@ public enum GameSoundEnum{
     English_With,
     Albanian_With,
     Georgian_With,
+
+    Turkish_Beer,
+    Turkish_Water,
+    Turkish_White_Wine,
+
     
 }
 
