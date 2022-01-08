@@ -222,8 +222,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4742672211691041855, guid: 4c5ef71b4a7deb845b40c256afdad768, type: 3}
+      propertyPath: parentTextObject
+      value: 
+      objectReference: {fileID: 1734024658}
+    - target: {fileID: 4742672211691041855, guid: 4c5ef71b4a7deb845b40c256afdad768, type: 3}
       propertyPath: languageDictionaryKeyString
-      value: I would like a
+      value: with
       objectReference: {fileID: 0}
     - target: {fileID: 4742672211691041855, guid: 4c5ef71b4a7deb845b40c256afdad768, type: 3}
       propertyPath: audioLanguageDictionaryKeyString
@@ -967,7 +971,6 @@ GameObject:
   - component: {fileID: 1734024659}
   - component: {fileID: 1734024662}
   - component: {fileID: 1734024661}
-  - component: {fileID: 1734024660}
   - component: {fileID: 1734024663}
   m_Layer: 5
   m_Name: WithText (TMP)
@@ -996,19 +999,6 @@ RectTransform:
   m_AnchoredPosition: {x: 14.7, y: -17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0.5}
---- !u!114 &1734024660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734024658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4265817a92fe0e64da59ad7f7b9ca8a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTextMeshProUIObject: {fileID: 1734024661}
 --- !u!114 &1734024661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1446,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 6598642025767868315, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
+      propertyPath: parentTextObject
+      value: 
+      objectReference: {fileID: 1892161420837456079}
     - target: {fileID: 7394907202248324754, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.20376508
@@ -1525,11 +1519,17 @@ MonoBehaviour:
   englishWordTextMeshPro: {fileID: 0}
   albanianWordTextMeshPro: {fileID: 0}
   georgianWordTextMeshPro: {fileID: 0}
+  turkishWordTextMeshPro: {fileID: 0}
   wordImage: {fileID: 0}
   arrayOfTextMeshProUGUI: []
 --- !u!224 &1892161420837456078 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1892161421807397021, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
+  m_PrefabInstance: {fileID: 1892161420837456075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1892161420837456079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1892161421582584736, guid: e2c4bef93b2a0844093b96a502d710cb, type: 3}
   m_PrefabInstance: {fileID: 1892161420837456075}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901191730453610339
@@ -1931,6 +1931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonClickAudioClip: {fileID: 8300000, guid: 7274112a48d324261a3b56cac5c73401, type: 3}
   mySceneToLoadEnumeration: 3
+  fadeTransitioner: {fileID: 0}
 --- !u!114 &5185801258230550652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2053,7 @@ MonoBehaviour:
   buttonClickAudioClip: {fileID: 8300000, guid: f0e110baa768aed45816aa1a8047dbe2, type: 3}
   objectToToggleOn: {fileID: 521220225}
   objectToToggleOff: {fileID: 5656172184565946345}
+  fadeTransitioner: {fileID: 0}
 --- !u!224 &5185801258676499849
 RectTransform:
   m_ObjectHideFlags: 0

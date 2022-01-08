@@ -141,6 +141,7 @@ public class LanguageDictionary : MonoBehaviour
 
         languageDictionary.Add(Language.Turkish, new Dictionary<string, string>());
         languageDictionary[Language.Turkish].Add("a", "Bir adet ");
+        languageDictionary[Language.Turkish].Add("with", " lu or li ");
         languageDictionary[Language.Turkish].Add("with only lettuce", "marullu ");
         languageDictionary[Language.Turkish].Add("with only tomato", "domatesli ");
         languageDictionary[Language.Turkish].Add("with only onion", "soğanlı ");
