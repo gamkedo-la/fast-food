@@ -548,7 +548,9 @@ public class CustomerOrderingScript : MonoBehaviour
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce, tomato, and onion"];
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["with lettuce, tomato, and onion"];
             }
-            
+
+            currentCustomerOrderDisplayString += "\n";
+
             if (iWantAHamburger)
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["hamburger"];
@@ -566,24 +568,28 @@ public class CustomerOrderingScript : MonoBehaviour
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["water"];
             }
             else if (iWantBeer)
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["beer"];
             }
             else if (iWantRedWine)
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["red wine"];
             }
             else if (iWantWhiteWine)
             {
                 customersOrderString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
                 currentCustomerDrinkOrderString = LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
+                currentCustomerOrderDisplayString += "\n";
                 currentCustomerOrderDisplayString += LanguageDictionary.languageDictionary[GameManagerScript.currentLanguage]["white wine"];
             }
 

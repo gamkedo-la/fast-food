@@ -148,7 +148,7 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Turkish].Add("with lettuce and tomato", "marullu ve domatesli ");
         languageDictionary[Language.Turkish].Add("with lettuce and onion", "marullu ve soğanlı ");
         languageDictionary[Language.Turkish].Add("with tomato and onion", "domatesli ve soğanlı ");
-        languageDictionary[Language.Turkish].Add("with lettuce, tomato, and onion", "marullu, domatesli, ve soğanlı ");
+        languageDictionary[Language.Turkish].Add("with lettuce, tomato, and onion", "marullu, domatesli,\nve soğanlı ");
         languageDictionary[Language.Turkish].Add("Thank you!", "Teşekkür ederim!");
         languageDictionary[Language.Turkish].Add("That's not what I want!", "İstediğim bu değil!");
         languageDictionary[Language.Turkish].Add("I want", " istiyorum.");
