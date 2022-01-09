@@ -17,7 +17,9 @@ MonoBehaviour:
   georgianWord: "\u10D4\u10E0\u10D7\u10D8 \u10F0\u10D0\u10DB\u10D1\u10E3\u10E0\u10D2\u10D4\u10E0\u10D8
     \u10E1\u10D0\u10DA\u10D0\u10D7\u10D8\u10E1 \u10E4\u10E3\u10E0\u10EC\u10DA\u10D8\u10D7
     \u10D7\u10E3 \u10E8\u10D4\u10D8\u10EB\u10DA\u10D4\u10D1\u10D0"
+  turkishWord: Bir adet marullu hamburger istiyorum
   sprite: {fileID: 21300000, guid: 99885d5944256ad43b59e0e5eaefef96, type: 3}
   englishAudio: {fileID: 8300000, guid: f6de096ec9a14324d9669346e8f85090, type: 3}
   albanianAudio: {fileID: 8300000, guid: f2f11dcab352bc1438eb93dfc5c63af1, type: 3}
   georgianAudio: {fileID: 8300000, guid: 6ac90b0ae219eaf4bb9b6b79565ba9cc, type: 3}
+  turkishAudio: {fileID: 0}

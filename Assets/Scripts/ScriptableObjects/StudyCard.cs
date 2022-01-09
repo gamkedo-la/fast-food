@@ -349,6 +349,9 @@ public class StudyCard : MonoBehaviour
             case "ერთი ქათმის შაურმა სალათის ფურწლით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Lettuce;
                 break;
+            case "Bir adet marullu tavuk döner istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce;
+                break;
 
             case "I would like a chicken doner with onion":
                 myGameSoundEnum = GameSoundEnum.English_Order_Chicken_Doner_Onion;
@@ -358,6 +361,9 @@ public class StudyCard : MonoBehaviour
                 break;
             case "ერთი ქათმის შაურმა ხახვით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Onion;
+                break;
+            case "Bir adet soğanlı tavuk döner istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Chicken_Doner_Onion;
                 break;
 
             case "I would like a chicken doner with tomato":
@@ -369,6 +375,9 @@ public class StudyCard : MonoBehaviour
             case "ერთი ქათმის შაურმა პამიდორით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Chicken_Doner_Tomato;
                 break;
+            case "Bir adet domatesli tavuk döner istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Chicken_Doner_Tomato;
+                break;
 
             case "I would like a hamburger":
                 myGameSoundEnum = GameSoundEnum.English_Order_Hamburger;
@@ -378,6 +387,9 @@ public class StudyCard : MonoBehaviour
                 break;
             case "ერთი ჰამბურგერი თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger;
+                break;
+            case "Bir adet hamburger istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Hamburger;
                 break;
 
             case "I would like a hamburger with lettuce":
@@ -389,6 +401,9 @@ public class StudyCard : MonoBehaviour
             case "ერთი ჰამბურგერი სალათის ფურწლით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Lettuce;
                 break;
+            case "Bir adet marullu hamburger istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Hamburger_Lettuce;
+                break;
 
             case "I would like a hamburger with onion":
                 myGameSoundEnum = GameSoundEnum.English_Order_Hamburger_Onion;
@@ -399,6 +414,9 @@ public class StudyCard : MonoBehaviour
             case "ერთი ჰამბურგერი ხახვით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Onion;
                 break;
+            case "Bir adet soğanlı hamburger istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Hamburger_Onion;
+                break;
 
             case "I would like a hamburger with tomato":
                 myGameSoundEnum = GameSoundEnum.English_Order_Hamburger_Tomato;
@@ -408,6 +426,9 @@ public class StudyCard : MonoBehaviour
                 break;
             case "ერთი ჰამბურგერი  პამიდორით თუ შეიძლება":
                 myGameSoundEnum = GameSoundEnum.Georgian_Order_Hamburger_Tomato;
+                break;
+            case "Bir adet domatesli hamburger istiyorum":
+                myGameSoundEnum = GameSoundEnum.Turkish_Order_Hamburger_Tomato;
                 break;
         }
 
