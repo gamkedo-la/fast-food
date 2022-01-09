@@ -23,7 +23,8 @@ public class TutorialVideoPlatformManagement : MonoBehaviour
         {
             itchVideoPlayerParentGameObject.SetActive(true);
             vPlayer = childItchVideoPlayerGameObject.GetComponent<UnityEngine.Video.VideoPlayer>();
-            vPlayer.url = Path.Combine(Application.streamingAssetsPath, "placeholderTutorialVideo.mp4");
+            //vPlayer.url = Path.Combine(Application.streamingAssetsPath, "placeholderTutorialVideo.mp4");
+            vPlayer.url = Path.Combine(Application.streamingAssetsPath, "FastFoodTutorial V4.mp4");
             Debug.Log(vPlayer.url); 
             vPlayer.Play();
         }

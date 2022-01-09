@@ -303,13 +303,14 @@ public class AudioController : MonoBehaviour
         }
         else if (GameManagerScript.currentLanguage == Language.Turkish)
         {
-
+            Debug.Log("customerOrderString: " + customerOrderString);
             switch (customerOrderString)
             {
-
+                
                 //Order Hamburger
-                case "Bir adet hamgurber istiyorum.":
+                case "Bir adet hamburger istiyorum.":
                     return GameSoundEnum.Turkish_Order_Hamburger;
+                      
                 case "Bir adet marullu hamburger istiyorum.":
                     return GameSoundEnum.Turkish_Order_Hamburger_Lettuce;
                 case "Bir adet domatesli hamburger istiyorum.":

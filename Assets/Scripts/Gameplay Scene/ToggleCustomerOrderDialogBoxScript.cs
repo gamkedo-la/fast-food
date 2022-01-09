@@ -37,6 +37,7 @@ public class ToggleCustomerOrderDialogBoxScript : MonoBehaviour
         }
         else
         {
+            Debug.Log(AudioController.instance.ConvertCustomerOrderStringToGameSoundEnum(customer.GetComponent<CustomerOrderingScript>().currentCustomerDialogueString));
             AudioController.instance.PlayAudio(
             AudioController.instance.ConvertCustomerOrderStringToGameSoundEnum(customer.GetComponent<CustomerOrderingScript>().currentCustomerDialogueString));
         }

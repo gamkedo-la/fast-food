@@ -138,7 +138,7 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.Georgian].Add("water", " და ერთი წყალი.");
         languageDictionary[Language.Georgian].Add("red wine", " და ერთი წითელი ღვინო.");
         languageDictionary[Language.Georgian].Add("white wine", " და ერთი თეთრი ღვინო.");
-
+        
         languageDictionary.Add(Language.Turkish, new Dictionary<string, string>());
         languageDictionary[Language.Turkish].Add("a", "Bir adet ");
         languageDictionary[Language.Turkish].Add("with", " lu or li ");
@@ -166,7 +166,7 @@ public class LanguageDictionary : MonoBehaviour
         languageDictionary[Language.English].Add("onion", "onion");
 
         languageDictionary[Language.Albanian].Add("I would like a", "Unë dua një");
-        languageDictionary[Language.Albanian].Add("hamburger", "hamburger");
+        languageDictionary[Language.Albanian].Add("hamburger", "hamburger ");
         languageDictionary[Language.Albanian].Add("lettuce", "marule");
         languageDictionary[Language.Albanian].Add("tomato", "domate");
         languageDictionary[Language.Albanian].Add("onion", "qepë");
