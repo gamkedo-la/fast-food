@@ -70,6 +70,7 @@ public class LoadSceneButtonScript : ButtonScript
             SceneManager.GetActiveScene().name == "Spelling" && !GameManagerScript.NewPlayerHasntPlayedMainGameYet)
         {
             mySceneToLoadEnumeration = ScenesToLoadEnumerations.Gameplay;
+            GameManagerScript.shouldIntroduceNewLevel = false;
             return;
         }
     }

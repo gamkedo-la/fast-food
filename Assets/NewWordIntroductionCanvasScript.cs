@@ -15,6 +15,11 @@ public class NewWordIntroductionCanvasScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!GameManagerScript.shouldIntroduceNewLevel)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         GameManagerScript.introducingANewWord = true;
         Time.timeScale = 0;
         GameManagerScript.extraPauseForTransitions = true;
