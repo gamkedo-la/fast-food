@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class TogglePromptModeButtonScript : ButtonScript
 {
     [SerializeField] Text currentModeTextbox;
+
+    private void Start()
+    {
+        currentModeTextbox.text = GameManagerScript.currentCustomerPromptType.ToString();
+    }
     public override void HandleButtonClick()
     {
         if (GameManagerScript.currentCustomerPromptType == CustomerPromptTypeEnumerables.Text)
