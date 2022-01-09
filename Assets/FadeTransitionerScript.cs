@@ -83,6 +83,7 @@ public class FadeTransitionerScript : MonoBehaviour
             else if (isTransitioningAScene)
             {
                 //Debug.Log("inside is transitioning a scene after fadeOut");
+                isFadingIn = true;
                 currentLoadSceneButtonScript.LoadScene();
             }
             

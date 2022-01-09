@@ -103,4 +103,6 @@ public static class GameManagerScript
     //block movement and sound calls for a 'pause' while leaving Time.deltaTime running for fadeOut transitions
     public static bool extraPauseForTransitions = false;
     public static bool introducingANewWord = false;
+
+    public static bool firstLoadInitializationDone = false;
 }

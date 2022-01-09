@@ -82,6 +82,11 @@ public class LoadSceneButtonScript : ButtonScript
             //GameManagerScript.extraPauseForTransitions = true;
             fadeTransitioner.GetComponent<FadeTransitionerScript>().firstFrameAfterSceneLoadHasPassed = false;
 
+        if (SceneManager.GetActiveScene().name == "Gameplay")
+        {
+            Debug.Log("inside LoadScene() in Gameplay scene");
+            Debug.Log("mySceneToLoadEnumeration.ToString()");
+        }
         //AudioController.instance.PlayAudio(GameSoundEnum.UI_Button);
         SceneManager.LoadScene(mySceneToLoadEnumeration.ToString());
 
