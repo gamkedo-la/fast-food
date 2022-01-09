@@ -261,7 +261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &31972859
 PrefabInstance:
@@ -627,7 +627,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &100434259
 GameObject:
@@ -1051,7 +1051,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &173643049
 PrefabInstance:
@@ -2340,7 +2340,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 99
   m_RenderMode: 5
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -8064,7 +8064,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734172975
 GameObject:
@@ -9265,7 +9265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7467504209452812438, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7467504209452812438, guid: 57d9af814c43e4a0f88bd8f8f4ae1d9f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11681,7 +11681,7 @@ RectTransform:
   - {fileID: 1884719901}
   - {fileID: 519452903}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11703,6 +11703,7 @@ MonoBehaviour:
   androidVideoPlayerParentGameObject: {fileID: 2009315740}
   itchVideoPlayerParentGameObject: {fileID: 1069586369}
   childItchVideoPlayerGameObject: {fileID: 1922016193}
+  logoParticles: {fileID: 1895670658}
 --- !u!1001 &1717217271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12073,7 +12074,7 @@ RectTransform:
   - {fileID: 1717217272}
   - {fileID: 254171976}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17595,7 +17596,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1973237552
 GameObject:
@@ -18388,7 +18389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084091, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5529033243019084091, guid: 3120f88c658d0ef44bf4fe4af617ac6d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -18661,6 +18662,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 734172977}
+    - target: {fileID: 8794712495210467338, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8794712495210467341, guid: 5bf32250022307a4abaa8598a912f1d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
