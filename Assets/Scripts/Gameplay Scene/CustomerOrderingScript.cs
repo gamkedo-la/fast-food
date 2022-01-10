@@ -1051,6 +1051,9 @@ public class CustomerOrderingScript : MonoBehaviour
             case Language.Albanian:
             AudioController.instance.PlayAudio(GameSoundEnum.Albanian_Thank_You);
             break;
+            case Language.Turkish:
+            AudioController.instance.PlayAudio(GameSoundEnum.Turkish_Thank_You);
+            break;
         }
         AudioController.instance.OneShot(GameSoundEnum.SFX_Correct_Order);
         if (!customerManagerObject.GetComponent<CustomerManagerScript>().AreAnyCustomersLosingPatience()){ //if no customers are losing patience when a correct order is delivered, the customer impatience sound should stop

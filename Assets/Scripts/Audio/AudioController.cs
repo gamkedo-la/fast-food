@@ -323,7 +323,7 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.Turkish_Order_Hamburger_Lettuce_Onion;
                 case "Bir adet domatesli ve soğanlı hamburger istiyorum.":
                     return GameSoundEnum.Turkish_Order_Hamburger_Tomato_Onion;
-                case "Bir adet marullu, domatesli, ve soğanlı hamburger istiyorum.":
+                case "Bir adet marullu, domatesli,\nve soğanlı hamburger istiyorum.":
                     return GameSoundEnum.Turkish_Order_Hamburger_Lettuce_Tomato_Onion;
                 //Order Chicken Doner
                 case "Bir adet tavuk döner istiyorum.":
@@ -340,7 +340,7 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce_Onion;
                 case "Bir adet domatesli ve soğanlı tavuk döner istiyorum.":
                     return GameSoundEnum.Turkish_Order_Chicken_Doner_Tomato_Onion;
-                case "Bir adet marullu, domatesli, ve soğanlı tavuk döner istiyorum.":
+                case "Bir adet marullu, domatesli,\nve soğanlı tavuk döner istiyorum.":
                     return GameSoundEnum.Turkish_Order_Chicken_Doner_Lettuce_Tomato_Onion;
                 case " Ve su istiyorum.":
                     return GameSoundEnum.Turkish_And_A_Water;
