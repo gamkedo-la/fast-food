@@ -348,7 +348,7 @@ public class AudioController : MonoBehaviour
                     return GameSoundEnum.Turkish_And_A_Beer;
                 case " Ve kırmızı şarap istiyorum.":
                     return GameSoundEnum.Turkish_And_A_Red_Wine;
-                case " Ve beyaz şarap istiyorum":
+                case " Ve beyaz şarap istiyorum.":
                     return GameSoundEnum.Turkish_And_A_White_Wine;
             }
         }
